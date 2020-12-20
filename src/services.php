@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/services.css" />
 
     <script src="../js/responde.js"></script>    
 </head>
@@ -20,7 +20,7 @@
     
     <?php include('../header.php'); ?>
 
-    <!-- Contact -->
+    <!-- Services -->
     
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
