@@ -36,31 +36,26 @@
             <div class="row">
             		<div class="ContactForm col-6">
             			<form action="mailto:info.cartechb@gmail.com?subject=" method="POST" onsubmit="return addActionTest(this);"
-                        enctype="Contact/plain" >
-                    <h5>You can contact me using the following form<img src="../imgs/contactUs_Tittle.png" width="50px"></h5>
+                        enctype="Contact/plain" name="myemailform" >
+                        <h3>Contact Us<img src="../imgs/contactUs_Tittle.png" width="50px"></h3>
                         <p>Name</p>
                         <p>
-                            <input type="text" name="name" class="Inputs_Text" required
-                            placeholder="Enter Your Name *" size="40">
+                            <input type="text" class="Inputs_Text" required
+                            placeholder="Enter Your Name *" size="50">
                         </p> 
                         <p>Email</p> 
                         <p>
-                            <input type="email" name="email" class="Inputs_Text" required
-                            placeholder="Enter Your Email *" size="40">
-                        </p>
-                        <p>Mobile phone</p> 
-                        <p>
-                            <input type="text" name="number" class="Inputs_Text" required
-                            placeholder="Enter Your Number *" size="40">
+                            <input type="email" class="Inputs_Text" required
+                            placeholder="Enter Your Email *" size="50">
                         </p>
                         <p>Subject</p> 
                         <p>
                             <input type="text" name="subjectTitle" class="Inputs_Text" required placeholder="Enter Your subject title *"
-                             size="40" value="">
+                             size="50" value="">
                         </p>
                         <p>Massege</p> 
                         <p>
-                            <textarea name="message" cols="40" rows="10" placeholder="Your Message" required></textarea>
+                            <textarea name="message" cols="60" rows="5" placeholder="Your Message" required></textarea>
                         </p>
                         <table width="70%">
                             <tr>
@@ -74,7 +69,6 @@
                 </form>
         	</div>
                 <div class="img_contact col-6">
-            <h1 class="contact_UnderLine">Contact Us</h1>
             <img class="img_Form" src="../imgs/ContactUsForm.png">
             </div>
         </div>	
