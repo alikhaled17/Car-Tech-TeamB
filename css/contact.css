@@ -1,1 +1,79 @@
 /* Contact */
+.Inputs_Text
+{
+	color: #08526D;
+	border:none;
+	border-bottom: 1px solid #08526D;
+	padding: 3px;
+    padding-left: 10px;
+}
+input
+{
+	padding: 10px;
+	margin: 10px;
+}
+/*#3b8fad
+*/
+input:focus {
+    background: transparent;
+    border:none;
+    outline: none;
+	border-bottom: 1px solid #08526D;
+}
+textarea:focus {
+    background: transparent;
+    border: 1px solid #08526D;
+    outline: none;
+}
+/*--------------------------------------------------------------
+# Selection
+--------------------------------------------------------------*/
+
+*::-moz-selection {
+    background: #e9f4f7;
+    color: #08526D;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: #e9f4f7;
+    color: #08526D;
+    text-shadow: none;
+}
+::selection {
+    background: #e9f4f7;
+    color: #08526D;
+    text-shadow: none;
+}
+input:hover,textarea:hover{
+    background: transparent;
+    border:none;
+	border-bottom: 1px solid #08526D;
+	background-color:#e9f4f7;
+}
+.ContactForm,.img_contact{
+display: inline-block;
+color: #08526D;
+}
+.img_Form{
+	float: right;
+	width: 100%;
+}
+.Outer{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.ContactForm{
+	padding: 10px;
+	float: left;
+}
+.img_contact
+{
+	padding: 10px;
+	border: 1px solid #08526D;
+	border-radius: 5%;
+	margin-left: -25px;
+}
+.contact_UnderLine
+{
+	text-decoration: underline;
+}
