@@ -45,7 +45,7 @@
                         <a class="nav-link " href="../index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="/Car-Tech-TeamB/src/uProfile.php">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Car-Tech-TeamB/src/services.php">Services</a>

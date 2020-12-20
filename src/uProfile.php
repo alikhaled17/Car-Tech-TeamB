@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/uProfile.css" />
 
     <script src="../js/responde.js"></script>    
 </head>
@@ -30,7 +30,6 @@
                 </div>
                 <div class="info-prof col-9">
                     <h3>Account Name</h3>
-
                     <div class="card-body text-center"> 
                         <fieldset class="rating"> 
                             <input type="radio" id="star5" name="rating" value="5" />
