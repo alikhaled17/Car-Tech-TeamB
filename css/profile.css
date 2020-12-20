@@ -1,0 +1,155 @@
+
+
+/* Start Upper Profile */
+.prof-section{
+    margin-top: 5%;
+}
+
+.prof-section .container .upper-prof .img-prof {
+    position: relative;
+    height: 200px;
+}
+
+.prof-section .container .upper-prof .img-prof .shadows {
+    z-index: -9;
+    position: absolute;
+    height: 5%;
+    left : -200%;
+    width: 2100px;
+    background-color: #d3d7d8;
+    opacity: .4;
+}
+.prof-section .container .upper-prof .img-prof .shadows:first-child {
+    transform: rotateZ(30deg);   
+    top: 100%;
+}
+
+.prof-section .container .upper-prof .img-prof .shadows:nth-child(2) {
+    transform: rotateZ(50deg);   
+    top: 250%;
+}
+
+.prof-section .container .upper-prof .img-prof img {
+    width: 100%;
+    box-shadow: 5px 5px 2px 1px #888888; 
+    border-radius: 50%;
+}
+
+
+.prof-section .container .upper-prof .info-prof{
+    padding: 50px 0 0 50px ;
+}
+
+
+
+.prof-section .container .upper-prof .contact-info{
+    font-size: 30px;
+    padding: 50px 0 0 50px;
+}
+
+.prof-section .container .upper-prof .contact-info > div{
+    border-bottom: 2px solid #08526d;
+    border-radius: 0 0 10px 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.prof-section .container .upper-prof .contact-info > div > .fa {
+    color: #08526d;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.prof-section .container .upper-prof .contact-info span {
+    color: #08526d;
+}
+
+.prof-section .container .upper-prof .contact-info button {
+    background-color: #08526d;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    position: absolute;
+    right: 2px;   
+}
+
+.prof-section .container .upper-prof .contact-info button:hover {
+    background-color: #0a6283;
+}
+
+.prof-section .container .upper-prof .services-prof {
+    border-top: 2px solid #08526d;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.prof-section .container .upper-prof .services-prof ul {
+    display: flex;
+}
+
+.prof-section .container .upper-prof .services-prof ul li {
+    list-style: none;
+    height: 40px;
+    margin: 20px 10px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #0a6283;
+    color: #fff;
+    justify-content: space-around;
+}
+
+.card-body{
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+.rating
+{
+    float: left;
+}
+
+.myratings {
+    float: left;
+    color: green;
+    margin-left: 10px;
+}
+
+.rating>[id^="star"] {
+    display: none
+}
+
+.rating>label:before {
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005"
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute
+}
+
+.rating>label {
+    color: #ddd;
+    float: right
+}
+
+.rating>[id^="star"]:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700
+}
+
+.rating>[id^="star"]:checked+label:hover,
+.rating>[id^="star"]:checked~label:hover,
+.rating>label:hover~[id^="star"]:checked~label,
+.rating>[id^="star"]:checked~label:hover~label {
+    color: #FFED85
+}
+
+
+
+
+/* End Upper Profile */
