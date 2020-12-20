@@ -1,8 +1,7 @@
 /*
-    theme name : Ghostamo
-    theme coder: Ali khaled
-    date: 08/06/2020
-    psd designer:
+    theme name : Car Tech
+    theme coder: ITi-Team-B 
+    date: 20/12/2020
     firstColor: #08526d
     secoundColor: #ec1c23    
 */
@@ -67,87 +66,3 @@
     color: #ec1c23 !important
 }
 /* End Nav Bar */
-/* Srart slider */
-.carousel
-{
-    width: 100%;
-    height: 500px;
-}
-
-.carousel .carousel-item
-{
-    background-position: 50% 95%;
-    background-size: cover;
-    width: 100%;
-    height: 500px;
-    position: relative;
-}
-
-.carousel .one
-{
-    background-image: url('../imgs/05.jpeg');
-}
-.carousel .two
-{
-    background-image: url('../imgs/04.jpeg');
-}
-.carousel .tre
-{
-    background-image: url('../imgs/02.png');
-}
-
-.carousel .carousel-item .carouselay
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #22505f8a;
-    z-index: 2;
-}
-
-.carousel .carousel-item h2
-{
-    top: 150px;
-    position: absolute;
-    z-index: 3;    
-    color: #fff;
-    line-height: 1.5;
-    font-size: 30px;
-    width: 50%;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 10px
-}
-
-.carousel .carousel-item h2 span {
-    background-color: #ec1c23ce;
-    padding: 0 5px 0;
-    border-radius: 5px;
-}
-/* End slider */
-/* Start feature */
-.features
-{
-    margin-top: 25px 
-}
-
-.features .feat-item i
-{
-    padding: 10px;
-    font-size: 25px;
-    color: #fff;
-    background-color: #ec1c23;
-    border-radius: 50%;
-}
-.features .feat-item h2
-{
-    font-size: 20px;
-    margin-top: 10px;
-    color: #08526d 
-}
-.features .feat-item p
-{
-    opacity: .8;
-    margin-bottom: 40px;
-    padding: 0 20px;
-}
-/* End feature */

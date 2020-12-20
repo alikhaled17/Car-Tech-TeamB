@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech</title>
+    <title>Car Tech - Contact</title>
     <!-- my css files -->    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/contact.css" />
 
     <script src="js/responde.js"></script>    
 </head>
@@ -77,22 +77,14 @@
             </div>
         </div>
     </nav>
-
-    <div class="image-header row">
-        <div class="container">
-            <div class="right-side col-6">
-                <h1>Carella</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur amet animi vero tempora, odit esse non eos dignissimos ipsa possimus alias, necessitatibus molestias, error cumque delectus omnis ratione eaque.
-                </p>
-            </div>
-            <div class="left-side col-6">
-                <img src="imgs/home-img.png" alt="home-img" width="100%">
-            </div>
-        </div>
-    </div>
- 
+    <!-- End Nav Bar -->
     
+
+
+
+    #### Mayar Araby #####
+
+
     
 
     <script src="js/jquery-3.5.1.min.js"></script>
