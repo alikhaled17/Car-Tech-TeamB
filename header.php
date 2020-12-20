@@ -11,12 +11,10 @@
     <link rel="stylesheet" href="/Car-Tech-TeamB/css/bootstrap.css">
     <link rel="stylesheet" href="/Car-Tech-TeamB/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Car-Tech-TeamB/css/animate.css">
-    <link rel="stylesheet" href="/Car-Tech-TeamB/css/style.css" />
     <script src="js/responde.js"></script>    
 </head>
 <body>
     
-
     <!-- Start Upper Bar -->
     <div class="upper-bar">
         <div class="container">
@@ -40,14 +38,13 @@
                 <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo1.png" alt="car-tech" width="120px">
                 <span>Car</span><span>Tech</span>
             </a>
-          
         
             <div class="collapse navbar-collapse" id="ournavbar">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
                     <li class="nav-item active">
+                        <a class="nav-link " href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -76,11 +73,5 @@
         </div>
     </nav>   
 
-    <script src="/Car-Tech-TeamB/js/jquery-3.5.1.min.js"></script>
-    <script src="/Car-Tech-TeamB/js/bootstrap.min.js"></script>
-    <script src="/Car-Tech-TeamB/js/wow.min.js"></script>
-    <script>new WOW().init();</script>    
-    <script src="/Car-Tech-TeamB/js/script.js"></script>
 </body>
-
 </html>
