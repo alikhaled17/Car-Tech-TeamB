@@ -27,14 +27,13 @@
         <div class="container">
             <div class="left-side col-6">
                 <!-- form -->
-                <h2>Registration</h2><hr>
-                <input type="radio" id="user" name="user-info" />
-                <label for="user">Sign Up as User</label>
-                <input type="radio" id="Provider" name="user-info" />
-                <label for="Provider">Sign Up as Provider Of service</label>
-
                 <br>
-                <form method="POST">
+                <form method="POST" action="register.php">
+                    <h2>Registration</h2><hr>
+                    <input type="radio" id="user" name="user-info" value="User" />
+                    <label for="user">Sign Up as User</label>
+                    <input type="radio" id="Provider" name="user-info" value="Provider" />
+                    <label for="Provider">Sign Up as Provider Of service</label>
                     <div class="global-info">
                         <label>User Name</label>
                         <input type="text" name="UserName" required placeholder="Enter Your User Name *"><br>
@@ -58,7 +57,7 @@
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID</label>
-                        <input type="file" name="National_ID">
+                        <input type="file" name="image">
                         <label>commercial ID</label>
                         <input type="file" name="commercial_ID"><br>
                         <label>City </label>
@@ -94,8 +93,9 @@
                             <option value="Suez">Suez</option>
                         </select><br>
                         <label>Region</label>
-						<input type="text" name="Region" required placeholder="Enter Your region">
+						<input type="text" name="Region" placeholder="Enter Your region">
                     </div>
+                    <button name="submit">Sign Up</button>
                 </form>
             </div>
             <div class="right-side col-5">
