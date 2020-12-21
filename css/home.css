@@ -1,0 +1,71 @@
+
+.image-header {
+    margin-top: 100px;
+}
+
+.image-header .right-side,
+.image-header .left-side {
+    float:left
+}
+
+.image-header .left-side p {
+    padding: 50px 0 0 40px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #08526d;
+}
+
+
+.image-header .right-side img{
+    width: 100%;
+    transition: all .1s ease-in-out;
+}
+
+.image-header .right-side:hover img {
+    margin-left: 5px;
+}
+
+
+.about-us {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.about-us .right-side,
+.about-us .left-side {
+    float:left
+}
+
+.about-us .right-side{
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px ;
+    height: 200px;
+}
+
+.about-us .right-side div{
+    position: absolute;
+    background-color: #08526d;
+    width: 90%;
+    height: 100%;
+    padding: 70px 50px;
+    transform: skewX(-20deg);
+    z-index: 0;
+    transition: transform .5s ease-in-out;
+    border-radius: 50px 0 50px 0;
+}
+
+.about-us .right-side:hover div{
+    transform: skewX(0deg);
+}
+
+.about-us .right-side p{
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    width: 85%;
+    top: 50px;
+    left: 75px;
+}

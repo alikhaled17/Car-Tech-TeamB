@@ -22,14 +22,28 @@
     <!-- Home -->
     <div class="image-header row">
         <div class="container">
-            <div class="right-side col-6">
+            <div class="left-side col-6">
                 <h1>Car Tech.</h1>
+                <hr>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur amet animi vero tempora, odit esse non eos dignissimos ipsa possimus alias, necessitatibus molestias, error cumque delectus omnis ratione eaque.
                 </p>
             </div>
-            <div class="left-side col-6">
-                <img src="imgs/home-img.png" alt="home-img" width="100%">
+            <div class="right-side col-6">
+                <img src="imgs/home-img.png" alt="home-img">
+            </div>
+        </div>
+    </div>
+    <div class="about-us row">
+        <div class="container">
+            <div class="left-side col-2">
+                <h2>About US</h2>
+            </div>
+            <div class="right-side col-10">
+                <div></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptatibus facilis possimus nihil officiis voluptatum reprehenderit autem reiciendis impedit qui velit ducimus odio, unde amet! Provident assumenda sequi reprehenderit eius?
+                </p>
             </div>
         </div>
     </div>
