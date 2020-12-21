@@ -94,11 +94,10 @@
 }
 
 .signup .left-side > form .prov-info .service-check {
-    padding: 20px 0 0 20px;
+    padding: 0px 0 0 20px;
 }
 .signup .left-side > form .prov-info .service-check h4{
-    padding-bottom: 0px;
-    margin-bottom: -5px;
+    color: #08526d;
 }
 
 .signup .left-side > form .prov-info .service-check input {
