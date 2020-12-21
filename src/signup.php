@@ -27,69 +27,41 @@
         <div class="container">
             <div class="left-side col-6">
                 <!-- form -->
-                <span><h2>Registration</h2></span>
-                <label for="user">
-                    <input type="radio" id="user" name="chkQstn" />
-                    Sign Up as User
-                </label>
-                <label for="Provider">
-                    <input type="radio" id="Provider" name="chkQstn" />
-                    Sign Up as Provider Of service
-                </label>
+                <h2>Registration</h2><hr>
+                <input type="radio" id="user" name="user-info" />
+                <label for="user">Sign Up as User</label>
+                <input type="radio" id="Provider" name="user-info" />
+                <label for="Provider">Sign Up as Provider Of service</label>
+
                 <br>
                 <form method="POST">
-                        <label>
-                            User Name
-                        </label>
-                            <input type="text" name="UserName" required placeholder="Enter Your User Name *">
-                        <br>
-                        <label>
-                            Password
-                        </label>
-                            <input type="Password" name="PWD" required placeholder="Enter Your Password *">
-                        <br>
-                        <label>
-                            Email
-                        </label>
-                            <input type="Email" name="Email" required placeholder="Enter Your E-mail *">
-                        <br>
-                        <label>
-                            Phone Number
-                        </label>
-                            <input type="text" name="PhoneNum" required placeholder="Enter Your Phone Number">
-                        <br>
-                    <div id="dvqstn" style="display: none">
-                        <label>
-                            services :
-                        </label>
-                            <label>
-                                Gas Station
-                                <input type="checkbox" name="Gas_Station">
-                            </label>
-                            <label>
-                                Car Wash
-                                <input type="checkbox" name="Car_Wash">
-                            </label>
-                            <label>
-                                Car Maintenance
-                                <input type="checkbox" name="Car_Maintenance">
-                            </label>
-                            <label>
-                                Trailer Truck
-                                <input type="checkbox" name="Trailer_Truck">
-                            </label>
-                        <label>
-                            National ID
-                            <input type="file" name="National_ID">
-                        </label>
-                        <label>
-                            commercial ID
-                            <input type="file" name="commercial_ID">
-                        </label>
-                        <br>
-                        <label>
-                            City 
-                        </label>
+                    <div class="global-info">
+                        <label>User Name</label>
+                        <input type="text" name="UserName" required placeholder="Enter Your User Name *"><br>
+                        <label>Password</label>
+                        <input type="Password" name="PWD" required placeholder="Enter Your Password *"><br>
+                        <label>Email</label>
+                        <input type="Email" name="Email" required placeholder="Enter Your E-mail *"><br>
+                        <label>Phone Number</label>
+                        <input type="text" name="PhoneNum" required placeholder="Enter Your Phone Number"><br>
+                    </div>
+                    <div class="prov-info" id="provider-info" style="display: none">
+                        <h4>services</h4>
+                        <div class="service-check">
+                            <input type="checkbox" name="Gas_Station">
+                            <label>Gas Station</label><br>
+                            <input type="checkbox" name="Car_Wash">                            
+                            <label>Car Wash</label><br>
+                            <input type="checkbox" name="Car_Maintenance">
+                            <label>Car Maintenance</label><br>
+                            <input type="checkbox" name="Trailer_Truck">
+                            <label>Trailer Truck</label><br>
+                        </div>
+                        <label>National ID</label>
+                        <input type="file" name="National_ID">
+                        <label>commercial ID</label>
+                        <input type="file" name="commercial_ID"><br>
+                        <label>City </label>
                         <select id="first-choice">
                             <option selected value="base_City">Select the city</option>
                             <option  value="Alexandria">Alexandria</option>
@@ -120,8 +92,7 @@
                             <option value="Sohag">Sohag</option>
                             <option value="South">South Sinai</option>
                             <option value="Suez">Suez</option>
-                        </select>
-						<br>
+                        </select><br>
                         <label>Region</label>
 						<input type="text" name="Region" required placeholder="Enter Your region">
                     </div>
@@ -138,15 +109,15 @@
 	<script type="text/javascript">
     	$(function () {
 			//on click of an input whose name is chkQstn
-        $("input[name='chkQstn']").click(function () {
-			//it will check if the checked input has id chkYes
-            if ($("#Provider").is(":checked")) {
-			//then the hidden div will be shown
-                $("#dvqstn").show();
-            } else {
-                $("#dvqstn").hide();
-            }
-        });
+            $("input[name='user-info']").click(function () {
+                //it will check if the checked input has id chkYes
+                if ($("#Provider").is(":checked")) {
+                //then the hidden div will be shown
+                    $("#provider-info").show();
+                } else {
+                    $("#provider-info").hide();
+                }
+            });
  		});
     </script>
     <script src="../js/jquery-3.5.1.min.js"></script>
