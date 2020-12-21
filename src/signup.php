@@ -56,7 +56,7 @@
                         <label>
                             Phone Number
                         </label>
-                            <input type="text" name="PhoneNum" required placeholder="Enter Your User Number">
+                            <input type="text" name="PhoneNum" required placeholder="Enter Your Phone Number">
                         <br>
                     <div id="dvqstn" style="display: none">
                         <label>
@@ -121,9 +121,9 @@
                             <option value="South">South Sinai</option>
                             <option value="Suez">Suez</option>
                         </select>
-                        <select>
-                            <option selected value="base_City">Select the region <option>
-                        </select>
+						<br>
+                        <label>Region</label>
+						<input type="text" name="Region" required placeholder="Enter Your region">
                     </div>
                 </form>
             </div>
