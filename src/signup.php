@@ -23,13 +23,13 @@
     <div class="signup">
         <div class="container">
             <div class="row">
-                <div class="left-side">
+                <div class="left-side col-6">
                     <!-- form -->
                 </div>
-                <div class="right-side">
+                <div class="right-side col-6">
                     <div class="sign-img">
                         <div class="shape"></div>
-                        <img src="" alt="">
+                        <img src="/Car-Tech-TeamB/imgs/signup.png" width="100%">
                     </div>
                 </div>
             </div>
