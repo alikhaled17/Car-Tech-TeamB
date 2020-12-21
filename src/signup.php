@@ -27,14 +27,13 @@
         <div class="container">
             <div class="left-side col-6">
                 <!-- form -->
-                <h2>Registration</h2><hr>
-                <input type="radio" id="user" name="user-info" />
-                <label for="user">Sign Up as User</label>
-                <input type="radio" id="Provider" name="user-info" />
-                <label for="Provider">Sign Up as Provider Of service</label>
-
                 <br>
                 <form method="POST">
+                    <h2>Registration</h2><hr>
+                    <input type="radio" id="user" name="user-info" />
+                    <label for="user">Sign Up as User</label>
+                    <input type="radio" id="Provider" name="user-info" />
+                    <label for="Provider">Sign Up as Provider Of service</label>
                     <div class="global-info">
                         <label>User Name</label>
                         <input type="text" name="UserName" required placeholder="Enter Your User Name *"><br>

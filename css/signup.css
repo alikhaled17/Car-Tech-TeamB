@@ -20,21 +20,18 @@
     margin-bottom: 25px;
 }
 
-
-
-
-.signup .left-side > input[type="radio"] {
+.signup .left-side form > input[type="radio"] {
     position: absolute;
     left: -9999px
 }
 
-.signup .left-side > input[type="radio"]+label {
+.signup .left-side form > input[type="radio"]+label {
     position: relative;
     padding: 3px 0 0 40px;
     cursor: pointer
 }
 
-.signup .left-side > input[type="radio"]+label:before {
+.signup .left-side form > input[type="radio"]+label:before {
     content: '';
     background: #fff;
     border: 2px solid #08526d;
@@ -46,7 +43,7 @@
     left: 0
 }
 
-.signup .left-side > input[type="radio"]+label:after {
+.signup .left-side form > input[type="radio"]+label:after {
     content: '';
     background: #08526d;
     width: 15px;
@@ -60,7 +57,7 @@
     transition: transform 0.3s linear, opacity 0.3s linear
 }
 
-.signup .left-side > input[type="radio"]:checked+label:after {
+.signup .left-side form > input[type="radio"]:checked+label:after {
     opacity: 1;
     transform: scale(1)
 }
@@ -101,5 +98,5 @@
 }
 
 .signup .left-side > form .prov-info .service-check input {
-    margin-right:  20px;
+    margin-right: 20px;
 }
