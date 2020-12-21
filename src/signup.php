@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="../css/services.css"/>
 
     <script src="../js/responde.js"></script>
+	<script src= 
+		"https://code.jquery.com/jquery-1.12.4.min.js"> 
+    </script> 
 </head>
 <body>
     
@@ -23,8 +26,107 @@
     <div class="signup">
         <div class="container">
             <div class="row">
-                <div class="left-side">
-                    <!-- form -->
+                <div class="left-side col-6">
+					<span><h2>Registration</h2></span>
+					<label for="user">
+						<input type="radio" id="user" name="chkQstn" />
+						Sign Up as User
+					</label>
+					<label for="Provider">
+						<input type="radio" id="Provider" name="chkQstn" />
+						Sign Up as Provider Of service
+					</label>
+					<br>
+					<div>
+					<form method="POST">
+							<label>
+								User Name
+							</label>
+								<input type="text" name="UserName" required placeholder="Enter Your User Name *">
+							<br>
+							<label>
+								Password
+							</label>
+								<input type="Password" name="PWD" required placeholder="Enter Your Password *">
+							<br>
+							<label>
+								Email
+							</label>
+								<input type="Email" name="Email" required placeholder="Enter Your E-mail *">
+							<br>
+							<label>
+								Phone Number
+							</label>
+								<input type="text" name="PhoneNum" required placeholder="Enter Your User Number">
+							<br>
+						<div id="dvqstn" style="display: none">
+							<label>
+								services :
+							</label>
+								<label>
+									Gas Station
+									<input type="checkbox" name="Gas_Station">
+								</label>
+								<label>
+									Car Wash
+									<input type="checkbox" name="Car_Wash">
+								</label>
+								<label>
+									Car Maintenance
+									<input type="checkbox" name="Car_Maintenance">
+								</label>
+								<label>
+									Trailer Truck
+									<input type="checkbox" name="Trailer_Truck">
+								</label>
+							<label>
+								National ID
+								<input type="file" name="National_ID">
+							</label>
+							<label>
+								commercial ID
+								<input type="file" name="commercial_ID">
+							</label>
+							<br>
+							<label>
+								City 
+							</label>
+							<select id="first-choice">
+								<option selected value="base_City">Select the city</option>
+								<option  value="Alexandria">Alexandria</option>
+								<option  value="Aswan">Aswan</option>
+								<option  value="Giza">Giza</option>
+								<option  value="Asyut">Asyut</option>
+								<option  value="Beheira">Beheira</option>
+								<option  value="Beni Suef">Beni Suef</option>
+								<option  value="Cairo">Cairo</option>
+								<option  value="Dakahlia">Dakahlia</option>
+								<option  value="Damietta">Damietta</option>
+								<option  value="Faiyum">Faiyum</option>
+								<option  value="Gharbia">Gharbia</option>
+								<option  value="Giza">Giza</option>
+								<option  value="Ismailia">Ismailia</option>
+								<option  value="Kafr El Sheikh">Kafr El Sheikh</option>
+								<option  value="Luxor">Luxor</option>
+								<option  value="Matruh">Matruh</option>
+								<option  value="Minya">Minya</option>
+								<option  value="Monufia">Monufia</option>
+								<option value="New Valley">New Valley</option>
+								<option  value="North Sinai">North Sinai</option>
+								<option value="Port Said">Port Said</option>
+								<option value="Qalyubia">Qalyubia</option>
+								<option value="Qena Sea">Qena</option>
+								<option value="Red">Red Sea</option>
+								<option value="Sharqia">Sharqia</option>
+								<option value="Sohag">Sohag</option>
+								<option value="South">South Sinai</option>
+								<option value="Suez">Suez</option>
+							</select>
+							<select>
+								<option selected value="base_City">Select the region <option>
+							</select>
+						</div>
+					</form>
                 </div>
                 <div class="right-side">
                     <div class="sign-img">
@@ -35,7 +137,20 @@
             </div>
         </div>
     </div>
-    
+	<script type="text/javascript">
+    	$(function () {
+			//on click of an input whose name is chkQstn
+        $("input[name='chkQstn']").click(function () {
+			//it will check if the checked input has id chkYes
+            if ($("#Provider").is(":checked")) {
+			//then the hidden div will be shown
+                $("#dvqstn").show();
+            } else {
+                $("#dvqstn").hide();
+            }
+        });
+ 		});
+    </script>
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
