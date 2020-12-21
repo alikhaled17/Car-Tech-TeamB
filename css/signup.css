@@ -1,0 +1,9 @@
+
+.signup {
+    margin-top: 100px;
+}
+
+.signup .right-side,
+.signup .left-side {
+    float:left
+}
