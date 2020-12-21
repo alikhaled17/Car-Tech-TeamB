@@ -28,11 +28,11 @@
             <div class="left-side col-6">
                 <!-- form -->
                 <br>
-                <form method="POST">
+                <form method="POST" action="register.php">
                     <h2>Registration</h2><hr>
-                    <input type="radio" id="user" name="user-info" />
+                    <input type="radio" id="user" name="user-info" value="User" />
                     <label for="user">Sign Up as User</label>
-                    <input type="radio" id="Provider" name="user-info" />
+                    <input type="radio" id="Provider" name="user-info" value="Provider" />
                     <label for="Provider">Sign Up as Provider Of service</label>
                     <div class="global-info">
                         <label>User Name</label>
@@ -57,32 +57,32 @@
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID</label>
-                        <input type="file" name="National_ID">
+                        <input type="file" name="image">
                         <label>commercial ID</label>
                         <input type="file" name="commercial_ID"><br>
                         <label>City </label>
                         <select id="first-choice">
                             <option selected value="base_City">Select the city</option>
-                            <option  value="Alexandria">Alexandria</option>
-                            <option  value="Aswan">Aswan</option>
-                            <option  value="Giza">Giza</option>
-                            <option  value="Asyut">Asyut</option>
-                            <option  value="Beheira">Beheira</option>
-                            <option  value="Beni Suef">Beni Suef</option>
-                            <option  value="Cairo">Cairo</option>
-                            <option  value="Dakahlia">Dakahlia</option>
-                            <option  value="Damietta">Damietta</option>
-                            <option  value="Faiyum">Faiyum</option>
-                            <option  value="Gharbia">Gharbia</option>
-                            <option  value="Giza">Giza</option>
-                            <option  value="Ismailia">Ismailia</option>
-                            <option  value="Kafr El Sheikh">Kafr El Sheikh</option>
-                            <option  value="Luxor">Luxor</option>
-                            <option  value="Matruh">Matruh</option>
-                            <option  value="Minya">Minya</option>
-                            <option  value="Monufia">Monufia</option>
+                            <option value="Alexandria">Alexandria</option>
+                            <option value="Aswan">Aswan</option>
+                            <option value="Giza">Giza</option>
+                            <option value="Asyut">Asyut</option>
+                            <option value="Beheira">Beheira</option>
+                            <option value="Beni Suef">Beni Suef</option>
+                            <option value="Cairo">Cairo</option>
+                            <option value="Dakahlia">Dakahlia</option>
+                            <option value="Damietta">Damietta</option>
+                            <option value="Faiyum">Faiyum</option>
+                            <option value="Gharbia">Gharbia</option>
+                            <option value="Giza">Giza</option>
+                            <option value="Ismailia">Ismailia</option>
+                            <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                            <option value="Luxor">Luxor</option>
+                            <option value="Matruh">Matruh</option>
+                            <option value="Minya">Minya</option>
+                            <option value="Monufia">Monufia</option>
                             <option value="New Valley">New Valley</option>
-                            <option  value="North Sinai">North Sinai</option>
+                            <option value="North Sinai">North Sinai</option>
                             <option value="Port Said">Port Said</option>
                             <option value="Qalyubia">Qalyubia</option>
                             <option value="Qena Sea">Qena</option>
@@ -93,8 +93,9 @@
                             <option value="Suez">Suez</option>
                         </select><br>
                         <label>Region</label>
-						<input type="text" name="Region" required placeholder="Enter Your region">
+						<input type="text" name="Region" placeholder="Enter Your region">
                     </div>
+                    <button name="submit">Sign Up</button>
                 </form>
             </div>
             <div class="right-side col-5">

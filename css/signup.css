@@ -62,7 +62,7 @@
     transform: scale(1)
 }
 
-.signup .left-side > form {
+.signup .left-side form > form {
     padding: 20px 0 0 20px;
 }
 
