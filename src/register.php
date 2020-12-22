@@ -78,10 +78,7 @@ if (isset($_POST['submit'])) {
         $conn->query("INSERT INTO city (user_id,city,Region) VALUES ('$id','$selected','$Region')");
       }
     } 
-   
-    
   }
-
 }
 }
 //header("Location:signin.php");

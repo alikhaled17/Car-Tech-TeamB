@@ -3,46 +3,38 @@
     box-sizing: border-box;
   }
 
-.header {
-    margin-top: 2% !important;
-    text-align: center;
-    color: #08526D;
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-  }
 
-  .Outer {
+  .outer {
     margin: 50px 0 50px ;
   }
 
-  .Search .hr{
+  .right-side .hr{
     width: 30px;
     border: 2px solid #08526d;
     margin-top: -2px;
     margin-bottom: 25px;
   }
 
-.Search,
-.result {
+.right-side,
+.left-side {
     display: inline-block;
     color: #08526D;
 }
 
 
 
-.Search .form-body {
+.right-side .form-body {
   padding: 20px 0 0 20px;
   margin-top: -10px;
 }
 
-.Search label
+.right-side label
 {
   width: 25%;
   font-weight: 500;
 }
 
-.Search .search-selct {
+.right-side .right-side-selct {
   width: 50% !important;
   border-radius: 20px;
   border: 1px solid #08526d;
@@ -50,7 +42,7 @@
   outline-style: none;
 }
 
-.Search input[type="text"]
+.right-side input[type="text"]
 {
   width: 50% !important;
   border-radius: 20px;
@@ -58,7 +50,7 @@
   padding: 3px 8px;
   outline-style: none;
 }
-.Search input[type="submit"]
+.right-side input[type="submit"]
 {
   background-color: #08526d;
   color: #fff;
@@ -68,7 +60,7 @@
   border-radius: 20px;
   font-size: 20px;
 }
-.Search input[type="submit"]:hover
+.right-side input[type="submit"]:hover
 {
   background-color: #086688;
 }
@@ -76,7 +68,7 @@
 
 /* Start Result */
 
-.result form
+.left-side form
 {
 padding: 10px;
 margin-left: -25px;
@@ -84,7 +76,7 @@ width: 100%;
 
 }
 
-ul {
+.left-side ul {
     list-style: none;
     width: 100%;
 

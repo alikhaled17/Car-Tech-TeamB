@@ -22,13 +22,12 @@
     <?php include('../header.php'); ?>
     <!-- Services -->
 
-    <h2 class="header">Looking For The Best Service</h2>
 
     <!-- Search -->
-    <div class="Outer">
+    <div class="outer">
         <div class="container">
             <div class="row">
-                <div class="Search col-6">
+                <div class="right-side col-6">
                     <h3>Select Choose</h3><hr class="hr">
                     <br>
                     <div class="form-body">
@@ -137,7 +136,7 @@
                 </div>
 
                 <!-- result -->
-                <div class="result col-6">
+                <div class="left-side col-6">
                     <h3>Click On Your Selection</h3>
                     <br><br>
                     <form class="result" action="">
