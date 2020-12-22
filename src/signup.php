@@ -28,10 +28,9 @@
             <div class="left-side col-6">
                 <!-- form -->
                 <br>
-                <h2>Registration</h2><hr>
                 <form method="POST" action="register.php" enctype="multipart/form-data">
-                    
-                    <input type="radio" id="user" name="user-info" value="User" />
+                    <h2>Registration</h2><hr>
+                    <input type="radio" id="user" name="user-info" value="User" checked />
                     <label for="user">Sign Up as User</label>
                     <input type="radio" id="Provider" name="user-info" value="Provider" />
                     <label for="Provider">Sign Up as Provider Of service</label>
@@ -62,7 +61,7 @@
                         <label>commercial ID</label>
                         <input type="file" name="commercial_ID"><br>
                         <label>City </label>
-                        <select id="first-choice">
+                        <select id="first-choice" name="city">
                             <option selected value="base_City">Select the city</option>
                             <option value="Alexandria">Alexandria</option>
                             <option value="Aswan">Aswan</option>
@@ -96,7 +95,7 @@
                         <label>Region</label>
 						<input type="text" name="Region" placeholder="Enter Your region">
                     </div>
-                    <button name="submit" class="btn btn-outline-dark">Sign Up</button>
+                    <button name="submit">Sign Up</button>
                 </form>
             </div>
             <div class="right-side col-5">
