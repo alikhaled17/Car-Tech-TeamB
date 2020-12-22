@@ -36,13 +36,13 @@
                     <label for="Provider">Sign Up as Provider Of service</label>
                     <div class="global-info">
                         <label>User Name</label>
-                        <input type="text" name="UserName"  placeholder="Enter Your User Name *"><br>
+                        <input type="text" name="UserName" required placeholder="Enter Your User Name *"><br>
                         <label>Password</label>
-                        <input type="Password" name="PWD"  placeholder="Enter Your Password *"><br>
+                        <input type="Password" name="PWD"  required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
-                        <input type="Email" name="Email"  placeholder="Enter Your E-mail *"><br>
+                        <input type="Email" name="Email"  required placeholder="Enter Your E-mail *"><br>
                         <label>Phone Number</label>
-                        <input type="text" name="PhoneNum"  placeholder="Enter Your Phone Number"><br>
+                        <input type="text" name="PhoneNum"  required placeholder="Enter Your Phone Number"><br>
                     </div>
                     <div class="prov-info" id="provider-info" style="display: none">
                         <h4>services</h4>
