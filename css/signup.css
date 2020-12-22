@@ -1,12 +1,16 @@
 
 
 .signup {
-    margin-top: 100px;
+    margin: 50px 0 ;
 }
 
 .signup .right-side,
 .signup .left-side {
     float:left
+}
+
+.signup .left-side form{
+    padding: 20px 0 0 30px;
 }
 
 .signup .left-side h2 {
@@ -93,10 +97,37 @@
 .signup .left-side > form .prov-info .service-check {
     padding: 0px 0 0 20px;
 }
-.signup .left-side > form .prov-info .service-check h4{
+.signup .left-side > form .prov-info h4{
     color: #08526d;
 }
 
 .signup .left-side > form .prov-info .service-check input {
     margin-right: 20px;
+}
+
+
+.signup .left-side > form .prov-info select
+ {
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid #08526d;
+    background-color: #08526d;
+    color: #fff;
+    padding: 5px 8px;
+    outline-style: none;
+}
+
+.signup .left-side > form .prov-info input[name="Region"] {
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid #08526d;
+    padding: 3px 8px;
+    outline-style: none;
+}
+
+
+.signup .left-side > form button {
+    margin: 20px 0 ;
+    width: 20% !important;
+
 }

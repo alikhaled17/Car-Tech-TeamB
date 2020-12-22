@@ -28,8 +28,9 @@
             <div class="left-side col-6">
                 <!-- form -->
                 <br>
+                <h2>Registration</h2><hr>
                 <form method="POST" action="register.php" enctype="multipart/form-data">
-                    <h2>Registration</h2><hr>
+                    
                     <input type="radio" id="user" name="user-info" value="User" />
                     <label for="user">Sign Up as User</label>
                     <input type="radio" id="Provider" name="user-info" value="Provider" />
@@ -95,7 +96,7 @@
                         <label>Region</label>
 						<input type="text" name="Region" placeholder="Enter Your region">
                     </div>
-                    <button name="submit">Sign Up</button>
+                    <button name="submit" class="btn btn-outline-dark">Sign Up</button>
                 </form>
             </div>
             <div class="right-side col-5">
