@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -32,136 +35,118 @@
                     <br>
                     <div class="form-body">
                         <form class="test" action="#" method= "post">
-                            <!-- Service -->
                             <label class="label">Service</label>
-                            <?php
-                            include_once("config.php");
-                            $sql="SELECT Serviceid,Servicename FROM `myService`";
-                            $result=mysqli_query($conn, $sql);
-
-                            echo '<select name="Service" id="filter" class="search-selct">';
-                            echo '<option selected>Choose...</option>';
-                            while($myservice=mysqli_fetch_array($result)) {
-
-                                echo '<option value="'
-                                .$myservice ['Serviceid']
-                                .'">'
-                                .$myservice ['Servicename']
-                                .'</option>';
-
-                            }
-                            echo '</select>';
-                            ?>
-                            <br><br>
-                            <!-- City -->
-                            <label class="label">City</label>
-                            <?php
-                            include_once("config.php");
-                            $sql="SELECT cityid,cityname FROM `mycitys`";
-                            $result=mysqli_query($conn, $sql);
-
-                            echo '<select name="City" id="City1" class="search-selct">';
-                            echo '<option value="none" selected >Choose...</option>';
-                            while($mycitys=mysqli_fetch_array($result)) {
-
-                                echo '<option value="'
-                                .$mycitys ['cityid']
-                                .'">'
-                                .$mycitys ['cityname']
-                                .'</option>';
-
-                            }
-                            echo '</select>';
-                            ?>
-                            <br><br>
-                            <!-- Region -->
-                            <label class="label">Region</label>
-                            <select name="Region" id="Region1" name="Region1" class="search-selct">
+                            <select name="Service" id="filter" class="search-select">';
+                                <option selected>Choose</option>
+                                <option value="Trailer Truck">Trailer Truck</option>
+                                <option value="Gas Station">Gas Station</option>
+                                <option value="Car Wash">Car Wash</option>
+                                <option value="Car Maintenance">Car Maintenance</option>
                             </select>
-                            <script type="text/javascript">
-                                var City1= document.getElementById("City1");
-                                var Region1 = document.getElementById("Region1");
-                                onchange();
-                                City1.onchange = onchange;
-                                function onchange() {
-                                    <?php include_once("config.php"); ?>
-                                    option_html = "<option selected>Choose...</option>";
-                                    console.log("Heeereeee 1");
-
-                                    console.log(City1.value);
-                                    if (City1.value != null && City1.value != "none") {
-                                            console.log("Heeereeee 2");
-
-                                            <?php $Region=$_POST['City'];
-                                            $sql = "SELECT regionid, regionname FROM `region` WHERE cityid_f = '$Region'";
-                                            $result = mysqli_query($conn, $sql); 
-
-                                            while($myregion=mysqli_fetch_array($result)) 
-                                             { ?>
-                                                option_html += "<option value=\"
-                                                                <?php echo $myregion ['regionid']; ?>
-                                                                \" >
-                                                                <?php echo $myregion ['regionname']; ?>
-                                                                </option>";
-                                            
-                                            <?php } ?>
-                                        }
-                                    Region1.innerHTML = option_html;
-                                }
-                            </script>
+                            <br><br>
+                            <label class="label">City</label>
+                            <select name="City" id="City1" class="search-select" onchange="myFunction()">
+                                <option selected>Choose</option>
+                                <option value="Alexandria">Alexandria</option>
+                                <option value="Aswan">Aswan</option>
+                                <option value="Giza">Giza</option>
+                                <option value="Asyut">Asyut</option>
+                                <option value="Beheira">Beheira</option>
+                                <option value="Beni Suef">Beni Suef</option>
+                                <option value="Cairo">Cairo</option>
+                                <option value="Dakahlia">Dakahlia</option>
+                                <option value="Damietta">Damietta</option>
+                                <option value="Faiyum">Faiyum</option>
+                                <option value="Gharbia">Gharbia</option>
+                                <option value="Giza">Giza</option>
+                                <option value="Ismailia">Ismailia</option>
+                                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                                <option value="Luxor">Luxor</option>
+                                <option value="Matruh">Matruh</option>
+                                <option value="Minya">Minya</option>
+                                <option value="Monufia">Monufia</option>
+                                <option value="New Valley">New Valley</option>
+                                <option value="North Sinai">North Sinai</option>
+                                <option value="Port Said">Port Said</option>
+                                <option value="Qalyubia">Qalyubia</option>
+                                <option value="Qena Sea">Qena</option>
+                                <option value="Red">Red Sea</option>
+                                <option value="Sharqia">Sharqia</option>
+                                <option value="Sohag">Sohag</option>
+                                <option value="South">South Sinai</option>
+                                <option value="Suez">Suez</option>
+                            </select>
+                            <br><br>
+                            <label class="label">Region</label>
+                            <select onchang="filter()" name="Region" id="Region1" name="Region1" class="search-select">
+                                <option selected>Choose</option>
+                            </select>
                             <hr>
-                            <!-- Name -->
                             <label class="label">Name</label>
                             <input id="name_p" type="text" placeholder="Search.." name="search_name"><br>
-                            <?php
-                            include_once("config.php");
-
-                            if (isset($_POST['submit'])&& isset($_POST['search_name']) && ! empty($_POST['search_name'])) {
-                                $Nameproveder=$_POST['search_name'];
-                                $sql="SELECT userid,username FROM `mayar_table_user` WHERE p_name = '$Nameproveder' LIKE '$Nameproveder%'";
-                                $result=mysqli_query($conn, $sql);
-                                echo" <br>Last Search ... <br>";
-
-                                while($tasks=mysqli_fetch_array($result)) {
-                                    echo $tasks['task']."<br>";
-                                }
-                            }
-
-                            ?>
-                            <!-- search_submit -->
-                            <input type="submit" value="submit" >
-
+                            <input class="btn btn-outline-dark" type="submit" value="search">
                         </form>
                     </div>
                 </div>
 
-                <!-- result -->
                 <div class="left-side col-6">
                     <h3>Click On Your Selection</h3>
                     <br><br>
                     <form class="result" action="">
-                        <ul id="result">
-                            <li class="result-card">
-                                <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png" alt="imgProfile">
-                                <h5>Account Name</h5>
-                                <div class="rate-card">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <span class="address-card">Address</span>
-                                <a href="#">View Profile</a>
-                            </li>
+                        <ul>
+                            
                         </ul>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
 
+    <script>
+
+        function myFunction() {
+            <?php
+
+                include("../Config.php");
+                $sql = "SELECT * FROM users";
+                $result = mysqli_query($conn, $sql);
+                $rows = mysqli_num_rows($result);
+                
+                if ($rows == 1) {
+                    $user_data = mysqli_fetch_array($result);
+                    ?>
+                        document.querySelector(".left-side .result ul").innerHTML = " <li class='result-card row'> " +
+                        "    <div class='lift col-2'>"+
+                        "        <img src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png'>"+
+                        "    </div>"+
+                        "    <div class='mid col-6'>"+
+                        "        <h5>"+ <?php echo $user_data['user_id']; ?> +"</h5>"+
+                        "        <span class='address-card'>Address</span>"+
+                        "    </div>"+
+                        "    <div class='right col-4'>"+
+                        "        <a class='btn btn-outline-dark' href='#' >View</a>"+
+                        "    </div>"+
+                        "</li>";
+                    <?php
+                } else {
+                    echo "wrong, not found!";
+                }
+            ?>
+            // document.querySelector(".left-side .result ul").innerHTML = " <li class='result-card row'> " +
+            //     "    <div class='lift col-2'>"+
+            //     "        <img src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png'>"+
+            //     "    </div>"+
+            //     "    <div class='mid col-6'>"+
+            //     "        <h5>Account Name</h5>"+
+            //     "        <span class='address-card'>Address</span>"+
+            //     "    </div>"+
+            //     "    <div class='right col-4'>"+
+            //     "        <a class='btn btn-outline-dark' href='#' >View</a>"+
+            //     "    </div>"+
+            //     "</li>"
+        }
+        
+    </script>
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>

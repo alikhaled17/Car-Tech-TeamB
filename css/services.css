@@ -34,9 +34,9 @@
   font-weight: 500;
 }
 
-.right-side .right-side-selct {
-  width: 50% !important;
-  border-radius: 20px;
+.right-side .search-select {
+  width: 40% !important;
+  border-radius: 5px;
   border: 1px solid #08526d;
   padding: 3px 8px;
   outline-style: none;
@@ -45,68 +45,66 @@
 .right-side input[type="text"]
 {
   width: 50% !important;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid #08526d;
   padding: 3px 8px;
   outline-style: none;
 }
 .right-side input[type="submit"]
 {
-  background-color: #08526d;
-  color: #fff;
-  outline-style: none;
-  margin: 15px 5px 0 0;
-  padding: 1px 20px;
-  border-radius: 20px;
-  font-size: 20px;
-}
-.right-side input[type="submit"]:hover
-{
-  background-color: #086688;
+  margin-top: 20px;
+  width: 100% !important;
+  border-radius: 5px !important;
 }
 
 
 /* Start Result */
 
-.left-side form
+.left-side .result {
+  list-style: none;
+  width: 80%;
+}
+
+.left-side .result .result-card
 {
-padding: 10px;
-margin-left: -25px;
-width: 100%;
-
-}
-
-.left-side ul {
-    list-style: none;
-    width: 100%;
-
-  }
-
-.result-card {
-  position: relative;
-  width: 90%;
   border: 2px solid #08526d;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: #000 1px 1px 1px;
+  height: 70px;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.411) 3px 3px;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
-.result-card img {
-  width : 20%;
-  float: left;
+.left-side .result .result-card:hover {
+  box-shadow: none ;
 }
 
-
-.result-card a {
-  position: absolute;
-  right: 5%;
-  bottom: 20%;
-  background-color: #08526d;
-  color: #fff;
-  outline-style: none;
-  margin: 15px 5px 0 0;
-  padding: 1px 20px;
-  border-radius: 20px;
-  font-size: 20px;
-
+.left-side .result .result-card .lift {
+  height: 98%;
+  margin-left: -10px;
+  
 }
 
+.left-side .result .result-card .lift img {
+  height: 98%;
+  margin-top: 2px;
+  border-radius: 5px;
+}
+.left-side .result .result-card .mid {
+  padding-left: 25px;
+}
+.left-side .result .result-card .mid h5 {
+  margin: 7px 0 -5px 0;
+}
+.left-side .result .result-card .right {
+  padding: 10px 0 0 18%;
+}
+.left-side .result .result-card .right a {
+  text-decoration: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100% !important;
+  border-width: 2px !important;
+}

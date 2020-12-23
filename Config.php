@@ -2,11 +2,9 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "car";
+$dbname = "cartech";
 
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
-$usedb = "USE car;";
-$runusedb = $conn->query($usedb);
+$conn = new mysqli($servername, $username, $password, $dbname);
 ?>

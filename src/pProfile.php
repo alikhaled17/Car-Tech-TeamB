@@ -1,3 +1,7 @@
+<?php 
+    include('../Config.php');  
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +18,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
 
-    <script src="../js/responde.js"></script>    
+    <script src="../js/responde.js"></script>
 </head>
 <body>
     
@@ -24,13 +28,22 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <div class="shadows"></div>
-                    <div class="shadows"></div>
-                    <img src="../imgs/profile-test.jpg" alt="profile-img">
+
+                    <?php 
+                        $p_id = $_SESSION['p_id'];
+                        $sql = "SELECT * FROM providers WHERE user_id = '$p_id'";
+                        $result = $conn->query($sql);
+                        $rows = $result->fetch_assoc();
+                    ?> 
+                    <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['ID_img']); ?>" /> 
+
                 </div>
                 <div class="info-prof col-9">
                     <div class="account-name">
-                        <h3>Account Name</h3>
+                        <h3><?php 
+                                echo $_SESSION['username'];
+                            ?>
+                        </h3>
                     </div>
                     <hr>
                     <div class="card-body text-center"> 

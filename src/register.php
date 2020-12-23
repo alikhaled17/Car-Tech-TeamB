@@ -1,81 +1,60 @@
 <?php
 include('../Config.php');
-if (isset($_POST['submit'])) {      
-    
+
+if (isset($_POST['submit'])) {   
   if(
-    isset($_POST['UserName'])
-    && isset($_POST['Email'])
-    && isset($_POST['PWD'])
-    && isset($_POST['PhoneNum'])
-    && !empty($_POST['user-info']))
+    isset($_POST['username'])
+    && isset($_POST['email'])
+    && isset($_POST['pass'])
+    && isset($_POST['phone'])
+    && isset($_POST['gender'])
+    && !empty($_POST['user-info'])) 
   {
-    $username = $_POST['UserName'];
-    $email = $_POST['Email'];
-    $password = $_POST['PWD'];
-    $PhoneNum = $_POST['PhoneNum'];
-    $conn->query("INSERT INTO users (userName,userPassword,Email,Phone) VALUES ('$username','$password','$email','$PhoneNum')");
-    if($_POST['user-info']=='Provider')
-   { if($_SERVER['REQUEST_METHOD'] == "POST") {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    $gender = $_POST['gender'];
+    $Phone = $_POST['phone'];
+    
+    $conn->query("INSERT INTO users (username, email, password, gender, phone) VALUES ('$username','$email','$password', '$gender','$Phone')");
+    
+    if($_POST['user-info']=='Provider') {
+      if($_SERVER['REQUEST_METHOD'] == "POST") {
       if(!empty($_FILES["commercial_ID"]["tmp_name"])) { 
         $fileName = basename($_FILES["commercial_ID"]["tmp_name"]); 
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);     
         $allowTypes = array('jpg','png','jpeg','gif'); 
-        // if(in_array($fileType, $allowTypes)){ 
-          $image = $_FILES['image']['tmp_name']; 
-          $imgContent = addslashes(file_get_contents($image)); 
+        $image = $_FILES['image']['tmp_name']; 
+        $imgContent = addslashes(file_get_contents($image)); 
         $fileName = basename($_FILES["image"]["tmp_name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);     
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
         $allowTypes = array('jpg','png','jpeg','gif'); 
-          // if(in_array($fileType, $allowTypes)){ 
-            $imageID = $_FILES['commercial_ID']['tmp_name']; 
-            $imgID = addslashes(file_get_contents($imageID)); 
-          $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
-          $row = $result->fetch_assoc();
-          $id =  $row['id'];
-          $conn->query("UPDATE users SET Type = 'Provider' WHERE id ='$id'");
-          $conn->query("INSERT INTO providers_info (User_id,IDimage,commimage	) VALUES ('$id','$imgID','$imgContent')"); 
-        // }
-      }
-      if(isset($_POST['Gas_Station'])) { 
-        $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
-          $row = $result->fetch_assoc();
-          $id =  $row['id'];
-          $conn->query("INSERT INTO services (user_id,servicename) VALUES ('$id','Gas Station')");
-        // $Gas_Station=$_POST['Gas_Station'];
-        // echo $Gas_Station;
-      }
-      if(isset($_POST['Car_Wash'])) { 
-        $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
-          $row = $result->fetch_assoc();
-          $id =  $row['id'];
-          $conn->query("INSERT INTO services (user_id,servicename) VALUES ('$id','Car Wash')");
-        // $Car_Wash=$_POST['Car_Wash'];
-        // echo $Car_Wash;
-      } 
-      if(isset($_POST['Car_Maintenance'])) { 
-        $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
-          $row = $result->fetch_assoc();
-          $id =  $row['id'];
-          $conn->query("INSERT INTO services (user_id,servicename) VALUES ('$id','Car Maintenance')");
-        // $Car_Maintenance=$_POST['Car_Maintenance'];
-        // echo $Car_Maintenance;
-      } 
-      if(isset($_POST['Trailer_Truck'])) { 
-        $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
-          $row = $result->fetch_assoc();
-          $id =  $row['id'];
-          $conn->query("INSERT INTO services (user_id,servicename) VALUES ('$id','Trailer Truck')");
-          // $Trailer_Truck=$_POST['Trailer_Truck'];
-          // echo $Trailer_Truck;
-      }
-      if(isset($_POST['city'])) {
-        $selected = $_POST['city'];
-        $result = $conn->query("SELECT id FROM users WHERE Email='$email'"); 
+        $imageID = $_FILES['commercial_ID']['tmp_name'];
+        $imgID = addslashes(file_get_contents($imageID));
+        $result = $conn->query("SELECT id FROM users WHERE email='$email'");
         $row = $result->fetch_assoc();
         $id =  $row['id'];
-        $Region = $_POST['Region'];
-        // echo 'You have chosen: ' . $selected;
-        $conn->query("INSERT INTO city (user_id,city,Region) VALUES ('$id','$selected','$Region')");
+
+        $conn->query("UPDATE users SET account_type = 'Provider' WHERE id ='$id'");
+        $conn->query("INSERT INTO providers (user_id,ID_img,comm_img	) VALUES ('$id','$imgID','$imgContent')"); 
+
+        if(isset($_POST['Gas_Station'])) { 
+            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Gas Station')");
+        }
+        if(isset($_POST['Car_Wash'])) { 
+            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Car Wash')");
+        } 
+        if(isset($_POST['Car_Maintenance'])) { 
+            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Car Maintenance')");
+        } 
+        if(isset($_POST['Trailer_Truck'])) { 
+            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Trailer Truck')");
+        }
+        if(isset($_POST['city'])) {
+          $selected = $_POST['city'];
+          $Region = $_POST['Region'];
+          $conn->query("INSERT INTO city (p_id,city,region) VALUES ('$id','$selected','$Region')");
+        }
       }
     } 
   }

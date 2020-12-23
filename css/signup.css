@@ -18,6 +18,11 @@
     color: #08526d;
 }
 
+.signup .left-side form h4 {
+    color: #08526d;
+    margin:0 0 15px -10px;
+}
+
 .signup .left-side hr{
     width: 30px;
     border: 2px solid #08526d;
@@ -32,8 +37,10 @@
 
 .signup .left-side form > input[type="radio"]+label {
     position: relative;
-    padding: 3px 0 0 40px;
-    cursor: pointer
+    padding: 0 50px 0 30px;
+    cursor: pointer;
+    color: #08526d;
+    font-weight: 500;
 }
 
 .signup .left-side form > input[type="radio"]+label:before {
@@ -66,15 +73,21 @@
     opacity: 1;
     transform: scale(1)
 }
-
-.signup .left-side form > form {
-    padding: 20px 0 0 20px;
-}
-
 .signup .left-side > form .global-info label {
     width: 35%;
     color: #08526d;
     font-weight: 500;
+}
+
+
+.signup .left-side > form .global-info input[type="radio"] {
+    display: inline;
+    width: 15px;
+}   
+
+.signup .left-side > form .global-info label.gender-h
+{
+    display: block;
 }
 
 .signup .left-side > form .global-info input {
@@ -83,6 +96,8 @@
     border: 1px solid #08526d;
     padding: 3px 8px;
     outline-style: none;
+    display: block;
+
 }
 
 .signup .left-side > form .global-info input:focus {
@@ -130,4 +145,15 @@
 .signup .left-side > form button {
     margin: 20px 0 ;
     width: 20% !important;
+}
+
+
+.signup .right-side {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 30px;
+} 
+
+.signup .right-side img {
+    position: sticky;
 }

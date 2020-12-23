@@ -30,20 +30,27 @@
                 <br>
                 <h2>Registration</h2><hr>
                 <form method="POST" action="register.php" enctype="multipart/form-data">
+                    <h4>Account Type</h4>
                     <input type="radio" id="user" name="user-info" value="User" checked />
-                    <label for="user">Sign Up as User</label>
+                    <label for="user">User</label>
                     <input type="radio" id="Provider" name="user-info" value="Provider" />
-                    <label for="Provider">Sign Up as Provider Of service</label>
+                    <label for="Provider">Provider</label><br><br>
                     <div class="global-info">
                         <label>User Name</label>
-                        <input type="text" name="UserName" required placeholder="Enter Your User Name *"><br>
+                        <input type="text" name="username" required placeholder="Enter Your User Name *"><br>
                         <label>Password</label>
-                        <input type="Password" name="PWD"  required placeholder="Enter Your Password *"><br>
+                        <input type="Password" name="pass"  required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
-                        <input type="Email" name="Email"  required placeholder="Enter Your E-mail *"><br>
+                        <input type="Email" name="email"  required placeholder="Enter Your E-mail *"><br>
+                        <label class="gender-h">Gender</label>
+                            <input type="radio" name="gender" value="Male" />
+                            <label class="gender">Male</label>
+                            <input type="radio" name="gender" value="Female" />
+                            <label class="gender" >Female</label><br>
                         <label>Phone Number</label>
-                        <input type="text" name="PhoneNum"  required placeholder="Enter Your Phone Number"><br>
+                        <input type="text" name="phone"  required placeholder="Enter Your Phone Number"><br>
                     </div>
+
                     <div class="prov-info" id="provider-info" style="display: none">
                         <h4>services</h4>
                         <div class="service-check">
@@ -59,7 +66,7 @@
                         <label>National ID</label>
                         <input type="file" name="image">
                         <label>commercial ID</label>
-                        <input type="file" name="commercial_ID"><br>
+                        <input type="file" name="commercial_ID"><br><br>
                         <label>City </label>
                         <select id="first-choice" name="city">
                             <option selected value="base_City">Select the city</option>
@@ -91,7 +98,7 @@
                             <option value="Sohag">Sohag</option>
                             <option value="South">South Sinai</option>
                             <option value="Suez">Suez</option>
-                        </select><br>
+                        </select><br><br>
                         <label>Region</label>
 						<input type="text" name="Region" placeholder="Enter Your region">
                     </div>
@@ -100,7 +107,6 @@
             </div>
             <div class="right-side col-5">
                 <div class="sign-img">
-                    <div class="shape"></div>
                     <img src="/Car-Tech-TeamB/imgs/signup.png" width="100%">
                 </div>
             </div>
