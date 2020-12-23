@@ -94,7 +94,7 @@
                     <br><br>
                     <form class="result" action="">
                         <ul>
-                            
+                        
                         </ul>
                     </form>
                 </div>
@@ -120,7 +120,7 @@
                         "        <img src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png'>"+
                         "    </div>"+
                         "    <div class='mid col-6'>"+
-                        "        <h5>"+ <?php echo $user_data['user_id']; ?> +"</h5>"+
+                        "        <h5>name</h5>"+
                         "        <span class='address-card'>Address</span>"+
                         "    </div>"+
                         "    <div class='right col-4'>"+

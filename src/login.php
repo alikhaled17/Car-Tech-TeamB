@@ -12,7 +12,7 @@
         if ($rows == 1) {
             session_start();
             $user_data = mysqli_fetch_array($result);
-            if($user_data[Type] == "Client") {
+            if($user_data[account_type] == "Client") {
                 $_SESSION['username'] = $user_data[username];
                 header("Location: uProfile.php");
             } else {
