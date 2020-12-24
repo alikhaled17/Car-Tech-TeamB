@@ -10,7 +10,7 @@
     if (isset ($_POST['search'])) {
         echo('<h3>Click On Your Selection</h3>
             <br><br>');
-        if ($_POST['Service'] !="none"&& $_POST['City'] !="none") {
+        if ($_POST['Service'] !="none" && $_POST['City'] !="none") {
             $Service=$_POST['Service'];
             $City=$_POST['City'];
             $Region=$_POST['Region'];
@@ -35,11 +35,12 @@
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
             }
-            
             $result=mysqli_query($conn, $sql);
-
+            if (!$result) {
+                printf("Error: %s\n", mysqli_error($conn));
+                exit();
+            }
             while($provider=mysqli_fetch_array($result)) {
-
                 echo ('<div class="result">
                     <ul id="result">
                         <li class="result-card row">

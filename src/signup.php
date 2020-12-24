@@ -82,8 +82,15 @@ if (isset($_POST['submit'])) {
                             $selected = $_POST['City'];
                             $Region = $_POST['Region'];
                             $street = $_POST['street'];
-                            $conn->query("INSERT INTO p_address (p_id,city_id,region_id,street) 
-                            VALUES ('$id','$selected','$Region','$street')");
+                            // echo  $selected  ;//2
+                            // echo "<br>";
+                            // echo  "=>".$Region; //3
+                            // echo "<br>";
+                            // echo  "=>".$street;
+                            // echo "<br>";
+                            // $conn->query("SELECT id FROM regions WHERE city_id = $selected");
+                            $conn->query("INSERT INTO p_address (p_id,region_id,street) 
+                            VALUES ($id,$Region,'$street')");
                             
                             }
 
