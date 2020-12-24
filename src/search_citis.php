@@ -17,13 +17,13 @@
 }
 
 </script>
-<select name="City"id="City1"class="search-select"onchange="fetch_region(this.value);">
+<select name="City"id="City1"class="search-select"onchange="fetch_region(this.value);" required> 
 <?php
 include_once("../Config.php");
 $sql="SELECT id,city_name FROM `cities`";
 $result=mysqli_query($conn, $sql);
 
-echo '<option value="none" selected >Choose..</option>';
+echo '<option value="" selected >Choose...</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
 

@@ -10,38 +10,39 @@
     if (isset ($_POST['search'])) {
         echo('<h3>Click On Your Selection</h3>
             <br><br>');
-        if ($_POST['Service'] !="none" && $_POST['City'] !="none") {
+        if ($_POST['Service'] !="none"&& $_POST['City'] !="none") {
             $Service=$_POST['Service'];
             $City=$_POST['City'];
             $Region=$_POST['Region'];
             $Name=$_POST['search_name'];
             $sql="SELECT users.prof_img,
-                users.id,
-                users.username,
-                services.ser_name,
-                cities.city_name,
-                regions.region_name FROM ((((((users 
-                inner join providers on providers.user_id=users.id) 
-                inner join prov_services on prov_services.user_id=users.id) 
-                inner join services on prov_services.ser_name=services.id) 
-                inner join p_address on users.id=p_address.p_id) 
-                inner join regions on regions.id=p_address.region_id) 
-                -- inner join cities on cities.id=p_address.city_id) 
-                WHERE users.account_type='Provider' and 
-                services.ser_name='$Service' and 
-                cities.city_name='$City' and 
-                users.username like '$Name%'";
+                    users.id,
+                    users.username, 
+                    services.ser_name,
+                    cities.city_name,
+                    regions.region_name
+                    
+                    FROM (((((( users
+                    inner join providers on providers.user_id = users.id)
+                    inner join prov_services on prov_services.p_id = providers.user_id )
+                    inner join services on prov_services.ser_id = services.id )
+                    inner join p_address on p_address.p_id = providers.user_id)
+                    inner join regions on regions.id = p_address.region_id)
+                    inner join cities on cities.id = regions.city_id )
+                    
+                    WHERE users.account_type ='Provider' and 
+                    prov_services.ser_id ='$Service' and 
+                    regions.city_id='$City' and 
+                    users.username like '$Name%'";
 
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
             }
+            
             $result=mysqli_query($conn, $sql);
-            if (!$result) {
-                printf("Error: %s\n", mysqli_error($conn));
-                exit();
-            }
             while($provider=mysqli_fetch_array($result)) {
-                echo ('<div class="result">
+
+                echo ('<form class="result" action="#">
                     <ul id="result">
                         <li class="result-card row">
                             <div class="lift col-2">
@@ -56,22 +57,22 @@
                             </div>'.
                         '</li>
                     </ul>
-                </div>');
+                </form>');
             }
             
         }
 
-        else if ($_POST['Service'] !="none") {
-            prompt("City");
-        }
+        // else if ($_POST['Service'] !="none") {
+        //     prompt("City");
+        // }
 
-        else if ($_POST['City'] !="none") {
-            prompt("Service");
-        }
+        // else if ($_POST['City'] !="none") {
+        //     prompt("Service");
+        // }
 
-        else {
-            prompt("Service And City");
-        }
+        // else {
+        //     prompt("Service And City");
+        // }
     }
 
     ?>

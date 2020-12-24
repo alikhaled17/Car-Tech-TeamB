@@ -2,8 +2,8 @@
 $sql="SELECT id,ser_name FROM `services`";
 $result=mysqli_query($conn, $sql);
 
-echo '<select name="Service" id="filter" class="search-select">';
-echo '<option selected>Choose..</option>';
+echo '<select name="Service" id="filter" required class="search-select">';
+echo '<option value="" selected >Choose...</option>';
 
 while($myservice=mysqli_fetch_array($result)) {
 
