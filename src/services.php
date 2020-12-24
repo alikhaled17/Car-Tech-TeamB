@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -34,126 +31,44 @@
                     <h3>Select Choose</h3><hr class="hr">
                     <br>
                     <div class="form-body">
-                        <form class="test" action="#" method= "post">
+                        <form class="test" action="services.php" method= "post">
+                            <!-- Service -->
                             <label class="label">Service</label>
-                            <select name="Service" id="filter" class="search-select">';
-                                <option selected>Choose</option>
-                                <option value="Trailer Truck">Trailer Truck</option>
-                                <option value="Gas Station">Gas Station</option>
-                                <option value="Car Wash">Car Wash</option>
-                                <option value="Car Maintenance">Car Maintenance</option>
-                            </select>
-                            <br><br>
+                            <?php include('search_service.php'); ?>
+
+                             <!-- City -->
                             <label class="label">City</label>
-                            <select name="City" id="City1" class="search-select" onchange="myFunction()">
-                                <option selected>Choose</option>
-                                <option value="Alexandria">Alexandria</option>
-                                <option value="Aswan">Aswan</option>
-                                <option value="Giza">Giza</option>
-                                <option value="Asyut">Asyut</option>
-                                <option value="Beheira">Beheira</option>
-                                <option value="Beni Suef">Beni Suef</option>
-                                <option value="Cairo">Cairo</option>
-                                <option value="Dakahlia">Dakahlia</option>
-                                <option value="Damietta">Damietta</option>
-                                <option value="Faiyum">Faiyum</option>
-                                <option value="Gharbia">Gharbia</option>
-                                <option value="Giza">Giza</option>
-                                <option value="Ismailia">Ismailia</option>
-                                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
-                                <option value="Luxor">Luxor</option>
-                                <option value="Matruh">Matruh</option>
-                                <option value="Minya">Minya</option>
-                                <option value="Monufia">Monufia</option>
-                                <option value="New Valley">New Valley</option>
-                                <option value="North Sinai">North Sinai</option>
-                                <option value="Port Said">Port Said</option>
-                                <option value="Qalyubia">Qalyubia</option>
-                                <option value="Qena Sea">Qena</option>
-                                <option value="Red">Red Sea</option>
-                                <option value="Sharqia">Sharqia</option>
-                                <option value="Sohag">Sohag</option>
-                                <option value="South">South Sinai</option>
-                                <option value="Suez">Suez</option>
-                            </select>
-                            <br><br>
+                            <?php include('search_citis.php'); ?>
+
+                            <!-- Region -->
                             <label class="label">Region</label>
-                            <select onchang="filter()" name="Region" id="Region1" name="Region1" class="search-select">
-                                <option selected>Choose</option>
+                            <select id="Region1" name="Region" class="search-select">
+                                <option value="none" selected >Choose...</option>
                             </select>
                             <hr>
+
+                            <!-- Name -->
                             <label class="label">Name</label>
-                            <input id="name_p" type="text" placeholder="Search.." name="search_name"><br>
-                            <input class="btn btn-outline-dark" type="submit" value="search">
+                            <input id="name_p" type="text" placeholder="Search.." name="search_name"> <br>
+
+                            <!-- search_submit -->
+                            <input class="btn btn-outline-dark" type="submit" value="Search" name="search" >
                         </form>
                     </div>
                 </div>
 
+                <!-- result -->
                 <div class="left-side col-6">
-                    <h3>Click On Your Selection</h3>
-                    <br><br>
-                    <form class="result" action="">
-                        <ul>
-                        
-                        </ul>
-                    </form>
+                    <?php include('search_submit.php'); ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-
-        function myFunction() {
-            <?php
-
-                include("../Config.php");
-                $sql = "SELECT * FROM users";
-                $result = mysqli_query($conn, $sql);
-                $rows = mysqli_num_rows($result);
-                
-                if ($rows == 1) {
-                    $user_data = mysqli_fetch_array($result);
-                    ?>
-                        document.querySelector(".left-side .result ul").innerHTML = " <li class='result-card row'> " +
-                        "    <div class='lift col-2'>"+
-                        "        <img src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png'>"+
-                        "    </div>"+
-                        "    <div class='mid col-6'>"+
-                        "        <h5>name</h5>"+
-                        "        <span class='address-card'>Address</span>"+
-                        "    </div>"+
-                        "    <div class='right col-4'>"+
-                        "        <a class='btn btn-outline-dark' href='#' >View</a>"+
-                        "    </div>"+
-                        "</li>";
-                    <?php
-                } else {
-                    echo "wrong, not found!";
-                }
-            ?>
-            // document.querySelector(".left-side .result ul").innerHTML = " <li class='result-card row'> " +
-            //     "    <div class='lift col-2'>"+
-            //     "        <img src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d8cab7b01ffef290b73909d06d92705.png'>"+
-            //     "    </div>"+
-            //     "    <div class='mid col-6'>"+
-            //     "        <h5>Account Name</h5>"+
-            //     "        <span class='address-card'>Address</span>"+
-            //     "    </div>"+
-            //     "    <div class='right col-4'>"+
-            //     "        <a class='btn btn-outline-dark' href='#' >View</a>"+
-            //     "    </div>"+
-            //     "</li>"
-        }
-        
-    </script>
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+    <script>new WOW().init();</script>
     <script src="../js/script.js"></script>
 </body>
-
 </html>

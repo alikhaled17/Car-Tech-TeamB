@@ -68,39 +68,11 @@
                         <label>commercial ID</label>
                         <input type="file" name="commercial_ID"><br><br>
                         <label>City </label>
-                        <select id="first-choice" name="city">
-                            <option selected value="base_City">Select the city</option>
-                            <option value="Alexandria">Alexandria</option>
-                            <option value="Aswan">Aswan</option>
-                            <option value="Giza">Giza</option>
-                            <option value="Asyut">Asyut</option>
-                            <option value="Beheira">Beheira</option>
-                            <option value="Beni Suef">Beni Suef</option>
-                            <option value="Cairo">Cairo</option>
-                            <option value="Dakahlia">Dakahlia</option>
-                            <option value="Damietta">Damietta</option>
-                            <option value="Faiyum">Faiyum</option>
-                            <option value="Gharbia">Gharbia</option>
-                            <option value="Giza">Giza</option>
-                            <option value="Ismailia">Ismailia</option>
-                            <option value="Kafr El Sheikh">Kafr El Sheikh</option>
-                            <option value="Luxor">Luxor</option>
-                            <option value="Matruh">Matruh</option>
-                            <option value="Minya">Minya</option>
-                            <option value="Monufia">Monufia</option>
-                            <option value="New Valley">New Valley</option>
-                            <option value="North Sinai">North Sinai</option>
-                            <option value="Port Said">Port Said</option>
-                            <option value="Qalyubia">Qalyubia</option>
-                            <option value="Qena Sea">Qena</option>
-                            <option value="Red">Red Sea</option>
-                            <option value="Sharqia">Sharqia</option>
-                            <option value="Sohag">Sohag</option>
-                            <option value="South">South Sinai</option>
-                            <option value="Suez">Suez</option>
-                        </select><br><br>
+                        <?php include('search_citis.php'); ?>
                         <label>Region</label>
-						<input type="text" name="Region" placeholder="Enter Your region">
+						<select id="Region1" name="Region" class="search-select">
+                            <option value="none" selected >Choose...</option>
+                        </select>
                     </div>
                     <button name="submit" class="btn btn-outline-dark">Sign Up</button>
                 </form>
