@@ -3,15 +3,15 @@ include('../Config.php');
 function prompt () {
   echo("<script type='text/javascript'>
       window.alert('Please, Complete form for registeration.');
-    </script> ");
+    </script> "); 
     
 }
-// function AlreadyExist () {
-//     echo("<script type='text/javascript'>
-//     document.getElementById('vaild_Email').innerHTML = 'email exist';
-//       </script> ");
+function AlreadyExist () {
+    echo("<script type='text/javascript'>
+      window.alert('email exist.');
+    </script> ");
       
-//   }
+  }
 
 if (isset($_POST['submit'])) {   
     if($_POST['user-info']=='Provider'&&$_SERVER['REQUEST_METHOD'] == "POST")
@@ -41,8 +41,8 @@ if (isset($_POST['submit'])) {
                         $result = mysqli_query($conn, $query); 
                         $num_rows = mysqli_num_rows($result);
                         if($num_rows >= 1){
-                            // AlreadyExist ();
-                            echo"email exist";
+                            AlreadyExist ();
+                            // echo"email exist";
                         }
                         else
                         {
@@ -117,6 +117,7 @@ if (isset($_POST['submit'])) {
                 $num_rows = mysqli_num_rows($result);
                 if($num_rows >= 1){
                     AlreadyExist ();
+                    // echo"email exist";
                 }
                 else{
                     $conn->query("INSERT INTO users (username, email, password, gender, phone) VALUES
