@@ -37,6 +37,19 @@
                         $dbsql = "SELECT * FROM users WHERE id = '$p_id'";
                         $dbresult = $conn->query($dbsql);
                         $dbrow = $dbresult->fetch_assoc();
+                        $addsql = "SELECT * FROM p_address WHERE p_id = '$p_id'";
+                        $addresult = $conn->query($addsql);
+                        $addrow = $addresult->fetch_assoc();
+                        // echo $p_id;
+                        // echo $addrow['city_id'] ;
+                        
+                        $City="SELECT city_name FROM cities WHERE id = '".$addrow['city_id']."' "; 
+                        $CityResult= $conn->query($City);
+                        $CityRow=$CityResult->fetch_assoc();
+                        $Region="SELECT region_name FROM regions WHERE city_id = '".$addrow['city_id']."' "; 
+                        $RegionResult= $conn->query($Region);
+                        $RegionRow=$RegionResult->fetch_assoc();
+                        // echo $CityRow['city_name'];
                     ?> 
                     <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['ID_img']); ?>" /> 
 
@@ -103,7 +116,13 @@
                     </div>
                     <div class="adress">
                         <i class="fa fa-address-book"></i>
-                        <span>Salam st, Aswan 18511 </span>
+                        <span> <?php
+                        echo " " . $addrow['street'] . " ";
+                        echo ",";
+                        echo " " . $RegionRow['region_name'] . " ";
+                        echo " " . $CityRow['city_name'] . " ";
+
+                         ?>  </span>
                         <button>
                             Go | 
                             <i class="fa fa-location-arrow"></i>
