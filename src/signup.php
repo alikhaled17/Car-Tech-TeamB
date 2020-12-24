@@ -124,11 +124,11 @@ if (isset($_POST['submit'])) {
 
                 }
                 }
-        else
+    }
+    else
         {
             prompt();
         }
-    }
      }
         
 } 
