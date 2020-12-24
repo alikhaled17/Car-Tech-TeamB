@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech - Contact</title>
+    <title>Car Tech - Profile</title>
     <!-- my css files -->    
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -34,6 +34,9 @@
                         $sql = "SELECT * FROM providers WHERE user_id = '$p_id'";
                         $result = $conn->query($sql);
                         $rows = $result->fetch_assoc();
+                        $dbsql = "SELECT * FROM users WHERE id = '$p_id'";
+                        $dbresult = $conn->query($dbsql);
+                        $dbrow = $dbresult->fetch_assoc();
                     ?> 
                     <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['ID_img']); ?>" /> 
 
@@ -76,15 +79,27 @@
                 <div class="col-9 contact-info">
                     <div class="gender">
                         <i class="fa fa-venus-mars"></i>
-                        <span>Male</span>
+                        <span>
+                            <?php 
+                                echo $dbrow['gender'];
+                            ?>
+                        </span>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
-                        <span>+20 112 0988 399</span>
+                        <span>
+                            <?php 
+                                echo $dbrow['phone'];
+                            ?>
+                        </span>
                     </div>
                     <div class="mail">
                         <i class="fa fa-envelope-square"></i>
-                        <span>account12@gmail.com</span>
+                        <span>
+                            <?php 
+                                echo $dbrow['email'];
+                            ?>
+                        </span>
                     </div>
                     <div class="adress">
                         <i class="fa fa-address-book"></i>

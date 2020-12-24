@@ -6,73 +6,134 @@ function prompt () {
     </script> ");
     
 }
+// function AlreadyExist () {
+//     echo("<script type='text/javascript'>
+//     document.getElementById('vaild_Email').innerHTML = 'email exist';
+//       </script> ");
+      
+//   }
+
 if (isset($_POST['submit'])) {   
-  if(
-    isset($_POST['username'])
-    && isset($_POST['email'])
-    && isset($_POST['pass'])
-    && isset($_POST['phone'])
-    && isset($_POST['gender'])
-    && !empty($_POST['user-info'])) 
-  {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
-    $gender = $_POST['gender'];
-    $Phone = $_POST['phone'];
-    
-    $conn->query("INSERT INTO users (username, email, password, gender, phone) VALUES ('$username','$email','$password', '$gender','$Phone')");
-    
-    if($_POST['user-info']=='Provider') {
-      if($_SERVER['REQUEST_METHOD'] == "POST") {
-        
+    if($_POST['user-info']=='Provider'&&$_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        if(
+            isset($_POST['username'])
+            && isset($_POST['email'])
+            && isset($_POST['pass'])
+            && isset($_POST['phone'])
+            && isset($_POST['gender'])
+            &&!empty($_FILES["image"]["tmp_name"])
+            &&!empty($_FILES["commercial_ID"]["tmp_name"])
+            &&isset($_POST['City'])
+            &&isset($_POST['Region'])
+            &&isset($_POST['street'])
+            &&(isset($_POST['Gas_Station'])||isset($_POST['Car_Wash'])
+                ||isset($_POST['Car_Maintenance'])||isset($_POST['Trailer_Truck']))
+            ) 
+            {
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $password = $_POST['pass'];
+                $gender = $_POST['gender'];
+                $Phone = $_POST['phone'];
+                    if($email != "") {
+                        $query = "SELECT email FROM users where email='".$email."'";
+                        $result = mysqli_query($conn, $query); 
+                        $num_rows = mysqli_num_rows($result);
+                        if($num_rows >= 1){
+                            // AlreadyExist ();
+                            echo"email exist";
+                        }
+                        else
+                        {
+                            $conn->query("INSERT INTO users (username, email, password, gender, phone) 
+                            VALUES ('$username','$email','$password', '$gender','$Phone')");
 
-      $result = $conn->query("SELECT id FROM users WHERE email='$email'");
-      $row = $result->fetch_assoc();
-      $id =  $row['id'];
+                            $result = $conn->query("SELECT id FROM users WHERE email='$email'");
+                            $row = $result->fetch_assoc();
+                            $id =  $row['id'];
 
-      $conn->query("UPDATE users SET account_type = 'Provider' WHERE id ='$id'");
+                            $conn->query("UPDATE users SET account_type = 'Provider' WHERE id ='$id'");
 
-      if(!empty($_FILES["commercial_ID"]["tmp_name"]) 
-        && !empty($_FILES["image"]["tmp_name"])) { 
-        $fileName = basename($_FILES["commercial_ID"]["tmp_name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);     
-        $allowTypes = array('jpg','png','jpeg','gif'); 
-        $image = $_FILES['image']['tmp_name']; 
-        $imgContent = addslashes(file_get_contents($image)); 
-        $fileName = basename($_FILES["image"]["tmp_name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-        $allowTypes = array('jpg','png','jpeg','gif'); 
-        $imageID = $_FILES['commercial_ID']['tmp_name'];
-        $imgID = addslashes(file_get_contents($imageID));
-          $conn->query("INSERT INTO providers (user_id,ID_img,comm_img	) VALUES ('$id','$imgID','$imgContent')"); 
-        } 
+                            $fileName = basename($_FILES["commercial_ID"]["tmp_name"]); 
+                            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);     
+                            $allowTypes = array('jpg','png','jpeg','gif'); 
+                            $image = $_FILES['image']['tmp_name']; 
+                            $imgContent = addslashes(file_get_contents($image)); 
+                            $fileName = basename($_FILES["image"]["tmp_name"]); 
+                            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                            $allowTypes = array('jpg','png','jpeg','gif'); 
+                            $imageID = $_FILES['commercial_ID']['tmp_name'];
+                            $imgID = addslashes(file_get_contents($imageID));
+                            $conn->query("INSERT INTO providers (user_id,ID_img,comm_img) VALUES ('$id','$imgID','$imgContent')"); 
+                            if(isset($_POST['Gas_Station'])) { 
+                                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
+                            }
+                            if(isset($_POST['Car_Wash'])) { 
+                                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
+                            } 
+                            if(isset($_POST['Car_Maintenance'])) { 
+                                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
+                            } 
+                            if(isset($_POST['Trailer_Truck'])) { 
+                                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
+                            }
+                            if(isset($_POST['City'])) {
+                            $selected = $_POST['City'];
+                            $Region = $_POST['Region'];
+                            $street = $_POST['street'];
+                            $conn->query("INSERT INTO p_address (p_id,city_id,region_id,street) 
+                            VALUES ('$id','$selected','$Region','$street')");
+                            
+                            }
+
+                        }
+                    }     
+            }
         else {
             prompt();
         }
+    
 
-      if(isset($_POST['Gas_Station'])) { 
-          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
-      }
-      if(isset($_POST['Car_Wash'])) { 
-          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
-      } 
-      if(isset($_POST['Car_Maintenance'])) { 
-          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
-      } 
-      if(isset($_POST['Trailer_Truck'])) { 
-          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
-      }
-      if(isset($_POST['city'])) {
-        $selected = $_POST['city'];
-        $Region = $_POST['Region'];
-        $conn->query("INSERT INTO city (p_id,city,region) VALUES ('$id','$selected','$Region')");
-      }
-  } 
+    }
+    else
+    {
+        if(
+            isset($_POST['username'])
+            && isset($_POST['email'])
+            && isset($_POST['pass'])
+            && isset($_POST['phone'])
+            && isset($_POST['gender'])
+        ) 
+        {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['pass'];
+            $gender = $_POST['gender'];
+            $Phone = $_POST['phone'];
+            if($email != "") {
+                $query = "SELECT email FROM users where email='".$email."'";
+                $result = mysqli_query($conn, $query); 
+                $num_rows = mysqli_num_rows($result);
+                if($num_rows >= 1){
+                    AlreadyExist ();
+                }
+                else{
+                    $conn->query("INSERT INTO users (username, email, password, gender, phone) VALUES
+                    ('$username','$email','$password', '$gender','$Phone')");
+
+                }
+                }
+        else
+        {
+            prompt();
+        }
+    }
+     }
+        
+} 
   
-  }
-}
-}
+ 
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +167,7 @@ if (isset($_POST['submit'])) {
                 <!-- form -->
                 <br>
                 <h2>Registration</h2><hr>
-                <form method="POST" action="" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
                     <h4>Account Type</h4>
                     <input type="radio" id="user" name="user-info" value="User" checked />
                     <label for="user">User</label>
@@ -119,13 +180,14 @@ if (isset($_POST['submit'])) {
                         <input type="Password" name="pass"  required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
                         <input type="Email" name="email"  required placeholder="Enter Your E-mail *"><br>
+                        <p id="vaild_Email"><p>
                         <label class="gender-h">Gender</label>
                             <input type="radio" name="gender" value="Male" />
                             <label class="gender">Male</label>
                             <input type="radio" name="gender" value="Female" />
                             <label class="gender" >Female</label><br>
                         <label>Phone Number</label>
-                        <input type="text" name="phone"  required placeholder="Enter Your Phone Number"><br>
+                        <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">
@@ -141,9 +203,9 @@ if (isset($_POST['submit'])) {
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID</label>
-                        <input type="file" name="image" value="none">
+                        <input type="file" name="image" value="none" accept="image/*">
                         <label>commercial ID</label>
-                        <input type="file" name="commercial_ID" value="none"><br><br>
+                        <input type="file" name="commercial_ID" value="none" accept="image/*"><br><br>
                         <label>City </label>
                         <?php include('search_citis.php'); ?>
                         <label>Region</label>
@@ -153,7 +215,7 @@ if (isset($_POST['submit'])) {
                         <label for="">Street</label>
                         <input type="text" name="street" placeholder="street">
                     </div>
-                    <button name="submit" class="btn btn-outline-dark">Sign Up</button>
+                    <button name="submit" class="btn btn-outline-info">Sign Up</button>
                 </form>
                 
             </div>
