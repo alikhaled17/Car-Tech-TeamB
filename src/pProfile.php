@@ -40,12 +40,12 @@
                         $addsql = "SELECT * FROM p_address WHERE p_id = '$p_id'";
                         $addresult = $conn->query($addsql);
                         $addrow = $addresult->fetch_assoc();
-                        $City="SELECT city_name FROM cities WHERE id = '".$addrow['city_id']."' "; 
-                        $CityResult= $conn->query($City);
-                        $CityRow=$CityResult->fetch_assoc();
-                        $Region="SELECT region_name FROM regions WHERE id = '".$addrow['region_id']."' "; 
+                        $Region="SELECT * FROM regions WHERE id = '".$addrow['region_id']."' "; 
                         $RegionResult= $conn->query($Region);
                         $RegionRow=$RegionResult->fetch_assoc();
+                        $City="SELECT city_name FROM cities WHERE id = '".$RegionRow['city_id']."' "; 
+                        $CityResult= $conn->query($City);
+                        $CityRow=$CityResult->fetch_assoc();                        
                         $services="SELECT ser_id FROM prov_services WHERE p_id = '$p_id' ";
                         $ser_Result= $conn->query($services);
                     ?> 
