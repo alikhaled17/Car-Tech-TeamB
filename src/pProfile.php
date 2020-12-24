@@ -46,7 +46,7 @@
                         $City="SELECT city_name FROM cities WHERE id = '".$addrow['city_id']."' "; 
                         $CityResult= $conn->query($City);
                         $CityRow=$CityResult->fetch_assoc();
-                        $Region="SELECT region_name FROM regions WHERE city_id = '".$addrow['city_id']."' "; 
+                        $Region="SELECT region_name FROM regions WHERE id = '".$addrow['region_id']."' "; 
                         $RegionResult= $conn->query($Region);
                         $RegionRow=$RegionResult->fetch_assoc();
                         // echo $CityRow['city_name'];
