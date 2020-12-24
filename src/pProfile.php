@@ -40,16 +40,14 @@
                         $addsql = "SELECT * FROM p_address WHERE p_id = '$p_id'";
                         $addresult = $conn->query($addsql);
                         $addrow = $addresult->fetch_assoc();
-                        // echo $p_id;
-                        // echo $addrow['city_id'] ;
-                        
                         $City="SELECT city_name FROM cities WHERE id = '".$addrow['city_id']."' "; 
                         $CityResult= $conn->query($City);
                         $CityRow=$CityResult->fetch_assoc();
                         $Region="SELECT region_name FROM regions WHERE id = '".$addrow['region_id']."' "; 
                         $RegionResult= $conn->query($Region);
                         $RegionRow=$RegionResult->fetch_assoc();
-                        // echo $CityRow['city_name'];
+                        $services="SELECT ser_id FROM prov_services WHERE p_id = '$p_id' ";
+                        $ser_Result= $conn->query($services);
                     ?> 
                     <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['ID_img']); ?>" /> 
 
@@ -132,9 +130,19 @@
                 <div class="services-prof col-12">
                     <h4>Services</h4>
                     <ul>
-                        <li>Station</li>
-                        <li>Maintainance</li>
-                        <li>Wash</li>
+                    <?php
+                    while($user_ser = mysqli_fetch_array($ser_Result))
+                    { 
+                        $serviceName="SELECT * FROM  services WHERE id = '".$user_ser['ser_id']."'";
+                        $Name_Result= $conn->query($serviceName);
+                        while ( $Name_Row =  mysqli_fetch_array($Name_Result))
+                        {
+                            // print_r ($Name_Row );
+                            echo "<li>".$Name_Row['ser_name']."</li>";
+                            
+                        }
+                    }
+                    ?>
                     </ul>
                 </div>
                 <div class="work-gallery col-12">
