@@ -90,14 +90,13 @@
     display: block;
 }
 
-.signup .left-side > form .global-info input {
-    width: 60%;
-    border-radius: 20px;
-    border: 1px solid #08526d;
+.signup .left-side > form .global-info input:not([type="radio"]){
     padding: 3px 8px;
     outline-style: none;
     display: block;
-
+    width: 86% !important;
+    border-radius: 5px;
+    border: 1px solid #08526d;
 }
 
 .signup .left-side > form .global-info input:focus {
@@ -123,28 +122,26 @@
 
 
 .signup .left-side > form .prov-info select
- {
-    width: 60%;
-    border-radius: 20px;
-    border: 1px solid #08526d;
-    background-color: #08526d;
-    color: #fff;
-    padding: 5px 8px;
-    outline-style: none;
+ {    
+    width: 50% !important;
+  border-radius: 5px;
+  border: 1px solid #08526d;
+  padding: 3px 8px;
+  outline-style: none;
 }
 
-.signup .left-side > form .prov-info input[name="Region"] {
-    width: 60%;
-    border-radius: 20px;
+.signup .left-side > form .prov-info input[type="text"]
+{
+    width: 50% !important;
+    border-radius: 5px;
     border: 1px solid #08526d;
     padding: 3px 8px;
     outline-style: none;
 }
-
-
+ 
 .signup .left-side > form button {
     margin: 20px 0 ;
-    width: 20% !important;
+    width: 86% !important;
 }
 
 

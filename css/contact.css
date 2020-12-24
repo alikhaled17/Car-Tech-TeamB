@@ -1,27 +1,47 @@
 /* Contact */
+textarea,
 .Inputs_Text
 {
-	color: #08526D;
-	border:none;
-	border-bottom: 1px solid #08526D;
-	padding: 3px;
-    padding-left: 10px;
+	width: 80% !important;
+    border-radius: 5px;
+    border: 1px solid #08526d;
+    padding: 3px 8px;
+    outline-style: none;
 }
-input
+
+span+input,
+span+textarea
+{
+    width: 35%;
+    color: #08526d;
+    font-weight: 500;
+    display: block;
+}
+
+input[type="submit"],
+input[type="reset"]
+{
+    width: 39% !important;
+    float: left;
+}
+
+input[type="reset"]{
+    margin: 0 0 0 2% ;
+}
+
+input,
+textarea
 {
 	padding: 10px;
-	margin: 10px;
+	margin: 20px 10px 10px 10px  !important;
 }
 
 input:focus {
     background: transparent;
-    border:none;
     outline: none;
-	border-bottom: 1px solid #08526D;
 }
 textarea:focus {
     background: transparent;
-    border: 1px solid #08526D;
     outline: none;
 }
 /*--------------------------------------------------------------
@@ -43,12 +63,7 @@ textarea:focus {
     color: #08526D;
     text-shadow: none;
 }
-input:hover,textarea:hover{
-    background: transparent;
-    border:none;
-	border-bottom: 1px solid #08526D;
-	background-color:#e9f4f7;
-}
+
 .ContactForm,.img_contact{
 display: inline-block;
 color: #08526D;

@@ -1,6 +1,12 @@
 <?php
 include('../Config.php');
-
+function prompt () {
+  echo("<script type='text/javascript'>
+      window.alert('Please, Complete form for registeration.');
+      window.location.href = 'signup.php';
+    </script> ");
+    
+}
 if (isset($_POST['submit'])) {   
   if(
     isset($_POST['username'])
@@ -20,7 +26,16 @@ if (isset($_POST['submit'])) {
     
     if($_POST['user-info']=='Provider') {
       if($_SERVER['REQUEST_METHOD'] == "POST") {
-      if(!empty($_FILES["commercial_ID"]["tmp_name"])) { 
+        
+
+      $result = $conn->query("SELECT id FROM users WHERE email='$email'");
+      $row = $result->fetch_assoc();
+      $id =  $row['id'];
+
+      $conn->query("UPDATE users SET account_type = 'Provider' WHERE id ='$id'");
+
+      if(!empty($_FILES["commercial_ID"]["tmp_name"]) 
+        && !empty($_FILES["image"]["tmp_name"])) { 
         $fileName = basename($_FILES["commercial_ID"]["tmp_name"]); 
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);     
         $allowTypes = array('jpg','png','jpeg','gif'); 
@@ -31,34 +46,33 @@ if (isset($_POST['submit'])) {
         $allowTypes = array('jpg','png','jpeg','gif'); 
         $imageID = $_FILES['commercial_ID']['tmp_name'];
         $imgID = addslashes(file_get_contents($imageID));
-        $result = $conn->query("SELECT id FROM users WHERE email='$email'");
-        $row = $result->fetch_assoc();
-        $id =  $row['id'];
-
-        $conn->query("UPDATE users SET account_type = 'Provider' WHERE id ='$id'");
-        $conn->query("INSERT INTO providers (user_id,ID_img,comm_img	) VALUES ('$id','$imgID','$imgContent')"); 
-
-        if(isset($_POST['Gas_Station'])) { 
-            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Gas Station')");
-        }
-        if(isset($_POST['Car_Wash'])) { 
-            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Car Wash')");
+          $conn->query("INSERT INTO providers (user_id,ID_img,comm_img	) VALUES ('$id','$imgID','$imgContent')"); 
         } 
-        if(isset($_POST['Car_Maintenance'])) { 
-            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Car Maintenance')");
-        } 
-        if(isset($_POST['Trailer_Truck'])) { 
-            $conn->query("INSERT INTO services (p_id,ser_name) VALUES ('$id','Trailer Truck')");
+        else {
+            prompt();
         }
-        if(isset($_POST['city'])) {
-          $selected = $_POST['city'];
-          $Region = $_POST['Region'];
-          $conn->query("INSERT INTO city (p_id,city,region) VALUES ('$id','$selected','$Region')");
-        }
+
+      if(isset($_POST['Gas_Station'])) { 
+          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
       }
-    } 
+      if(isset($_POST['Car_Wash'])) { 
+          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
+      } 
+      if(isset($_POST['Car_Maintenance'])) { 
+          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
+      } 
+      if(isset($_POST['Trailer_Truck'])) { 
+          $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
+      }
+      if(isset($_POST['city'])) {
+        $selected = $_POST['city'];
+        $Region = $_POST['Region'];
+        $conn->query("INSERT INTO city (p_id,city,region) VALUES ('$id','$selected','$Region')");
+      }
+      header("Location:login.php"); 
+  } 
+  
   }
 }
 }
-//header("Location:signin.php");
 ?>

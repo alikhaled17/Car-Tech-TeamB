@@ -34,44 +34,26 @@
     <div class="Outer">
         <div class="container">
             <div class="row">
-            		<div class="ContactForm col-6">
-            			<form action="mailto:info.cartechb@gmail.com?subject=" method="POST" onsubmit="return addActionTest(this);"
-                        enctype="Contact/plain" name="myemailform" >
-                        <h3>Contact Us<img src="../imgs/contactUs_Tittle.png" width="50px"></h3>
-                        <p>Name</p>
-                        <p>
-                            <input type="text" class="Inputs_Text" required
-                            placeholder="Enter Your Name *" size="50">
-                        </p> 
-                        <p>Email</p> 
-                        <p>
-                            <input type="email" class="Inputs_Text" required
-                            placeholder="Enter Your Email *" size="50">
-                        </p>
-                        <p>Subject</p> 
-                        <p>
-                            <input type="text" name="subjectTitle" class="Inputs_Text" required placeholder="Enter Your subject title *"
-                             size="50" value="">
-                        </p>
-                        <p>Massege</p> 
-                        <p>
-                            <textarea name="message" cols="60" rows="5" placeholder="Your Message" required></textarea>
-                        </p>
-                        <table width="70%">
-                            <tr>
-                                 <td>
-                                    <input type="submit" value="Send" name="send" class="btn btn-outline-dark" ></td>
-                                <td align="left">
-                                    <input type="reset" value="Reset" class="btn btn-outline-dark">
-                                </td>
-                            </tr>
-                        </table>
-                </form>
-        	</div>
+                <div class="ContactForm col-6">
+                    <form action="mailto:info.cartechb@gmail.com?subject=" method="POST" onsubmit="return addActionTest(this);"
+                            enctype="Contact/plain" name="myemailform" >
+                            <h3>Contact Us<img src="../imgs/contactUs_Tittle.png" width="50px"></h3>
+                            <span>Name</span>
+                                <input type="text" class="Inputs_Text" required placeholder="Enter Your Name *" size="50">
+                            <span>Email</span> 
+                                <input type="email" class="Inputs_Text" required placeholder="Enter Your Email *" size="50">
+                            <span>Subject</span> 
+                                <input type="text" name="subjectTitle" class="Inputs_Text" required placeholder="Enter Your subject title *" size="50" value="">
+                            <span>Massege</span> 
+                                <textarea name="message" cols="60" rows="5" placeholder="Your Message" required></textarea>
+                                <input type="submit" value="Send" name="send" class="btn btn-outline-dark" ></td>
+                                <input type="reset" value="Reset" class="btn btn-outline-dark">
+                    </form>
+                </div>
                 <div class="img_contact col-6">
-            <img class="img_Form" src="../imgs/ContactUsForm.png">
-            </div>
-        </div>	
+                    <img class="img_Form" src="../imgs/ContactUsForm.png">
+                </div>
+            </div>	
         </div>
     </div>
     
