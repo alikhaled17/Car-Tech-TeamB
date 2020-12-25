@@ -62,9 +62,7 @@
                             <a class="dropdown-item " href="/Car-Tech-TeamB/src/signup.php">Sign up</a>
                             <a class="dropdown-item " href="/Car-Tech-TeamB/src/login.php">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item " href="#"><button onclick="
-                            <?php session_destroy(); ?>">
-                                    Logout</button></a>
+                            <a class="dropdown-item " href="/Car-Tech-TeamB/src/logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>

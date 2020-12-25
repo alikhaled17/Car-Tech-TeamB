@@ -13,18 +13,6 @@ function fail()
             form {
                 border:2px solid red;
             }
-
-            form:after {
-                content: '!';
-                width: 20px;
-                padding: 5px 10px;
-                height: 20px;
-                border-radius: 3px;
-                background-color: red;
-                color: #fff;
-                right: 0;
-                bottom: 0;
-            }
         </style>
     ");
 }

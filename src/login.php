@@ -9,12 +9,18 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
 
-    if ($rows == 1) {
-        session_start();
-        $user_data = mysqli_fetch_array($result);
-        if ($user_data[account_type] == "Client") {
-            $_SESSION['username'] = $user_data[username];
-            header("Location: uProfile.php");
+        if ($rows == 1) {
+            session_start();
+            $user_data = mysqli_fetch_array($result);
+            if($user_data[account_type] == "Client") {
+                $_SESSION['username'] = $user_data[username];
+                $_SESSION['id'] = $user_data[id];
+                header("Location: uProfile.php");
+            } else {
+                $_SESSION['username'] = $user_data[username];
+                $_SESSION['p_id'] = $user_data[id];
+                header("Location: pProfile.php");
+            }
         } else {
             $_SESSION['username'] = $user_data[username];
             $_SESSION['p_id'] = $user_data[id];
