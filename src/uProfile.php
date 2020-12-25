@@ -1,6 +1,11 @@
 <?php 
     include('../Config.php');  
     session_start();
+    session_regenerate_id();
+    if(!isset($_SESSION['u_id']))      // if there is no valid session
+    {
+        header("Location:login.php");
+    }
     $id = $_SESSION['u_id'];
 
     $sql="SELECT *
@@ -32,7 +37,6 @@
     <script src="../js/responde.js"></script>    
 </head>
 <body>
-    
     <?php include('../header.php'); ?>
 
     <div class="prof-section">

@@ -27,9 +27,10 @@ if (isset($_POST['submit'])) {
             && isset($_POST['email'])
             && isset($_POST['pass'])
             && isset($_POST['phone'])
-            && isset($_POST['gender'])
+            && isset($_POST['gender']) 
             && !empty($_FILES["nation_id"]["tmp_name"])
             && !empty($_FILES["commerc_id"]["tmp_name"])
+            &&!empty($_FILES["prof_img"]["tmp_name"])
             && isset($_POST['City'])
             && isset($_POST['Region'])
             && isset($_POST['street'])
@@ -41,6 +42,8 @@ if (isset($_POST['submit'])) {
             $password = $_POST['pass'];
             $gender = $_POST['gender'];
             $Phone = $_POST['phone'];
+            $prof_img = $_FILES['prof_img']['tmp_name'];
+            $prof_imgID = addslashes(file_get_contents($prof_img));
             if ($email != "") {
                 $query = "SELECT email FROM users where email='" . $email . "'";
                 $result = mysqli_query($conn, $query);
@@ -48,8 +51,9 @@ if (isset($_POST['submit'])) {
                 if ($num_rows >= 1) {
                     fail();
                 } else {
-                    $conn->query("INSERT INTO users (username, email, password, gender, phone, account_type) 
-                            VALUES ('$username','$email','$password', '$gender','$Phone', 'Provider')");
+
+                    $conn->query("INSERT INTO users (username, email, password, gender, phone, account_type,prof_img) 
+                            VALUES ('$username','$email','$password', '$gender','$Phone', 'Provider','$prof_imgID')");
 
                     $result = $conn->query("SELECT id FROM users WHERE email='$email'");
                     $row = $result->fetch_assoc();
@@ -95,12 +99,15 @@ if (isset($_POST['submit'])) {
             && isset($_POST['pass'])
             && isset($_POST['phone'])
             && isset($_POST['gender'])
+            &&!empty($_FILES["prof_img"]["tmp_name"])
         ) {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['pass'];
             $gender = $_POST['gender'];
             $Phone = $_POST['phone'];
+            $prof_img = $_FILES['prof_img']['tmp_name'];
+            $prof_imgID = addslashes(file_get_contents($prof_img));
             if ($email != "") {
                 $query = "SELECT email FROM users where email='$email' or username = '$username'";
                 $result = mysqli_query($conn, $query);
@@ -108,8 +115,8 @@ if (isset($_POST['submit'])) {
                 if ($num_rows >= 1) {
                     fail();
                 } else {
-                    $conn->query("INSERT INTO users (username, email, password, gender, phone) VALUES
-                    ('$username','$email','$password', '$gender','$Phone')");
+                    $conn->query("INSERT INTO users (username, email, password, gender, phone,prof_img) VALUES
+                    ('$username','$email','$password', '$gender','$Phone','$prof_imgID')");
                     success();
                 }
             }
@@ -164,6 +171,8 @@ if (isset($_POST['submit'])) {
                         <input type="Password" name="pass" required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
                         <input type="Email" name="email" required placeholder="Enter Your E-mail *"><br>
+                        <label>Profile Image</label>
+                        <input type="file" name="prof_img" value="none" accept="image/*">
                         <p id="vaild_Email">
                             <p>
                                 <label class="gender-h">Gender</label>

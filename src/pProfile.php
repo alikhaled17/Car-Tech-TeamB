@@ -1,12 +1,19 @@
 <?php 
     include('../Config.php');  
-    if (session_status() == 1) {
-        session_start();
-        $id = $_SESSION['p_id'];
-        echo $_SESSION['p_id'];
-    } else {
-        exit(); 
+    // if (session_status() == 1) {
+    //     session_start();
+    //     $id = $_SESSION['p_id'];
+    //     // echo $_SESSION['p_id'];
+    // } else {
+    //     exit(); 
+    // }
+    session_start();
+    session_regenerate_id();
+    if(!isset($_SESSION['p_id']))      // if there is no valid session
+    {
+        header("Location:login.php");
     }
+    $id = $_SESSION['p_id'];
     $sql="SELECT users.*,
         providers.comm_img,
         providers.ID_img,
@@ -62,7 +69,9 @@
                             <?php 
                         } else {
                             ?>
+                            <div class='imgProf'>
                             <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
+                            </div>
                             <?php
                         }
                     ?>

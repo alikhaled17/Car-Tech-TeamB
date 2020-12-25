@@ -46,14 +46,14 @@
                     <ul id="result">
                         <li class="result-card row">
                             <div class="lift col-2">
-                                <img src="../imgs/profile-test.jpg" alt="imgProfile">
+                                <img src="data:image/jpg;charset=utf8mb4;base64,'.base64_encode($provider['prof_img']).'">
                             </div>'.
                             '<div class="mid col-6">
                                 <h5>'.$provider['username'].'</h5>'.
                                 '<span class="address-card">'.$provider['region_name'].'  '.$provider['city_name'].'</span>
                             </div>
                             <div class="right col-4">
-                            <a class="btn btn-outline-dark" href="#"'.$provider['id'].'">View</a>
+                            <a class="btn btn-outline-dark" href="pProfile.php"'.$provider['id'].'">View</a>
                             </div>'.
                         '</li>
                     </ul>

@@ -9,6 +9,11 @@
     position: relative;
     height: 180px;
 }
+.imgProf
+{
+/*	height: 100px;
+*/	max-width: 80%;
+}
 
 .prof-section .container .upper-prof .img-prof .shadows {
     z-index: -9;
