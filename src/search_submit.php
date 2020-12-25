@@ -59,18 +59,6 @@
             }
             
         }
-
-        // else if ($_POST['Service'] !="none") {
-        //     prompt("City");
-        // }
-
-        // else if ($_POST['City'] !="none") {
-        //     prompt("Service");
-        // }
-
-        // else {
-        //     prompt("Service And City");
-        // }
     }
 
     ?>
