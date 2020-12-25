@@ -1,6 +1,17 @@
 <?php 
     include('../Config.php');  
     session_start();
+    $id = $_SESSION['u_id'];
+
+    $sql="SELECT *
+        FROM users
+        WHERE
+            users.id = '$id'";
+
+    $result = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($result);
+    $user_data = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,18 +40,22 @@
             <div class="upper-prof row">
                 <div class="img-prof col-3">
                     <?php 
-                        $id= $_SESSION['id'];
-                        $sql = "SELECT * FROM users WHERE id = '$id'";
-                        $result = $conn->query($sql);
-                        $rows = $result->fetch_assoc();
-                    ?> 
-                    <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['prof_img']); ?>" /> 
+                        if($user_data['prof_img'] == '') {
+                            ?>
+                            <img src="../imgs/default-prof.png"/>       
+                            <?php 
+                        } else {
+                            ?>
+                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
+                            <?php
+                        }
+                    ?>
                 </div>
                 <div class="info-prof col-9">
                     <div class="account-name">
                         <h3>
                             <?php 
-                                echo $rows['username'];
+                                echo $user_data['username'];
                             ?>
                         </h3>
                     </div>
@@ -50,7 +65,7 @@
                             <i class="fa fa-venus-mars"></i>
                             <span>
                                 <?php
-                                    echo $rows['gender'] ;
+                                    echo $user_data['gender'] ;
                                 ?>
                             </span>
                         </div>
@@ -59,15 +74,10 @@
                         <i class="fa fa-phone-square"></i>
                         <span> 
                             <?php
-                               echo $rows['phone'] ;
+                               echo $user_data['phone'] ;
                             ?>
                         </span>
                     </div>
-                </div>
-                <div class="col-3"></div>
-                <div class="col-9 contact-info">
-                    
-                    
                 </div>
             </div>
         </div>

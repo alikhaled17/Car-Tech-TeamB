@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
 
-    <script src="js/responde.js"></script>    
+     
 </head>
 <body>
     

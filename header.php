@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/Car-Tech-TeamB/css/bootstrap.css">
     <link rel="stylesheet" href="/Car-Tech-TeamB/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Car-Tech-TeamB/css/animate.css">
-    <script src="js/responde.js"></script>
+     
 </head>
 
 <body>

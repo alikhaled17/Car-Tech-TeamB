@@ -11,10 +11,12 @@ function fail()
     echo ("
         <style>
             form {
-                border:2px solid red;
+                border:1px solid red;
             }
         </style>
     ");
+
+    
 }
 
 
@@ -26,8 +28,8 @@ if (isset($_POST['submit'])) {
             && isset($_POST['pass'])
             && isset($_POST['phone'])
             && isset($_POST['gender'])
-            && !empty($_FILES["image"]["tmp_name"])
-            && !empty($_FILES["commercial_ID"]["tmp_name"])
+            && !empty($_FILES["nation_id"]["tmp_name"])
+            && !empty($_FILES["commerc_id"]["tmp_name"])
             && isset($_POST['City'])
             && isset($_POST['Region'])
             && isset($_POST['street'])
@@ -54,9 +56,9 @@ if (isset($_POST['submit'])) {
                     $id =  $row['id'];
 
                     $commirc = $_FILES['commerc_id']['tmp_name'];
-                    $commircID = addslashes(file_get_contents($imageID));
+                    $commircID = addslashes(file_get_contents($commirc));
                     $nation = $_FILES['nation_id']['tmp_name'];
-                    $nationID = addslashes(file_get_contents($imageID));
+                    $nationID = addslashes(file_get_contents($nation));
 
 
                     $conn->query("INSERT INTO providers (user_id,ID_img,comm_img) VALUES ('$id','$nationID','$commircID')");
@@ -100,7 +102,7 @@ if (isset($_POST['submit'])) {
             $gender = $_POST['gender'];
             $Phone = $_POST['phone'];
             if ($email != "") {
-                $query = "SELECT email FROM users where email='" . $email . "'";
+                $query = "SELECT email FROM users where email='$email' or username = '$username'";
                 $result = mysqli_query($conn, $query);
                 $num_rows = mysqli_num_rows($result);
                 if ($num_rows >= 1) {
@@ -134,7 +136,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/signup.css" />
 
-    <script src="../js/responde.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js">
     </script>
 </head>

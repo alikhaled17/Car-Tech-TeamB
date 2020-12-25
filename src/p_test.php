@@ -1,12 +1,10 @@
 <?php 
     include('../Config.php');  
-    if (session_status() == 1) {
-        session_start();
-        $id = $_SESSION['p_id'];
-        echo $_SESSION['p_id'];
-    } else {
-        exit(); 
-    }
+    session_start();
+
+
+    $id = $_SESSION['p_id'];
+
     $sql="SELECT users.*,
         providers.comm_img,
         providers.ID_img,
@@ -114,28 +112,17 @@
                             echo " " . $user_data['city_name'] . " ";
                         ?>  
                         </span>
-                        <?php
-                        if($user_data['account_type'] == 'Client') {
-                        ?>                            
-                            <button>
-                                Go | 
-                                <i class="fa fa-location-arrow"></i>
-                            </button>
-                        <?php
-                        } else {
-                        ?>  
-                            <button>Edit Info</button>
-                        <?php
-                        }
-                        ?>
+                        <button>
+                            Go | 
+                            <i class="fa fa-location-arrow"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="services-prof col-12">
                     <h4>Services</h4>
                     <ul>
                         <?php
-                        $res = mysqli_query($conn, $sql);
-                        while($ser_name = mysqli_fetch_array($res))
+                        while($ser_name = mysqli_fetch_array($result))
                         { 
                             echo "<li>".$ser_name['ser_name']."</li>";
                         }

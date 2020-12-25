@@ -6,7 +6,6 @@
             data: {
                 get_option:val
             }
-
             ,
             success: function (response) {
                 document.getElementById("Region1").innerHTML=response;
@@ -17,7 +16,7 @@
 }
 
 </script>
-<select name="City"id="City1"class="search-select"onchange="fetch_region(this.value);" required> 
+<select name="City"id="City1"class="search-select"onchange="fetch_region(this.value);" > 
 <?php
 include_once("../Config.php");
 $sql="SELECT id,city_name FROM `cities`";

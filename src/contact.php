@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/contact.css" />
 
-    <script src="../js/responde.js"></script>   
     <script type="text/javascript">
 
     function addActionTest(theForm) {
