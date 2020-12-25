@@ -59,7 +59,11 @@
 
                 <!-- result -->
                 <div class="left-side col-6">
+                    <div class="result">
+                        <ul id="result">
                     <?php include('search_submit.php'); ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

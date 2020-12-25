@@ -60,8 +60,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
-
-                            if(!isset($_SESSION['p_id']) || !isset($_SESSION['u_id']) )      // if there is no valid session
+                            if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                                 echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/login.php'> Login</a>" ;
                                 echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/signup.php'> Sign Up</a>" ;
@@ -73,7 +72,6 @@
                                 else
                                     { echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/logoutU.php'> Logout</a>"; }
                             }
-                            
                         ?>
                         </div>
                     </li>

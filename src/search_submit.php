@@ -42,8 +42,7 @@
             $result=mysqli_query($conn, $sql);
             while($provider=mysqli_fetch_array($result)) {
 
-                echo ('<form class="result" action="#">
-                    <ul id="result">
+                echo ('
                         <li class="result-card row">
                             <div class="lift col-2">
                                 <img src="data:image/jpg;charset=utf8mb4;base64,'.base64_encode($provider['prof_img']).'">
@@ -56,8 +55,7 @@
                             <a class="btn btn-outline-dark" href="pProfile.php"'.$provider['id'].'">View</a>
                             </div>'.
                         '</li>
-                    </ul>
-                </form>');
+                    ');
             }
             
         }
