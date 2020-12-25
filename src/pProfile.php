@@ -151,6 +151,10 @@
                         ?>
                     </ul>
                 </div>
+                <div class="work-gallery col-12">
+                    <h4>Work Gallery</h4>
+                    
+                </div>
             </div>
         </div>
     </div>
