@@ -59,10 +59,22 @@
                             Settings
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " href="/Car-Tech-TeamB/src/signup.php">Sign up</a>
-                            <a class="dropdown-item " href="/Car-Tech-TeamB/src/login.php">Login</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item " href="/Car-Tech-TeamB/src/logout.php">Logout</a>
+                        <?php
+
+                            if(!isset($_SESSION['p_id']) || !isset($_SESSION['u_id']) )      // if there is no valid session
+                            {
+                                echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/login.php'> Login</a>" ;
+                                echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/signup.php'> Sign Up</a>" ;
+                            }
+                            else
+                            {
+                                if (isset($_SESSION['p_id']))
+                                   { echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/logoutP.php'> Logout</a>" ;}
+                                else
+                                    { echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/logoutU.php'> Logout</a>"; }
+                            }
+                            
+                        ?>
                         </div>
                     </li>
                 </ul>
