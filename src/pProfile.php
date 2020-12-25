@@ -49,8 +49,7 @@
                         $services="SELECT ser_id FROM prov_services WHERE p_id = '$p_id' ";
                         $ser_Result= $conn->query($services);
                     ?> 
-                    <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['ID_img']); ?>" /> 
-
+                    <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['comm_img']); ?>" /> 
                 </div>
                 <div class="info-prof col-9">
                     <div class="account-name">

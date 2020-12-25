@@ -1,3 +1,7 @@
+<?php 
+    include('../Config.php');  
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,22 +28,40 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <img src="../imgs/profile-test.jpg" alt="profile-img">
+                    <?php 
+                        $id= $_SESSION['id'];
+                        $sql = "SELECT * FROM users WHERE id = '$id'";
+                        $result = $conn->query($sql);
+                        $rows = $result->fetch_assoc();
+                    ?> 
+                    <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($rows['prof_img']); ?>" /> 
                 </div>
                 <div class="info-prof col-9">
                     <div class="account-name">
-                        <h3>Account Name</h3>
+                        <h3>
+                            <?php 
+                                echo $rows['username'];
+                            ?>
+                        </h3>
                     </div>
                     <hr>
                     <div class="personal-info">
                         <div class="gender">
                             <i class="fa fa-venus-mars"></i>
-                            <span>Male</span>
+                            <span>
+                                <?php
+                                    echo $rows['gender'] ;
+                                ?>
+                            </span>
                         </div>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
-                        <span>+20 112 0988 399</span>
+                        <span> 
+                            <?php
+                               echo $rows['phone'] ;
+                            ?>
+                        </span>
                     </div>
                 </div>
                 <div class="col-3"></div>

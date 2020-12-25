@@ -14,6 +14,7 @@
             $user_data = mysqli_fetch_array($result);
             if($user_data[account_type] == "Client") {
                 $_SESSION['username'] = $user_data[username];
+                $_SESSION['id'] = $user_data[id];
                 header("Location: uProfile.php");
             } else {
                 $_SESSION['username'] = $user_data[username];
