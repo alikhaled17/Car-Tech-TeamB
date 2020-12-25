@@ -61,13 +61,14 @@
                 <div class="left-side col-6">
                     <div class="result">
                         <ul id="result">
-                    <?php include('search_submit.php'); ?>
+                            <?php include('search_submit.php'); ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php include('../footer.php'); ?>
 
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>

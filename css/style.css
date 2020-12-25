@@ -78,3 +78,24 @@ body {
     color: #b90d24 !important;
 }
 /* End Nav Bar */
+
+/* Start Footer */
+footer {
+    background-color: #d6dadb69;
+}
+
+
+.left-sec, .mid-sec, .right-sec {
+    padding: 20px ;
+}
+
+
+
+.mid-sec ul{
+    list-style: none ;
+}
+
+.right-sec ul{
+    list-style: none ;
+}
+/* End Footer */
