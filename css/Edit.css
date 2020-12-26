@@ -1,0 +1,15 @@
+.inputStyle
+{
+  	border-radius: 5px;
+  	border: 1px solid #08526d;
+  	padding: 3px 8px;
+  	outline-style: none;
+}
+.RadioStyle
+{
+cursor: pointer;
+padding: 0 50px 0 30px;
+color: #08526d;
+font-weight: 500;
+}
+/*class="form-check-input"*/

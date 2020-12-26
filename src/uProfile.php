@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/uProfile.css" />
+    <link rel="stylesheet" href="../css/Edit.css" />
+
 
     <script src="../js/responde.js"></script>    
 </head>
@@ -86,10 +88,17 @@
                             ?>
                         </span>
                     </div>
+                    <div class="mail">
+                        <span> 
+                        <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
+                            update </button>
+                        </span>
+                    </div>                    
                 </div>
             </div>
         </div>
     </div>
+    <br>
     
     <?php include('../footer.php'); ?>
 
