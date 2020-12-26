@@ -88,7 +88,7 @@
                             ?>
                         </span>
                     </div>
-                    <div class="mail">
+                    <div>
                         <span> 
                         <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
                             update </button>
