@@ -126,7 +126,7 @@
                         <?php
                         } else {
                         ?>  
-                            <button>Edit Info</button>
+                            <button class="btn btn-outline-info" onclick="window.location.href ='EditpProfile.php';">Edit Info</button>
                         <?php
                         }
                         ?>
