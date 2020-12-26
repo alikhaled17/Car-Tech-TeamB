@@ -17,8 +17,6 @@ session_start();
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/services.css" />
-
-    <script src="../js/responde.js"></script>
 </head>
 
 <body>

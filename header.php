@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech</title>
-    <!-- my css files -->
-    <link rel="stylesheet" href="/Car-Tech-TeamB/css/bootstrap.css">
-    <link rel="stylesheet" href="/Car-Tech-TeamB/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/Car-Tech-TeamB/css/animate.css">
-     
-</head>
-
-<body>
 
     <!-- Start Upper Bar -->
     <div class="upper-bar">
@@ -41,26 +24,12 @@
             </a>
 
             <div class="collapse navbar-collapse" id="ournavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../index.php">Home</a>
+                <ul class="navbar-nav navar ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Car-Tech-TeamB/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <?php
-                            if (isset($_SESSION['p_id']))
-                            {
-                                echo "<a class='nav-link' href=/Car-Tech-TeamB/src/pProfile.php> Profile </a>";
-                            }
-                            elseif(isset($_SESSION['u_id']))
-                            {
-                                echo "<a class='nav-link' href=/Car-Tech-TeamB/src/uProfile.php> Profile </a>";
-                            }
-                            else
-                            {
-                                echo "<a class='nav-link' href=/Car-Tech-TeamB/src/login.php> Profile </a>";
-                            }
-                        ?>
-                        <!-- <a class="nav-link" href="/Car-Tech-TeamB/src/pProfile.php">Profile</a> -->
+                        <a class="nav-link" href="/Car-Tech-TeamB/src/pProfile.php">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Car-Tech-TeamB/src/services.php">Services</a>
@@ -94,7 +63,5 @@
             </div>
         </div>
     </nav>
-
-</body>
-
-</html>
+    
+   

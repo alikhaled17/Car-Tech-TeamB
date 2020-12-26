@@ -11,7 +11,6 @@
                 document.getElementById("Region1").innerHTML=response;
             }
         }
-
     );
 }
 

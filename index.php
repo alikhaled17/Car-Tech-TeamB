@@ -17,8 +17,6 @@ session_start();
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
-
-     
 </head>
 <body>
     <?php include('header.php'); ?>
@@ -59,8 +57,8 @@ session_start();
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script>new WOW().init();</script>    
-    <script src="js/script.js"></script>
+    <script>new WOW().init();</script>  
+    <script src="/Car-Tech-TeamB/js/script.js"></script>
 </body>
 
 </html>
