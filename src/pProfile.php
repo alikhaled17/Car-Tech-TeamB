@@ -1,12 +1,5 @@
 <?php 
     include('../Config.php');  
-    // if (session_status() == 1) {
-    //     session_start();
-    //     $id = $_SESSION['p_id'];
-    //     // echo $_SESSION['p_id'];
-    // } else {
-    //     exit(); 
-    // }
     session_start();
     session_regenerate_id();
     if(!isset($_SESSION['p_id']))      // if there is no valid session

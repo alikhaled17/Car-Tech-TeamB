@@ -1,5 +1,5 @@
 <?php 
-    include('../Config.php');  
+    include('../Config.php');
     session_start();
     session_regenerate_id();
     if(!isset($_SESSION['u_id']))      // if there is no valid session
@@ -8,10 +8,7 @@
     }
     $id = $_SESSION['u_id'];
 
-    $sql="SELECT *
-        FROM users
-        WHERE
-            users.id = '$id'";
+    $sql="SELECT * FROM users WHERE id = '$id'";
 
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
