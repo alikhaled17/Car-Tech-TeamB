@@ -24,7 +24,7 @@
     <div class="image-header row">
         <div class="container">
             <div class="left-side col-6">
-                <h1>Car Tech.</h1>
+                <h1>Car Tech</h1>
                 <hr>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur amet animi vero tempora, odit esse non eos dignissimos ipsa possimus alias, necessitatibus molestias, error cumque delectus omnis ratione eaque.
