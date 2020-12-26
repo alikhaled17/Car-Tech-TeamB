@@ -143,6 +143,7 @@
 }
 
 .signup .right-side img {
+  margin-top: 50px;
   position: sticky;
 }
 
@@ -161,3 +162,22 @@
   display: none;
   transition: all 0.5s ease-in-out;
 } */
+
+
+.fail {
+  border-radius: 10px;
+  padding: 5px 15px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: rgb(245, 61, 37);
+}
+
+.success {
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: rgb(66, 184, 66);
+}

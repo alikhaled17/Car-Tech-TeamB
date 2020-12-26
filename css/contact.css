@@ -89,3 +89,12 @@ color: #08526D;
 {
 	text-decoration: underline;
 }
+
+.success {
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: rgb(66, 184, 66);
+}

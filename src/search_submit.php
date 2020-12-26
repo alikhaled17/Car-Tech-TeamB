@@ -56,7 +56,7 @@
                             '<span class="address-card">'.$provider['region_name'].'  '.$provider['city_name'].'</span>
                         </div>
                         <div class="right col-4">
-                        <a class="btn btn-outline-dark" href="visitProvider.php?id='.$provider['id'].' ">View</a>
+                        <a class="btn btn-outline-dark" target="_blank" href="visitProvider.php?id='.$provider['id'].' ">View</a>
                         </div>'.
                     '</li>
                 ');

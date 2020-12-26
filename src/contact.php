@@ -17,11 +17,13 @@
     <script type="text/javascript">
 
     function addActionTest(theForm) {
-    if (theForm.subjectTitle.value != '') {
-        theForm.action += theForm.subjectTitle.value;
-        return true;
-    }
-    else { alert('Error'); return false;}
+        if (theForm.subjectTitle.value != '') {
+            theForm.action += theForm.subjectTitle.value;
+            return true;
+        }
+        else { alert('Error'); 
+            return false;
+        }
     }
     </script>  
 </head>
@@ -32,6 +34,8 @@
     <!-- Contact -->
     <div class="Outer">
         <div class="container">
+        <?php include('contact_config.php'); ?>
+
             <div class="row">
                 <div class="ContactForm col-6">
                     <form class="Mail"  method="POST"
@@ -47,7 +51,7 @@
                                 <textarea name="message" cols="60" rows="5" placeholder="Your Message" required></textarea>
                                 <input type="submit" value="Send" name="send" class="btn btn-outline-dark" ></td>
                                 <input type="reset" value="Reset" class="btn btn-outline-dark">
-                                <?php include('contact_config.php'); ?>
+                                
                     </form>
                 </div>
                 <div class="img_contact col-6">
