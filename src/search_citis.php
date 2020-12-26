@@ -15,7 +15,7 @@
 }
 
 </script>
-<select name="City"id="City1"class="search-select"onchange="fetch_region(this.value);" > 
+<select name="City" id="City1" class="search-select" onchange="fetch_region(this.value);" > 
 <?php
 include_once("../Config.php");
 $sql="SELECT id,city_name FROM `cities`";

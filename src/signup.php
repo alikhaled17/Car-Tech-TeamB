@@ -74,7 +74,9 @@
                         <label>commercial ID</label>
                         <input type="file" name="commerc_id" value="none" accept="image/*"><br><br>
                         <label>City </label>
-                        <?php include('search_citis.php'); ?>
+                        <?php
+                            include('search_citis.php'); 
+                        ?>
                         <label>Region</label>
                         <select id="Region1" name="Region" class="search-select">
                             <option value="none" selected>Choose...</option>
