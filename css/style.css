@@ -66,14 +66,16 @@ body {
 
 .navbar-nav .nav-link
 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     font-weight: bolder;
     margin-left: 20px;
     color: #08526d !important
 }
 
-.navbar-nav .nav-item.active .nav-link
+.navbar-nav
+.nav-item.active
+.nav-link
 {
     color: #b90d24 !important;
 }

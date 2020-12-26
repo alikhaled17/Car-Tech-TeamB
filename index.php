@@ -50,7 +50,33 @@ session_start();
             </div>
         </div>
     </div>
- 
+    <div id="port" class="our-team row">
+        <div class="container">
+            <div class="box">
+                <div class="member">
+                    <div class="overlay">Turki</div>
+                    <img src="imgs/ahmed_T.jpg" alt="">
+                </div>
+                <div class="member">
+                    <div class="overlay">Ali</div>
+                    <img src="imgs/ali_k.jpg" alt="">
+                </div>
+                <div class="member">
+                    <div class="overlay">Sally</div>                    
+                    <img src="imgs/sally_E.jpg" alt="">
+                </div>
+                <div class="member">
+                    <div class="overlay">Mayar</div>                    
+                    <img src="imgs/mayar_a.jpg" alt="">
+                </div>
+                <div class="member">
+                    <div class="overlay">Mahmoud</div>                    
+                    <img src="imgs/mahmoud_Y.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
     <?php include('footer.php'); ?>
 

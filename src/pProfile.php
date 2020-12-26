@@ -72,11 +72,11 @@
                 
                 <div class="info-prof col-9">
                     <div class="account-name">
-                        <h3>
+                        <h2>
                             <?php 
                                 echo $user_data['username'];
                             ?>
-                        </h3>
+                        </h2>
                     </div>
                     <hr>
                 </div>
