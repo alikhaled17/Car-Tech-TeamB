@@ -1,5 +1,7 @@
 <?php
 include('../Config.php');
+ob_start();
+session_start();
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -10,13 +12,15 @@ if (isset($_POST['login'])) {
     $rows = mysqli_num_rows($result);
 
     if ($rows == 1) {
-        session_start();
         $user_data = mysqli_fetch_array($result);
-        if($user_data[account_type] == "Client") {
-            $_SESSION['u_id'] = $user_data[id];
+        if($user_data["account_type"] == "Client") 
+        {
+            $_SESSION['u_id'] = $user_data["id"];
             header("Location: uProfile.php");
-        } else {
-            $_SESSION['p_id'] = $user_data[id];
+        }
+        else
+        {
+            $_SESSION['p_id'] = $user_data["id"];
             header("Location: pProfile.php");
         }
     } else {
