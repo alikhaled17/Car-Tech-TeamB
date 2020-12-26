@@ -1,7 +1,3 @@
-<?php
-ob_start();
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="../css/contact.css" />
 
     <script type="text/javascript">
-    
+
     function addActionTest(theForm) {
     if (theForm.subjectTitle.value != '') {
         theForm.action += theForm.subjectTitle.value;
@@ -38,19 +34,20 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="ContactForm col-6">
-                    <form action="mailto:info.cartechb@gmail.com?subject=" method="POST" onsubmit="return addActionTest(this);"
+                    <form class="Mail"  method="POST"
                             enctype="Contact/plain" name="myemailform" >
                             <h3>Contact Us<img src="../imgs/contactUs_Tittle.png" width="50px"></h3>
                             <span>Name</span>
-                                <input type="text" class="Inputs_Text" required placeholder="Enter Your Name *" size="50">
+                                <input type="text" name="nameUser" class="Inputs_Text" required placeholder="Enter Your Name *" size="50">
                             <span>Email</span> 
-                                <input type="email" class="Inputs_Text" required placeholder="Enter Your Email *" size="50">
+                                <input type="email" name="Emailsend" class="Inputs_Text" required placeholder="Enter Your Email *" size="50">
                             <span>Subject</span> 
                                 <input type="text" name="subjectTitle" class="Inputs_Text" required placeholder="Enter Your subject title *" size="50" value="">
                             <span>Massege</span> 
                                 <textarea name="message" cols="60" rows="5" placeholder="Your Message" required></textarea>
                                 <input type="submit" value="Send" name="send" class="btn btn-outline-dark" ></td>
                                 <input type="reset" value="Reset" class="btn btn-outline-dark">
+                                <?php include('contact_config.php'); ?>
                     </form>
                 </div>
                 <div class="img_contact col-6">
@@ -59,12 +56,10 @@ session_start();
             </div>	
         </div>
     </div>
-    <?php include('../footer.php'); ?>
-    
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script>new WOW().init();</script>   
-    <script src="/Car-Tech-TeamB/js/script.js"></script>
+    <script>new WOW().init();</script>    
+    <script src="../js/script.js"></script>
 </body>
 </html>
