@@ -24,7 +24,6 @@
 		<div class="row">
 		<!--Grid column-->
 		<div class="col-6 left-sec">
-			<img src="/Car-Tech-TeamB/imgs/logo1.png" width="70px">
 			<h5 class="text-uppercase">Car Tech</h5>
 			<p>
 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
@@ -59,11 +58,11 @@
 			<ul class="list">
 			<li>
 				<i class="fa fa-map-marker"></i>
-				<span>| ITI Aswan, Egypt</span>
+				<span>ITI Aswan, Egypt</span>
 			</li>
 			<li>
 				<i class="fa fa-phone"></i>
-				<span>| +20 100 3887 479</span>
+				<span>+20 100 3887 479</span>
 			</li>
 			
 			</ul>

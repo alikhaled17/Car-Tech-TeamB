@@ -40,7 +40,7 @@ session_start();
     <div class="about-us row">
         <div class="container">
             <div class="left-side col-2">
-                <h2>About US</h2>
+                <h2>About us</h2>
             </div>
             <div class="right-side col-10">
                 <div></div>
@@ -52,6 +52,8 @@ session_start();
     </div>
     <div id="port" class="our-team row">
         <div class="container">
+            <h2>Our Team </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat impedit sunt molestiae, iusto doloribus aperiam expedita maiores inventore. Consectetur quasi earum magnam ratione sunt soluta quibusdam sapiente praesentium vitae autem.</p>
             <div class="box">
                 <div class="member">
                     <div class="overlay">Turki</div>

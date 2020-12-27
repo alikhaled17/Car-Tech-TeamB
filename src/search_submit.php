@@ -8,7 +8,7 @@ function prompt ($prompt_msg) {
     include_once ("../Config.php");
 
     if (isset ($_POST['search'])) {
-        echo('<h3>Click On Your Selection</h3>
+        echo('<h3>Result</h3>
             <br><br>');
         if ($_POST['Service'] !="" && $_POST['City'] !="") {
             $Service=$_POST['Service'];

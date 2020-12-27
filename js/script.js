@@ -11,6 +11,6 @@ $( document ).ready(function() {
 });
 
 $('.our-team .box .member .overlay').hover(function () {
-    $(this).fadeToggle(1000);
+    $(this).fadeToggle(1500);
 });
 

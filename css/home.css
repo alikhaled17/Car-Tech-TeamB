@@ -3,6 +3,10 @@
     margin-top: 100px;
 }
 
+.image-header .left-side h1 {
+    color: #08526d;
+}
+
 .image-header .right-side,
 .image-header .left-side {
     float:left
@@ -15,25 +19,35 @@
     color: #08526d;
 }
 
+.image-header:hover .left-side p {
+    color: #f54a16;
+    opacity: .8;
+}
 
 .image-header .right-side img{
-    width: 100%;
+    width: 80%;
+    margin-left: 20%;
     transition: all .1s ease-in-out;
 }
 
 .image-header .right-side:hover img {
-    margin-left: 5px;
+    margin-left: 19%;
 }
 
 
 .about-us {
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+
 }
 
 .about-us .right-side,
 .about-us .left-side {
     float:left
+}
+
+.about-us .left-side h2 {
+    color: #08526d;
 }
 
 .about-us .right-side{
@@ -67,7 +81,7 @@
     font-size: 20px;
     width: 85%;
     top: 50px;
-    left: 75px;
+    left: 100px;
 }
 
 
@@ -75,8 +89,30 @@
 {
     width: 100%;
     padding: 0 30px 30px;
+    margin-bottom: 70px;
 
 }
+
+.our-team h2{
+    color: #08526d;
+    cursor: pointer;
+}
+
+.our-team p {
+    width: 80%;
+    margin: 20px 100px 20px 20px;
+    font-weight: 500;
+    opacity: .6;
+    border-left: 4px solid #08526d;
+    padding-left: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.our-team:hover p {
+    color: #f54a16;
+}
+
+
 .our-team:after{
     content: '';
     clear: both;
@@ -84,7 +120,7 @@
 .our-team .box
 {
     width: 100%;
-
+    border-radius: 20px;
     height: 200px;
     float: left;
 }
@@ -98,6 +134,7 @@
 
 .our-team .box .member
 {
+    border-radius: 20px;
     position: relative;
     width: 18%;   
     cursor: pointer;    
@@ -107,6 +144,7 @@
 
 .our-team .box .member .overlay
 {
+    border-radius: 20px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -121,6 +159,7 @@
 
 .our-team .box .member img
 {
+    border-radius: 20px;
     width: 100%;
     margin: 20px 0;
 }
