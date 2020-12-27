@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/uProfile.css" />
-    <link rel="stylesheet" href="../css/Edit.css" />
+    <link rel="stylesheet" href="../css/EditUProfile.css" />
 
 
     <script src="../js/responde.js"></script>    
@@ -80,7 +80,7 @@
                             <input type="password" class="inputStyle" name="pass" value="<?php echo $password ?>" required>
                             <div class="gender">
                                 <i class="fa fa-venus-mars"></i>
-                                <span>
+                                <span class="gender-span">
                                 <input type="radio" class="RadioStyle" name="gender" value="Male"  required/>
                                 <label class="gender">Male</label>
                                 <input type="radio" class="RadioStyle" name="gender" value="Female" required />
@@ -103,7 +103,7 @@
                         <input type="hidden" name="id" value="<?php echo $id ?>">
                         <div >
                             <span> 
-                            <input type="submit" class="btn btn-outline-info" name="update" value="Update">
+                            <input type="submit" class="btn btn-outline-info loc" name="update" value="Update">
                             </span>
                         </div>
                         <br>

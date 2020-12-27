@@ -1,79 +1,3 @@
-<?php 
-    include('../Config.php');
-    session_start();
-    session_regenerate_id();
-    $id = $_SESSION['p_id'];
-    if(isset($_POST['update']))
-    {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['pass'];
-        $phone = $_POST['phone'];
-        $gender = $_POST['gender'];
-
-        $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-        password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
-        ;
-        $conn->query("DELETE FROM prov_services WHERE p_id = $id");
-
-        if (isset($_POST['Gas_Station'])) {
-            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
-        }
-        if (isset($_POST['Car_Wash'])) {
-            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
-        }
-        if (isset($_POST['Car_Maintenance'])) {
-            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
-        }
-        if (isset($_POST['Trailer_Truck'])) {
-            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
-        }
-        if (isset($_POST['City'])) {
-            $selected = $_POST['City'];
-            $Region = $_POST['Region'];
-            $street = $_POST['street'];
-
-            $conn->query("UPDATE p_address SET p_id='$id',region_id='$Region' ,street='$street'") ;
-        }
-        header("Location:pProfile.php");
-    }
-    
-
-	$id = $_SESSION['p_id'];
-    $sql="SELECT users.*,
-        providers.comm_img,
-        providers.ID_img,
-        p_address.street,
-        cities.city_name,
-        regions.region_name,
-        services.ser_name
-    
-        FROM (((((( users
-        inner join providers on providers.user_id = users.id)
-        inner join prov_services on prov_services.p_id = providers.user_id )
-        inner join services on prov_services.ser_id = services.id )
-        inner join p_address on p_address.p_id = providers.user_id)
-        inner join regions on regions.id = p_address.region_id)
-        inner join cities on cities.id = regions.city_id )
-        WHERE
-        users.id = '$id'";
-
-    $result = mysqli_query($conn, $sql);
-    $rows = mysqli_num_rows($result);
-    $user_data = mysqli_fetch_array($result);
-    // $selected = $user_data['City'];
-    // $Region = $user_data['Region'];
-    // $street = $user_data['street'];
-    $username = $user_data['username'];
-    $email = $user_data['email'];
-    $password = $user_data['password'];
-    $phone = $user_data['phone'];
-    $gender = $user_data['gender'];
-
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -89,7 +13,7 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
-    <link rel="stylesheet" href="../css/Edit.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
 
 
     <script src="../js/responde.js"></script>    
@@ -98,6 +22,10 @@
     <?php include('../header.php'); ?>
     <div class="prof-section">
         <div class="container">
+        <?php 
+             include('EditProfilePConfig.php'); 
+        ?>
+        <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
                     <?php 
@@ -124,7 +52,7 @@
                             <input type="password" class="inputStyle" name="pass" value="<?php echo $password ?>" required>
                             <div class="gender">
                                 <i class="fa fa-venus-mars"></i>
-                                <span>
+                                <span class="gender-span">
                                 <input type="radio" class="RadioStyle" name="gender" value="Male"  required/>
                                 <label class="gender">Male</label>
                                 <input type="radio" class="RadioStyle" name="gender" value="Female" required />
@@ -146,7 +74,7 @@
                         </div>
                         <div class="adress">
                         <i class="fa fa-address-book"></i>
-                            <span> 
+                            <span class="inputStyle"> 
                             <?php
                                 echo " " . $user_data['street'] ;
                                 echo ",";
@@ -154,35 +82,39 @@
                                 echo ",";
                                 echo " " . $user_data['city_name'] . " ";
                             ?>  
-                                <br>
-                                <label>City </label>
+                            <br>
+                            <br>
+                                <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
-                                <label>Region</label>
+                                <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select">
                                 <option value="none" selected>Choose...</option>
                                 </select><br><br>
-                                <label for="">Street</label>
-                                <input type="text" name="street" placeholder="street">
+                                <label class="st">Street</label>
+                                <input class="street" type="text" name="street" placeholder="street">
                               
                             </span>
                         </div>
                         <div class="service-check">
                             <input type="checkbox" name="Gas_Station">
-                            <label>Gas Station</label><br>
+                            <label class="service">Gas Station</label><br>
                             <input type="checkbox" name="Car_Wash">
-                            <label>Car Wash</label><br>
+                            <label class="service">Car Wash</label><br>
                             <input type="checkbox" name="Car_Maintenance">
-                            <label>Car Maintenance</label><br>
+                            <label class="service">Car Maintenance</label><br>
                             <input type="checkbox" name="Trailer_Truck">
-                            <label>Trailer Truck</label><br>
+                            <label class="service">Trailer Truck</label><br>
+                        
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
                         </div>
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
-                        <div >
+				        <div >
                             <span> 
-                            <input type="submit" class="btn btn-outline-info" name="update" value="Update">
+                            <input type="submit" class="btn btn-outline-info" name="update" value="Update"><br>
                             </span>
                         </div>
-				        
+                        <div>
+                            <br>
+                        </div>
                     </div>
                 </form>
             </div>
