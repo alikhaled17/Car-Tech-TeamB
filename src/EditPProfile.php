@@ -1,3 +1,7 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +27,7 @@
     <div class="prof-section">
         <div class="container">
         <?php 
-             include('EditProfilePConfig.php'); 
+            include('EditProfilePConfig.php'); 
         ?>
         <br>
             <div class="upper-prof row">
@@ -87,11 +91,11 @@
                                 <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
                                 <label class="labelReion">Region</label>
-                                <select id="Region1" name="Region" class="search-select">
+                                <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose...</option>
                                 </select><br><br>
                                 <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street">
+                                <input class="street" type="text" name="street" placeholder="street" required> 
                               
                             </span>
                         </div>

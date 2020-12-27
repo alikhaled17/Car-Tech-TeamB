@@ -9,11 +9,14 @@
         echo ("<div class='fail'>Please complete your info</div>");
     }
     include('../Config.php');
-    session_start();
-    session_regenerate_id();
     $id = $_SESSION['p_id'];
     if(isset($_POST['update']))
-    {
+    { 
+        // echo $_POST['City'];
+        // echo $_POST['Region'];
+        // echo $_POST['street'];
+
+        // address();
         if (
                 isset($_POST['username'])
                 && isset($_POST['email'])
@@ -21,8 +24,8 @@
                 && isset($_POST['phone'])
                 && isset($_POST['gender']) 
                 && isset($_POST['City'])
-                && isset($_POST['Region'])
                 && isset($_POST['street'])
+                && ($_POST['Region'] != 0)
                 && (isset($_POST['Gas_Station']) || isset($_POST['Car_Wash'])
                 || isset($_POST['Car_Maintenance']) || isset($_POST['Trailer_Truck']))
         )
@@ -35,27 +38,30 @@
 
             $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
             password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
-            ;
+            
             $conn->query("DELETE FROM prov_services WHERE p_id = $id");
 
             if (isset($_POST['Gas_Station'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
             }
             if (isset($_POST['Car_Wash'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2') ");
             }
             if (isset($_POST['Car_Maintenance'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
             }
             if (isset($_POST['Trailer_Truck'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4') ");
             }
-            if (isset($_POST['City'])) {
+            $conn->query("DELETE FROM p_address WHERE p_id = $id");
+            if (isset($_POST['City'])&& isset($_POST['Region']) &&isset($_POST['street']) ) {
                 $selected = $_POST['City'];
                 $Region = $_POST['Region'];
-                $street = $_POST['street'];
-
-                $conn->query("UPDATE p_address SET p_id='$id',region_id='$Region' ,street='$street'") ;
+                $street = $_POST['street']; 
+                $conn->query("INSERT INTO p_address ( p_id , region_id,street) VALUES ('$id','$Region','$street') ") ;
+            }
+            else{
+                fail();
             }
             success();
             header("Location:pProfile.php");
