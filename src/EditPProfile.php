@@ -13,19 +13,21 @@
 
         $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
         password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
+        ;
+        $conn->query("DELETE FROM prov_services WHERE p_id = $id");
 
-        // if (isset($_POST['Gas_Station'])) {
-        //     $conn->query("UPDATE prov_services SET p_id='$id' , ser_id='1' WHERE id=$id");
-        // }
-        // if (isset($_POST['Car_Wash'])) {
-        //     $conn->query("UPDATE prov_services SET p_id='$id' , ser_id='2' WHERE id=$id");
-        // }
-        // if (isset($_POST['Car_Maintenance'])) {
-        //     $conn->query("UPDATE prov_services SET p_id='$id' , ser_id='3' WHERE id=$id");
-        // }
-        // if (isset($_POST['Trailer_Truck'])) {
-        //     $conn->query("UPDATE prov_services SET p_id='$id' , ser_id='4' WHERE id=$id");
-        // }
+        if (isset($_POST['Gas_Station'])) {
+            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
+        }
+        if (isset($_POST['Car_Wash'])) {
+            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2')");
+        }
+        if (isset($_POST['Car_Maintenance'])) {
+            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
+        }
+        if (isset($_POST['Trailer_Truck'])) {
+            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4')");
+        }
         if (isset($_POST['City'])) {
             $selected = $_POST['City'];
             $Region = $_POST['Region'];
@@ -164,7 +166,7 @@
                               
                             </span>
                         </div>
-                        <!-- <div class="service-check">
+                        <div class="service-check">
                             <input type="checkbox" name="Gas_Station">
                             <label>Gas Station</label><br>
                             <input type="checkbox" name="Car_Wash">
@@ -173,7 +175,7 @@
                             <label>Car Maintenance</label><br>
                             <input type="checkbox" name="Trailer_Truck">
                             <label>Trailer Truck</label><br>
-                        </div> -->
+                        </div>
                         <input type="hidden" name="id" value="<?php echo $id ?>">
                         <div >
                             <span> 

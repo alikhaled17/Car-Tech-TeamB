@@ -136,11 +136,23 @@
                     <h4>Services</h4>
                     <ul>
                         <?php
+                        $sql = "SELECT * FROM prov_services WHERE p_id = '$id'";
                         $res = mysqli_query($conn, $sql);
-                        while($ser_name = mysqli_fetch_array($res))
-                        { 
-                            echo "<li>".$ser_name['ser_name']."</li>";
+                        
+                        // echo"befor whil 1";
+                        while($ser_id = mysqli_fetch_array($res))
+                        {
+                            $Sql_ser="SELECT * FROM services WHERE id = ".$ser_id['ser_id']." ";
+                            $res_Ser = mysqli_query($conn, $Sql_ser);
+                            while($ser_Name = mysqli_fetch_array($res_Ser))
+                            { 
+                            // print_r($ser_Name);
+                            // echo"befor whil 2";
+                            echo "<li>".$ser_Name['ser_name']."</li>";
+                            // echo"befor ser 2";
+                            }
                         }
+                        
                         ?>
                     </ul>
                 </div>
