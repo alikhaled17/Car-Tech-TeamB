@@ -1,16 +1,16 @@
-<?php function prompt ($prompt_msg) {
+<?php 
+function prompt ($prompt_msg) {
     echo("<script type='text/javascript'>
         window.alert('Please Choose ".$prompt_msg." For Search');
         </script> ");
-
-    }
+}
 
     include_once ("../Config.php");
 
     if (isset ($_POST['search'])) {
         echo('<h3>Click On Your Selection</h3>
             <br><br>');
-        if ($_POST['Service'] !="none"&& $_POST['City'] !="none") {
+        if ($_POST['Service'] !="" && $_POST['City'] !="") {
             $Service=$_POST['Service'];
             $City=$_POST['City'];
             $Region=$_POST['Region'];
@@ -40,6 +40,7 @@
             }
             
             $result=mysqli_query($conn, $sql);
+
             while($provider=mysqli_fetch_array($result)) {
 
                 echo ('
@@ -62,7 +63,10 @@
                 ');
             }
             
-        }
+        } 
+        // else  {
+        //     echo "<span>please Select City<span>";
+        // }
     }
 
 ?>
