@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
+    <link rel="stylesheet" href="../css/Location.css" />
+
 
 </head>
 <body>
@@ -110,8 +112,18 @@
                             echo " " . $user_data['city_name'] . " ";
                         ?>  
                         </span>
-                        <button>
-                            Go | 
+                        <?php
+                            $sql="SELECT * FROM coordinates WHERE p_id = '$id' ";
+                            $Result = mysqli_query($conn, $sql);
+                            $Location = mysqli_fetch_array($Result);
+                            $lon= $Location['longitude'];
+                            $lat= $Location['latitude'];
+                        ?>
+                        <button >
+                            <?php 
+                                echo "<a href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
+                            ?>
+                            <!-- <a> Go |  </a>    -->
                             <i class="fa fa-location-arrow"></i>
                         </button>
                     </div>
@@ -120,11 +132,22 @@
                     <h4>Services</h4>
                     <ul>
                         <?php
-                        $res = mysqli_query($conn, $sql);
-                        while($ser_name = mysqli_fetch_array($res))
-                        { 
-                            echo "<li>".$ser_name['ser_name']."</li>";
-                        }
+                            $sql = "SELECT * FROM prov_services WHERE p_id = '$id'";
+                            $res = mysqli_query($conn, $sql);
+                            
+                            // echo"befor whil 1";
+                            while($ser_id = mysqli_fetch_array($res))
+                            {
+                                $Sql_ser="SELECT * FROM services WHERE id = ".$ser_id['ser_id']." ";
+                                $res_Ser = mysqli_query($conn, $Sql_ser);
+                                while($ser_Name = mysqli_fetch_array($res_Ser))
+                                { 
+                                // print_r($ser_Name);
+                                // echo"befor whil 2";
+                                echo "<li>".$ser_Name['ser_name']."</li>";
+                                // echo"befor ser 2";
+                                }
+                            }
                         ?>
                     </ul>
                 </div>
