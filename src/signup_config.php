@@ -44,7 +44,7 @@
                         fail();
                     } else {
 
-                        $conn->query("INSERT INTO users (username, email, password, gender, phone, account_type,prof_img) 
+                        $conn->query("INSERT INTO users (username, email, password, gender, phone, account_type, prof_img) 
                                 VALUES ('$username','$email','$password', '$gender','$Phone', 'Provider','$prof_imgID')");
 
                         $result = $conn->query("SELECT id FROM users WHERE email='$email'");

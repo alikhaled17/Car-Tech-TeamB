@@ -126,10 +126,12 @@
                         <?php
                         } else {
                         ?>  
+                            <button class="addloc" style="right: 130px" onclick="getLocation()">Add Location</button>
                             <button class="btn btn-outline-info" onclick="window.location.href ='EditpProfile.php';">Edit Info</button>
                         <?php
                         }
                         ?>
+
                     </div>
                 </div>
                 <div class="services-prof col-12">
@@ -163,6 +165,41 @@
             </div>
         </div>
     </div>
+
+    <script>
+		//var x = document.getElementById("demo");
+		var longitudeCoords=0;
+		var latitudeCoords=0;
+		
+		function getLocation() {
+			//if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			/*} else { 
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}*/
+		}
+
+		function showPosition(position) {
+				console.log(position, "position")
+		
+			longitudeCoords=position.coords.longitude; //30
+			latitudeCoords=position.coords.latitude; //5505
+			
+            var u = "./get_loc.php?lon=" + longitudeCoords+"&lat="+latitudeCoords;
+            var x = window.open(u,'_self');
+		}
+		
+		function goPosition() {
+			if (longitudeCoords==0 || latitudeCoords==0)
+				getLocation();
+			var url = "http://maps.google.com/maps?q="+ latitudeCoords + 
+			",+" +longitudeCoords ;
+			
+			location.replace(url);
+        }
+	</script>
+    
+    
     <?php include('../footer.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -172,3 +209,4 @@
     <script src="../js/script.js"></script>
 </body>
 </html>
+
