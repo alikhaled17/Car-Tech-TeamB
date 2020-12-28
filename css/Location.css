@@ -11,8 +11,8 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-	color: white;
-	text-decoration: none;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 /* selected link */
