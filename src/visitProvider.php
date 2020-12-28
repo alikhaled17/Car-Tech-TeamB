@@ -115,17 +115,19 @@
                         <?php
                             $sql="SELECT * FROM coordinates WHERE p_id = '$id' ";
                             $Result = mysqli_query($conn, $sql);
-                            $Location = mysqli_fetch_array($Result);
-                            $lon= $Location['longitude'];
-                            $lat= $Location['latitude'];
+                            if(mysqli_num_rows($Result) == 1) {
+                                $Location = mysqli_fetch_array($Result);
+                                $lon= $Location['longitude'];
+                                $lat= $Location['latitude'];
                         ?>
-                        <button >
-                            <?php 
-                                echo "<a href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
-                            ?>
-                            <!-- <a> Go |  </a>    -->
-                            <i class="fa fa-location-arrow"></i>
-                        </button>
+                            <button >
+                                <?php 
+                                    echo "<a href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
+                                ?>
+                                <!-- <a> Go |  </a>    -->
+                                <i class="fa fa-location-arrow"></i>
+                            </button>
+                        <?PHP } ?>
                     </div>
                 </div>
                 <div class="services-prof col-12">

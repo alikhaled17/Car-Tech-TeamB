@@ -1,12 +1,7 @@
 <?php 
-function prompt ($prompt_msg) {
-    echo("<script type='text/javascript'>
-        window.alert('Please Choose ".$prompt_msg." For Search');
-        </script> ");
-}
 
     include_once ("../Config.php");
-
+    $x = $_SESSION['p_id'];
     if (isset ($_POST['search'])) {
         echo('<h3>Result</h3>
             <br><br>');
@@ -30,13 +25,18 @@ function prompt ($prompt_msg) {
                     inner join regions on regions.id = p_address.region_id)
                     inner join cities on cities.id = regions.city_id )
                     
-                    WHERE users.account_type ='Provider' and 
+                    WHERE
+                    users.account_type ='Provider' and 
                     prov_services.ser_id ='$Service' and 
                     regions.city_id='$City' and 
                     users.username like '$Name%'";
 
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
+            }
+            
+            if(isset($_SESSION['p_id']))  {
+                $sql = $sql."and users.id != '$x'";
             }
             
             $result=mysqli_query($conn, $sql);
@@ -64,9 +64,9 @@ function prompt ($prompt_msg) {
             }
             
         } 
-        // else  {
-        //     echo "<span>please Select City<span>";
-        // }
+        else  {
+            echo "<span>please Select City<span>";
+        }
     }
 
 ?>
