@@ -122,7 +122,7 @@
                         ?>
                             <button >
                                 <?php 
-                                    echo "<a href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
+                                    echo "<a class='location' href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
                                 ?>
                                 <!-- <a> Go |  </a>    -->
                                 <i class="fa fa-location-arrow"></i>
