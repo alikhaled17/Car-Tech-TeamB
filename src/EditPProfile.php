@@ -53,16 +53,9 @@ session_start();
                         </div>
                         <hr>
                         <div class="personal-info">
-                            <input type="password" class="inputStyle" name="pass" value="<?php echo $password ?>" required>
-                            <div class="gender">
-                                <i class="fa fa-venus-mars"></i>
-                                <span class="gender-span">
-                                <input type="radio" class="RadioStyle" name="gender" value="Male"  required/>
-                                <label class="gender">Male</label>
-                                <input type="radio" class="RadioStyle" name="gender" value="Female" required />
-                                <label class="gender">Female</label><br>
-                                </span>
-                            </div>
+                            <input type="password" class="inputStyle" name="pass" id="myInput" value="<?php echo $password ?>" required>
+                            <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
+                            
                         </div>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
@@ -129,6 +122,7 @@ session_start();
 
     
     <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/Password.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    

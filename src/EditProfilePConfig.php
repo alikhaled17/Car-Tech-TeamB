@@ -12,17 +12,11 @@
     $id = $_SESSION['p_id'];
     if(isset($_POST['update']))
     { 
-        // echo $_POST['City'];
-        // echo $_POST['Region'];
-        // echo $_POST['street'];
-
-        // address();
         if (
                 isset($_POST['username'])
                 && isset($_POST['email'])
                 && isset($_POST['pass'])
                 && isset($_POST['phone'])
-                && isset($_POST['gender']) 
                 && isset($_POST['City'])
                 && isset($_POST['street'])
                 && ($_POST['Region'] != 0)
@@ -34,10 +28,9 @@
             $email = $_POST['email'];
             $password = $_POST['pass'];
             $phone = $_POST['phone'];
-            $gender = $_POST['gender'];
 
             $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-            password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
+            password='$password',phone='$phone' WHERE id=$id");  
             
             $conn->query("DELETE FROM prov_services WHERE p_id = $id");
 
@@ -99,7 +92,6 @@
     $email = $user_data['email'];
     $password = $user_data['password'];
     $phone = $user_data['phone'];
-    $gender = $user_data['gender'];
 
 
 ?>

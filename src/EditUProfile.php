@@ -9,11 +9,13 @@
         $email = $_POST['email'];
         $password = $_POST['pass'];
         $phone = $_POST['phone'];
-        $gender = $_POST['gender'];
-
+        // $gender = $_POST['gender'];
+        // $prof_img = $_FILES['prof_img']['tmp_name'];
+        // $prof_imgID = addslashes(file_get_contents($prof_img));
         $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-        password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
-        
+        password='$password',phone='$phone' WHERE id=$id");  
+        // $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
+        //     password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
         header("Location:uProfile.php");
     }
     
@@ -24,7 +26,6 @@
     $username = $user_data['username'];
     $email = $user_data['email'];
     $password = $user_data['password'];
-    $gender = $user_data['gender'];
     $phone = $user_data['phone'];
 
 ?>
@@ -56,6 +57,7 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="img-prof col-3">
+                <form name="update_user" method="post" action="EditUProfile.php">
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
@@ -68,7 +70,6 @@
                         }
                     ?>
                 </div>
-                <form name="update_user" method="post" action="EditUProfile.php">
                     <div class="info-prof col-9">
                         <div class="account-name">
                             <h3>
@@ -77,16 +78,9 @@
                         </div>
                         <hr>
                         <div class="personal-info">
-                            <input type="password" class="inputStyle" name="pass" value="<?php echo $password ?>" required>
-                            <div class="gender">
-                                <i class="fa fa-venus-mars"></i>
-                                <span class="gender-span">
-                                <input type="radio" class="RadioStyle" name="gender" value="Male"  required/>
-                                <label class="gender">Male</label>
-                                <input type="radio" class="RadioStyle" name="gender" value="Female" required />
-                                <label class="gender">Female</label><br>
-                                </span>
-                            </div>
+                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php echo $password ?>" required>
+                            <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
+                            
                         </div>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
@@ -118,6 +112,7 @@
 
     
     <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/Password.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
