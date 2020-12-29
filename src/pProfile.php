@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="services-prof col-12">
-                    <h4>Services</h4>
+                    <h3>Services</h3>
                     <ul>
                         <?php
                         $sql = "SELECT * FROM prov_services WHERE p_id = '$id'";
@@ -159,8 +159,47 @@
                     </ul>
                 </div>
                 <div class="work-gallery col-12">
-                    <h4>Work Gallery</h4>
-                    
+                    <h3>Work Gallery</h3>
+                    <form method="POST" enctype="multipart/form-data" action="Gallery.php">
+                        
+                        <div class="inForm">
+                            <h4> Add New Image</h4>
+                            <hr>
+                            <p> Your Description </p>
+                            <p>
+                                <textarea name="MSG" cols="45" rows="5" placeholder="Enter description about this photo" required></textarea>
+                            </p>
+                            <p> Image </p>
+                            <p>
+                                <input type="file" name="G_image" accept="image/*" required class="file" >
+                            </p>
+                            <p>
+                                <input type='submit' name='submit' value ='Add New' class="btn btn-outline-info newBtn" >
+                            </p>
+                        </div>
+                        
+                    </form>
+                        
+                    <?php
+                        $sql_G= "SELECT * FROM gallery WHERE P_id='$id'";
+                        $result_G = mysqli_query($conn, $sql_G); 
+                        while ($user_G = mysqli_fetch_array($result_G))
+                            {
+                        ?>
+                            <div class="card" style="width: 19%;">
+                                <div class="card-img-top" >
+                                    <img width="100%" src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_G['G_image']); ?> " />
+                                </div>    
+                                    <div class="card-body" >
+                                    <?php 
+                                        echo"<p class='card-text'>". $user_G['MSG']."</p>";
+                                        echo "<a style='float:right; padding-bottom:10px;' href='Delete.php?id=".$user_G['id']."'><img src='../imgs/Delete.png' width='20px'> </a>";                                    
+                                    ?>
+                                    </div>
+                            </div>
+                            <?php
+                            }
+                    ?>  
                 </div>
             </div>
         </div>

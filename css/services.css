@@ -84,12 +84,14 @@
 .left-side .result .result-card .lift {
   height: 98%;
   margin-left: -10px;
+  overflow: hidden;
   
 }
 
 .left-side .result .result-card .lift img {
   height: 98%;
-  margin-top: 2px;
+/*  width: 100%;
+*/  margin-top: 2px;
   border-radius: 5px;
 }
 .left-side .result .result-card .mid {
@@ -97,9 +99,10 @@
 }
 .left-side .result .result-card .mid h5 {
   margin: 7px 0 -5px 0;
+  flex-wrap: nowrap;
 }
 .left-side .result .result-card .right {
-  padding: 10px 0 0 18%;
+  padding: 10px 0 0 ;
 }
 .left-side .result .result-card .right a {
   text-decoration: none;

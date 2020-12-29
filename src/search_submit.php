@@ -1,7 +1,6 @@
 <?php 
 
     include_once ("../Config.php");
-    $x = $_SESSION['p_id'];
     if (isset ($_POST['search'])) {
         echo('<h3>Result</h3>
             <br><br>');
@@ -36,6 +35,7 @@
             }
             
             if(isset($_SESSION['p_id']))  {
+                $x = $_SESSION['p_id'];
                 $sql = $sql."and users.id != '$x'";
             }
             
@@ -52,11 +52,11 @@
                     echo ('<img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" />');
                 }
                 echo   ('</div>'.
-                        '<div class="mid col-6">
+                        '<div class="mid col-7">
                             <h5>'.$provider['username'].'</h5>'.
                             '<span class="address-card">'.$provider['region_name'].'  '.$provider['city_name'].'</span>
                         </div>
-                        <div class="right col-4">
+                        <div class="right col-3">
                         <a class="btn btn-outline-dark" target="_blank" href="visitProvider.php?id='.$provider['id'].' ">View</a>
                         </div>'.
                     '</li>

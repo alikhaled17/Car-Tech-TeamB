@@ -155,7 +155,26 @@
                 </div>
                 <div class="work-gallery col-12">
                     <h4>Work Gallery</h4>
-                    
+                    <?php
+                        $sql_G= "SELECT * FROM gallery WHERE P_id='$id'";
+                        $result_G = mysqli_query($conn, $sql_G); 
+                        while ($user_G = mysqli_fetch_array($result_G))
+                            {
+                        ?>
+                            <div class="card" style="width: 19%;">
+                                <div class="card-img-top" >
+                                    <img width="100%" src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_G['G_image']); ?> " />
+                                </div>    
+                                    <div class="card-body" >
+                                    <?php 
+                                        echo"<p class='card-text'>". $user_G['MSG']."</p>";
+                                        // echo "<a style='float:right;' href='Delete.php?id=".$user_G['id']."'><img src='../imgs/Delete.png' width='20px'> </a>";                                    
+                                    ?>
+                                    </div>
+                            </div>
+                            <?php
+                            }
+                        ?>  
                 </div>
             </div>
         </div>
