@@ -158,6 +158,8 @@
                     <?php
                         $sql_G= "SELECT * FROM gallery WHERE P_id='$id'";
                         $result_G = mysqli_query($conn, $sql_G); 
+                        $_rows = mysqli_num_rows($result_G);
+                        if($_rows >= 1) {
                         while ($user_G = mysqli_fetch_array($result_G))
                             {
                         ?>
@@ -168,13 +170,13 @@
                                     <div class="card-body" >
                                     <?php 
                                         echo"<p class='card-text'>". $user_G['MSG']."</p>";
-                                        // echo "<a style='float:right;' href='Delete.php?id=".$user_G['id']."'><img src='../imgs/Delete.png' width='20px'> </a>";                                    
                                     ?>
                                     </div>
                             </div>
                             <?php
                             }
-                        ?>  
+                        }
+                    ?>  
                 </div>
             </div>
         </div>

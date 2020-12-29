@@ -1,6 +1,30 @@
-<?php
-ob_start();
-session_start();
+<?php 
+    include('../Config.php');  
+    session_start();
+    
+    $id = $_SESSION['p_id'];
+    $sql="SELECT users.*,
+        providers.comm_img,
+        providers.ID_img,
+        p_address.street,
+        cities.city_name,
+        regions.region_name,
+        services.ser_name
+    
+        FROM (((((( users
+        inner join providers on providers.user_id = users.id)
+        inner join prov_services on prov_services.p_id = providers.user_id )
+        inner join services on prov_services.ser_id = services.id )
+        inner join p_address on p_address.p_id = providers.user_id)
+        inner join regions on regions.id = p_address.region_id)
+        inner join cities on cities.id = regions.city_id )
+        WHERE
+            users.id = '$id'";
+
+    $result = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($result);
+    $user_data = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,26 +72,21 @@ session_start();
                     <div class="info-prof col-9">
                         <div class="account-name">
                             <h3>
-                            <input type="text" class="inputStyle" name="username" value="<?php echo $username ?>"  required>
+                            <input type="text" class="inputStyle" name="username" value="<?php echo $user_data['username']; ?>"  required>
                             </h3>
                         </div>
                         <hr>
                         <div class="personal-info">
-                            <input type="password" class="inputStyle" name="pass" id="myInput" value="<?php echo $password ?>" required>
+                            <input type="password" class="inputStyle" name="pass" id="myInput" value="<?php echo $user_data['password']; ?>" required>
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
-                            
                         </div>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
-                            <span> 
-                                <input class="inputStyle" type="number" name="phone" value="<?php echo $phone ?>" required> 
-                            </span>
+                            <input class="inputStyle" type="number" name="phone" value="<?php echo $user_data['phone']; ?>" required> 
                         </div>
                         <div class="mail">
                             <i class="fa fa-envelope-square"></i>
-                            <span> 
-                                <input type="Email" class="inputStyle" name="email" value="<?php echo $email ?>" required>
-                            </span>
+                            <input type="Email" class="inputStyle" name="email" value="<?php echo $user_data['email']; ?>" required>
                         </div>
                         <div class="adress">
                         <i class="fa fa-address-book"></i>
@@ -92,19 +111,40 @@ session_start();
                               
                             </span>
                         </div>
-                        <div class="service-check">
-                            <input type="checkbox" name="Gas_Station">
-                            <label class="service">Gas Station</label><br>
-                            <input type="checkbox" name="Car_Wash">
-                            <label class="service">Car Wash</label><br>
-                            <input type="checkbox" name="Car_Maintenance">
-                            <label class="service">Car Maintenance</label><br>
-                            <input type="checkbox" name="Trailer_Truck">
-                            <label class="service">Trailer Truck</label><br>
                         
-                            <input type="hidden" name="id" value="<?php echo $id ?>">
-                        </div>
-				        <div >
+                        <div class="service-check">
+                        <?php
+                            $sql = "SELECT 
+                                prov_services.ser_id,
+                                services.ser_name  
+                                FROM prov_services
+                                INNER join services on services.id = prov_services.ser_id
+                                WHERE prov_services.p_id = '$id'";
+                                
+                            $res = mysqli_query($conn, $sql);
+                            $arr = array( "Gas" => 'Gas Station',
+                                            "Wash" => 'Car Wash',
+                                            "Maintenance" => 'Car Maintenance',
+                                            "Trailer" => 'Trailer Truck');
+                            $stack = array();
+                            while($ser_id = mysqli_fetch_array($res))
+                            { 
+                                array_push($stack, $ser_id['ser_name']);
+                            }
+                            foreach ($arr as $k => $v )
+                            {
+                                if(in_array($v , $stack) ) {
+                                    echo "<input type='checkbox' name='".$k."' checked>";
+                                    echo "<label class='service'>". $v ."</label><br>";
+                                } 
+                                else {
+                                    echo "<input type='checkbox' name='".$k."'>";
+                                    echo "<label class='service'>". $v ."</label><br>";
+                                }
+                            }
+                            
+                            ?>
+				        <div>
                             <span> 
                             <input type="submit" class="btn btn-outline-info" name="update" value="Update"><br>
                             </span>

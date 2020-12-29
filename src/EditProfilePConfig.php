@@ -20,8 +20,8 @@
                 && isset($_POST['City'])
                 && isset($_POST['street'])
                 && ($_POST['Region'] != 0)
-                && (isset($_POST['Gas_Station']) || isset($_POST['Car_Wash'])
-                || isset($_POST['Car_Maintenance']) || isset($_POST['Trailer_Truck']))
+                && (isset($_POST['Gas']) || isset($_POST['Wash'])
+                || isset($_POST['Maintenance']) || isset($_POST['Trailer']))
         )
         {
             $username = $_POST['username'];
@@ -34,16 +34,16 @@
             
             $conn->query("DELETE FROM prov_services WHERE p_id = $id");
 
-            if (isset($_POST['Gas_Station'])) {
+            if (isset($_POST['Gas'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
             }
-            if (isset($_POST['Car_Wash'])) {
+            if (isset($_POST['Wash'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2') ");
             }
-            if (isset($_POST['Car_Maintenance'])) {
+            if (isset($_POST['Maintenance'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
             }
-            if (isset($_POST['Trailer_Truck'])) {
+            if (isset($_POST['Trailer'])) {
                 $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4') ");
             }
             $conn->query("DELETE FROM p_address WHERE p_id = $id");

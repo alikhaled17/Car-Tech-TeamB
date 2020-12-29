@@ -30,13 +30,12 @@
 }
 
 .login-section .left-side form input:not([type="submit"]) {
-    width: 60%;
-    border-radius: 20px;
-    border: 1px solid #08526d;
     padding: 3px 8px;
     outline-style: none;
     display: block;
-    margin-left: 20px;
+    width: 86% !important;
+    border-radius: 5px;
+    border: 1px solid #08526d;
 }
 
 .login-section .left-side form input:not([type="submit"]):focus {

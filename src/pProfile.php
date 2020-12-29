@@ -2,7 +2,7 @@
     include('../Config.php');  
     session_start();
     session_regenerate_id();
-    if(!isset($_SESSION['p_id']))      // if there is no valid session
+    if(!isset($_SESSION['p_id']))      
     {
         header("Location:login.php");
     }
@@ -126,7 +126,15 @@
                         <?php
                         } else {
                         ?>  
-                            <button class="addloc" style="right: 130px" onclick="getLocation()">Add Location</button>
+                            <button class="addloc" style="right: 130px" onclick="getLocation()">
+                            <?php 
+                                $cords="SELECT * FROM coordinates WHERE p_id = '$id' ";
+                                $ifcords = mysqli_query($conn, $cords);
+                                if($ex = mysqli_num_rows($ifcords)) {echo "update Location";} 
+                                else {echo "Add Location";}
+                            ?>
+                            </button>
+
                             <button class="btn btn-outline-info" onclick="window.location.href ='EditpProfile.php';">Edit Info</button>
                         <?php
                         }
@@ -183,6 +191,8 @@
                     <?php
                         $sql_G= "SELECT * FROM gallery WHERE P_id='$id'";
                         $result_G = mysqli_query($conn, $sql_G); 
+                        $_rows = mysqli_num_rows($result_G);
+                        if($_rows >= 1) {
                         while ($user_G = mysqli_fetch_array($result_G))
                             {
                         ?>
@@ -199,6 +209,7 @@
                             </div>
                             <?php
                             }
+                        }
                     ?>  
                 </div>
             </div>
