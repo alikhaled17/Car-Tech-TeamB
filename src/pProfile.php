@@ -54,11 +54,13 @@
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
-                <div class="img-prof col-3">
+                <div class="wow wobble img-prof col-3">
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
+                            <div class='imgProf'>
                             <img src="../imgs/default-prof.png"/>       
+                            </div>
                             <?php 
                         } else {
                             ?>
@@ -68,20 +70,19 @@
                             <?php
                         }
                     ?>
+                    
+
                 </div>
                 
-                <div class="info-prof col-9">
+                
+                <div class="col-9 contact-info">
                     <div class="account-name">
                         <h2>
                             <?php 
                                 echo $user_data['username'];
                             ?>
-                        </h2>
+                        </h2><hr>
                     </div>
-                    <hr>
-                </div>
-                <div class="col-3"></div>
-                <div class="col-9 contact-info">
                     <div class="gender">
                         <i class="fa fa-venus-mars"></i>
                         <span>
@@ -117,16 +118,9 @@
                         ?>  
                         </span>
                         <?php
-                        if($user_data['account_type'] == 'Client') {
-                        ?>                            
-                            <button>
-                                Go | 
-                                <i class="fa fa-location-arrow"></i>
-                            </button>
-                        <?php
-                        } else {
+                        if($user_data['account_type'] == 'Provider') {
                         ?>  
-                            <button class="addloc" style="right: 130px" onclick="getLocation()">
+                            <button class="addloc btn btn-outline-info" style="right: 130px" onclick="getLocation()">
                             <?php 
                                 $cords="SELECT * FROM coordinates WHERE p_id = '$id' ";
                                 $ifcords = mysqli_query($conn, $cords);
@@ -142,7 +136,9 @@
 
                     </div>
                 </div>
-                <div class="services-prof col-12">
+
+                
+                <div class="services-prof">
                     <h3>Services</h3>
                     <ul>
                         <?php
@@ -167,15 +163,14 @@
                     </ul>
                 </div>
                 <div class="work-gallery col-12">
-                    <h3>Work Gallery</h3>
                     <form method="POST" enctype="multipart/form-data" action="Gallery.php">
                         
                         <div class="inForm">
-                            <h4> Add New Image</h4>
+                            <h3>Work Gallery</h3>
                             <hr>
                             <p> Your Description </p>
                             <p>
-                                <textarea name="MSG" cols="45" rows="5" placeholder="Enter description about this photo" required></textarea>
+                                <textarea name="MSG"  cols="45" rows="5" placeholder="Enter description about this photo" required></textarea>
                             </p>
                             <p> Image </p>
                             <p>
