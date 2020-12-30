@@ -2,8 +2,7 @@
 
     include_once ("../Config.php");
     if (isset ($_POST['search'])) {
-        echo('<h3>Result</h3>
-            <br><br>');
+        
         if ($_POST['Service'] !="" && $_POST['City'] !="") {
             $Service=$_POST['Service'];
             $City=$_POST['City'];
@@ -39,6 +38,13 @@
                 $sql = $sql."and users.id != '$x'";
             }
             
+            $info=mysqli_query($conn, $sql);
+            if($x=mysqli_fetch_array($info)) {
+               
+                echo("<h3>Result</h3> <span>". $x['ser_name']. ", ".$x['city_name']
+                ."</span><br><br>"); 
+            }
+
             $result=mysqli_query($conn, $sql);
 
             while($provider=mysqli_fetch_array($result)) {

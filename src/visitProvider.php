@@ -39,7 +39,6 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
-    <link rel="stylesheet" href="../css/Location.css" />
 
 
 </head>
@@ -54,7 +53,9 @@
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
+                            <div class='imgProf'>
                             <img src="../imgs/default-prof.png"/>       
+                            </div>
                             <?php 
                         } else {
                             ?>
@@ -66,7 +67,8 @@
                     ?>
                 </div>
                 
-                <div class="info-prof col-9">
+                
+                <div class="col-9 contact-info">
                     <div class="account-name">
                         <h3>
                             <?php 
@@ -74,10 +76,6 @@
                             ?>
                         </h3>
                     </div>
-                    <hr>
-                </div>
-                <div class="col-3"></div>
-                <div class="col-9 contact-info">
                     <div class="gender">
                         <i class="fa fa-venus-mars"></i>
                         <span>
@@ -115,12 +113,13 @@
                         <?php
                             $sql="SELECT * FROM coordinates WHERE p_id = '$id' ";
                             $Result = mysqli_query($conn, $sql);
+                            
                             if(mysqli_num_rows($Result) == 1) {
                                 $Location = mysqli_fetch_array($Result);
                                 $lon= $Location['longitude'];
                                 $lat= $Location['latitude'];
                         ?>
-                            <button >
+                            <button class="go btn btn-outline-info">
                                 <?php 
                                     echo "<a class='location' href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
                                 ?>
@@ -153,7 +152,7 @@
                         ?>
                     </ul>
                 </div>
-                <div class="work-gallery col-12">
+                <div class="v-gallery col-12">
                     <h4>Work Gallery</h4>
                     <?php
                         $sql_G= "SELECT * FROM gallery WHERE P_id='$id'";
