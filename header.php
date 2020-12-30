@@ -29,7 +29,18 @@
                         <a class="nav-link" href="/Car-Tech-TeamB/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Car-Tech-TeamB/src/pProfile.php">Profile</a>
+                    <?php
+                             if(isset($_SESSION['p_id']) )    
+                             {
+                                 echo "<a class='nav-link' href='/Car-Tech-TeamB/src/pProfile.php'> Profile </a>"; 
+                             }
+                             else
+                             {
+                                 echo "<a class='nav-link' href='/Car-Tech-TeamB/src/uProfile.php'> Profile </a>"; 
+                                 
+                             }
+                    ?>
+                        <!-- <a class="nav-link" href="/Car-Tech-TeamB/src/pProfile.php">Profile</a> -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Car-Tech-TeamB/src/services.php">Services</a>

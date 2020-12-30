@@ -64,7 +64,7 @@
     border: 3px solid #08526d;
     border-radius: 10px;
     padding: 2%;
-    margin: 50px 1% 0 1% ;
+    margin: 100px 1% 0 1% ;
     width: 100%;
 }
 
@@ -139,13 +139,6 @@ textarea:focus {
     margin-bottom:1% !important; 
     margin-top:1% !important ;
     padding: 1% !important ;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) !important;
-}
-.card:hover
-{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
-    border: 1px gray solid !important;
-
 }
 .card-img-top
 {
@@ -180,10 +173,16 @@ textarea:focus {
     padding: 3% 0% 1% 5% !important;
 }
 
-.v-gallery {
+.v-gallery 
+{
     padding: 2%;
     border-radius: 10px 10px 0 0;
     border: 3px #08526d solid;
     margin: 2% 0 1% 1%;
     border-bottom: none;
+}
+.Add
+{
+    width: 100% !important; 
+
 }

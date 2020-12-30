@@ -92,9 +92,14 @@
                         <span> 
                         <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
                             update </button>
+                            <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
+                            Show Favorite 
+                             </button>
                         </span>
+                        
                     </div>                    
                 </div>
+               
             </div>
         </div>
     </div>

@@ -137,7 +137,13 @@
                     </div>
                 </div>
 
-                
+                <div class="services-prof">
+                    <h3>Favorite list</h3>
+                    <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
+                        Show Favorite 
+                    </button>
+                    
+                </div>
                 <div class="services-prof">
                     <h3>Services</h3>
                     <ul>
