@@ -270,6 +270,13 @@ textarea
     margin-right:1% !important ;
     margin-bottom:1% !important 
     padding: 1% !important ;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) !important;
+}
+.card:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
+    border: 1px gray solid !important;
+
 }
 .card-img-top
 {
