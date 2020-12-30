@@ -3,7 +3,7 @@
     theme coder: ITi-Team-B 
     date: 20/12/2020
     firstColor: #08526d
-    secoundColor: #d61a33    
+    secoundColor: #b90d24    
 */
 
 /* start global */
@@ -12,6 +12,10 @@
     margin: 0;
     padding: 0 ;
     box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
 }
 /* End global */
 
@@ -28,13 +32,21 @@
 .upper-bar .get-quote
 {
     display: inline-block;
-    border: 1px solid #d61a33;
+    border: 1px solid #b90d24;
     padding: 2px 10px;
     margin-left: 20px;
     cursor: pointer;
 }
 /* End Upper Bar */
 /* Start Nav Bar */
+.navbar-brand {
+    margin-bottom: -10px !important;
+}
+
+.navbar-brand img {
+    margin-bottom: 20px;
+}
+
 .navbar-brand > span
 {
     font-weight: bold;
@@ -48,21 +60,86 @@
 
 .navbar-brand span:last-child
 {
-    color: #d61a33;
+    color: #b90d24;
     font-weight: 500;
 }
 
 .navbar-nav .nav-link
 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
-    text-transform: uppercase;
+    font-weight: bolder;
     margin-left: 20px;
     color: #08526d !important
 }
 
-.navbar-nav .nav-item.active .nav-link
+.navbar-nav
+.nav-item.active
+.nav-link
 {
-    color: #d61a33 !important
+    color: #b90d24 !important;
 }
 /* End Nav Bar */
+
+/* Start Footer */
+footer {
+    background-color: #d6dadb69;
+}
+
+.left-sec h5,
+.right-sec h5 {
+    color: #08526d;
+}
+
+.left-sec p {
+    margin: 10px;
+    color: #08526d;
+    opacity: .5;
+    font-weight: 500;
+}
+
+.left-sec, .mid-sec, .right-sec {
+    padding: 20px ;
+}
+
+.mid-sec ul,
+.right-sec ul{
+    list-style: none ;
+}
+
+.mid-sec {
+    margin-top: 20px;
+}
+
+.mid-sec ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #08526d;
+}
+
+
+
+.right-sec {
+    list-style: none ;
+}
+
+.right-sec ul li {
+    margin: 15px;
+}
+
+.right-sec i {
+    background-color: #08526d;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    width: 25px;
+    text-align: center;
+}
+
+.right-sec span {
+    text-decoration: none;
+    font-weight: 500;
+    color: #08526d;
+    margin-left: 10px;
+}
+/* End Footer */
