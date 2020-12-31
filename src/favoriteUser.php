@@ -10,14 +10,6 @@ session_start();
     {
         $id=$_SESSION['p_id'];
     }
-// if (isset($_POST['submit_fav']))
-// {
-//     if ( $current_id != $id ){
-//         echo"in else if ";
-//         $conn->query("INSERT INTO favorite (user_id,favorite_id) VALUES ('$current_id','$id')");
-//     }
-// }
-    
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +25,6 @@ session_start();
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
     <link rel="stylesheet" href="../css/fav.css" />
 
 
@@ -47,15 +38,15 @@ session_start();
 
             <div class="row">
                 <div class="left-side col-12">
+                    <h2>Results</h2>
                     <div class="result">
-                        <ul id="result">
+                        <ul id="row">
                         <?php
                             $sql="SELECT favorite_id FROM favorite WHERE user_id= '$id'";
                             $result=mysqli_query($conn, $sql);
                             
                             if(mysqli_num_rows($result) >= 1)
                             {
-                                echo "hhhhhhhh";
                                 while($fav_id=mysqli_fetch_array($result)) {
                                     $favSql="SELECT * FROM users WHERE id='".$fav_id['favorite_id']."' " ;
                                     $favResult=mysqli_query($conn, $favSql);
@@ -64,23 +55,21 @@ session_start();
                                     while($provider=mysqli_fetch_array($favResult)) {
                         
                                         echo ('
-                                                <li class="result-card row">
-                                                    <div class="lift col-2"> ');
+                                                <li class="result-card">
+                                                <div class="lift"> ');
                                         if($provider['prof_img'] == '') {
-                                            echo ('<img src="../imgs/default-prof.png"/>');     
+                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="../imgs/default-prof.png"/></a>');     
                                         } else {
-                                            echo ('<img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" />');
+                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" /></a>');
                                         }
                                         echo   ('</div>'.
-                                                '<div class="mid col-7">
-                                                    <h5>'.$provider['username'].'</h5>'.
-                                                    '<span class="address-card">'.$provider['email'].' - '.$provider['phone'].'</span>
+                                                '<div class="name-hover">
+                                                    <h6>'.$provider['username'].'</h6>
                                                 </div>
-                                                <div class="right col-3">
-                                                <a class="btn btn-outline-dark" target="_blank" href="visitProvider.php?id='.$provider['id'].' ">View</a>
-                                                </div>'.
-                                            '</li>
-                                        ');
+                                                <div class="x">
+                                                    <a  href="del_fav.php?id='.$provider['id'].' ">x</a>
+                                                </div>
+                                            </li>');
                                     }
                                 }
                             } 

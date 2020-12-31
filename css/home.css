@@ -19,7 +19,7 @@
     color: #08526d;
 }
 
-.image-header:hover .left-side p {
+.image-header .left-side p:hover  {
     color: #f54a16;
     opacity: .8;
 }
