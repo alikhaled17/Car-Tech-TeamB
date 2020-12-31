@@ -67,7 +67,7 @@ session_start();
                                                     <h6>'.$provider['username'].'</h6>
                                                 </div>
                                                 <div class="x">
-                                                    <a  href="del_fav.php?id='.$provider['id'].' ">x</a>
+                                                    <a class="ax"  href="del_fav.php?id='.$provider['id'].' ">x</a>
                                                 </div>
                                             </li>');
                                     }

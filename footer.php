@@ -74,7 +74,7 @@
 	<!-- Grid container -->
 
 	<!-- Copyright -->
-	<div class="text-center p-3" style="background-color: #08526d">
+	<div class="text-center p-3" style="background-color: #08526d; color: black;">
 		© 2020 Copyright:
 		<a class="text-white" >Car Service</a>
 	</div>
