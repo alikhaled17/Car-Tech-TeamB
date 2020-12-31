@@ -35,7 +35,7 @@
 }
 
 .right-side .search-select {
-  width: 40% !important;
+  width: 74% !important;
   border-radius: 5px;
   border: 1px solid #08526d;
   padding: 3px 8px;
@@ -44,7 +44,7 @@
 
 .right-side input[type="text"]
 {
-  width: 50% !important;
+  width: 74% !important;
   border-radius: 5px;
   border: 1px solid #08526d;
   padding: 3px 8px;
@@ -110,4 +110,22 @@
   border-radius: 5px;
   width: 100% !important;
   border-width: 2px !important;
+}
+
+.no-result {
+  /* display: flex; */
+}
+
+.no-result img {
+  margin: 22% 0 0 40%;
+  width: 30%;
+}
+
+
+.no-result h5 {
+  text-align: center;
+  border-top: 2px solid #08526d;
+  color: rgb(182, 32, 47);
+  padding-top: 10px;
+  margin: 4% 0 0 20%;
 }

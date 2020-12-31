@@ -23,9 +23,9 @@ session_start();
     <?php include('Config.php'); ?>
 
     <!-- Home -->
-    <div class="image-header row">
+    <div class="image-header row ">
         <div class="container">
-            <div class="left-side col-6">
+            <div class="left-side col-6 wow zoomInDown">
                 <h1>Car Tech</h1>
                 <hr>
                 <p>
@@ -113,23 +113,23 @@ session_start();
             <h2>Our Team </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat impedit sunt molestiae, iusto doloribus aperiam expedita maiores inventore. Consectetur quasi earum magnam ratione sunt soluta quibusdam sapiente praesentium vitae autem.</p>
             <div class="box">
-                <div class="member">
+                <div class="member wow bounceInDown">
                     <div class="overlay">Turki</div>
                     <img src="imgs/ahmed_T.jpg" alt="">
                 </div>
-                <div class="member">
+                <div class="member wow bounceInUp">
                     <div class="overlay">Ali</div>
                     <img src="imgs/ali_k.jpg" alt="">
                 </div>
-                <div class="member">
+                <div class="member wow bounceInDown">
                     <div class="overlay">Sally</div>                    
                     <img src="imgs/sally_E.jpg" alt="">
                 </div>
-                <div class="member">
+                <div class="member wow bounceInUp">
                     <div class="overlay">Mayar</div>                    
                     <img src="imgs/mayar_a.jpg" alt="">
                 </div>
-                <div class="member">
+                <div class="member wow bounceInDown">
                     <div class="overlay">Mahmoud</div>                    
                     <img src="imgs/mahmoud_Y.jpg" alt="">
                 </div>

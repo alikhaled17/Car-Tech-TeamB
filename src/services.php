@@ -26,9 +26,9 @@ session_start();
 
 
     <!-- Search -->
-    <div class="outer">
+    <div class="outer ">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="right-side col-6">
                     <h3>Select Choose</h3><hr class="hr">
                     <br>

@@ -58,7 +58,7 @@ session_start();
                                 
                     </form>
                 </div>
-                <div class="img_contact col-6">
+                <div class="img_contact col-6 wow bounceInRight">
                     <img class="img_Form" src="../imgs/ContactUsForm.png">
                 </div>
             </div>	

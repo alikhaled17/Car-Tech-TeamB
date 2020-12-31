@@ -88,7 +88,7 @@
                         } else {
                             ?>
                             <div class='imgProf'>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
+                            <img class="wow bounceInDown" src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
                             </div>
                             <?php
                         }
@@ -100,13 +100,6 @@
                             if(mysqli_num_rows($search_result) != 1)
                         {
                     ?>
-                        
-                        <!-- // $search_sql="SELECT favorite_id FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id'  " ;
-                        // $search_result = mysqli_query($conn, $search_sql);
-                        // // $search_rows = mysqli_num_rows($search_result);
-                        // if(mysqli_num_rows($search_result) != 1)
-                        // { -->
-                    
                         <form method="POST" >
                             <button class="btn btn-outline-info Add" name="add_fav"> Add To Favorite  </button>
                         </form>
