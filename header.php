@@ -83,8 +83,8 @@
                         <a class="nav-link" href="/Car-Tech-TeamB/src/contact.php">Contact US</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Settings
+                        <a class="nav-link dropdown-toggle fa fa-user-circle-o " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- Settings -->
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
