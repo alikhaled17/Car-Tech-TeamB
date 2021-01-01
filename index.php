@@ -45,8 +45,7 @@ session_start();
             <div class="right-side col-10">
                 <div></div>
                 <p>
-                Our mission is to organize the cars services information and make it accessible and useful.
-                </p>
+                We offer full range of cars services to vehicle owners in Egypt . Our professionals know how to handle a wide range of car services. Whether you drive a passenger car or medium sized truck or SUV, mechanics strive to ensure that your vehicle will be performing at its best before leaving car shop. Whether you drive a medium sized truck or passenger car or SUV, our mechanics strive to ensure.                </p>
             </div>
         </div>
     </div>
@@ -56,7 +55,7 @@ session_start();
         <div class="container">
             <div class="upper">
                 <h2>Our Services</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vel cumque numquam perspiciatis itaque, provident nihil deserunt, sequi, sunt rerum officia asperiores odit sit suscipit distinctio earum voluptatem. Rem, accusamus!</p>
+                <p>Car care is our specialty</p>
             </div>
             <div class="elems">
                 <div class="left col-4">
@@ -69,7 +68,7 @@ session_start();
                         </div>
                         <div class="info">
                             <h3>Car Maintainance</h3>
-                            <p>Car maintainance is a good service you want!</p>
+                            <p>Car Maintainance include general car care, wheel alignment, wheel balancing, battery trade and tire trade, express mechanical and electrical services.</p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +82,7 @@ session_start();
                         </div>
                         <div class="info">
                             <h3>Gaz Station</h3>
-                            <p>Gaz Station is a good service you want!</p>
+                            <p>we offer quick oil changes from a wide range of automotive and industrial oils.We also offer a complementary lubricant check-up for overall vehicle safety. </p>
                         </div>
                     </div>
                 </div>
@@ -97,7 +96,7 @@ session_start();
                         </div>
                         <div class="info">
                             <h3>Trailer Truck</h3>
-                            <p>Trailer Truck is a good service you want!</p>
+                            <p>Our drivers and dispatchers are able help you by sending the right type of equipment and personnel for your towing situation. Our wrecker drivers are fully trained  </p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +110,7 @@ session_start();
     <div id="port" class="our-team row">
         <div class="container">
             <h2>Our Team </h2>
-            <p>Get to know some of us, explore engaging stories</p>
+            <p>Our team is your team. When your mission is to be better, faster and smarter, you need the best people driving your vision forward , Get to know some of us.</p>
             <div class="box">
                 <div class="member wow bounceInUp">
                     <div class="overlay">Ali</div>
