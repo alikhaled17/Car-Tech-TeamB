@@ -44,7 +44,7 @@ session_start();
 
                             <!-- Region -->
                             <label class="label">Region</label>
-                            <select id="Region1" name="Region" class="search-select" onchange="change();" >
+                            <select id="Region1" name="Region" class="search-select" onchange="change()" >
                                 <option value="none" selected >Choose...</option>
                             </select>
                             <hr>
@@ -54,19 +54,10 @@ session_start();
                             <input id="name_p" type="text" placeholder="Search.." name="search_name"> <br>
 
                             <!-- search_submit -->
-                            <input id="check" class="btn btn-outline-dark" disabled="disabled" type="submit" value="Search" name="search" onclick="location.reload();">
+                            <input id="check" class="btn btn-outline-dark" disabled="disabled" 
+                                type="submit" value="Search" name="search" onclick="location.reload();">
                         </form>
-                        <?php
-                        //mosh bedo5l el if condition asln becaus rhe form didin't post because disabel att.
-                        if (isset($_POST['Region'])!= "none")
-                        {?>
-                            <script>
-                                function change()
-                               { document.getElementById("check").disabled = false;}
-                            </script>
-                        <?php
-                        }
-                        ?>
+                        <!-- //mosh bedo5l el if condition asln becaus rhe form didin't post because disabel att. -->   
                     </div>
                 </div>
 
@@ -118,6 +109,10 @@ session_start();
     //  opt.value = localStorage.getItem('Service');
     //  opt.text = localStorage.getItem('Service');
     // }
+    function change()
+    {
+        document.getElementById("check").disabled = false;
+    }
     changeService();
     changeCity();
     changeRigion();  
