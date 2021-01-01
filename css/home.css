@@ -72,6 +72,10 @@
 .about-us .right-side:hover div{
     transform: skewX(0deg);
 }
+.aboutH2
+{
+    margin-top: 70px;
+}
 
 .about-us .right-side p{
     position: absolute;

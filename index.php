@@ -29,9 +29,7 @@ session_start();
                 <h1>Car Tech</h1>
                 <hr>
                 <p>
-                Car tech is dedicated to helping people discover the cars services in Egypt .
-                <br>
-                We use technology to provide you with the necessary information you need for your car
+                We offer full range of cars services to vehicle owners in Egypt . Our professionals know how to handle a wide range of car services. Whether you drive a passenger car or medium sized truck or SUV, mechanics strive to ensure that your vehicle will be performing at its best before leaving car shop. Whether you drive a medium sized truck or passenger car or SUV, our mechanics strive to ensure.
                 </p>
             </div>
             <div class="right-side col-6">
@@ -42,12 +40,16 @@ session_start();
     <div class="about-us row">
         <div class="container">
             <div class="left-side col-2">
-                <h2>About us</h2>
+                <h2 class="aboutH2">About us</h2>
             </div>
             <div class="right-side col-10">
                 <div></div>
                 <p>
-                We offer full range of cars services to vehicle owners in Egypt . Our professionals know how to handle a wide range of car services. Whether you drive a passenger car or medium sized truck or SUV, mechanics strive to ensure that your vehicle will be performing at its best before leaving car shop. Whether you drive a medium sized truck or passenger car or SUV, our mechanics strive to ensure.                </p>
+                Our expertise with various vehicles, automotive technologies is as diverse as the people .
+                We believe in the power of ordinary people to do extra ordinary things.
+                We employ our collective potential to vastly improve your automotive service experience.
+                We all have one thing in common…Passion for the automobile.
+            </p>
             </div>
         </div>
     </div>
@@ -98,7 +100,7 @@ session_start();
                         </div>
                         <div class="info">
                             <h3>Trailer Truck</h3>
-                            <p>Our drivers and dispatchers are able help you by sending the right type of equipment and personnel for your towing situation. Our wrecker drivers are fully trained  </p>
+                            <p>Our drivers and dispatchers are able help you by sending the right type of equipment and personnel for your towing situation.</p>
                         </div>
                     </div>
                 </div>

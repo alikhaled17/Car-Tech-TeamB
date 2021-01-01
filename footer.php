@@ -26,9 +26,7 @@
 		<div class="col-6 left-sec">
 			<h5 class="text-uppercase">Car Tech</h5>
 			<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-			molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-			voluptatem veniam, est atque cumque eum delectus sint!
+			Our mission is to organize cars services information and make it accessible and useful
 			</p>
 		</div>
 		<!--Grid column-->
@@ -39,13 +37,10 @@
 
 			<ul class="">
 			<li>
-				<a href="#">Home</a>
+				<a href="/Car-Tech-TeamB/index.php">Home</a>
 			</li>
 			<li>
-				<a href="#">Services</a>
-			</li>
-			<li>
-				<a href="#" >Sign up</a>
+				<a href="/Car-Tech-TeamB/src/services.php">Services</a>
 			</li>
 			</ul>
 		</div>
