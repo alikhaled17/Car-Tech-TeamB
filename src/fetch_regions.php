@@ -1,5 +1,5 @@
 <?php
-    echo '<option value="none" selected >Choose...</option>';
+    echo '<option value="none" selected >Choose ...</option>';
     if(isset($_POST['get_option']))
     {
 

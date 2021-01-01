@@ -3,7 +3,7 @@ $sql="SELECT id,ser_name FROM `services`";
 $result=mysqli_query($conn, $sql);
 ?>
 <select name="Service" id="filter" required class="search-select">
-<option value="" selected >Choose...</option>
+<option value="" selected >Choose ...</option>
 <?php
 while($myservice=mysqli_fetch_array($result)) {
 

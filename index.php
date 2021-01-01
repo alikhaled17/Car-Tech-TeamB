@@ -29,7 +29,7 @@ session_start();
                 <h1>Car Tech</h1>
                 <hr>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur amet animi vero tempora, odit esse non eos dignissimos ipsa possimus alias, necessitatibus molestias, error cumque delectus omnis ratione eaque.
+                Car tech is dedicated to helping people discover the cars services in Egypt
                 </p>
             </div>
             <div class="right-side col-6">
@@ -45,7 +45,7 @@ session_start();
             <div class="right-side col-10">
                 <div></div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptatibus facilis possimus nihil officiis voluptatum reprehenderit autem reiciendis impedit qui velit ducimus odio, unde amet! Provident assumenda sequi reprehenderit eius?
+                Our mission is to organize the cars services information and make it accessible and useful.
                 </p>
             </div>
         </div>
@@ -111,19 +111,11 @@ session_start();
     <div id="port" class="our-team row">
         <div class="container">
             <h2>Our Team </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat impedit sunt molestiae, iusto doloribus aperiam expedita maiores inventore. Consectetur quasi earum magnam ratione sunt soluta quibusdam sapiente praesentium vitae autem.</p>
+            <p>Get to know some of us, explore engaging stories</p>
             <div class="box">
-                <div class="member wow bounceInDown">
-                    <div class="overlay">Turki</div>
-                    <img src="imgs/ahmed_T.jpg" alt="">
-                </div>
                 <div class="member wow bounceInUp">
                     <div class="overlay">Ali</div>
                     <img src="imgs/ali_k.jpg" alt="">
-                </div>
-                <div class="member wow bounceInDown">
-                    <div class="overlay">Sally</div>                    
-                    <img src="imgs/sally_E.jpg" alt="">
                 </div>
                 <div class="member wow bounceInUp">
                     <div class="overlay">Mayar</div>                    
@@ -133,6 +125,15 @@ session_start();
                     <div class="overlay">Mahmoud</div>                    
                     <img src="imgs/mahmoud_Y.jpg" alt="">
                 </div>
+                <div class="member wow bounceInDown">
+                    <div class="overlay">Turki</div>
+                    <img src="imgs/ahmed_T.jpg" alt="">
+                </div>
+                
+                <div class="member wow bounceInDown">
+                    <div class="overlay">Sally</div>                    
+                    <img src="imgs/sally_E.jpg" alt="">
+                </div>  
             </div>
         </div>
     </div>

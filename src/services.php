@@ -44,8 +44,9 @@ session_start();
 
                             <!-- Region -->
                             <label class="label">Region</label>
+                            <!-- onchange="change()"  -->
                             <select id="Region1" name="Region" class="search-select" onchange="change()" >
-                                <option value="none" selected >Choose...</option>
+                                <option value="Choose" >Choose ...</option>
                             </select>
                             <hr>
 
@@ -89,34 +90,44 @@ session_start();
     document.getElementById("City1").selectedIndex = City;
     }    
     function changeService(){
-    document.getElementById("filter").selectedIndex = Service;
+        document.getElementById("filter").selectedIndex = Service;
     }
-    // function changeRigion(){
-    // document.getElementById("Region1").selectedIndex = Region;
-    // }
-//    function changeCity(){
-//      var opt= document.getElementById('City1').options[0];
-//      opt.value =localStorage.getItem('City');
-//      opt.text = localStorage.getItem('City');
-//     }
+
     function changeRigion(){
-     var opt= document.getElementById('Region1').options[0];
-     opt.value = localStorage.getItem('Region');
-     opt.text = localStorage.getItem('Region');
+        var opt= document.getElementById('Region1').options[0];
+        opt.value = localStorage.getItem('Region');
+        opt.text = localStorage.getItem('Region');
+        console.log (opt.value);
+        console.log (opt.text);
+        if ( opt.text == 'null'|| opt.text=='null')
+        {
+            opt.value = 'Choose ...';
+            opt.text = 'Choose ...';
+        }
     }
-    // function changeService(){
-    //  var opt= document.getElementById('filter').options[0];
-    //  opt.value = localStorage.getItem('Service');
-    //  opt.text = localStorage.getItem('Service');
-    // }
+</script>
+<script>
+    function isDisabled({region, city, button}) {
+        console.log({region, city});
+        if (region == "Choose ..." || city == "Choose ...") button.disabled = true;
+        else {
+            button.disabled = false;
+        }
+    }
+
     function change()
     {
-        document.getElementById("check").disabled = false;
+        let region= document.getElementById('Region1').value;
+        let city= document.getElementById('City1').value;
+        let button = document.getElementById("check");
+        return isDisabled({ region, city, button });
     }
+
     changeService();
     changeCity();
-    changeRigion();  
-    localStorage.clear();  
+    changeRigion();   
+    localStorage.clear();
+    
 </script>
 
 </body>

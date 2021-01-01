@@ -79,7 +79,7 @@
                         ?>
                         <label>Region</label>
                         <select id="Region1" name="Region" class="search-select">
-                            <option value="none" selected>Choose...</option>
+                            <option value="none" selected>Choose ...</option>
                         </select><br><br>
                         <label for="">Street</label>
                         <input type="text" name="street" placeholder="street">

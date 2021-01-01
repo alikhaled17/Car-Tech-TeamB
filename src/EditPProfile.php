@@ -104,7 +104,7 @@
                                 <?php include('search_citis.php'); ?>
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
-                                <option value="none" selected>Choose...</option>
+                                <option value="none" selected>Choose ...</option>
                                 </select><br><br>
                                 <label class="st">Street</label>
                                 <input class="street" type="text" name="street" placeholder="street" required> 
