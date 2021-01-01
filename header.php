@@ -1,4 +1,37 @@
-
+<script>
+        /*Task One */
+        function getOne()
+        {
+            var tipsArray=[];
+            tipsArray[0]="You can totally do this";
+            tipsArray[1]="If it matters to you, you’ll find a way." ;
+            tipsArray[2]="Dream without fear. Love without limits.";
+            tipsArray[3]="When nothing goes right, go left";
+            tipsArray[4]="Impossible is for the unwilling. John Keats";
+            tipsArray[5]="At the end of hardship comes happiness.";
+            tipsArray[6]="Take the risk or lose the chance";
+            tipsArray[7]="He who is brave is free. Seneca ";
+            tipsArray[8]="Prove them wrong";
+            tipsArray[9]="No guts, no story. Chris Brady";
+            tipsArray[10]="My life is my message";
+            tipsArray[11]="Boldness be my friend. William Shakespeare";
+            tipsArray[13]="Keep going. Be all in. Bryan Hutchinson";
+            tipsArray[14]="My life is my argument. Albert Schweitzer";
+            tipsArray[15]="Dream big. Pray bigger.";
+            tipsArray[16]="Leave no stone unturned. Euripides";
+            tipsArray[17]="Fight till the last gasp. William Shakespeare";
+            tipsArray[18]="If you want it, work for it.";
+            tipsArray[19]="And so the adventure begins.";
+            tipsArray[20]="Do it with passion or not at all";
+            tipsArray[21]="Grow through what you go through.";
+            tipsArray[22]="Do it with passion or not at all.";
+            tipsArray[22]="You matter";
+            var randomIndex = Math.floor(Math.random()*tipsArray.length);
+            var randomTips = tipsArray[randomIndex];
+            document.getElementById("test").innerHTML =randomTips;
+        }
+		
+</script>
     <!-- Start Upper Bar -->
     <div class="upper-bar">
         <div class="container">
@@ -8,8 +41,9 @@
                     <i class="fa fa-envelope-o"></i> CarTech@gmail.com
                 </div>
                 <div class="col-sm text-right">
-                    <span>Let's Work Together! </span>
-                    <span class="get-quote">Get Qoute</span>
+                    <span id="test">
+                    </span>
+                    <div class="get-quote" onclick="getOne();">Get Qoute</div>
                 </div>
             </div>
         </div>

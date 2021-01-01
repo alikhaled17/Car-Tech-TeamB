@@ -21,7 +21,7 @@ session_start();
 
 <body>
     <!-- Header -->
-    <?php include('../header.php'); ?>
+    <?php include('../header.php'); ?> 
     <!-- Services -->
 
 
@@ -44,7 +44,7 @@ session_start();
 
                             <!-- Region -->
                             <label class="label">Region</label>
-                            <select id="Region1" name="Region" class="search-select">
+                            <select id="Region1" name="Region" class="search-select" onchange="change();" >
                                 <option value="none" selected >Choose...</option>
                             </select>
                             <hr>
@@ -54,8 +54,19 @@ session_start();
                             <input id="name_p" type="text" placeholder="Search.." name="search_name"> <br>
 
                             <!-- search_submit -->
-                            <input class="btn btn-outline-dark" type="submit" value="Search" name="search" >
+                            <input id="check" class="btn btn-outline-dark" disabled="disabled" type="submit" value="Search" name="search" onclick="location.reload();">
                         </form>
+                        <?php
+                        //mosh bedo5l el if condition asln becaus rhe form didin't post because disabel att.
+                        if (isset($_POST['Region'])!= "none")
+                        {?>
+                            <script>
+                                function change()
+                               { document.getElementById("check").disabled = false;}
+                            </script>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
 
@@ -78,5 +89,40 @@ session_start();
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>
     <script src="../js/script.js"></script>
+    <script>
+    var City = localStorage.getItem('City');
+    var Region = localStorage.getItem('Region');
+    var Service = localStorage.getItem('Service');
+    var name = localStorage.getItem('Name');
+    function changeCity(){
+    document.getElementById("City1").selectedIndex = City;
+    }    
+    function changeService(){
+    document.getElementById("filter").selectedIndex = Service;
+    }
+    // function changeRigion(){
+    // document.getElementById("Region1").selectedIndex = Region;
+    // }
+//    function changeCity(){
+//      var opt= document.getElementById('City1').options[0];
+//      opt.value =localStorage.getItem('City');
+//      opt.text = localStorage.getItem('City');
+//     }
+    function changeRigion(){
+     var opt= document.getElementById('Region1').options[0];
+     opt.value = localStorage.getItem('Region');
+     opt.text = localStorage.getItem('Region');
+    }
+    // function changeService(){
+    //  var opt= document.getElementById('filter').options[0];
+    //  opt.value = localStorage.getItem('Service');
+    //  opt.text = localStorage.getItem('Service');
+    // }
+    changeService();
+    changeCity();
+    changeRigion();  
+    localStorage.clear();  
+</script>
+
 </body>
 </html>

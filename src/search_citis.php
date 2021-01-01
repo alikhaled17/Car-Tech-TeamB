@@ -13,7 +13,6 @@
         }
     );
 }
-
 </script>
 <select name="City" id="City1" class="search-select" onchange="fetch_region(this.value);" > 
 <?php
