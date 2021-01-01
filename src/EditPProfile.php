@@ -34,7 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech - Profile</title>
+    <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -101,7 +101,7 @@
                             <br>
                             <br>
                                 <label class="labelCity" >City </label>
-                                <?php include('search_citis.php'); ?>
+                                <?php include('city.php'); ?>
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose ...</option>

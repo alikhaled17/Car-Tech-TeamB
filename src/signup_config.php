@@ -8,7 +8,7 @@
 
     function fail()
     {
-        echo ("<div class='fail'>Please complete your info</div>");
+        echo ("<div class='fail'>Please complete your info or your email is already exist </div>");
     }
 
 
