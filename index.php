@@ -29,7 +29,9 @@ session_start();
                 <h1>Car Tech</h1>
                 <hr>
                 <p>
-                Car tech is dedicated to helping people discover the cars services in Egypt
+                Car tech is dedicated to helping people discover the cars services in Egypt .
+                <br>
+                We use technology to provide you with the necessary information you need for your car
                 </p>
             </div>
             <div class="right-side col-6">
