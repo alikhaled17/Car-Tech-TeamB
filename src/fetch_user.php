@@ -5,19 +5,18 @@ include('forMsg.php');
 
 session_start();
 
+// = 3
 
 if(isset($_SESSION['p_id']) )    
 {
     $query = "
-    SELECT * FROM users 
-    WHERE id != '".$_SESSION['p_id']."' 
-    ";
+    SELECT * FROM `users` LEFT OUTER JOIN `favorite` AS f ON users.id = f.favorite_id WHERE f.user_id= '".$_SESSION['p_id']."' 
+    ";  
 }
 else
 {
     $query = "
-    SELECT * FROM users 
-    WHERE id != '".$_SESSION['u_id']."' 
+    SELECT * FROM `users` LEFT OUTER JOIN `favorite` AS f ON users.id = f.favorite_id WHERE f.user_id= '".$_SESSION['u_id']."' 
     "; 
 }
 
