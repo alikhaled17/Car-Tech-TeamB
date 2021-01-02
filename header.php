@@ -82,8 +82,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Car-Tech-TeamB/src/contact.php">Contact US</a>
                     </li>
+                    <li class="nav-item">
+                    <?php
+                            if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
+                            {
+                             echo "<a class='nav-link fa fa-comment' aria-hidden='true' style='margin-top: 3px;'
+                              href='/Car-Tech-TeamB/src/msg.php'> </a>" ;
+                            }      
+                    ?>                    
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fa fa-user-circle " style="margin-top: 7px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle fa fa-user-circle " style="margin-top: 3px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <!-- Settings -->
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
