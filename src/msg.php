@@ -3,33 +3,23 @@ include('forMsg.php');
 session_start();
 if(isset($_SESSION['p_id']) )    
 {
-      $query = "
-      SELECT username FROM users 
-      WHERE id != '".$_SESSION['p_id']."' 
-      ";
+      $id = $_SESSION['p_id'];
 }
 else
 {
-      $query = "
-      SELECT username FROM users 
-      WHERE id != '".$_SESSION['u_id']."' 
-      "; 
+      $id = $_SESSION['u_id'];
 }
 ?>
 <html>  
       <head>  
             <title>Chat</title>  
             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
             <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Car Tech - Profile</title>
+            <title>Car Tech - Chat</title>
             <!-- my css files -->    
             <link rel="stylesheet" href="../css/bootstrap.css">
             <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -40,17 +30,14 @@ else
             <?php include('../header.php'); ?>
             <div class="container">
             <br/>
-            <h3 align="center">Chat</a></h3><br />
-            <br />
             <div class="table-responsive">
-            <h4 align="center">Users</h4>
-      <!-- <p align="right">Hi - <?php echo $_SESSION['username'];  ?> - <a href="logout.php">Logout</a></p> -->
-      <div id="user_details"></div>
-      <div id="user_model_details"></div>
-      </div>
-      </div>
+                  <h4 align="center">User</h4>
+                  <p align="right">Hi - <?php echo $id;  ?> </p>
+                  <div id="user_details"></div>
+                  <div id="user_model_details"></div>
+                  </div>
+            </div>
             <?php include('../footer.php'); ?>
-            <script src="../js/jquery-3.5.1.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>
             <script src="../js/wow.min.js"></script>
             <script>
