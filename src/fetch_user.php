@@ -43,15 +43,15 @@ if (isset($_SESSION['p_id']))
     $user_last_activity = fetch_user_last_activity($row['id'], $conn);
     if($user_last_activity > $current_timestamp)
     {
-    $status = '<span class="text-success">Online</span>';
+    $status = '<span class="badge badge-success">Online</span>';
     }
     else
     {
-    $status = '<span class="text-danger">Offline</span>';
+    $status = '<span class="badge badge-danger">Offline</span>';
     }
     $output .= '
     <tr>
-    <td>'.$row['username'].' '.count_unseen_message($row['id'], $_SESSION['p_id'], $conn).' '.fetch_is_type_status($row['id'], $conn).'</td>
+    <td>'.$row['username'].'<span> '.count_unseen_message($row['id'], $_SESSION['p_id'], $conn).' </span>'.fetch_is_type_status($row['id'], $conn).'</td>
     <td>'.$status.'</td>
     <td><button type="button" class="btn btn-info btn-xs start_chat" data-touserid="'.$row['id'].'" data-tousername="'.$row['username'].'">Start Chat</button></td>
     </tr>
