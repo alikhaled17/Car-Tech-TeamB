@@ -4,7 +4,6 @@
 
 include('forMsg.php');
 
-
 session_start();
 if(isset($_SESSION['p_id']) )    
 {

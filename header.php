@@ -1,3 +1,49 @@
+<?php 
+include('Config.php');
+function count_unseen_message_h($connect)
+{
+    if(isset($_SESSION['p_id']) )    
+    {
+        $p_id = $_SESSION['p_id'];
+        $query = "
+        SELECT * FROM chat_message 
+        WHERE 
+        to_user_id = '$p_id' 
+        AND status = '1'
+        ";
+        $result = mysqli_query($connect, $query);
+        $rows = mysqli_num_rows($result);
+        $count = mysqli_num_rows($result);
+        $output = '';
+        if($count > 0)
+        {
+        $output = '<span class="label label-success">'.$count.'</span>';
+        }
+        echo $output;   
+    }
+    else
+    {
+        $u_id = $_SESSION['u_id'];
+        $query = "
+        SELECT * FROM chat_message 
+        WHERE  
+        to_user_id = '$u_id' 
+        AND status = '1'
+        ";
+        $result = mysqli_query($connect, $query);
+        $rows = mysqli_num_rows($result);
+        $count = mysqli_num_rows($result);
+        $output = '';
+        if($count > 0)
+        {
+        $output = '<span class="label label-success">'.$count.'</span>';
+        }
+        echo $output;
+    }    
+}
+
+
+?>  
 <script>
         /*Task One */
         function getOne()
@@ -88,6 +134,7 @@
                             {
                              echo "<a class='nav-link fa fa-comment' aria-hidden='true' style='margin-top: 3px;'
                               href='/Car-Tech-TeamB/src/msg.php'> </a>" ;
+                              count_unseen_message_h( $conn);
                             }      
                     ?>                    
                     </li>
@@ -117,5 +164,3 @@
             </div>
         </div>
     </nav>
-    
-   

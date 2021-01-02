@@ -4752,7 +4752,11 @@ input[type="button"].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-
+.label-success 
+{
+  color: #fff;
+  background-color: #2ECC71 !important ;
+}
 .card > hr {
   margin-right: 0;
   margin-left: 0;

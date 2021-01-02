@@ -1,8 +1,10 @@
+<style>
+li {
+    list-style-type: none;
+}
+</style>
 <?php
 include('../Config.php');  
-$conn = new PDO("mysql:host=localhost;dbname=cartech", "root", "");
-
-date_default_timezone_set('Asia/Kolkata');
 
 function fetch_user_last_activity($user_id, $conn)
 {
@@ -12,9 +14,10 @@ function fetch_user_last_activity($user_id, $conn)
  ORDER BY last_activity DESC 
  LIMIT 1
  ";
- $statement = $conn->prepare($query);
- $statement->execute();
- $result = $statement->fetchAll();
+$result = mysqli_query($conn, $query);
+$rows = mysqli_num_rows($result);
+$user_data = mysqli_fetch_array($result);
+
  foreach($result as $row)
  {
   return $row['last_activity'];
@@ -31,54 +34,61 @@ function fetch_user_chat_history($from_user_id, $to_user_id, $conn)
  AND to_user_id = '".$from_user_id."') 
  ORDER BY timestamp DESC
  ";
- $statement = $conn->prepare($query);
- $statement->execute();
- $result = $statement->fetchAll();
- $output = '<ul class="list-unstyled">';
- foreach($result as $row)
+
+$result = mysqli_query($conn, $query);
+$user_data = mysqli_fetch_array($result);
+$output = '<ul class="list-unstyled">';
+foreach($result as $row)
  {
-  $user_name = '';
-  if($row["from_user_id"] == $from_user_id)
-  {
-   $user_name = '<b class="text-success">You</b>';
-  }
-  else
-  {
-   $user_name = '<b class="text-danger">'.get_user_name($row['from_user_id'], $conn).'</b>';
-  }
-  $output .= '
-  <li style="border-bottom:1px dotted #ccc">
-   <p>'.$user_name.' - '.$row["chat_message"].'
-    <div align="right">
-     - <small><em>'.$row['timestamp'].'</em></small>
-    </div>
-   </p>
-  </li>
-  ';
+    $user_name = '';
+    if($row['from_user_id'] == $from_user_id)
+    {
+        $user_name = '<b class="text-success">You</b>';
+    }
+    else
+    {
+        $user_name = '<b class="text-danger">'.get_user_name($row['from_user_id'], $conn).'</b>';
+    }
+    $output .= '
+        <li style="border-bottom:1px dotted #ccc">
+         <p>'.$user_name.' - '.$row['chat_message'].'
+          <div align="right">
+           - <small><em>'.$row['timestamp'].'</em></small>
+          </div>
+         </p>
+        </li>
+        ';
+       
+       $output .= '</ul>';
+       $query = "
+       UPDATE chat_message 
+       SET status = '0' 
+       WHERE from_user_id = '".$to_user_id."' 
+       AND to_user_id = '".$from_user_id."' 
+       AND status = '1'
+       ";
+       $result = mysqli_query($conn, $query);
+//   return $row['from_user_id'];
  }
- $output .= '</ul>';
- $query = "
- UPDATE chat_message 
- SET status = '0' 
- WHERE from_user_id = '".$to_user_id."' 
- AND to_user_id = '".$from_user_id."' 
- AND status = '1'
- ";
- $statement = $conn->prepare($query);
- $statement->execute();
- return $output;
+// while($user_data = mysqli_fetch_array($result))
+// {    
+// }
+return $output;       
 }
 
 function get_user_name($user_id, $conn)
 {
- $query = "SELECT username FROM login WHERE user_id = '$user_id'";
- $statement = $conn->prepare($query);
- $statement->execute();
- $result = $statement->fetchAll();
- foreach($result as $row)
- {
-  return $row['username'];
- }
+ $query = "SELECT username FROM users WHERE id = '$user_id'";
+
+    $result = mysqli_query($conn, $query) ;
+    if (is_array($result) || is_object($result))
+    {
+        foreach($result as $row)
+        {
+         return $row['username'];
+        }
+    }
+ 
 }
 
 function count_unseen_message($from_user_id, $to_user_id, $conn)
@@ -89,9 +99,10 @@ function count_unseen_message($from_user_id, $to_user_id, $conn)
  AND to_user_id = '$to_user_id' 
  AND status = '1'
  ";
- $statement = $conn->prepare($query);
- $statement->execute();
- $count = $statement->rowCount();
+$result = mysqli_query($conn, $query);
+$rows = mysqli_num_rows($result);
+$count = mysqli_num_rows($result);
+
  $output = '';
  if($count > 0)
  {
@@ -108,9 +119,7 @@ function fetch_is_type_status($user_id, $conn)
  ORDER BY last_activity DESC 
  LIMIT 1
  "; 
- $statement = $conn->prepare($query);
- $statement->execute();
- $result = $statement->fetchAll();
+ $result = mysqli_query($conn, $query);
  $output = '';
  foreach($result as $row)
  {
