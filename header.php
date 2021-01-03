@@ -109,8 +109,11 @@ function count_unseen_message_h($connect)
                         <a class="nav-link" href="/Car-Tech-TeamB/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                    <?php
-                             if(isset($_SESSION['p_id']) )    
+                        <a class="nav-link" href="/Car-Tech-TeamB/src/AboutUs.php">About US</a>
+                    </li>
+                    <li class="nav-item">
+                    <?php if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )
+                             {if(isset($_SESSION['p_id']) )    
                              {
                                  echo "<a class='nav-link' href='/Car-Tech-TeamB/src/pProfile.php'> Profile </a>"; 
                              }
@@ -118,7 +121,7 @@ function count_unseen_message_h($connect)
                              {
                                  echo "<a class='nav-link' href='/Car-Tech-TeamB/src/uProfile.php'> Profile </a>"; 
                                  
-                             }
+                             }}
                     ?>
                         <!-- <a class="nav-link" href="/Car-Tech-TeamB/src/pProfile.php">Profile</a> -->
                     </li>
