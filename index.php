@@ -72,7 +72,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="right col-4">
+                <div class="right col-4 ">
                     <div>
                         <div class="i">
                             <svg style="width: 100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" xml:space="preserve">

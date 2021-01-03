@@ -44,17 +44,18 @@
                         <input type="Password" name="pass" required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
                         <input type="Email" name="email" required placeholder="Enter Your E-mail *"><br>
-                        <label>Profile Image</label>
-                        <input type="file" name="prof_img" value="none" accept="image/*">
-                        <p id="vaild_Email">
-                            <p>
-                                <label class="gender-h">Gender</label>
-                                <input type="radio" name="gender" value="Male" />
-                                <label class="gender">Male</label>
-                                <input type="radio" name="gender" value="Female" />
-                                <label class="gender">Female</label><br>
-                                <label>Phone Number</label>
-                                <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
+                        <p id="vaild_Email"> </p>
+                        <label class="gender-h">Gender</label>
+                        <input type="radio" name="gender" value="Male" />
+                        <label class="gender">Male</label>
+                        <input type="radio" name="gender" value="Female" />
+                        <label class="gender">Female</label><br>
+                        <label>Phone Number</label>
+                        <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
+                        <div id="User-info">
+                            <label>Profile Image</label>
+                            <input type="file" name="prof_img" value="none" accept="image/*">
+                        </div>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">
@@ -102,6 +103,15 @@
                     $("#provider-info").show();
                 } else {
                     $("#provider-info").hide();
+                }
+            });
+        });
+        $(function() {
+            $("input[name='user-info']").click(function() {
+                if ($("#User").is(":checked")) {
+                    $("#User-info").show();
+                } else {
+                    $("#User-info").hide();
                 }
             });
         });

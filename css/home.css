@@ -18,6 +18,10 @@
     font-weight: 500;
     color: #08526d;
 }
+.post
+{
+	display: inline-block;
+}
 
 /* .image-header .left-side p:hover  {
     color: #f54a16;
