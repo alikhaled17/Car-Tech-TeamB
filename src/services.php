@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech - Services</title>
+    <title>Car Tech - Contact</title>
     <!-- my css files -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -21,7 +21,7 @@ session_start();
 
 <body>
     <!-- Header -->
-    <?php include('../header.php'); ?> 
+    <?php include('../header.php'); ?>
     <!-- Services -->
 
 
@@ -44,9 +44,8 @@ session_start();
 
                             <!-- Region -->
                             <label class="label">Region</label>
-                            <!-- onchange="change()"  -->
-                            <select id="Region1" name="Region" class="search-select" onchange="change()" >
-                                <option value="Choose" >Choose ...</option>
+                            <select id="Region1" name="Region" class="search-select">
+                                <option value="none" selected >Choose...</option>
                             </select>
                             <hr>
 
@@ -55,10 +54,8 @@ session_start();
                             <input id="name_p" type="text" placeholder="Search.." name="search_name"> <br>
 
                             <!-- search_submit -->
-                            <input id="check" class="btn btn-outline-dark" disabled="disabled" 
-                                type="submit" value="Search" name="search" onclick="location.reload();">
+                            <input class="btn btn-outline-dark" type="submit" value="Search" name="search" >
                         </form>
-                        <!-- //mosh bedo5l el if condition asln becaus rhe form didin't post because disabel att. -->   
                     </div>
                 </div>
 
@@ -81,54 +78,5 @@ session_start();
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>
     <script src="../js/script.js"></script>
-    <script>
-    var City = localStorage.getItem('City');
-    var Region = localStorage.getItem('Region');
-    var Service = localStorage.getItem('Service');
-    var name = localStorage.getItem('Name');
-    function changeCity(){
-    document.getElementById("City1").selectedIndex = City;
-    }    
-    function changeService(){
-        document.getElementById("filter").selectedIndex = Service;
-    }
-
-    function changeRigion(){
-        var opt= document.getElementById('Region1').options[0];
-        opt.value = localStorage.getItem('Region');
-        opt.text = localStorage.getItem('Region');
-        console.log (opt.value);
-        console.log (opt.text);
-        if ( opt.text == 'null'|| opt.text=='null')
-        {
-            opt.value = 'Choose ...';
-            opt.text = 'Choose ...';
-        }
-    }
-</script>
-<script>
-    function isDisabled({region, city, button}) {
-        console.log({region, city});
-        if (region == "Choose ..." || city == "Choose ...") button.disabled = true;
-        else {
-            button.disabled = false;
-        }
-    }
-
-    function change()
-    {
-        let region= document.getElementById('Region1').value;
-        let city= document.getElementById('City1').value;
-        let button = document.getElementById("check");
-        return isDisabled({ region, city, button });
-    }
-
-    changeService();
-    changeCity();
-    changeRigion();   
-    localStorage.clear();
-    
-</script>
-
 </body>
 </html>
