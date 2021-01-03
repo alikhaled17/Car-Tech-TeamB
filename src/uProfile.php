@@ -63,14 +63,31 @@
                     </div>
                     <hr>
                     <div class="personal-info">
-                        <div class="gender">
-                            <i class="fa fa-venus-mars"></i>
+                    <div class="gender">
+                        <?php
+                            if ($user_data['gender']== "Male")
+                            {
+                        ?>
+                            <i class="fa fa-male"></i>
                             <span>
-                                <?php
-                                    echo $user_data['gender'] ;
+                            <?php 
+                                echo $user_data['gender']; 
+                            ?>
+                            </span>
+                            <?php
+                            }
+                            else{
+                            ?>
+                            <i class="fa fa-female"></i>
+                            <span>
+                                <?php 
+                                    echo $user_data['gender']; 
                                 ?>
                             </span>
-                        </div>
+                            <?php
+                            }
+                            ?>
+                    </div>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>

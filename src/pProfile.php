@@ -2,6 +2,7 @@
     include('../Config.php');  
     session_start();
     session_regenerate_id();
+
     if(!isset($_SESSION['p_id']))      
     {
         header("Location:login.php");
@@ -84,12 +85,29 @@
                         </h2><hr>
                     </div>
                     <div class="gender">
-                        <i class="fa fa-venus-mars"></i>
-                        <span>
+                        <?php
+                            if ($user_data['gender']== "Male")
+                            {
+                        ?>
+                            <i class="fa fa-male"></i>
+                            <span>
                             <?php 
-                                echo $user_data['gender'];
+                                echo $user_data['gender']; 
                             ?>
-                        </span>
+                            </span>
+                            <?php
+                            }
+                            else{
+                            ?>
+                            <i class="fa fa-female"></i>
+                            <span>
+                                <?php 
+                                    echo $user_data['gender']; 
+                                ?>
+                            </span>
+                            <?php
+                            }
+                            ?>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
@@ -142,6 +160,7 @@
                     <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
                         Show Favorite 
                     </button>
+               
                     
                 </div>
                 <div class="services-prof">
