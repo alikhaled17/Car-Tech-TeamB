@@ -28,18 +28,12 @@
                     prov_services.ser_id ='$Service' and 
                     regions.city_id='$City' and 
                     users.username like '$Name%'";
-            // $sql_city= "SELECT city_name FROM cities WHERE id = '$City'  " ;
-            // $cityResult=mysqli_query($conn, $sql_city);
-            // $Cityname=mysqli_fetch_array($cityResult);
-            // $city_name = $Cityname['city_name'];
+
             $sql_region= "SELECT region_name FROM regions WHERE id = '$Region' " ;
             $regionResult=mysqli_query($conn, $sql_region);
             $regionName=mysqli_fetch_array($regionResult);
             $region_name = $regionName['region_name'];
-            // $sql_services= "SELECT ser_name FROM services WHERE id = '$Service' " ;
-            // $servicesResult=mysqli_query($conn, $sql_services);
-            // $servicesName=mysqli_fetch_array($servicesResult);
-            // $services_name = $servicesName['ser_name'];
+
             
 ?>
 <script>
@@ -75,11 +69,7 @@
                     echo ('
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
-                    if($provider['prof_img'] == '') {
-                        echo ('<img src="../imgs/default-prof.png"/>');     
-                    } else {
-                        echo ('<img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" />');
-                    }
+                    echo ('<img src="../imgs/default-prof.jpg"/>');   
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.

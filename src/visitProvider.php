@@ -78,20 +78,10 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="../imgs/default-prof.png"/>       
-                            </div>
-                            <?php 
-                        } else {
-                            ?>
-                            <div class='imgProf'>
-                            <img class="wow bounceInDown" src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            </div>
-                            <?php
-                        }
+                    <div class='imgProf'>
+                        <img src="../imgs/default-prof.jpg"/> 
+                    </div>
+                    <?php
                         if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) ) 
                         {
                             $search_sql="SELECT favorite_id FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id'  " ;

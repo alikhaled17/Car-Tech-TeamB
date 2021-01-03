@@ -56,22 +56,10 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="wow wobble img-prof col-3">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="../imgs/default-prof.png"/>       
-                            </div>
-                            <?php 
-                        } else {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            </div>
-                            <?php
-                        }
-                    ?>
-                    
+                   
+                    <div class='imgProf'>
+                    <img src="../imgs/default-prof.jpg"/> 
+                    </div>
 
                 </div>
                 
