@@ -5,19 +5,37 @@ include('forMsg.php');
 
 session_start();
 
-// = 3
-
+/***
+ * SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
+ON users.id = favorite.favorite_id
+LEFT OUTER JOIN `chat_message`
+ON users.id = chat_message.from_user_id
+WHERE favorite.user_id = 4 OR chat_message.to_user_id = 4
+GROUP BY(users.id)
+ */
 if(isset($_SESSION['p_id']) )    
 {
+    $id=$_SESSION['p_id'];
     $query = "
-    SELECT * FROM `users` LEFT OUTER JOIN `favorite` AS f ON users.id = f.favorite_id WHERE f.user_id= '".$_SESSION['p_id']."' 
+    SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
+    ON users.id = favorite.favorite_id
+    LEFT OUTER JOIN `chat_message`
+    ON users.id = chat_message.from_user_id
+    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    GROUP BY(users.id)
     ";  
 }
 else
 {
+    $id=$_SESSION['u_id'];
     $query = "
-    SELECT * FROM `users` LEFT OUTER JOIN `favorite` AS f ON users.id = f.favorite_id WHERE f.user_id= '".$_SESSION['u_id']."' 
-    "; 
+    SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
+    ON users.id = favorite.favorite_id
+    LEFT OUTER JOIN `chat_message`
+    ON users.id = chat_message.from_user_id
+    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    GROUP BY(users.id)
+    ";   
 }
 
 $result = mysqli_query($conn, $query);
