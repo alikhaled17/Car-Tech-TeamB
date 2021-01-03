@@ -120,20 +120,20 @@
 }
 
 
-.our-sers .elems .col-4{
+.our-sers .elems .col-3{
     float: left;
 }
-.our-sers .elems .col-4 > div{
+.our-sers .elems .col-3 > div{
 
     width: 100%;
     height: 350px;
-    padding: 30px;
+    padding: 15px 30px 30px 30px;
     border-radius: 20px;
     background-color: rgba(230, 227, 227, 0.651);
     cursor: pointer;
 }
 
-.our-sers .elems .col-4:hover > div {
+.our-sers .elems .col-3:hover > div {
     background-color: rgba(230, 227, 227, 0.3);
 
 }
@@ -145,22 +145,26 @@
     border-radius: 50%;
     
 }
-.our-sers .elems .left .i { border: 5px solid #f54a16;  }
-.our-sers .elems .mid .i { border: 5px solid #9c16f5; }
-.our-sers .elems .right .i {border: 5px solid #2ccc5c;  }
+.our-sers .elems .Maintainance .i { border: 5px solid #f54a16;  }
+.our-sers .elems .Gaz .i { border: 5px solid #9c16f5; }
+.our-sers .elems .Truck .i {border: 5px solid #2ccc5c;  }
+.our-sers .elems .wash .i {border: 5px solid #2059d3;  }
 
-.our-sers .elems .left .i svg { fill: #f54a16; }
-.our-sers .elems .mid .i svg { fill: #9c16f5; }
-.our-sers .elems .right .i svg { fill: #2ccc5c; }
+.our-sers .elems .Maintainance .i svg { fill: #f54a16; }
+.our-sers .elems .Gaz .i svg { fill: #9c16f5; }
+.our-sers .elems .Truck .i svg { fill: #2ccc5c; }
+.our-sers .elems .wash .i svg { fill: #2059d3; }
 
-.our-sers .elems .left h3 { color: #f54a16; }
-.our-sers .elems .mid h3 { color: #9c16f5; }
-.our-sers .elems .right h3 { color: #2ccc5c; }
+.our-sers .elems .Maintainance h3 { color: #f54a16; }
+.our-sers .elems .Gaz h3 { color: #9c16f5; }
+.our-sers .elems .Truck h3 { color: #2ccc5c; }
+.our-sers .elems .wash h3 { color: #2059d3; }
 
 
 .our-sers .elems h3 {
     color: #08526d;
     margin-bottom: 20px;
+    font-size: 22px;
     text-align: center;
 
 }
@@ -169,6 +173,7 @@
     color: #08526d;
     opacity: .8;
     font-weight: 500;
+    font-size: 15px;
     text-align: center;
 }
 /* End Our Services */
@@ -255,3 +260,36 @@
     margin: 20px 0;
 }
 /* End Our Team */
+
+
+/* Start carousel */
+.carousel-item {
+    margin-bottom: 50px;
+}
+
+.carousel-item .img {
+    overflow:hidden;
+    height:300px;
+    width: 40%;
+    float: left;
+}
+
+.carousel-item .ad-content{
+    width: 39%;
+    height: 300px;
+    float: left;
+    padding: 20px 0 0 30px;
+    margin-left: 5px;
+    border-left: 2px solid #08526d;
+}
+.carousel-item .ad-content p {
+    padding: 5px 0 0 10px;
+    border-left: 1px solid #08526d;
+    margin-left: 2px;
+}
+
+.carousel-item .img img {
+    height: 300px;
+    margin: 0 auto;
+}
+/* End carousel */
