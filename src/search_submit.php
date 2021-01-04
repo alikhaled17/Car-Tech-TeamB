@@ -53,11 +53,7 @@
                     echo ('
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
-                    if($provider['prof_img'] == '') {
-                        echo ('<img src="../imgs/default-prof.png"/>');     
-                    } else {
-                        echo ('<img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" />');
-                    }
+                        echo ('<img src="../imgs/default-prof.jpg"/>');     
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.

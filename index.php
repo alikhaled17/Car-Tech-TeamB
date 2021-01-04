@@ -68,7 +68,7 @@ session_start();
                         </div>
                         <div class="info">
                             <h3>Car Wash</h3>
-                            <p>Car Wash - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eius dolorum hic voluptas similique sit harum molestiae perspiciatis .</p>
+                            <p>Experience our complete washing service. Our provider uses professional machinery and equipment with high quality detergents.</p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ session_start();
         $rows = mysqli_num_rows($result);
         $count = 1;
         
-                        if($rows >= 1) {
+        if($rows >= 1) {
 
     ?>
     <div id="port" class="Ads row">
