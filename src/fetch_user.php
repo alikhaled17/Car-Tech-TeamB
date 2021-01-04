@@ -15,25 +15,25 @@ GROUP BY(users.id)
  */
 if(isset($_SESSION['p_id']) )    
 {
-    $id=$_SESSION['p_id'];
+    $p_id=$_SESSION['p_id'];
     $query = "
     SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
     ON users.id = favorite.favorite_id
     LEFT OUTER JOIN `chat_message`
     ON users.id = chat_message.from_user_id
-    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    WHERE favorite.user_id = $p_id OR chat_message.to_user_id = $p_id
     GROUP BY(users.id)
     ";  
 }
 else
 {
-    $id=$_SESSION['u_id'];
+    $u_id=$_SESSION['u_id'];
     $query = "
     SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
     ON users.id = favorite.favorite_id
     LEFT OUTER JOIN `chat_message`
     ON users.id = chat_message.from_user_id
-    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    WHERE favorite.user_id = $u_id OR chat_message.to_user_id = $u_id
     GROUP BY(users.id)
     ";   
 }
