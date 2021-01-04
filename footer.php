@@ -18,9 +18,7 @@
 
     <!-- Start Upper Bar -->
     <footer style="
-	position: fixed;
-  bottom: 0;
-			width: 100%;">
+		width: 100%;">
 	<!-- Grid container -->
 	<div class="container">
 		<!--Grid row-->
