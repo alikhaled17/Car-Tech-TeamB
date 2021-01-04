@@ -169,11 +169,15 @@ session_start();
                 <h2>- Why use Car Tech ?</h2>
                 <hr>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, rerum. Laudantium repellendus, debitis aliquid eveniet natus dolores vero excepturi saepe. Blanditiis atque quae magni incidunt corporis sequi, odit deserunt totam.
+                    Servicing your car will extend your engine life, reduce fuel consumption, increase the safety of your vehicle, prevent wearing of moving parts, maintains road worthiness and improves resale value.
+                    <br>
+                    Here in Car Tech you can find all services near you in all of Egypt 
+                    <br>
+                    We will provide you with all necessary information about the service owners (their address - photos of their services - their location on Google Maps) and you can contact them through us before you go to them .
                 </p>
             </div>
             <div class="right-side col-6">
-                <img src="imgs/why.jpg" alt="home-img">
+                <img src="imgs/why.jpg" alt="home-img" style="margin-top: 70px;">
             </div>
         </div>
     </div>
