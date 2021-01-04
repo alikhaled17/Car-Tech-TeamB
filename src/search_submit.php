@@ -78,7 +78,7 @@
         else  {
             echo "<div class='wow rotateIn no-result'>";
             echo "<img src='../imgs/search.png'>";
-            echo "<h5>Sorry, please selct city</h5>";
+            echo "<h5>Sorry, please select city</h5>";
             echo "</div>";
         }
     } else {
