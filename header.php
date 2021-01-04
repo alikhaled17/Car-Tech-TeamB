@@ -71,7 +71,7 @@ function count_unseen_message_h($connect)
             tipsArray[20]="Do it with passion or not at all";
             tipsArray[21]="Grow through what you go through.";
             tipsArray[22]="Do it with passion or not at all.";
-            tipsArray[22]="You matter";
+            tipsArray[23]="You matter";
             var randomIndex = Math.floor(Math.random()*tipsArray.length);
             var randomTips = tipsArray[randomIndex];
             document.getElementById("test").innerHTML =randomTips;
