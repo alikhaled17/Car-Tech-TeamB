@@ -181,6 +181,8 @@ session_start();
             </div>
         </div>
     </div>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-19737a3b-6c3b-429b-b63d-df7c1593b4cb"></div>
 
     <?php include('footer.php'); ?>
 
