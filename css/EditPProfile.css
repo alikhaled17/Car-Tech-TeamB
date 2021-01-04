@@ -59,13 +59,12 @@ label.gender
 }
 .gender
 {
-  margin-right: 7%
+  margin-right: 7%;
   font-size: 25px;
 }
 select#City1.search-select
 {
   padding-left: 1%;
-  margin-left: 12%;
   width: 50% !important;
   border-radius: 5px;
   outline-style: none;
@@ -75,7 +74,6 @@ select#City1.search-select
 select#Region1.search-select
 {
   padding-left: 1%;
-  margin-left: 3%;
   width: 50% !important;
   border-radius: 5px;
   outline-style: none;
@@ -83,13 +81,16 @@ select#Region1.search-select
 }
 label.labelCity
 {
-  margin-left: -1%;
-  font-size: 20px
+  font-size: 20px;
+  width: 20%;
+  display: block;
+
 }
 label.labelReion
 {
-  margin-left: -1%;
-  font-size: 20px
+  font-size: 20px;
+  width: 20%;
+  display: block;
 }
 label.st
 {
@@ -105,7 +106,7 @@ input.street
 }
 label.service
 {
-  margin-left: 9%;
+  margin-left: 1%;
   color: #08526d;
   font-size: 20px;
 }
@@ -114,4 +115,11 @@ input[type="checkbox"]
   margin-left: 7%;
   color: #08526d;
   border:1px solid #08526d;
+}
+
+input[type="text"], input[type="password"] {
+  border-left: 2px solid #08526d !important;
+  padding-left: 10px ;
+  border-radius: 0;
+  height: 20px;
 }

@@ -68,18 +68,19 @@
                         }
                     ?>
                 </div>
-                <form name="update_user" method="post" action="EditPProfile.php">
-                    <div class="info-prof col-9">
+                <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
+                    <div class="info-prof ">
                         <div class="account-name">
-                            <h3>
+                            <label style="color:#08526d; font-weight:500;">user name</label><br>
                             <input type="text" class="inputStyle" name="username" value="<?php echo $user_data['username']; ?>"  required>
-                            </h3>
                         </div>
-                        <hr>
+                        <br>
                         <div class="personal-info">
+                            <label style="color:#08526d; font-weight:500;">password</label><br>
                             <input type="password" class="inputStyle" name="pass" id="myInput" value="<?php echo $user_data['password']; ?>" required>
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                         </div>
+                        <br>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
                             <input class="inputStyle" type="number" name="phone" value="<?php echo $user_data['phone']; ?>" required> 
@@ -101,7 +102,7 @@
                             <br>
                             <br>
                                 <label class="labelCity" >City </label>
-                                <?php include('city.php'); ?>
+                                <?php include('search_citis.php'); ?>
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose ...</option>
@@ -111,6 +112,7 @@
                               
                             </span>
                         </div>
+                        <br>
                         
                         <div class="service-check">
                         <?php
@@ -144,6 +146,8 @@
                             }
                             
                             ?>
+
+                        <br>
 				        <div>
                             <span> 
                             <input type="submit" class="btn btn-outline-info" name="update" value="Update"><br>

@@ -5,39 +5,44 @@
     margin-top: 5%;
 }
 
-.prof-section .container .upper-prof .img-prof {
+.img-prof {
     height: 200px;
 }
 
-.prof-section .container .upper-prof .img-prof img {
+.img-prof img {
     width: 100%;
     box-shadow: 5px 5px 2px 1px #888888; 
+    border-radius: 20px;
 }
 
 
-.prof-section .container .upper-prof .info-prof{
+.upper-prof {
+    margin-bottom: 80px;
+}
+
+.upper-prof .info-prof{
     padding: 50px 0 0 50px ;
 }
 
 
 
-.prof-section .container .upper-prof .info-prof > div:not(:first-child) {
+.upper-prof .info-prof > div:not(:first-child) {
     font-size: 20px;
     padding: 20px 0 0 20px;
 } 
 
 
-.prof-section .container .upper-prof .info-prof > div:not(:first-child) .fa {
+.upper-prof .info-prof > div:not(:first-child) .fa {
     color: #08526d;
     text-align: center;
     margin-right: 10px;
 }
 
-.prof-section .container .upper-prof .info-prof > div:not(:first-child) span {
+.upper-prof .info-prof > div:not(:first-child) span {
     color: #08526d;
 }
 
-.prof-section .container .upper-prof .contact-info button {
+.upper-prof .contact-info button {
     background-color: #08526d;
     color: #fff;
     padding: 0 20px;
@@ -51,25 +56,5 @@
     background-color: #0a6283;
 }
 
-.prof-section .container .upper-prof .services-prof {
-    border-top: 2px solid #08526d;
-    padding-top: 30px;
-    margin-top: 20px;
-}
-
-.prof-section .container .upper-prof .services-prof ul {
-    display: flex;
-}
-
-.prof-section .container .upper-prof .services-prof ul li {
-    list-style: none;
-    height: 40px;
-    margin: 20px 10px;
-    text-align: center;
-    padding: 10px 15px;
-    background-color: #0a6283;
-    color: #fff;
-    justify-content: space-around;
-}
 
 /* End Upper Profile */
