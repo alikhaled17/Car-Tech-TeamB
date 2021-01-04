@@ -83,7 +83,7 @@ function count_unseen_message_h($connect)
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <i class="fa fa-phone"></i><span> +20 111 2332 199</span>,
+                    <i class="fa fa-phone"></i><span> +20 000 0000 000</span>,
                     <i class="fa fa-envelope-o"></i> CarTech@gmail.com
                 </div>
                 <div class="col-sm text-right">
@@ -99,7 +99,7 @@ function count_unseen_message_h($connect)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" data-wow-duration='.5s' href="#">
-                <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo1.png" alt="car-tech" width="100px">
+                <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo2.png" alt="car-tech" width="100px">
                 <span>Car</span><span>Tech</span>
             </a>
 

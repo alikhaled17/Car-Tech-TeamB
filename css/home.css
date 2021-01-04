@@ -14,7 +14,7 @@
 
 .image-header .left-side p {
     padding: 50px 0 0 40px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: #08526d;
 }
@@ -45,7 +45,7 @@
 /* Start Our Services */
 
 .our-sers {
-    margin: 100px 0 100px;
+    margin: 50px 0 100px;
 }
 
 .our-sers .upper{
@@ -130,6 +130,9 @@
 /* Start carousel */
 .carousel-item {
     margin-bottom: 50px;
+    background-color: #f7f5ec;
+    border: 10px solid #f47e3d;
+    border-width: 10px 0 10px ;
 }
 
 .carousel-item .img {
@@ -145,8 +148,8 @@
     float: left;
     padding: 20px 0 0 30px;
     margin-left: 5px;
-    border-left: 2px solid #08526d;
 }
+
 .carousel-item .ad-content p {
     padding: 5px 0 0 10px;
     border-left: 1px solid #08526d;
@@ -158,3 +161,53 @@
     margin: 0 auto;
 }
 /* End carousel */
+
+
+
+.why {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.why hr {
+    opacity: 0;
+}
+
+.why .left-side h2 {
+    color: #08526d;
+}
+
+.why .right-side,
+.why .left-side {
+    float:left
+}
+
+.why .left-side {
+    padding: 20px 0 10px 10px;
+    border: 2px solid #08526d;
+    border-right: none;
+}
+.why .left-side p {
+    padding: 20px 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #08526d;
+}
+.post
+{
+	display: inline-block;
+}
+
+/* .why .left-side p:hover  {
+    color: #f54a16;
+    opacity: .8;
+} */
+
+.why .right-side img{
+    width: 80%;
+    margin-left: 20%;
+    transition: all .1s ease-in-out;
+}
+
+
+

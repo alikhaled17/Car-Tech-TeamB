@@ -162,6 +162,22 @@ session_start();
     }
     ?>
 
+    
+    <div class="why row ">
+        <div class="container">
+            <div class="left-side col-6 wow zoomInDown">
+                <h2>- Why use Car Tech ?</h2>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, rerum. Laudantium repellendus, debitis aliquid eveniet natus dolores vero excepturi saepe. Blanditiis atque quae magni incidunt corporis sequi, odit deserunt totam.
+                </p>
+            </div>
+            <div class="right-side col-6">
+                <img src="imgs/why.jpg" alt="home-img">
+            </div>
+        </div>
+    </div>
+
     <?php include('footer.php'); ?>
 
     <script src="js/jquery-3.5.1.min.js"></script>

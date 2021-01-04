@@ -32,7 +32,7 @@ body {
 .upper-bar .get-quote
 {
     display: inline-block;
-    border: 1px solid #b90d24;
+    border: 1px solid #f47e3d;
     padding: 2px 10px;
     margin-left: 20px;
     cursor: pointer;
@@ -60,7 +60,7 @@ body {
 
 .navbar-brand span:last-child
 {
-    color: #b90d24;
+    color: #f47e3d;
     font-weight: 500;
 }
 
@@ -77,7 +77,7 @@ body {
 .nav-item.active
 .nav-link
 {
-    color: #b90d24 !important;
+    color: #f47e3d !important;
 }
 /* End Nav Bar */
 

@@ -24,7 +24,7 @@ session_start();
 
     <div class="about-us row">
         <div class="container">
-            <div class="left-side col-2">
+            <div class="left-side">
                 <h2 class="aboutH2">About us</h2>
             </div>
             <div class="right-side col-12">
