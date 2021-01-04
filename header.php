@@ -84,7 +84,7 @@ function count_unseen_message_h($connect)
             <div class="row">
                 <div class="col-sm">
                     <i class="fa fa-phone"></i><span> +20 000 0000 000</span>,
-                    <i class="fa fa-envelope-o"></i> CarTech@gmail.com
+                    <i class="fa fa-envelope-o"></i> info.cartechb@gmail.com
                 </div>
                 <div class="col-sm text-right">
                     <span id="test">
