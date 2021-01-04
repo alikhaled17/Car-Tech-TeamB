@@ -5,7 +5,7 @@ if(isset($_SESSION['p_id']) )
 {
       $id = $_SESSION['p_id'];
 }
-else
+elseif (isset($_SESSION['u_id']))
 {
       $id = $_SESSION['u_id'];
 }
@@ -24,6 +24,7 @@ else
             <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../css/animate.css">
             <link rel="stylesheet" href="../css/style.css" />
+
     </head>  
     <body>  
             <?php include('../header.php'); ?>
@@ -42,6 +43,8 @@ else
                   new WOW().init();
             </script>
             <script src="../js/script.js"></script>
+            <!-- <script src="../js/jquery-3.5.1.min.js"></script> -->
+
             <script>  
                   $(document).ready(function(){
                   fetch_user();
@@ -169,6 +172,5 @@ else
                   
                   });  
             </script>
-
       </body>  
 </html>  

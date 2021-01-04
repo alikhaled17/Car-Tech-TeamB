@@ -3,7 +3,7 @@
 
     function success()
     {
-        echo ("<div class='success'>Account created successfully!</div>");
+        echo ("<div class='success'>The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.</div>");
     }
 
     function fail()
@@ -19,10 +19,8 @@
                 && isset($_POST['email'])
                 && isset($_POST['pass'])
                 && isset($_POST['phone'])
-                && isset($_POST['gender']) 
                 && !empty($_FILES["nation_id"]["tmp_name"])
                 && !empty($_FILES["commerc_id"]["tmp_name"])
-                &&!empty($_FILES["prof_img"]["tmp_name"])
                 && isset($_POST['City'])
                 && isset($_POST['Region'])
                 && isset($_POST['street'])
@@ -32,10 +30,7 @@
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $password = $_POST['pass'];
-                $gender = $_POST['gender'];
                 $Phone = $_POST['phone'];
-                $prof_img = $_FILES['prof_img']['tmp_name'];
-                $prof_imgID = addslashes(file_get_contents($prof_img));
                 if ($email != "") {
                     $query = "SELECT email FROM users where email='" . $email . "'";
                     $result = mysqli_query($conn, $query);
@@ -44,8 +39,8 @@
                         fail();
                     } else {
 
-                        $conn->query("INSERT INTO users (username, email, password, gender, phone, account_type, prof_img) 
-                                VALUES ('$username','$email','$password', '$gender','$Phone', 'Provider','$prof_imgID')");
+                        $conn->query("INSERT INTO users (username, email, password, phone, account_type) 
+                                VALUES ('$username','$email','$password','$Phone', 'Provider')");
 
                         $result = $conn->query("SELECT id FROM users WHERE email='$email'");
                         $row = $result->fetch_assoc();
