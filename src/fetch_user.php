@@ -41,7 +41,7 @@ else
 $result = mysqli_query($conn, $query);
 $rows = mysqli_num_rows($result);
 $user_data = mysqli_fetch_array($result);
-
+echo "<div style='min-height: 50%;'>";
 $output = '
 <table class="table table-bordered table-striped">
  <tr>
@@ -107,6 +107,7 @@ else
 
 $output .= '</table>';
 
+echo "</div>";
 echo $output;
 
 }
