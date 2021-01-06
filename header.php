@@ -72,7 +72,7 @@ function count_unseen_message_h($connect)
             tipsArray[21]="Grow through what you go through.";
             tipsArray[22]="Do it with passion or not at all.";
             tipsArray[23]="You matter";
-            var randomIndex = Math.floor(Math.random()*tipsArray.length);
+            var randomIndex = Math.floor(Math.random()*((tipsArray.length) - 1));
             var randomTips = tipsArray[randomIndex];
             document.getElementById("test").innerHTML =randomTips;
         }
@@ -84,7 +84,7 @@ function count_unseen_message_h($connect)
             <div class="row">
                 <div class="col-sm">
                     <i class="fa fa-phone"></i><span> +20 000 0000 000</span>,
-                    <i class="fa fa-envelope-o"></i> info.cartechb@gmail.com
+                    <i class="fa fa-envelope-o"></i> CarTech@gmail.com
                 </div>
                 <div class="col-sm text-right">
                     <span id="test">

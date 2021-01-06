@@ -8,14 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $data_to_store = filter_input_array(INPUT_POST);
     $ser_name = $data_to_store['ser_name'];
-    //Check whether the user name already exists ; 
+    //Check whether the services already exists ; 
     $sql="SELECT * FROM services WHERE ser_name ='$ser_name' ";
     $result=mysqli_query($conn, $sql); 
     $count = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
 
     if($count >=1){
-        $_SESSION['failure'] = "User name already exists";
+        $_SESSION['failure'] = "Services already exists";
         header('location: add_services.php');
         exit();
     }
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $ins_result=mysqli_query($conn, $Insert_qur); 
     if($ins_result)
     {
-    	$_SESSION['success'] = "services added successfully!";
+    	$_SESSION['success'] = "Services added successfully!";
     	header('location: services_Show.php');
     	exit();
     }

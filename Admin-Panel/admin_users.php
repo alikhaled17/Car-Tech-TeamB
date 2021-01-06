@@ -2,12 +2,13 @@
 session_start();
 require_once 'config/config.php';
 include_once('counting.php');
-require_once BASE_PATH.'/includes/auth_validate.php';
+require_once BASE_PATH . '/includes/auth_validate.php';
 // Admins class
 require_once BASE_PATH.'/lib/Admins/Admins.php';
-$users = new Admins();
+$Data_once = new Admins();
 // Only super admin is allowed to access this page
-if ($_SESSION['admin_type'] !== 'super')
+echo '<br>'.$_SESSION['admin_type'].'<br>';
+if ($_SESSION['admin_type'] != 'super')
 {
     // Show permission denied message
     header('HTTP/1.1 401 Unauthorized', true, 401);
@@ -52,7 +53,7 @@ include BASE_PATH.'/includes/header.php';
             <label for="input_order">Order By</label>
             <select name="filter_col" class="form-control">
                 <?php
-                foreach ($users->setOrderingValues() as $opt_value => $opt_name):
+                foreach ($Data_once->setOrderingValues() as $opt_value => $opt_name):
                     ($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
                     echo ' <option value="'.$opt_value.'" '.$selected.'>'.$opt_name.'</option>';
                 endforeach;

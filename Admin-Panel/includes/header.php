@@ -24,10 +24,7 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 
 </head>
@@ -55,12 +52,12 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user-circle fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../Car-Tech-TeamB/"><i class="fa fa-user fa-fw"></i> Car Tech </a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['user_name']; ?> </a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="../Car-Tech-TeamB/"><i class="fa fa-exchange fa-fw"></i> Car Tech </a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -118,7 +115,7 @@
                             <a href="hold_providers.php"><i class="fa fa-clock-o fa-fw"></i>Providers Hold</a>
                         </li>
                         <li>
-                            <a href="providers_show.php"><i class="fa fa-list fa-fw"></i>Providers Accept</a>
+                            <a href="providers_show.php"><i class="fa fa-user-o fa-fw"></i>Providers Accept</a>
                         </li>
                         <li>
                             <a href="add_providers.php"><i class="fa fa-plus fa-fw"></i>Add New</a>
@@ -133,7 +130,7 @@
                 <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
                                 <div class=" nav nav-second-level" id="collapseOne">
                     <li>
-                        <a href="Users_show.php"><i class="fa fa-list fa-fw"></i>List All</a>
+                        <a href="Users_show.php"><i class="fa fa-user-o fa-fw"></i>List All</a>
                     </li>
                     <li>
                         <a href="add_users.php"><i class="fa fa-plus fa-fw"></i>Add New</a>
@@ -177,12 +174,21 @@
         </ul>
     </li>
     <!-- Inbox Message -->
-    <li <?php echo (CURRENT_PAGE == "Message_show.php" || CURRENT_PAGE == "") ? 'class="active"' : ''; ?>>
-        <a href="#"><i class="fa fa-envelope-open fa-fw"></i> Inbox Message <span class="fa arrow"></span></a>
+    <li <?php echo (CURRENT_PAGE == "Message_show.php" || CURRENT_PAGE == "add_message.php") ? 'class="active"' : ''; ?>>
+        <a href="#"><i class="fa fa-envelope fa-fw"></i> Message <span class="fa arrow"></span></a>
         <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
                                 <div class=" nav nav-second-level" id="collapseOne">
             <li>
-                <a href="Message_show.php"><i class="fa fa-list fa-fw"></i>List All</a>
+                <a href="inbox_new_message.php"><i class="fa fa-envelope-o fa-fw"></i>Inbox New Message</a>
+            </li>
+            <li>
+                <a href="Message_show.php"><i class="fa fa-envelope-open-o fa-fw"></i>Inbox Old Message</a>
+            </li>
+            <li>
+                <a href="Sent_messages_show.php"><i class="fa fa-bars fa-fw"></i>Sent Message</a>
+            </li>
+            <li>
+                <a href="add_message.php"><i class="fa fa-paper-plane-o fa-fw"></i>New Message</a>
             </li>
             </div>
         </ul>

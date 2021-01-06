@@ -10,7 +10,7 @@ $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 //Serve POST request.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// If non-super user accesses this script via url. Stop the exexution
-	if ($_SESSION['admin_type'] !== 'super') {
+	if ($_SESSION['admin_type'] != 'super') {
 		// show permission denied message
 		echo 'Permission Denied';
 		exit();
@@ -41,16 +41,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$admin_user_id = filter_input(INPUT_GET, 'admin_user_id', FILTER_VALIDATE_INT);
 	//Encrypting the password
+	$password = password_hash($data_to_update['password'], PASSWORD_DEFAULT);
+
 	if ($data_to_update['password'] != ""){
-		$password = password_hash($data_to_update['password'], PASSWORD_DEFAULT);
+
+		$sql="UPDATE admin_accounts
+		SET user_name='$username',password='$password',admin_type='$admin_type'
+		WHERE id='$admin_user_id'";
 
 	}else{
-		$password = $row['password'];
+		
+		$sql="UPDATE admin_accounts
+		SET user_name='$username',admin_type='$admin_type'
+		WHERE id='$admin_user_id'";
+
 	}
 
-	$sql="UPDATE admin_accounts
-	SET user_name='$username',password='$password',admin_type='$admin_type'
-	WHERE id='$admin_user_id'";
+	
 	$result=mysqli_query($conn, $sql);
 
 	if ($result) {

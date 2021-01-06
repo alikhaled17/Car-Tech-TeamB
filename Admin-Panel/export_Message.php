@@ -4,18 +4,18 @@ require_once 'config/config.php';
 include_once('counting.php');
 require_once BASE_PATH . '/includes/auth_validate.php';
 
-$select = array('id', 'ser_name');
+$select = array('ID','Name','Email','Subject','Massege','date');
 
 
 $chunk_size = 100;
 $offset = 0;
 
-$total_count = (int) counting('services');
+$total_count = (int) counting('message');
 
 $handle = fopen('php://memory', 'w');
 
 fputcsv($handle,$select);
-$filename = 'export_services.csv';
+$filename = 'export_message.csv';
 
 
 $num_queries = ceil($total_count/$chunk_size);
@@ -23,7 +23,8 @@ $num_queries = ceil($total_count/$chunk_size);
 //Prevent memory leak for large number of rows by using limit and offset :
 for ($i=0; $i<$num_queries; $i++){
 
-    $sql="SELECT id, ser_name FROM `services` 
+    $sql="SELECT * FROM `message`
+    where message_type = 'old'
     limit $chunk_size offset $offset ";
 
     $rows=mysqli_query($conn, $sql);
@@ -31,7 +32,7 @@ for ($i=0; $i<$num_queries; $i++){
     $offset = $offset + $chunk_size;
     foreach ($rows as $row) {
 
-        fputcsv($handle,array($row['id'], $row['ser_name']));
+        fputcsv($handle,array($row['id'], $row['Name'],$row['Email'],$row['Subject'],$row['Massege'],$row['date_time']));
     }
 }
 

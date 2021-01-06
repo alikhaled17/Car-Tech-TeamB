@@ -4,7 +4,7 @@ require_once 'config/config.php';
 include_once('counting.php');
 require_once BASE_PATH . '/includes/auth_validate.php';
 
-$select = array('id', 'city_name');
+$select = array('ID', 'City Name');
 
 
 $chunk_size = 100;

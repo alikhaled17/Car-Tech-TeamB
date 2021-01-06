@@ -20,7 +20,7 @@ $select_types_count="'hold'";
 include_once('Show_Data.php');
 // Data class
 require_once BASE_PATH . '/lib/Providers/Providers.php';
-$costumers = new Providers();
+$Data_once = new Providers();
 include BASE_PATH . '/includes/header.php';
 ?>
 <!-- Main container -->
@@ -40,7 +40,7 @@ include BASE_PATH . '/includes/header.php';
             <label for="input_order">Order By</label>
             <select name="filter_col" class="form-control">
                 <?php
-                    foreach ($costumers->setOrderingValues() as $opt_value => $opt_name):
+                    foreach ($Data_once->setOrderingValues() as $opt_value => $opt_name):
                         ($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
                         echo ' <option value="' . $opt_value . '" ' . $selected . '>' . $opt_name . '</option>';
                     endforeach;
@@ -81,6 +81,21 @@ include BASE_PATH . '/includes/header.php';
 
             </tr>
         </thead>
+        <script type="text/javascript"> function accept_prov(prov_id){
+            $.ajax({
+                type: "POST",
+                url: "accept_hold_prov.php",
+                data: {
+                    get_prov_id:prov_id
+                },
+                success: function (response) {
+                    setInterval(function() {
+                    location.reload();
+                }, 50);
+                }
+            });
+        }
+        </script>
         <tbody>
             <?php foreach ($rows as $row): ?>
             <tr>
@@ -92,19 +107,20 @@ include BASE_PATH . '/includes/header.php';
                 <th><?php echo xss_clean($row['region_name'] . ' '); ?></th>
                 <th><?php echo ($row['ser_name'] . ' '); ?></th>
                 <td style="text-align:center;"><img src="data:image/jpg;charset=utf8mb4;base64,
-                <?php echo base64_encode($row['ID_img']); ?>" style='width:50px;height:50px;'/></td>
+                <?php echo base64_encode($row['ID_img']); ?>" style='width:70px;height:50px;'/></td>
                 <td style="text-align:center;"><img src="data:image/jpg;charset=utf8mb4;base64,
-                <?php echo base64_encode($row['comm_img']); ?>" style='width:50px;height:50px;'/></td>
+                <?php echo base64_encode($row['comm_img']); ?>" style='width:70px;height:50px;'/></td>
 
                 <td>
-                    <a href="edit_providers.php?providers_hold_id=<?php echo $row['id']; ?>&operation=accpet" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i></a>
-                    <a href="#" class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row['id']; ?>"><i class="glyphicon glyphicon-trash"></i></a>
+                    <?php $selected_prov = $row['id']; ?>
+                    <button onclick="accept_prov(<?php echo $selected_prov; ?>)" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i></button>
+                    <button href="#" class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row['id']; ?>"><i class="glyphicon glyphicon-trash"></i></button>
                 </td>
             </tr>
             <!-- Delete Confirmation Modal -->
             <div class="modal fade" id="confirm-delete-<?php echo $row['id']; ?>" role="dialog">
                 <div class="modal-dialog">
-                    <form action="delete_providers.php" method="POST">
+                    <form action="delete_hold_prov.php" method="POST">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <div class="modal-header">

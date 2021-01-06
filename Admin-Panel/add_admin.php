@@ -3,8 +3,9 @@ session_start();
 require_once './config/config.php';
 require_once 'includes/auth_validate.php';
 
+$operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 //Only super admin is allowed to access this page
-if ($_SESSION['admin_type'] !== 'super') {
+if ($_SESSION['admin_type'] != 'super') {
     // show permission denied message
     echo 'Permission Denied';
     exit();

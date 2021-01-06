@@ -106,6 +106,8 @@
                     </div>
                     <div>
                         <span> 
+                            <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
+                            update </button>
                             <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
                             Show Favorite 
                              </button>

@@ -3,6 +3,7 @@ session_start();
 require_once './config/config.php';
 require_once 'includes/auth_validate.php';
 
+$operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
@@ -11,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $ad_content = $data_to_store['ad_content'];
     $img_adver = $_FILES['img_adver']['tmp_name'];
     $img_adver= addslashes(file_get_contents($img_adver));
+    
 
     //Check whether the user name already exists ; 
     $sql="SELECT * FROM advertising WHERE name_adver ='$name_adver' ";

@@ -18,12 +18,10 @@
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                <select name="city_name" class="form-control" required="" value="<?php echo ($edit) ? $region['city_id'] : ''; ?>">
                 <?php 
-                $selected_city_id = $region['city_id'];
+                $selected_city_id =($edit) ? $region['city_id'] : '' ;
                 include_once('include_citis.php'); ?>
-                <option value="Choose" >Choose ...</option>
-                </select>
+                
                 
             </div>
         </div>

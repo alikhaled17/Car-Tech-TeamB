@@ -40,7 +40,7 @@ session_start();
 
                              <!-- City -->
                             <label class="label">City</label>
-                            <?php include('search_citis.php'); ?>
+                            <?php include('citis_req.php'); ?>
 
                             <!-- Region -->
                             <label class="label">Region</label>
