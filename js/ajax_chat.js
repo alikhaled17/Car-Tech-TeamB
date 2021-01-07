@@ -52,7 +52,9 @@ $(document).ready(function () {
         // log.animate({ scrollTop: log.prop('scrollHeight')}, 0);
         // var log = $('#chat-box');
         // log.animate({ scrollTop: log.prop('scrollHeight')}, 1000); 
-         
+        $('#' + to_user_id + '').click(function (){
+            $('#chat_history_' + to_user_id + '').animate({ scrollTop: $('#chat_history_' + to_user_id + '').prop('scrollHeight')}, 1000);
+        });  
     }
   
 
