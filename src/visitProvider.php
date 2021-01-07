@@ -86,7 +86,6 @@
                         {
                             $search_sql="SELECT favorite_id FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id'  " ;
                             $search_result = mysqli_query($conn, $search_sql);
-                            // $search_rows = mysqli_num_rows($search_result);
                             if(mysqli_num_rows($search_result) != 1)
                         {
                     ?>

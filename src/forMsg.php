@@ -37,29 +37,32 @@ function fetch_user_chat_history($from_user_id, $to_user_id, $conn)
 
 $result = mysqli_query($conn, $query);
 $user_data = mysqli_fetch_array($result);
-$output = '<ul class="list-unstyled">';
+$output = '<div class="chat-history"><ul>';
 foreach($result as $row)
  {
     $user_name = '';
     if($row['from_user_id'] == $from_user_id)
     {
-        $user_name = '<b class="text-success">You</b>';
+        $user_name = '<li class="clearfix">
+        <div class="message-data align-right">';
     }
     else
     {
-        $user_name = '<b class="text-danger">'.get_user_name($row['from_user_id'], $conn).'</b>';
+        $user_name = '<li class="clearfix">
+        <div class="message-data">';
     }
     $output .= '
-        <li style="border-bottom:1px dotted #ccc">
-         <p>'.$user_name.' - '.$row['chat_message'].'
-          <div align="right">
-           - <small><em>'.$row['timestamp'].'</em></small>
-          </div>
-         </p>
+            <span class="message-data-time" >'.$row['timestamp'].'</span> &nbsp; &nbsp;
+            <span class="message-data-name" >'.$user_name.'</span> <i class="fa fa-circle me"></i>
+            
+            </div>
+            <div class="message other-message float-right">
+            '.$row['chat_message'].'
+            </div>
         </li>
         ';
        
-       $output .= '</ul>';
+       $output .= '</ul></div>';
        $query = "
        UPDATE chat_message 
        SET status = '0' 
