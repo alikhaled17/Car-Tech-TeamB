@@ -42,7 +42,6 @@
     </div>
     <?php } ?>
     <?php $displayed_attribute = $operation == 'edit' && $count_super == '1' && $admin_account['admin_type'] =='super'?  " disabled " : " ";
-        echo $displayed_attribute;
     ?>
     <!-- radio checks -->
     <div class="form-group">

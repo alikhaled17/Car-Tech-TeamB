@@ -20,8 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$img_adver_tmp= addslashes(file_get_contents($img_adver_tmp));
 	$ad_type =$data_to_update['ad_type'];
 
-	echo $ad_type;
-
 	$advertising_id = filter_input(INPUT_GET, 'advertising_id', FILTER_VALIDATE_INT);
 
 	if($img_adver_tmp != "")
@@ -41,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['failure'] = "Failed to update advertising : " . mysqli_error($conn);
 	}
 
-	// header('location: advertising_show.php');
-	// exit;
+	header('location: advertising_show.php');
+	exit;
 
 }
 

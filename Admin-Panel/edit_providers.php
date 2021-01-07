@@ -21,17 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$region_name =$data_to_update['region_name'];
 	$ser_ids =$data_to_update['ser_name'];
 	$account_type =$data_to_update['account_type'];
-	$img_ID = $_FILES['ID_img']['tmp_name'];
-    $img_ID= addslashes(file_get_contents($img_ID));
-    $img_comm = $_FILES['comm_img']['tmp_name'];
-    $img_comm= addslashes(file_get_contents($img_comm));
 	$prov_state =$data_to_update['prov_state'];
-    
+	
+	$img_ID = $_FILES['ID_img']['tmp_name'];
+	$img_comm = $_FILES['comm_img']['tmp_name'];
+
+	$add_id_image = $img_ID == '' ? "" : ", providers.ID_img = '".addslashes(file_get_contents($img_ID))."' ";
+	$add_img_comm = $img_comm == '' ? "" : ", providers.comm_img = '".addslashes(file_get_contents($img_comm))."' ";
+
 
 	$sql="SELECT * FROM `users`
 	WHERE email ='$email' && id <>'$providers_id' ";
 	$result=mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result);
+	
 	if (!empty($row['email'])) {
 
 		$_SESSION['failure'] = "Provider already exists";
@@ -47,20 +50,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$providers_id = filter_input(INPUT_GET, 'providers_id', FILTER_VALIDATE_INT);
 
 	$add_password = $password != "" ? ", users.password='$password' " : "";
-	$add_ID_img = $img_ID != "" ? ", providers.ID_img='$img_ID' " : "";
-	$add_comm_img = $img_comm != "" ? ", providers.comm_img='$img_comm' " : "";
 
 	$sql="UPDATE users, p_address ,providers
-	SET users.username='$username'".$add_password.",users.email='$email',users.phone='$phone',users.account_type='$account_type', 
-	p_address.region_id='$region_name'".$add_ID_img."".$add_comm_img.",providers.prov_state='$prov_state'
-	WHERE users.id='$providers_id' && ;";
-		 echo $sql;
+	SET users.username='$username'".$add_password.",users.email='$email',users.phone='$phone',
+	users.account_type='$account_type',p_address.region_id='$region_name',providers.prov_state='$prov_state'".$add_id_image.$add_img_comm."
+	WHERE users.id='$providers_id' and p_address.p_id='$providers_id' and providers.user_id='$providers_id';";
+		 
 	$sql .= "Delete from prov_services where p_id = '$providers_id';";
 
 	foreach ($ser_ids as $ser_id):
 		$sql .= "INSERT INTO prov_services (p_id,ser_id) VALUES ('$providers_id','$ser_id');";
-
 	endforeach;
+
+
 	$result=mysqli_multi_query($conn, $sql); 
 
 	if ($result) {

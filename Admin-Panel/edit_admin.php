@@ -9,15 +9,9 @@ $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 ($operation == 'edit') ? $edit = true : $edit = false;
 //Serve POST request.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	// If non-super user accesses this script via url. Stop the exexution
-	// if ($_SESSION['admin_type'] != 'super') {
-	// 	// show permission denied message
-	// 	echo 'Permission Denied';
-	// 	exit();
-	// }
+	
 	// Sanitize input post if we want
 	$data_to_update = filter_input_array(INPUT_POST);
-	echo json_encode($data_to_update);
 	//Check whether the user name already exists ;
 	$username =$data_to_update['user_name'];
 	$admin_type =$data_to_update['admin_type'];

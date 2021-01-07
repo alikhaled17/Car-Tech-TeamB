@@ -2,17 +2,13 @@
 session_start();
 require_once 'config/config.php';
 include_once('counting.php');
+
 require_once BASE_PATH . '/includes/auth_validate.php';
 // Admins class
 require_once BASE_PATH.'/lib/Admins/Admins.php';
 $Data_once = new Admins();
 // Only super admin is allowed to access this page
-if ($_SESSION['admin_type'] != 'super')
-{
-    // Show permission denied message
-    header('HTTP/1.1 401 Unauthorized', true, 401);
-    exit('Only super admin is allowed to access this page');
-}
+
 // send data to Show Data
 $select_coul = 'id, user_name, admin_type';
 $nema_table = 'admin_accounts';
@@ -22,6 +18,14 @@ $select_types = null;
 include_once('Show_Data.php');
 
 include BASE_PATH.'/includes/header.php';
+if ($_SESSION['admin_type'] != 'super')
+{
+    // Show permission denied message
+    $_SESSION['failure'] = "Only super admin is allowed to access this page";
+    //header('HTTP/1.1 401 Unauthorized', true, 401);        // exit();
+    // header('HTTP/1.1 401 Unauthorized', true, 401);
+    // exit('<a class="navbar-brand"> Only super admin is allowed to access this page </a>');
+}
 ?>
 <!-- Main container -->
 <div id="page-wrapper">
@@ -29,19 +33,21 @@ include BASE_PATH.'/includes/header.php';
         <div class="col-lg-6">
             <h1 class="page-header">Admin</h1>
         </div>
+        <?php if ($_SESSION['admin_type'] == 'super') { ?>
         <div class="col-lg-6">
             <div class="page-action-links text-right">
                 <a href="add_admin.php" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add new</a>
             </div>
         </div>
+        <?php } ?>
     </div>
     <?php include BASE_PATH.'/includes/flash_messages.php'; ?>
-
-    <?php
+<?php if ($_SESSION['admin_type'] == 'super')
+{
     if (isset($del_stat) && $del_stat == 1)
     {
         echo '<div class="alert alert-info">Successfully deleted</div>';
-    }
+    }  
     ?>
     
     <!-- Filters -->
@@ -130,6 +136,7 @@ include BASE_PATH.'/includes/header.php';
     <?php echo paginationLinks($page, $total_pages, 'admin_users.php'); ?>
     </div>
     <!-- //Pagination -->
+<?php } ?>
 </div>
 <!-- //Main container -->
 <?php include BASE_PATH.'/includes/footer.php'; ?>

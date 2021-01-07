@@ -55,7 +55,7 @@
                         <i class="fa fa-user-circle fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['user_name']; ?> </a>
+                        <li><a href="edit_admin.php?admin_user_id=<?php echo $_SESSION['id']; ?>&operation=edit"><i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['user_name']; ?> </a>
                         </li>
                         <li><a href="../Car-Tech-TeamB/"><i class="fa fa-exchange fa-fw"></i> Car Tech </a>
                         </li>
@@ -75,26 +75,28 @@
                         <li>
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                        <?php if ($_SESSION['admin_type'] == 'super') { ?>
                         <!-- Admin Users -->
-                        <li
-                            <?php echo (CURRENT_PAGE == "admin_users.php" || CURRENT_PAGE == "add_admin.php") ? 'class="active"' : ''; ?>>
-                            <a href="#"><i class="fa fa-adn fa-fw"></i> Admin <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
-                                <div class=" nav nav-second-level" id="collapseOne">
-                                <li>
-                                    <a href="admin_users.php"><i class="fa fa-list fa-fw"></i>List All</a>
-                                </li>
-                                <li>
-                                    <a href="add_admin.php"><i class="fa fa-plus fa-fw"></i>Add New</a>
-                                </li>
-                                </div>
-                            </ul>
-                        </li>
+                            <li
+                                <?php echo (CURRENT_PAGE == "admin_users.php" || CURRENT_PAGE == "add_admin.php") ? 'class=""' : ''; ?>>
+                                <a href="#"><i class="fa fa-adn fa-fw"></i> Admin <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
+                                    <div class=" nav nav-second-level" id="collapseOne">
+                                    <li>
+                                        <a href="admin_users.php"><i class="fa fa-list fa-fw"></i>List All</a>
+                                    </li>
+                                    <li>
+                                        <a href="add_admin.php"><i class="fa fa-plus fa-fw"></i>Add New</a>
+                                    </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        <?php } ?>
                 <!-- services -->
-                <li
-                    <?php echo (CURRENT_PAGE == "services_Show.php" || CURRENT_PAGE == "add_services.php") ? 'class="active"' : ''; ?>>
-                    <a href="#"><i class="fa fa-car fa-fw"></i> Services <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
+                        <li
+                            <?php echo (CURRENT_PAGE == "services_Show.php" || CURRENT_PAGE == "add_services.php") ? 'class=""' : ''; ?>>
+                            <a href="#"><i class="fa fa-car fa-fw"></i> Services <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                                 <div class=" nav nav-second-level" id="collapseOne">
                         <li>
                             <a href="services_Show.php"><i class="fa fa-list fa-fw"></i>List All</a>
@@ -107,7 +109,7 @@
             </li>
             <!-- providers -->
             <li
-                <?php echo (CURRENT_PAGE == "providers_show.php" || CURRENT_PAGE == "add_providers.php") ? 'class="active"' : ''; ?>>
+                <?php echo (CURRENT_PAGE == "providers_show.php" || CURRENT_PAGE == "add_providers.php") ? 'class=""' : ''; ?>>
                 <a href="#"><i class="fa fa-user-circle-o fa-fw"></i> Providers <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                     <div class="nav nav-second-level" id="collapseOne">
@@ -125,9 +127,9 @@
             </li>
             <!-- Users -->
             <li
-                <?php echo (CURRENT_PAGE == "Users_show.php" || CURRENT_PAGE == "add_users.php") ? 'class="active"' : ''; ?>>
+                <?php echo (CURRENT_PAGE == "Users_show.php" || CURRENT_PAGE == "add_users.php") ? 'class=""' : ''; ?>>
                 <a href="#"><i class="fa fa-users fa-fw"></i> Users <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
+                <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                                 <div class=" nav nav-second-level" id="collapseOne">
                     <li>
                         <a href="Users_show.php"><i class="fa fa-user-o fa-fw"></i>List All</a>
@@ -139,9 +141,9 @@
     </ul>
     </li>
     <!-- citis -->
-    <li <?php echo (CURRENT_PAGE == "Cities_Show.php" || CURRENT_PAGE == "add_Cities.php") ? 'class="active"' : ''; ?>>
+    <li <?php echo (CURRENT_PAGE == "Cities_Show.php" || CURRENT_PAGE == "add_Cities.php") ? 'class=""' : ''; ?>>
         <a href="#"><i class="fa fa-address-book fa-fw"></i> Citis & Region <span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
+        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                                 <div class=" nav nav-second-level" id="collapseOne">
             <li>
                 <a href="Cities_Show.php"><i class="fa fa-list fa-fw"></i>List all Citis</a>
@@ -160,9 +162,9 @@
     </li>
     <!-- advertising -->
     <li
-        <?php echo (CURRENT_PAGE == "advertising_show.php" || CURRENT_PAGE == "add_advertising.php") ? 'class="active"' : ''; ?>>
+        <?php echo (CURRENT_PAGE == "advertising_show.php" || CURRENT_PAGE == "add_advertising.php") ? 'class=""' : ''; ?>>
         <a href="#"><i class="fa fa-bullhorn fa-fw"></i> Advertising <span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
+        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                                 <div class=" nav nav-second-level" id="collapseOne">
             <li>
                 <a href="advertising_show.php"><i class="fa fa-list fa-fw"></i>List All</a>
@@ -174,9 +176,9 @@
         </ul>
     </li>
     <!-- Inbox Message -->
-    <li <?php echo (CURRENT_PAGE == "Message_show.php" || CURRENT_PAGE == "add_message.php") ? 'class="active"' : ''; ?>>
+    <li <?php echo (CURRENT_PAGE == "Message_show.php" || CURRENT_PAGE == "add_message.php") ? 'class=""' : ''; ?>>
         <a href="#"><i class="fa fa-envelope fa-fw"></i> Message <span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne"">
+        <ul class="nav nav-second-level collapse " data-toggle="collapse" data-target="#collapseOne">
                                 <div class=" nav nav-second-level" id="collapseOne">
             <li>
                 <a href="inbox_new_message.php"><i class="fa fa-envelope-o fa-fw"></i>Inbox New Message</a>
