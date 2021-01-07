@@ -91,7 +91,9 @@ $(document).ready(function () {
             method: "POST",
             data: { to_user_id: to_user_id },
             success: function (data) {
-                $('#chat_history_' + to_user_id).html(data);
+                // $('#chat_history_' + to_user_id).html(data);
+                var chatDiv = $('#chat_history_' + to_user_id);
+                chatDiv.html(data);
             }
         })
     }
