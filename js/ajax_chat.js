@@ -57,6 +57,8 @@ $(document).ready(function () {
     $(document).on('click', '.send_chat', function () {
         var to_user_id = $(this).attr('id');
         var chat_message = $('#chat_message_' + to_user_id).val();
+        // var thi =  $(this);
+        console.log(chat_message);
         $.ajax({
             url: "insert_chat.php",
             method: "POST",
@@ -64,8 +66,11 @@ $(document).ready(function () {
             success: function (data) {
 
                 $('#chat_history_' + to_user_id).html(data);
+                
             }
         })
+        var chat_message = $('#chat_message_' + to_user_id).val(' ');
+        // console.log(chat_message);
     });
 
     function fetch_user_chat_history(to_user_id) {

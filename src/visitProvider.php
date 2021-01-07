@@ -346,6 +346,7 @@
         
         $('.chat-text textarea').keypress(function(event) {
             var thi =  $(this);
+            console.log(thi);
             var to_user_id = thi.attr('id');
             if(event.keyCode == '13'){
                 let chat_message = thi.val().trim();
