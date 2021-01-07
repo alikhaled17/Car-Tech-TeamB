@@ -16,7 +16,6 @@ body{
 }
 .chat-head{
 	width: inherit;
-	height: 45px;
 	background: #2c3e50;
 	border-radius: 5px 5px 0px 0px;
 }
@@ -30,6 +29,7 @@ body{
 	color: #fff;
 	background: none;
 	border: none;
+	font-size: large;
 }
 .chat-head button:focus {
 	outline: none;
@@ -37,7 +37,7 @@ body{
 .chat-head img{
 	cursor: pointer;
 	float: right;
-	width: 25px;
+	width: 5%;
 	margin: 10px;
 }
 .chat-body{

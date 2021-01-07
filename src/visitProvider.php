@@ -327,7 +327,11 @@
         }
         function make_chat_dialog_box(to_user_id, to_user_name) {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
-            modal_content += fetch_one_user_chat_history(to_user_id);
+            let chat_content = fetch_one_user_chat_history(to_user_id);
+            if (chat_content !== undefined)
+                modal_content += chat_content; 
+            else
+                modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
             modal_content += '</div>';
             $('#user_model_details').html(modal_content);
         }
@@ -344,16 +348,17 @@
             var thi =  $(this);
             var to_user_id = thi.attr('id');
             if(event.keyCode == '13'){
-                
-                if((thi.val() != '') || (thi.val() != ' ')) {
-                    var chat_message = thi.val();
+                let chat_message = thi.val().trim();
+
+                if((chat_message != '') && (chat_message != ' ')) {
+                    
                     $.ajax({
                         url: "messengerOne/insert_chat_one.php",
                         method: "POST",
                         data: { to_user_id: to_user_id, chat_message: chat_message },
                         success: function (data) {
-                                $('#chat_history_' + to_user_id).html(data);
-                            }
+                            var chatDiv = $('#chat_history_' + to_user_id);
+                        }
                     }) 
                     thi.val('');
                 } 
@@ -366,7 +371,8 @@
                 method: "POST",
                 data: { to_user_id: to_user_id },
                 success: function (data) {
-                    $('#chat_history_' + to_user_id).html(data);
+                    var chatDiv = $('#chat_history_' + to_user_id);
+                    chatDiv.html(data);
                 }
             })
         }
