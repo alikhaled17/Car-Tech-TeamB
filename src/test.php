@@ -1,7 +1,35 @@
 <div class="container clearfix">
     <div class="people-list" id="people-list">
+      <div class="search">
+        <input type="text" placeholder="search" />
+        <i class="fa fa-search"></i>
+      </div>
+      <ul class="list">
+        
+       
+        
       
-      <ul class="list"> 
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Monica Ward</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Dean Henry</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> offline since Oct 28
+            </div>
+          </div>
+        </li>
+        
         <li class="clearfix">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" />
           <div class="about">
@@ -30,7 +58,7 @@
           <li class="clearfix">
             <div class="message-data align-right">
               <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Olia</span> 
+              <span class="message-data-name" >Olia</span>
               <i class="fa fa-circle me"></i>
               
             </div>
@@ -41,8 +69,8 @@
           
           <li>
             <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online">
-              </i> Vincent</span>
+              <span class="message-data-name">
+              <i class="fa fa-circle online"></i> Vincent</span>
               <span class="message-data-time">10:12 AM, Today</span>
             </div>
             <div class="message my-message">

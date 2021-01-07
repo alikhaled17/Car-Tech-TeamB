@@ -1,5 +1,6 @@
 <?php 
     include('../Config.php');  
+
     ob_start();
     session_start();
     $id =  $_GET['id']; 
@@ -75,24 +76,26 @@
 <body>
     
     <?php include('../header.php'); ?>
+    <!-- Remove include for_msg.php file from here because it aleardy exist in fetch one user  -->
+    
+    
+    
 
-    <div class="wrapper">
-        <div class="chat-box">
-            <div class="chat-head">
-                <h2>Chat Box</h2>
-                <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
-            </div>
-            <div class="chat-body">
-                <div class="msg-insert">
-                    <div class="msg-send"> Send message </div>
-                    <div class="msg-receive"> Received message </div>
-                </div>
-                <div class="chat-text">
-                    <textarea placeholder="Send"></textarea>
-                </div>
-            </div>
+  <div class="wrapper">
+    <div class="chat-box">
+      <div class="chat-head">
+      <div id="user_details"></div>
+        <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
+      </div>
+      <div class="chat-body">
+        <div class="msg-insert" id="user_model_details">
         </div>
+        <div class="chat-text">
+          <textarea placeholder="Send"></textarea>
+        </div>
+      </div>
     </div>
+  </div>
 
     <div class="prof-section">
         <div class="container">
@@ -266,6 +269,7 @@
         </div>
     </div>
     <?php include('../footer.php'); ?>
+    <?php include('forMsg_one.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -273,34 +277,147 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        $(function(){
-            var arrow = $('.chat-head img');
-            var textarea = $('.chat-text textarea');
+        // $(function(){
+        //     var arrow = $('.chat-head img');
+        //     var textarea = $('.chat-text textarea');
 
-            arrow.on('click', function(){
-                var src = arrow.attr('src');
+        //     arrow.on('click', function(){
+        //         var src = arrow.attr('src');
 
-                $('.chat-body').slideToggle('fast');
-                if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
-                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
-                }
-                else{
-                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
-                }
-            });
+        //         $('.chat-body').slideToggle('fast');
+        //         if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
+        //             arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
+        //         }
+        //         else{
+        //             arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
+        //         }
+        //     });
 
            
-            textarea.keypress(function(event) {
-                var $this = $(this);
+        //     textarea.keypress(function(event) {
+        //         var $this = $(this);
 
-                if(event.keyCode == 13){
-                    var msg = $this.val();
-                    $this.val('');
-                    $('.msg-insert').prepend("<div class='msg-send'>"+msg+"</div>");
-                    }
-            });
+        //         if(event.keyCode == 13){
+        //             var msg = $this.val();
+        //             $this.val('');
+        //             $('.msg-insert').prepend("<div class='msg-send'>"+msg+"</div>");
+        //             }
+        //     });
+
+        // });
+
+
+        $(document).ready(function () {
+        fetch_user();
+        setInterval(function () {
+            update_last_activity();
+            fetch_user();
+            update_chat_history_data();
+        }, 5000);
+
+     
+        function update_last_activity() {
+            $.ajax({
+                url: "update_last_activity_one.php",
+                success: function () {
+                }
+            })
+        }
+
+        function fetch_user() {
+            $.ajax({
+                url: "fetch_one_user.php?id=<?php echo $id; ?>",
+                method: "POST",
+                success: function (data) {
+                    $('#user_details').html(data);
+                }
+            })
+        }
+        function make_chat_dialog_box(to_user_id, to_user_name) {
+            var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
+            modal_content += fetch_user_chat_history(to_user_id);
+            modal_content += '</div>';
+            $('#user_model_details').html(modal_content);
+        }
+
+        $(document).on('click', '.start_chat', function () {
+            var to_user_id = $(this).data('touserid');
+            var to_user_name = $(this).data('tousername');
+            make_chat_dialog_box(to_user_id, to_user_name);
 
         });
+
+        $(document).on('click', '.send_chat', function () {
+            var to_user_id = $(this).attr('id');
+            var chat_message = $('#chat_message_' + to_user_id).val();
+            $.ajax({
+                url: "insert_chat_one.php",
+                method: "POST",
+                data: { to_user_id: to_user_id, chat_message: chat_message },
+                success: function (data) {
+
+                    $('#chat_history_' + to_user_id).html(data);
+                }
+            })
+        });
+
+        function fetch_user_chat_history(to_user_id) {
+            $.ajax({
+                url: "fetch_one_user_chat_history_one.php",
+                method: "POST",
+                data: { to_user_id: to_user_id },
+                success: function (data) {
+                    $('#chat_history_' + to_user_id).html(data);
+                }
+            })
+        }
+
+        function update_chat_history_data() {
+            $('.chat_history').each(function () {
+                console.log("===test====");
+                var to_user_id = $(this).data('touserid');
+                fetch_user_chat_history(to_user_id);
+            });
+        }
+
+
+        function fetch_user_chat_history(to_user_id) {
+            $.ajax({
+                url: "fetch_one_user_chat_history.php",
+                method: "POST",
+                data: { to_user_id: to_user_id },
+                success: function (data) {
+                    $('#chat_history_' + to_user_id).html(data);
+                }
+            })
+        }
+
+
+
+        $(document).on('focus', '.chat_message', function () {
+            var is_type = 'yes';
+            $.ajax({
+                url: "update_is_type_status_one.php",
+                method: "POST",
+                data: { is_type: is_type },
+                success: function () {
+                }
+            })
+        });
+
+        $(document).on('blur', '.chat_message', function () {
+            var is_type = 'no';
+            $.ajax({
+                url: "update_is_type_status_one.php",
+                method: "POST",
+                data: { is_type: is_type },
+                success: function () {
+                }
+            })
+        });
+
+    });  
+        
     </script>
 </body>
 </html>
