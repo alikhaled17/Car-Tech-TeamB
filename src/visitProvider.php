@@ -87,7 +87,7 @@
         <h2 id="user_details"></h2>
         <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
       </div>
-      <div class="chat-body">
+      <div class="chat-body" id="chat-body">
         <div class="msg-insert" id="user_model_details">
         </div>
         <div class="chat-text">
@@ -334,6 +334,7 @@
                 modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
             modal_content += '</div>';
             $('#user_model_details').html(modal_content);
+            
         }
 
         $(document).on('click', '.start_chat', function () {
@@ -362,6 +363,9 @@
                     }) 
                     thi.val('');
                 } 
+                $('.chat-text textarea').keypress(function(event){
+                $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 1000);
+            }); 
             }
         });
 

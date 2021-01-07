@@ -30,7 +30,7 @@ echo $output;
 <script>
     $(document).ready(function(){
 
-$("#yourButtonId")[0].click();
+    $("#yourButtonId")[0].click();
 
-}); 
-    </script>
+    }); 
+</script>
