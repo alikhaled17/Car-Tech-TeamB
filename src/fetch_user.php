@@ -17,11 +17,10 @@ if(isset($_SESSION['p_id']) )
 {
     $id=$_SESSION['p_id'];
     $query = "
-    SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
-    ON users.id = favorite.favorite_id
+    SELECT  * FROM `users` 
     LEFT OUTER JOIN `chat_message`
     ON users.id = chat_message.from_user_id
-    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    WHERE  chat_message.to_user_id = $id
     GROUP BY(users.id)
     ";  
 }
@@ -29,11 +28,10 @@ else
 {
     $id=$_SESSION['u_id'];
     $query = "
-    SELECT  * FROM `users` LEFT OUTER JOIN `favorite`
-    ON users.id = favorite.favorite_id
+    SELECT  * FROM `users` 
     LEFT OUTER JOIN `chat_message`
     ON users.id = chat_message.from_user_id
-    WHERE favorite.user_id = $id OR chat_message.to_user_id = $id
+    WHERE  chat_message.to_user_id = $id
     GROUP BY(users.id)
     ";   
 }
@@ -50,26 +48,34 @@ if (isset($_SESSION['p_id']))
     foreach($result as $row)
     {
     $status = '';
-    $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 10 second');
+    date_default_timezone_set("Africa/Cairo");
+    $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 15 second ');
     $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
     $user_last_activity = fetch_user_last_activity($row['id'], $conn);
     
+    // echo "last: " . $user_last_activity ."<br>";
+    // echo "time: " . $current_timestamp ."<br>";
+
     if($user_last_activity > $current_timestamp)
     {
-    $status = '<span class="badge badge-success">Online</span>';
+        $st_class = "online";
+        $status = '<span>Online</span>';
     }
     else
     {
-    $status = '<span class="badge badge-danger">Offline</span>';
+        $st_class = "offline";
+        $status = '<span>Offline</span>';
     }
     $output .= '
     <li class="clearfix">
-        <button type="button" class="btn btn-info btn-xs start_chat" data-touserid="'.$row['id'].'" data-tousername="'.$row['username'].'"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" /></button>
+        <button type="button" class="start_chat" data-touserid="'.$row['id'].'" data-tousername="'.$row['username'].'">
+            <img  src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($row['prof_img']) .'" alt="avatar" />
+        </button>
         <div class="about">
-        <div class="name">'.$row['username'] .  '<span> '.count_unseen_message($row['id'], $id, $conn).' </span></div>
-        <div class="status">
-            <i class="fa fa-circle online"></i> '.$status.'
-        </div>
+            <div class="name">'.$row['username'] .  '<span> '.count_unseen_message($row['id'], $id, $conn).' </span></div>
+            <div class="status">
+                <i class="fa fa-circle '.$st_class.'"></i> '.$status.'
+            </div>
         </div>
     </li>
     ';

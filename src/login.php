@@ -15,11 +15,29 @@ if (isset($_POST['login'])) {
         $user_data = mysqli_fetch_array($result);
         if($user_data["account_type"] == "Client") 
         {
+            
+
             $_SESSION['u_id'] = $user_data["id"];
             header("Location: uProfile.php");
+
         }
         else
         {
+
+            $sub_query = "
+                INSERT INTO login_details (user_id) 
+                VALUES ('".$user_data['id']."')
+            ";
+            $statement = $conn->prepare($sub_query);
+            $statement->execute();
+
+            $sq = "SELECT * FROM login_details WHERE user_id = '". $user_data['id'] ."'";
+            $cat = mysqli_query($conn, $sq);
+            $hh = mysqli_fetch_array($cat);
+
+            $_SESSION['login_details_id'] = $hh['login_details_id'];
+
+
             $_SESSION['p_id'] = $user_data["id"];
             header("Location: pProfile.php");
         }

@@ -68,12 +68,32 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
+    <link rel="stylesheet" href="../css/chat_direct.css" />
 
 
 </head>
 <body>
     
     <?php include('../header.php'); ?>
+
+    <div class="wrapper">
+        <div class="chat-box">
+            <div class="chat-head">
+                <h2>Chat Box</h2>
+                <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
+            </div>
+            <div class="chat-body">
+                <div class="msg-insert">
+                    <div class="msg-send"> Send message </div>
+                    <div class="msg-receive"> Received message </div>
+                </div>
+                <div class="chat-text">
+                    <textarea placeholder="Send"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
@@ -252,5 +272,35 @@
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
+    <script>
+        $(function(){
+            var arrow = $('.chat-head img');
+            var textarea = $('.chat-text textarea');
+
+            arrow.on('click', function(){
+                var src = arrow.attr('src');
+
+                $('.chat-body').slideToggle('fast');
+                if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
+                }
+                else{
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
+                }
+            });
+
+           
+            textarea.keypress(function(event) {
+                var $this = $(this);
+
+                if(event.keyCode == 13){
+                    var msg = $this.val();
+                    $this.val('');
+                    $('.msg-insert').prepend("<div class='msg-send'>"+msg+"</div>");
+                    }
+            });
+
+        });
+    </script>
 </body>
 </html>

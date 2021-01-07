@@ -13,7 +13,6 @@ WHERE login_details_id = '".$_SESSION["login_details_id"]."'
 ";
 
 $statement = $conn->prepare($query);
-
 $statement->execute();
 
 ?>

@@ -32,28 +32,23 @@ function fetch_user_chat_history($from_user_id, $to_user_id, $conn)
  AND to_user_id = '".$to_user_id."') 
  OR (from_user_id = '".$to_user_id."' 
  AND to_user_id = '".$from_user_id."') 
- ORDER BY timestamp DESC
+ ORDER BY timestamp 
  ";
 
 $result = mysqli_query($conn, $query);
 $user_data = mysqli_fetch_array($result);
-$output = '<div class="chat-history"><ul>';
+$output = '<ul>';
 foreach($result as $row)
  {
     $user_name = '';
     if($row['from_user_id'] == $from_user_id)
     {
-        $user_name = '<li class="clearfix">
-        <div class="message-data align-right">';
-    }
-    else
-    {
-        $user_name = '<li class="clearfix">
-        <div class="message-data">';
-    }
-    $output .= '
+
+
+        $output .= '<li class="clearfix">
+        <div class="message-data align-right">
             <span class="message-data-time" >'.$row['timestamp'].'</span> &nbsp; &nbsp;
-            <span class="message-data-name" >'.$user_name.'</span> <i class="fa fa-circle me"></i>
+            <span class="message-data-name" >You</span> <i class="fa fa-circle me"></i>
             
             </div>
             <div class="message other-message float-right">
@@ -61,8 +56,31 @@ foreach($result as $row)
             </div>
         </li>
         ';
+    }
+    else
+
+    {
+        if(fetch_user_last_activity($row['from_user_id'], $conn) == 1) {
+            $x = "online";
+        } else {
+            $x = "offline";
+        }
+        $output .= '<li class="clearfix">
+        <div class="message-data">
+            <i class="fa fa-circle '.$x. '"></i>
+            <span class="message-data-name" >'.get_user_name($row['from_user_id'], $conn).'</span>
+            <span class="message-data-time" >'.$row['timestamp'].'</span>
+            
+            </div>
+            <div class="message '. 'my-message' .'">
+            '.$row['chat_message'].'
+            </div>
+        </li>
+        ';
+    }
+
+    
        
-       $output .= '</ul></div>';
        $query = "
        UPDATE chat_message 
        SET status = '0' 
@@ -73,6 +91,8 @@ foreach($result as $row)
        $result = mysqli_query($conn, $query);
 //   return $row['from_user_id'];
  }
+ $output .= '</ul>';
+
 // while($user_data = mysqli_fetch_array($result))
 // {    
 // }
