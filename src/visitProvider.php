@@ -84,14 +84,14 @@
   <div class="wrapper">
     <div class="chat-box">
       <div class="chat-head">
-      <div id="user_details"></div>
+        <h2 id="user_details"></h2>
         <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
       </div>
       <div class="chat-body">
         <div class="msg-insert" id="user_model_details">
         </div>
         <div class="chat-text">
-          <textarea placeholder="Send"></textarea>
+          <textarea id="<?php echo $id; ?>" placeholder="Send"></textarea>
         </div>
       </div>
     </div>
@@ -277,34 +277,26 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        // $(function(){
-        //     var arrow = $('.chat-head img');
-        //     var textarea = $('.chat-text textarea');
+        $(function(){
+            var arrow = $('.chat-head img');
+            var textarea = $('.chat-text textarea');
 
-        //     arrow.on('click', function(){
-        //         var src = arrow.attr('src');
+            arrow.on('click', function(){
+                var src = arrow.attr('src');
 
-        //         $('.chat-body').slideToggle('fast');
-        //         if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
-        //             arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
-        //         }
-        //         else{
-        //             arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
-        //         }
-        //     });
+                $('.chat-body').slideToggle('fast');
+                if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
+                }
+                else{
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
+                }
+            });
 
            
-        //     textarea.keypress(function(event) {
-        //         var $this = $(this);
+            
 
-        //         if(event.keyCode == 13){
-        //             var msg = $this.val();
-        //             $this.val('');
-        //             $('.msg-insert').prepend("<div class='msg-send'>"+msg+"</div>");
-        //             }
-        //     });
-
-        // });
+        });
 
 
         $(document).ready(function () {
@@ -335,7 +327,7 @@
         }
         function make_chat_dialog_box(to_user_id, to_user_name) {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
-            modal_content += fetch_user_chat_history(to_user_id);
+            modal_content += fetch_one_user_chat_history(to_user_id);
             modal_content += '</div>';
             $('#user_model_details').html(modal_content);
         }
@@ -347,23 +339,30 @@
 
         });
 
-        $(document).on('click', '.send_chat', function () {
-            var to_user_id = $(this).attr('id');
-            var chat_message = $('#chat_message_' + to_user_id).val();
-            $.ajax({
-                url: "insert_chat_one.php",
-                method: "POST",
-                data: { to_user_id: to_user_id, chat_message: chat_message },
-                success: function (data) {
-
-                    $('#chat_history_' + to_user_id).html(data);
-                }
-            })
+        
+        $('.chat-text textarea').keypress(function(event) {
+            var thi =  $(this);
+            var to_user_id = thi.attr('id');
+            if(event.keyCode == '13'){
+                
+                if((thi.val() != '') || (thi.val() != ' ')) {
+                    var chat_message = thi.val();
+                    $.ajax({
+                        url: "insert_chat_one.php",
+                        method: "POST",
+                        data: { to_user_id: to_user_id, chat_message: chat_message },
+                        success: function (data) {
+                                $('#chat_history_' + to_user_id).html(data);
+                            }
+                    }) 
+                    thi.val('');
+                } 
+            }
         });
 
-        function fetch_user_chat_history(to_user_id) {
+        function fetch_one_user_chat_history(to_user_id) {
             $.ajax({
-                url: "fetch_one_user_chat_history_one.php",
+                url: "fetch_one_user_chat_history.php",
                 method: "POST",
                 data: { to_user_id: to_user_id },
                 success: function (data) {
@@ -374,14 +373,13 @@
 
         function update_chat_history_data() {
             $('.chat_history').each(function () {
-                console.log("===test====");
                 var to_user_id = $(this).data('touserid');
-                fetch_user_chat_history(to_user_id);
+                fetch_one_user_chat_history(to_user_id);
             });
         }
 
 
-        function fetch_user_chat_history(to_user_id) {
+        function fetch_one_user_chat_history(to_user_id) {
             $.ajax({
                 url: "fetch_one_user_chat_history.php",
                 method: "POST",

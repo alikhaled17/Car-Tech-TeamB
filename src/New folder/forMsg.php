@@ -47,7 +47,6 @@ foreach($result as $row)
 
         $output .= '<li class="clearfix">
         <div class="message-data align-right">
-            <span class="message-data-time" >'.$row['timestamp'].'</span> &nbsp; &nbsp;
             <span class="message-data-name" >You</span> <i class="fa fa-circle me"></i>
             
             </div>
