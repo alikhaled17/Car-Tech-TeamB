@@ -17,7 +17,7 @@ $user_data = mysqli_fetch_array($result);
     {
         $output = '
         <div class="clearfix">
-            <button type="button" class="start_chat" data-touserid="'.$id.'" data-tousername="'.$user_data['username'].'">
+            <button id="yourButtonId" type="button" class="start_chat" data-touserid="'.$id.'" data-tousername="'.$user_data['username'].'">
                 Chat
             </button>
             
@@ -27,3 +27,10 @@ $user_data = mysqli_fetch_array($result);
 echo $output;
 
 ?>
+<script>
+    $(document).ready(function(){
+
+$("#yourButtonId")[0].click();
+
+}); 
+    </script>
