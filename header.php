@@ -136,7 +136,7 @@ function count_unseen_message_h($connect)
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                              echo "<a class='nav-link fa fa-comment' aria-hidden='true' style='margin-top: 3px;'
-                              href='/Car-Tech-TeamB/src/msg.php'> </a>" ;
+                              href='/Car-Tech-TeamB/src/messenger/msg.php'> </a>" ;
                               count_unseen_message_h( $conn);
                             }      
                     ?>                    
