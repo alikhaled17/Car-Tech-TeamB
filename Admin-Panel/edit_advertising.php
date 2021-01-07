@@ -18,37 +18,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$img_adver = $_FILES['img_adver']['name'];
 	$img_adver_tmp = $_FILES['img_adver']['tmp_name'];
 	$img_adver_tmp= addslashes(file_get_contents($img_adver_tmp));
+	$ad_type =$data_to_update['ad_type'];
 
-
-	$sql="SELECT * FROM `advertising`
-	WHERE name_adver ='$name_adver' && id <>'$advertising_id' ";
-	$result=mysqli_query($conn, $sql);
-	$row = mysqli_fetch_array($result);
-
-	
-
-	if (!empty($row['name_adver'])) {
-
-		$_SESSION['failure'] = "User name already exists";
-
-		$query_string = http_build_query(array(
-			'advertising_id' => $advertising_id,
-			'operation' => $operation,
-		));
-		header('location: edit_advertising.php?'.$query_string );
-		exit;
-	}
+	echo $ad_type;
 
 	$advertising_id = filter_input(INPUT_GET, 'advertising_id', FILTER_VALIDATE_INT);
 
 	if($img_adver_tmp != "")
 	{
 		$sql="UPDATE advertising
-		SET name_adver='$name_adver',ad_content='$ad_content',img_adver='$img_adver_tmp' WHERE id='$advertising_id'";	 
+		SET name_adver='$name_adver',ad_content='$ad_content',img_adver='$img_adver_tmp',ad_type='$ad_type' WHERE id='$advertising_id'";	 
 	}else
 	{
 		$sql="UPDATE advertising
-		SET name_adver='$name_adver',ad_content='$ad_content' WHERE id='$advertising_id'";
+		SET name_adver='$name_adver',ad_content='$ad_content',ad_type='$ad_type' WHERE id='$advertising_id'";
 	}
 	$result=mysqli_query($conn, $sql);
 
@@ -58,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['failure'] = "Failed to update advertising : " . mysqli_error($conn);
 	}
 
-	header('location: advertising_show.php');
-	exit;
+	// header('location: advertising_show.php');
+	// exit;
 
 }
 

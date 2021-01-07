@@ -12,8 +12,8 @@
         </div>
     </div>
     <?php 
-        $required_field= $operation == 'edit' ? '': 'required';
-         ?>
+        $required_field= $operation == 'edit' ? '': ' required ';
+        ?>
     <!-- Text input-->
     
    
@@ -24,7 +24,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                 <input type="password" name="password" autocomplete="off" placeholder="Password "
-                    class="form-control" required="<?php echo $required_field; ?>" autocomplete="off">
+                    class="form-control" <?php echo $required_field; ?> autocomplete="off">
             </div>
         </div>
     </div>

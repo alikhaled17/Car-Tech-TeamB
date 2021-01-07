@@ -51,7 +51,6 @@ $offset = ($page - 1) * $pagelimit ;
 
 // Get result of the query.
 $sql.=" LIMIT $pagelimit OFFSET $offset";
-echo $sql;
 $rows=mysqli_query($conn, $sql);
 $total_count = 0 ;
 if ($nema_table_count == 'users' || $nema_table_count == 'providers'){

@@ -10,13 +10,14 @@ $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 //Serve POST request.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// If non-super user accesses this script via url. Stop the exexution
-	if ($_SESSION['admin_type'] != 'super') {
-		// show permission denied message
-		echo 'Permission Denied';
-		exit();
-	}
+	// if ($_SESSION['admin_type'] != 'super') {
+	// 	// show permission denied message
+	// 	echo 'Permission Denied';
+	// 	exit();
+	// }
 	// Sanitize input post if we want
 	$data_to_update = filter_input_array(INPUT_POST);
+	echo json_encode($data_to_update);
 	//Check whether the user name already exists ;
 	$username =$data_to_update['user_name'];
 	$admin_type =$data_to_update['admin_type'];
@@ -43,19 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//Encrypting the password
 	$password = password_hash($data_to_update['password'], PASSWORD_DEFAULT);
 
-	if ($data_to_update['password'] != ""){
+	$add_password = $data_to_update['password'] != "" ? ", password='$password' " : "";
+	$add_admin_type = $admin_type != "" ? ", admin_type='$admin_type' " : "";
 
-		$sql="UPDATE admin_accounts
-		SET user_name='$username',password='$password',admin_type='$admin_type'
+	$sql="UPDATE admin_accounts
+		SET user_name='$username'".$add_password."".$add_admin_type."
 		WHERE id='$admin_user_id'";
-
-	}else{
-		
-		$sql="UPDATE admin_accounts
-		SET user_name='$username',admin_type='$admin_type'
-		WHERE id='$admin_user_id'";
-
-	}
 
 	
 	$result=mysqli_query($conn, $sql);

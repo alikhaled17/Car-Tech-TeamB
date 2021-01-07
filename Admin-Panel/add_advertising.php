@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $ad_content = $data_to_store['ad_content'];
     $img_adver = $_FILES['img_adver']['tmp_name'];
     $img_adver= addslashes(file_get_contents($img_adver));
+    $ad_type = $data_to_store['ad_type'];
+
     
 
     //Check whether the user name already exists ; 
@@ -27,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
 
     //reset db instance
-    $Insert_qur="INSERT INTO advertising (name_adver,ad_content,img_adver) VALUES ('$name_adver','$ad_content','$img_adver')";
+    $Insert_qur="INSERT INTO advertising (name_adver,ad_content,img_adver,ad_type) VALUES ('$name_adver','$ad_content','$img_adver','$ad_type')";
     $ins_result=mysqli_query($conn, $Insert_qur); 
     if($ins_result)
     {

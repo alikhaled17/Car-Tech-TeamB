@@ -48,6 +48,24 @@
         </div>
     </div>
     <?php } ?>
+        <!-- radio checks -->
+        <div class="form-group">
+        <label class="col-md-4 control-label">Advertising State</label>
+        <div class="col-md-4">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="ad_type" value="Show" required=""
+                        <?php echo ($edit && $advertising['ad_type'] =='show') ? "checked": "" ; ?> /> Show
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="ad_type" value="Hide" required=""
+                        <?php echo ($edit && $advertising['ad_type'] =='hide') ? "checked": "" ; ?> /> Hide
+                </label>
+            </div>
+        </div>
+    </div>
     <!-- Button -->
     <div class="form-group">
         <label class="col-md-4 control-label"></label>

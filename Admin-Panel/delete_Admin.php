@@ -17,10 +17,6 @@ $row = mysqli_fetch_array($result);
 
 $count_super=counting_type('admin_accounts','admin_type',"'super'");
 
-echo $sql.'<br>';
-echo json_encode($row).'<br>';
-echo $count_super.'<br>';
-
 
 if ($count_super == '1' && $row['admin_type'] == 'super' ) {
 

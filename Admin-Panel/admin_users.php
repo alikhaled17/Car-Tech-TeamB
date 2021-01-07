@@ -7,7 +7,6 @@ require_once BASE_PATH . '/includes/auth_validate.php';
 require_once BASE_PATH.'/lib/Admins/Admins.php';
 $Data_once = new Admins();
 // Only super admin is allowed to access this page
-echo '<br>'.$_SESSION['admin_type'].'<br>';
 if ($_SESSION['admin_type'] != 'super')
 {
     // Show permission denied message
