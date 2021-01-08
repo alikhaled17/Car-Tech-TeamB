@@ -56,17 +56,7 @@
         <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <img src="../imgs/default-prof.png"/>       
-                            <?php 
-                        } else {
-                            ?>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            <?php
-                        }
-                    ?>
+                    <img src="../imgs/default-prof.jpg"/> 
                 </div>
                 <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
                     <div class="info-prof ">
