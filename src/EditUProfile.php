@@ -2,22 +2,40 @@
     include('../Config.php');
     session_start();
     session_regenerate_id();
+    function success()
+    {
+        echo ("<div class='success'>Account created successfully!</div>");
+    }
+
+    function fail()
+    {
+        echo ("<div class='fail'>Please complete your info</div>");
+    }
     $id = $_SESSION['u_id'];
     if(isset($_POST['update']))
     {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['pass'];
-        $phone = $_POST['phone'];
-        // $gender = $_POST['gender'];
-        // $prof_img = $_FILES['prof_img']['tmp_name'];
-        // $prof_imgID = addslashes(file_get_contents($prof_img));
-        $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-        password='$password',phone='$phone' WHERE id=$id");  
-        // $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-        //     password='$password',gender='$gender',phone='$phone' WHERE id=$id");  
-        header("Location:uProfile.php");
+        if (
+            isset($_POST['username'])
+            && isset($_POST['email'])
+            && isset($_POST['pass'])
+            && isset($_POST['phone'])
+        )
+        {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['pass'];
+            $phone = $_POST['phone'];
+            
+            $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
+            password='$password',phone='$phone' WHERE id=$id");  
+            success();
+            header("Location:uProfile.php");
+        }
+        else{
+            fail();
+        }  
     }
+
     
 
 	$result = mysqli_query($conn, "SELECT * FROM users WHERE id=$id"); 
@@ -25,6 +43,7 @@
 
     $username = $user_data['username'];
     $email = $user_data['email'];
+    
     $password = $user_data['password'];
     $phone = $user_data['phone'];
 
@@ -39,17 +58,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech - Profile</title>
+    <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
     <link rel="stylesheet" href="../css/uProfile.css" />
-    <link rel="stylesheet" href="../css/EditUProfile.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
 
-
-    <script src="../js/responde.js"></script>    
 </head>
 <body>
     <?php include('../header.php'); ?>
@@ -71,14 +89,14 @@
                     ?>
                 </div>
                     <div class="info-prof col-9">
-                        <div class="account-name">
-                            <h3>
-                            <input type="text" class="inputStyle" name="username" value="<?php echo $username ?>"  required>
-                            </h3>
+                        <div class="account-name" style>
+                            <label>User Name</label><br>
+                            <input type="text" class="inputStyle" name="username" value="<?php echo $user_data['username'] ?>"  required>
                         </div>
                         <hr>
                         <div class="personal-info">
-                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php echo $password ?>" required>
+                            <label>password</label><br>
+                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php $user_data['password'] ?>" required>
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                             
                         </div>

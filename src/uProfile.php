@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/uProfile.css" />
-    <link rel="stylesheet" href="../css/Edit.css" />
 
 
     <script src="../js/responde.js"></script>    
@@ -107,7 +106,7 @@
                     </div>
                     <div>
                         <span> 
-                        <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
+                            <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
                             update </button>
                             <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
                             Show Favorite 

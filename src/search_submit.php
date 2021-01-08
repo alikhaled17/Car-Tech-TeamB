@@ -29,22 +29,6 @@
                     regions.city_id='$City' and 
                     users.username like '$Name%'";
 
-            $sql_region= "SELECT region_name FROM regions WHERE id = '$Region' " ;
-            $regionResult=mysqli_query($conn, $sql_region);
-            $regionName=mysqli_fetch_array($regionResult);
-            $region_name = $regionName['region_name'];
-
-            
-?>
-<script>
-    
-    localStorage.setItem('City', "<?php echo $City;?>");
-    localStorage.setItem('Region', "<?php echo $region_name;?>");
-    localStorage.setItem('Service', "<?php echo $Service;?>");
-    localStorage.setItem('Name', "<?php echo $Name;?>");
-</script>
-<?php
-
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
             }
@@ -69,7 +53,7 @@
                     echo ('
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
-                    echo ('<img src="../imgs/default-prof.jpg"/>');   
+                        echo ('<img src="../imgs/default-prof.jpg"/>');     
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.
@@ -94,7 +78,7 @@
         else  {
             echo "<div class='wow rotateIn no-result'>";
             echo "<img src='../imgs/search.png'>";
-            echo "<h5>Sorry, please selct city</h5>";
+            echo "<h5>Sorry, please select city</h5>";
             echo "</div>";
         }
     } else {
@@ -103,15 +87,6 @@
         echo "<h5>Search Result </h5>";
         echo "<h5>----------------------------------</h5>";
         echo "</div>";
-        
-        // echo $cityResult ;
-        // print_r ($cityResult) ;
-    //     $pp="SELECT username FROM users WHERE  id = '$id' " ;
-    // $ppresult = mysqli_query($conn, $pp);
-    // $ppname=mysqli_fetch_array($ppresult);
-    // echo $ppname['username'];
-
     }
 
 ?>
-

@@ -71,10 +71,12 @@ function count_unseen_message_h($connect)
             tipsArray[20]="Do it with passion or not at all";
             tipsArray[21]="Grow through what you go through.";
             tipsArray[22]="Do it with passion or not at all.";
-            tipsArray[22]="You matter";
-            var randomIndex = Math.floor(Math.random()*tipsArray.length);
-            var randomTips = tipsArray[randomIndex];
-            document.getElementById("test").innerHTML =randomTips;
+            tipsArray[23]="You matter";
+            function shuffle(array) {
+                array.sort(() => Math.random() - 0.5);
+            }
+            shuffle(tipsArray);
+            document.getElementById("test").innerHTML = tipsArray[1];
         }
 		
 </script>
@@ -83,7 +85,7 @@ function count_unseen_message_h($connect)
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <i class="fa fa-phone"></i><span> +20 111 2332 199</span>,
+                    <i class="fa fa-phone"></i><span> +20 000 0000 000</span>,
                     <i class="fa fa-envelope-o"></i> CarTech@gmail.com
                 </div>
                 <div class="col-sm text-right">
@@ -99,7 +101,7 @@ function count_unseen_message_h($connect)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" data-wow-duration='.5s' href="#">
-                <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo1.png" alt="car-tech" width="100px">
+                <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo2.png" alt="car-tech" width="100px">
                 <span>Car</span><span>Tech</span>
             </a>
 

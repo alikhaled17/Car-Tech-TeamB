@@ -72,31 +72,6 @@
                             ?>
                         </h2><hr>
                     </div>
-                    <div class="gender">
-                        <?php
-                            if ($user_data['gender']== "Male")
-                            {
-                        ?>
-                            <i class="fa fa-male"></i>
-                            <span>
-                            <?php 
-                                echo $user_data['gender']; 
-                            ?>
-                            </span>
-                            <?php
-                            }
-                            else{
-                            ?>
-                            <i class="fa fa-female"></i>
-                            <span>
-                                <?php 
-                                    echo $user_data['gender']; 
-                                ?>
-                            </span>
-                            <?php
-                            }
-                            ?>
-                    </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
                         <span>
@@ -215,7 +190,7 @@
                                     ?>
                                     </div>
                             </div>
-                            <?php
+                            <?php   
                             }
                         }
                     ?>  
