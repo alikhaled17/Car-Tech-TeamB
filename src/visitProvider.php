@@ -81,10 +81,10 @@
         <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
       </div>
       <div class="chat-body" id="chat-body">
-        <div class="msg-insert" id="user_model_details">
+        <div  class="msg-insert" id="user_model_details">
         </div>
         <div class="chat-text">
-          <textarea id="<?php echo $id; ?>" placeholder="Send"></textarea>
+          <textarea onfocus="hamada()" id="<?php echo $id; ?>" placeholder="Send"></textarea>
         </div>
       </div>
     </div>
@@ -242,9 +242,19 @@
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script>new WOW().init();</script>    
+    <script>new WOW().init();
+    
+    function hamada() {
+        $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+    }
+    
+    </script>    
     <script src="../js/script.js"></script>
     <script>
+
+
+
+
         $(function(){
             var arrow = $('.chat-head img');
             var textarea = $('.chat-text textarea');
@@ -312,10 +322,11 @@
 
         
         $('.chat-text textarea').keypress(function(event) {
+            $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
             var thi =  $(this);
             var to_user_id = thi.attr('id');
-            var chat_message = thi.val().trim();
             if(event.keyCode == '13') {
+                var chat_message = thi.val().trim();
                 if((chat_message != '') && (chat_message != ' ')) {
                     $.ajax({
                         url: "insert_chat_one.php",
@@ -343,12 +354,9 @@
 
         }
 
-        // $('.chat-text textarea').keypress(function(event){
-        //      $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 10000);
-        // }); 
 
         function update_chat_history_data() {
-            $('.chat_history').each(function () {
+            $('.chat-history').each(function () {
                 var to_user_id = $(this).data('touserid');
                 fetch_one_user_chat_history(to_user_id);
             });

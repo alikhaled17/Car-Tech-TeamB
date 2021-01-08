@@ -51,9 +51,6 @@ $(document).ready(function () {
 
         $('#user_model_details').html(modal_content);
 
-
-
-
     }
 
 
