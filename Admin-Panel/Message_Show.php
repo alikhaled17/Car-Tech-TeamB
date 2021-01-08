@@ -5,13 +5,15 @@ include_once('counting.php');
 require_once BASE_PATH.'/includes/auth_validate.php';
 // Data class
 require_once BASE_PATH.'/lib/Message/Message.php';
-$users = new Message();
+$Data_once = new Message();
 // send data to Show Data
 $select_coul = '*';
 $nema_table = 'message';
 $nema_table_count= 'message';
 $coul = 'Name';
-$select_types = null;
+$types = 'message_type';
+$select_types = "'old'";
+$select_types_count="'old'";
 include_once('Show_Data.php');
 
 include BASE_PATH.'/includes/header.php';
@@ -40,7 +42,7 @@ include BASE_PATH.'/includes/header.php';
             <label for="input_order">Order By</label>
             <select name="filter_col" class="form-control">
                 <?php
-                foreach ($users->setOrderingValues() as $opt_value => $opt_name):
+                foreach ($Data_once->setOrderingValues() as $opt_value => $opt_name):
                     ($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
                     echo ' <option value="'.$opt_value.'" '.$selected.'>'.$opt_name.'</option>';
                 endforeach;
@@ -64,12 +66,16 @@ include BASE_PATH.'/includes/header.php';
     <hr>
     <!-- //Filters -->
 
+    <div id="export-section">
+        <a href="export_Message.php"><button class="btn btn-sm btn-primary">Export to CSV <i class="glyphicon glyphicon-export"></i></button></a>
+    </div>
+
     <!-- Table -->
     <table class="table table-striped table-bordered table-condensed">
         <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="15%">Name</th>
+                <th width="15%">Sender's Name</th>
                 <th width="15%">Email</th>
                 <th width="15%">Subject</th>
                 <th width="30%">Massege</th>

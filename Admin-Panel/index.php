@@ -181,12 +181,12 @@ include_once('includes/header.php');
                             <i class="fa fa-envelope-open fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo counting('message'); ?></div>
-                            <div>Inbox Message</div>
+                            <div class="huge"><?php echo counting_type('message','message_type',"'new'"); ?></div>
+                            <div>Inbox New Message</div>
                         </div>
                     </div>
                 </div>
-                <a href="Message_show.php">
+                <a href="inbox_new_message">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

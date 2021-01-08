@@ -4,7 +4,7 @@ require_once 'config/config.php';
 include_once('counting.php');
 require_once BASE_PATH . '/includes/auth_validate.php';
 // send data to Show Data
-$select_coul = 'id,name_adver,ad_content,img_adver';
+$select_coul = '*';
 $nema_table = 'advertising';
 $nema_table_count= 'advertising';
 $coul = 'name_adver';
@@ -12,7 +12,7 @@ $select_types = null;
 include_once('Show_Data.php');
 // Data class
 require_once BASE_PATH . '/lib/Advertising/Advertising.php';
-$costumers = new Advertising();
+$Data_once = new Advertising();
 include BASE_PATH . '/includes/header.php';
 ?>
 <!-- Main container -->
@@ -44,28 +44,28 @@ include BASE_PATH . '/includes/header.php';
             <label for="input_order">Order By</label>
             <select name="filter_col" class="form-control">
                 <?php
-foreach ($costumers->setOrderingValues() as $opt_value => $opt_name):
-	($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
-	echo ' <option value="' . $opt_value . '" ' . $selected . '>' . $opt_name . '</option>';
-endforeach;
-?>
-            </select>
-            <select name="order_by" class="form-control" id="input_order">
-                <option value="Asc" <?php
-if ($order_by == 'Asc') {
-	echo 'selected';
-}
-?> >Asc</option>
-                <option value="Desc" <?php
-if ($order_by == 'Desc') {
-	echo 'selected';
-}
-?>>Desc</option>
-            </select>
-            <input type="submit" value="Go" class="btn btn-primary">
-        </form>
-    </div>
-    <hr>
+            foreach ($Data_once->setOrderingValues() as $opt_value => $opt_name):
+                ($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
+                echo ' <option value="' . $opt_value . '" ' . $selected . '>' . $opt_name . '</option>';
+            endforeach;
+            ?>
+                        </select>
+                        <select name="order_by" class="form-control" id="input_order">
+                            <option value="Asc" <?php
+            if ($order_by == 'Asc') {
+                echo 'selected';
+            }
+            ?> >Asc</option>
+                            <option value="Desc" <?php
+            if ($order_by == 'Desc') {
+                echo 'selected';
+            }
+            ?>>Desc</option>
+                        </select>
+                        <input type="submit" value="Go" class="btn btn-primary">
+                    </form>
+                </div>
+                <hr>
     <!-- //Filters -->
 
     <!-- Table -->
@@ -75,7 +75,8 @@ if ($order_by == 'Desc') {
                 <th width="5%">ID</th>
                 <th width="20%">advertising Name</th>
                 <th width="40%">advertising Content</th>
-                <th width="25%">advertising Img</th>
+                <th width="20%">advertising Img</th>
+                <th width="5%">Type</th>
                 <th width="10%">Actions</th>
             </tr>
         </thead>
@@ -87,6 +88,7 @@ if ($order_by == 'Desc') {
                 <th><?php echo xss_clean($row['ad_content'] . ' '); ?></th>
                 <td style="text-align:center;"><img src="data:image/jpg;charset=utf8mb4;base64,
                 <?php echo base64_encode($row['img_adver']); ?>" style='width:150px;height:70px;'/></td>
+                <th><?php echo xss_clean($row['ad_type'] . ' '); ?></th>
 
                 <td>
                     <a href="edit_advertising.php?advertising_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>

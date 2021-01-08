@@ -10,12 +10,6 @@
         $message= $data_to_store['message'];
         $date_time=date('Y-m-d H:i:s');        
 
-        //Check whether the user name already exists ; 
-        $sql="SELECT * FROM admin_accounts ";
-        $result=mysqli_query($conn, $sql); 
-        $count = mysqli_num_rows($result);
-        $row = mysqli_fetch_array($result);
-
         //reset db instance
         $Insert_qur="INSERT INTO message (Name,Email,Subject,Massege,date_time) VALUES ('$nameUser', '$Emailsend', '$subjectTitle','$message','$date_time')";
         $ins_result=mysqli_query($conn, $Insert_qur);

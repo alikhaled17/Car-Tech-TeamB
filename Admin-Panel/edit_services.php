@@ -12,7 +12,7 @@ $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Sanitize input post if we want
 	$data_to_update = filter_input_array(INPUT_POST);
-	//Check whether the user name already exists ;
+	//Check whether the services already exists ;
 	$ser_name =$data_to_update['ser_name'];
 
 	$sql="SELECT * FROM `services`
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if (!empty($row['ser_name'])) {
 
-		$_SESSION['failure'] = "User name already exists";
+		$_SESSION['failure'] = "Services already exists";
 
 		$query_string = http_build_query(array(
 			'services_id' => $services_id,
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$result=mysqli_query($conn, $sql);
 
 	if ($result) {
-		$_SESSION['success'] = "Service user has been updated successfully";
+		$_SESSION['success'] = "Service has been updated successfully";
 	} else {
 		$_SESSION['failure'] = "Failed to update Service : " . mysqli_error($conn);
 	}

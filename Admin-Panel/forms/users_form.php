@@ -8,11 +8,23 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input type="text" name="username" autocomplete="off" placeholder="User Name" class="form-control"
-                    value="<?php echo ($edit) ? $users['username'] : ''; ?>" autocomplete="off">
+                required="" value="<?php echo ($edit) ? $users['username'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>
-
+    <?php if($operation != ''){ ?>
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" name="password" autocomplete="off" placeholder="Password " class="form-control"
+                value="" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <?php } else { ?>
     <!-- Text input-->
     <div class="form-group">
         <label class="col-md-4 control-label">Password</label>
@@ -24,6 +36,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
     <!-- Text input-->
     <div class="form-group">
         <label class="col-md-4 control-label">Email</label>
@@ -31,7 +44,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                 <input type="email" name="email"
-                    value="<?php echo htmlspecialchars($edit ? $users['email'] : '', ENT_QUOTES, 'UTF-8'); ?>"
+                required="" value="<?php echo htmlspecialchars($edit ? $users['email'] : '', ENT_QUOTES, 'UTF-8'); ?>"
                     placeholder="E-Mail Address" class="form-control" id="email">
             </div>
         </div>

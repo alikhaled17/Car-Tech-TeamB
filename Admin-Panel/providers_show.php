@@ -20,7 +20,7 @@ $select_types_count="'accept'";
 include_once('Show_Data.php');
 // Data class
 require_once BASE_PATH . '/lib/Providers/Providers.php';
-$costumers = new Providers();
+$Data_once = new Providers();
 include BASE_PATH . '/includes/header.php';
 ?>
 <!-- Main container -->
@@ -45,7 +45,7 @@ include BASE_PATH . '/includes/header.php';
             <label for="input_order">Order By</label>
             <select name="filter_col" class="form-control">
                 <?php
-                    foreach ($costumers->setOrderingValues() as $opt_value => $opt_name):
+                    foreach ($Data_once->setOrderingValues() as $opt_value => $opt_name):
                         ($order_by === $opt_value) ? $selected = 'selected' : $selected = '';
                         echo ' <option value="' . $opt_value . '" ' . $selected . '>' . $opt_name . '</option>';
                     endforeach;

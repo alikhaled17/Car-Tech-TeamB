@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Sanitize input post if we want
 	$data_to_update = filter_input_array(INPUT_POST);
 	//Check whether the user name already exists ;
-    $username =$data_to_update['username'];
+	$username =$data_to_update['username'];
+	$password =$data_to_update['password'];
     $email =$data_to_update['email'];
     $gender =$data_to_update['gender'];
     $phone =$data_to_update['phone'];
@@ -38,12 +39,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$users_id = filter_input(INPUT_GET, 'users_id', FILTER_VALIDATE_INT);
-	//Encrypting the password
-	$password = password_hash($data_to_update['password'], PASSWORD_DEFAULT);
 
-	$sql="UPDATE users
-	SET username='$username',password='$password',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
-	WHERE id='$users_id'";
+	if($password != "")
+	{
+		$sql="UPDATE users
+		SET username='$username',password='$password',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
+		WHERE id='$users_id'";	 
+	}else
+	{
+		$sql="UPDATE users
+		SET username='$username',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
+		WHERE id='$users_id'";
+	}
 	$result=mysqli_query($conn, $sql);
 
 	if ($result) {

@@ -45,6 +45,7 @@ if ($order_by)
     $sql.=" ORDER BY $filter_col $order_by";
 
 }
+
 // Set pagination limit
 $offset = ($page - 1) * $pagelimit ;
 

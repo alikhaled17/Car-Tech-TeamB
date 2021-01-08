@@ -67,7 +67,7 @@ if (isset($_COOKIE['series_id']) && isset($_COOKIE['remember_token']))
 	}
 }
 
-include BASE_PATH.'/includes/header.php';
+include './includes/header.php';
 ?>
 
 <footer>

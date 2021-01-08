@@ -13,21 +13,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Sanitize input post if we want
 	$data_to_update = filter_input_array(INPUT_POST);
 	//Check whether the user name already exists ;
-    $username =$data_to_update['username'];
+	$username =$data_to_update['username'];
+	$password =$data_to_update['password'];
     $email =$data_to_update['email'];
 	$phone =$data_to_update['phone'];
 	$city_name =$data_to_update['city_name'];
 	$region_name =$data_to_update['region_name'];
-	$ser_name =$data_to_update['ser_name'];
+	$ser_ids =$data_to_update['ser_name'];
 	$account_type =$data_to_update['account_type'];
 	$prov_state =$data_to_update['prov_state'];
-    
+	
+	$img_ID = $_FILES['ID_img']['tmp_name'];
+	$img_comm = $_FILES['comm_img']['tmp_name'];
+
+	$add_id_image = $img_ID == '' ? "" : ", providers.ID_img = '".addslashes(file_get_contents($img_ID))."' ";
+	$add_img_comm = $img_comm == '' ? "" : ", providers.comm_img = '".addslashes(file_get_contents($img_comm))."' ";
+
 
 	$sql="SELECT * FROM `users`
 	WHERE email ='$email' && id <>'$providers_id' ";
 	$result=mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result);
-
+	
 	if (!empty($row['email'])) {
 
 		$_SESSION['failure'] = "Provider already exists";
@@ -40,30 +47,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		exit;
 	}
 
-    $providers_id = filter_input(INPUT_GET, 'providers_id', FILTER_VALIDATE_INT);
-    //Encrypting the password
-	$password = password_hash($data_to_update['password'], PASSWORD_DEFAULT);
+	$providers_id = filter_input(INPUT_GET, 'providers_id', FILTER_VALIDATE_INT);
 
-	$sql="UPDATE users
-	SET username='$username',password='$password',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
-    WHERE id='$providers_id'";
-	$result=mysqli_query($conn, $sql);
+	$add_password = $password != "" ? ", users.password='$password' " : "";
+
+	$sql="UPDATE users, p_address ,providers
+	SET users.username='$username'".$add_password.",users.email='$email',users.phone='$phone',
+	users.account_type='$account_type',p_address.region_id='$region_name',providers.prov_state='$prov_state'".$add_id_image.$add_img_comm."
+	WHERE users.id='$providers_id' and p_address.p_id='$providers_id' and providers.user_id='$providers_id';";
+		 
+	$sql .= "Delete from prov_services where p_id = '$providers_id';";
+
+	foreach ($ser_ids as $ser_id):
+		$sql .= "INSERT INTO prov_services (p_id,ser_id) VALUES ('$providers_id','$ser_id');";
+	endforeach;
+
+
+	$result=mysqli_multi_query($conn, $sql); 
 
 	if ($result) {
 		$_SESSION['success'] = "Provider has been updated successfully";
 	} else {
 		$_SESSION['failure'] = "Failed to update Provider : " . mysqli_error($conn);
 	}
-
 	header('location: providers_show.php');
 	exit;
 
 }
 
 //Select where clause
-$sql="SELECT * FROM `users`
-WHERE id = $providers_id ";
+$sql="SELECT users.id,username,email,gender,phone,account_type,prof_img,
+city_id,region_id,ID_img,comm_img,prov_state, group_concat(ser_id SEPARATOR ',')ser_id FROM `users`
+inner join p_address on users.id = p_address.p_id
+inner join regions on p_address.region_id = regions.id
+inner join cities on regions.city_id = cities.id
+inner join prov_services on prov_services.p_id = users.id
+inner join providers on providers.user_id = users.id
+inner join services on services.id = prov_services.ser_id
+WHERE users.id = $providers_id ";
 // Set values to $result
+
 $result=mysqli_query($conn, $sql); 
 $users = mysqli_fetch_array($result);
 

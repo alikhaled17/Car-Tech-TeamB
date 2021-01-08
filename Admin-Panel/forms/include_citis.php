@@ -1,27 +1,22 @@
-<script type="text/javascript">
-    
-    function fetch_region(val) {
-        console.log({region, city})
-        var region= document.getElementById('Region1').value;
-        var city= document.getElementById('City1').value;
-        var button = document.getElementById("check");
-        isDisabled({ region, city, button });
+<script type="text/javascript">function fetch_region(val) {
+$.ajax( {
 
-        $.ajax( {
-
-                type: 'post',
-                url: 'fetch_regions.php',
-                data: {
-                    get_option:val
-                }
-                ,
-                success: function (response) {
-                    document.getElementById("Region1").innerHTML=response;
-                }
-            }
-        );
+        type: 'post',
+        url: 'forms/fetch_regions.php',
+        data: {
+            get_option:val
+        }
+        ,
+        success: function (response) {
+            console.log(response)
+            document.getElementById("Region1").innerHTML=response;
+        }
     }
+);
+}
 </script>
+
+<select id="City1" name="city_name" class="form-control" onchange="fetch_region(this.value)" required="required" value="<?php echo ($edit)? $selected_city_id : ''; ?>">
 
 <?php
 include_once("./config/config.php");
@@ -38,3 +33,5 @@ while($mycitys=mysqli_fetch_array($result)) {
 }
 
 ?>
+</select>
+

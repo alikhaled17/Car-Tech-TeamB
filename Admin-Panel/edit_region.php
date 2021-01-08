@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$sql="SELECT * FROM `regions`
 	WHERE region_name ='$region_name' && id <>'$region_id' && city_id =$city_name  ";
-	echo $sql;
 	$result=mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result);
 
@@ -58,7 +57,6 @@ WHERE id = $region_id ";
 $result=mysqli_query($conn, $sql); 
 $region = mysqli_fetch_array($result);
 
-echo $region['city_id'];
 // import header
 require_once 'includes/header.php';
 ?>

@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$_SESSION['user_logged_in'] = TRUE;
 			$_SESSION['admin_type'] = $row['admin_type'];
 			$_SESSION['id'] = $row['id'];
+			$_SESSION['user_name'] = $row['user_name'];
 
 			if ($remember) {
 

@@ -12,16 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $data_to_store = filter_input_array(INPUT_POST);
     $username = $data_to_store['username'];
+    $password =$data_to_store['password'];
     $email = $data_to_store['email'];
     $gender = $data_to_store['gender'];
     $phone = $data_to_store['phone'];
 
     if($operation == 'edit'){
+        
         $account_type = $data_to_store['account_type'];
     }
-
-
-
    
     //Check whether the user name already exists ; 
     $sql="SELECT * FROM users WHERE email ='$email' ";
@@ -35,12 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         exit();
     }
 
-    //Encrypt password
-    $password = password_hash($data_to_store['password'],PASSWORD_DEFAULT);
-
     //reset db instance
     $Insert_qur="INSERT INTO users (username,password,email,gender,phone,account_type) VALUES ('$username','$password','$email','$gender','$phone','Client')";
-    echo $Insert_qur;
     $ins_result=mysqli_query($conn, $Insert_qur); 
     echo json_encode($ins_result);
     if($ins_result)
