@@ -61,6 +61,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.send_chat', function () {
+        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
         var to_user_id = $(this).attr('id');
         var chat_message = $('#chat_message_' + to_user_id).val().trim();
         if ((chat_message != '') && (chat_message != ' ')) {

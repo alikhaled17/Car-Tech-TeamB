@@ -1,8 +1,7 @@
 <?php
+
 include('forMsg.php');
-
 include('../../Config.php'); 
-
 session_start();
 
 
@@ -14,7 +13,7 @@ if(isset($_SESSION['p_id']) )
     $query = "
     SELECT  * FROM `users` 
     right OUTER JOIN `chat_message`
-    ON users.id = chat_message.from_user_id or users.id = chat_message.to_user_id 
+    ON users.id = chat_message.from_user_id or (users.id = chat_message.to_user_id and users.id = chat_message.from_user_id)
     WHERE  users.id != $id
     GROUP BY(users.id)
     ";
@@ -25,8 +24,8 @@ else
     $query = "
     SELECT  * FROM `users` 
     LEFT OUTER JOIN `chat_message`
-    ON users.id = chat_message.from_user_id or users.id = chat_message.to_user_id 
-    WHERE  users.id != $id
+    ON users.id = chat_message.from_user_id 
+    WHERE  users.id != $id  
     GROUP BY(users.id)
     ";   
 }
@@ -61,7 +60,7 @@ if (isset($_SESSION['p_id']))
     $output .= '
     <li class="clearfix">
         <button type="button" class="start_chat" data-touserid="'.$row['id'].'" data-tousername="'.$row['username'].'">
-            <img  src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($row['prof_img']) .'" alt="avatar" />
+            '. strtoupper(substr($row['username'], 0, 1)) .'
         </button>
         <div class="about">
             <div class="name">'.$row['username'] .  '<span> '.count_unseen_message($row['id'], $id, $conn).' </span></div>

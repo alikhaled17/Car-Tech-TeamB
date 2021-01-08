@@ -20,6 +20,21 @@ if (isset($_POST['login'])) {
         }
         else
         {
+
+            $sub_query = "
+                INSERT INTO login_details (user_id) 
+                VALUES ('".$user_data['id']."')
+            ";
+            $statement = $conn->prepare($sub_query);
+            $statement->execute();
+
+            $sq = "SELECT * FROM login_details WHERE user_id = '". $user_data['id'] ."'";
+            $cat = mysqli_query($conn, $sq);
+            $hh = mysqli_fetch_array($cat);
+
+            $_SESSION['login_details_id'] = $hh['login_details_id'];
+
+
             $sql = "SELECT * FROM users ";
             if ($user_data["account_type"] == "Provider"){
                 $sql .= "inner join providers on providers.user_id = users.id";

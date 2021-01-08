@@ -59,7 +59,7 @@ foreach($result as $row)
     else
 
     {
-        if(fetch_user_last_activity($row['from_user_id'], $conn) == 1) {
+        if(fetch_user_last_activity($row['to_user_id'], $conn) == "1") {
             $x = "online";
         } else {
             $x = "offline";
@@ -131,22 +131,22 @@ $count = mysqli_num_rows($result);
 
 function fetch_is_type_status($user_id, $conn)
 {
- $query = "
- SELECT is_type FROM login_details 
- WHERE user_id = '".$user_id."' 
- ORDER BY last_activity DESC 
- LIMIT 1
- "; 
- $result = mysqli_query($conn, $query);
- $output = '';
- foreach($result as $row)
- {
-  if($row["is_type"] == 'yes')
-  {
-   $output = ' - <small><em><span class="text-muted">Typing...</span></em></small>';
-  }
- }
- return $output;
+    $query = "
+    SELECT is_type FROM login_details 
+    WHERE user_id = '".$user_id."' 
+    ORDER BY last_activity DESC 
+    LIMIT 1
+    "; 
+    $result = mysqli_query($conn, $query);
+    $output = '';
+    foreach($result as $row)
+    {
+        if($row["is_type"] == 'yes')
+        {
+            $output = ' - <small><em><span class="text-muted">Typing...</span></em></small>';
+        }
+    }
+    return $output;
 }
 
 
