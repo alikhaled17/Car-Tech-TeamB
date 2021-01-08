@@ -3,7 +3,7 @@
 
     function success()
     {
-        echo ("<div class='success'>Account created successfully!</div>");
+        echo ("<div class='success'>The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.</div>");
     }
 
     function fail()

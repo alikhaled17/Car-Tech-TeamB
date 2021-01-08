@@ -109,7 +109,7 @@ session_start();
             <ul class="social">
             <li><a href="https://github.com/sallyElsayedShehataa" class="fa fa-github" aria-hidden="true"></a></li>
             <!-- <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li> -->
-            <li><a href="https://www.linkedin.com/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a href="https://www.linkedin.com/in/sally-eissawy-5677b3201/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
        

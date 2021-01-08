@@ -106,7 +106,8 @@ session_start();
     
     <?php
         include('Config.php');
-        $sql = "SELECT * FROM advertising " ;
+        $sql = "SELECT * FROM advertising
+        where ad_type = 'show' " ;
         $result = mysqli_query($conn, $sql);
         $rows = mysqli_num_rows($result);
         $count = 1;
@@ -120,7 +121,7 @@ session_start();
                     <div class="carousel-inner">
                     <?php
                         while ($ads = mysqli_fetch_array($result))
-                        { 
+                        {
                             if($count == 1) {
                                 echo '<div class="carousel-item active">';
                             } else {

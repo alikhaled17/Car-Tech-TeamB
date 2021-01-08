@@ -24,11 +24,12 @@
         inner join regions on regions.id = p_address.region_id)
         inner join cities on cities.id = regions.city_id )
         WHERE
-            users.id = '$id'";
+        providers.id = '$id'";
 
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
     $user_data = mysqli_fetch_array($result);
+
 
 ?>
 <!DOCTYPE html>

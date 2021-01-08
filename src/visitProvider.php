@@ -1,20 +1,19 @@
 <?php 
-    include('../Config.php');  
+    include('../Config.php');
+    include('forMsg_one.php');
+
     ob_start();
     session_start();
     $id =  $_GET['id']; 
-    // $page = $_SERVER['PHP_SELF'];
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {
         if (isset($_SESSION['u_id']))
         {
             $current_id=$_SESSION['u_id'];
-            // echo $u_id ;
         }
         else
         {
             $current_id=$_SESSION['p_id'];
-            // echo $p_id ;
         }
     }
     $sql="SELECT users.*,
@@ -42,7 +41,6 @@
     if (isset($_POST['add_fav']))
     {
         if ( $current_id != $id ){
-            // echo"in else if ";
             $conn->query("INSERT INTO favorite (user_id,favorite_id) VALUES ('$current_id','$id')");
         }
     }
@@ -50,7 +48,6 @@
     {
         $conn->query("DELETE FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id' ");
     }                   
-    // header("Location:visitProvider.php?id='.$id.' ");                    
 
 ?>
 <!DOCTYPE html>
@@ -68,12 +65,31 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pProfile.css" />
+    <link rel="stylesheet" href="../css/chat_direct.css" />
 
 
 </head>
 <body>
     
     <?php include('../header.php'); ?>
+
+
+  <div class="wrapper">
+    <div class="chat-box">
+      <div class="chat-head">
+        <h2 id="user_details"></h2>
+        <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow" width="16">
+      </div>
+      <div class="chat-body" id="chat-body">
+        <div  class="msg-insert" id="user_model_details">
+        </div>
+        <div class="chat-text">
+          <textarea onfocus="hamada()" id="<?php echo $id; ?>" placeholder="Send"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
@@ -86,7 +102,6 @@
                         {
                             $search_sql="SELECT favorite_id FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id'  " ;
                             $search_result = mysqli_query($conn, $search_sql);
-                            // $search_rows = mysqli_num_rows($search_result);
                             if(mysqli_num_rows($search_result) != 1)
                         {
                     ?>
@@ -125,6 +140,7 @@
                             ?>
                         </h3>
                     </div>
+                    
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
                         <span>
@@ -226,7 +242,165 @@
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script>new WOW().init();</script>    
+    <script>new WOW().init();
+    
+    function hamada() {
+        $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+    }
+    
+    </script>    
     <script src="../js/script.js"></script>
+    <script>
+
+
+
+
+        $(function(){
+            var arrow = $('.chat-head img');
+            var textarea = $('.chat-text textarea');
+
+            arrow.on('click', function(){
+                var src = arrow.attr('src');
+
+                $('.chat-body').slideToggle('fast');
+                if(src == 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png'){
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_up-16.png');
+                }
+                else{
+                    arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
+                }
+            });
+
+           
+            
+
+        });
+
+
+        $(document).ready(function () {
+        fetch_user();
+        setInterval(function () {
+            update_last_activity();
+            update_chat_history_data();
+        }, 3000);
+
+     
+        function update_last_activity() {
+            $.ajax({
+                url: "update_last_activity_one.php",
+                success: function () {
+                }
+            })
+        }
+
+        function fetch_user() {
+            $.ajax({
+                url: "fetch_one_user.php?id=<?php echo $id; ?>",
+                method: "POST",
+                success: function (data) {
+                    $('#user_details').html(data);
+                }
+            })
+        }
+        function make_chat_dialog_box(to_user_id, to_user_name) {
+            var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
+            let chat_content = fetch_one_user_chat_history(to_user_id);
+            // if (chat_content !== undefined)
+            //     modal_content += chat_content; 
+            // else
+            //     modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
+            modal_content += '</div>';
+            
+            $('#user_model_details').html(modal_content);
+        }
+
+        $(document).on('click', '.start_chat', function () {
+            var to_user_id = $(this).data('touserid');
+            var to_user_name = $(this).data('tousername');
+            make_chat_dialog_box(to_user_id, to_user_name);
+        });
+
+        
+        $('.chat-text textarea').keypress(function(event) {
+            $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+            var thi =  $(this);
+            var to_user_id = thi.attr('id');
+            if(event.keyCode == '13') {
+                var chat_message = thi.val().trim();
+                if((chat_message != '') && (chat_message != ' ')) {
+                    $.ajax({
+                        url: "insert_chat_one.php",
+                        method: "POST",
+                        data: { to_user_id: to_user_id, chat_message: chat_message },
+                        success: function (data) {
+                            var chatDiv = $('#chat_history_' + to_user_id);
+                        }
+                    }) 
+                    thi.val(' ');
+                } 
+            }
+        });
+
+        function fetch_one_user_chat_history(to_user_id) {
+            $.ajax({
+                url: "fetch_one_user_chat_history.php",
+                method: "POST",
+                data: { to_user_id: to_user_id },
+                success: function (data) {
+                    var chatDiv = $('#chat_history_' + to_user_id);
+                    chatDiv.html(data);
+                }
+            })
+
+        }
+
+
+        function update_chat_history_data() {
+            $('.chat-history').each(function () {
+                var to_user_id = $(this).data('touserid');
+                fetch_one_user_chat_history(to_user_id);
+            });
+
+        }
+
+
+        function fetch_one_user_chat_history(to_user_id) {
+            $.ajax({
+                url: "fetch_one_user_chat_history.php",
+                method: "POST",
+                data: { to_user_id: to_user_id },
+                success: function (data) {
+                    $('#chat_history_' + to_user_id).html(data);
+                }
+            })
+        }
+
+        
+
+        $(document).on('focus', '.chat_message', function () {
+            var is_type = 'yes';
+            $.ajax({
+                url: "update_is_type_status_one.php",
+                method: "POST",
+                data: { is_type: is_type },
+                success: function () {
+                }
+            })
+        });
+
+        $(document).on('blur', '.chat_message', function () {
+            var is_type = 'no';
+            $.ajax({
+                url: "update_is_type_status_one.php",
+                method: "POST",
+                data: { is_type: is_type },
+                success: function () {
+                }
+            })
+        });
+
+    });  
+        
+    </script>
 </body>
 </html>
