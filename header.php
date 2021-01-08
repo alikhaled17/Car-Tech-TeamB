@@ -72,11 +72,12 @@ function count_unseen_message_h($connect)
             tipsArray[21]="Grow through what you go through.";
             tipsArray[22]="Do it with passion or not at all.";
             tipsArray[23]="You matter";
-            var randomIndex = Math.floor(Math.random()*((tipsArray.length) - 1));
-            var randomTips = tipsArray[randomIndex];
-            document.getElementById("test").innerHTML =randomTips;
+            function shuffle(array) {
+                array.sort(() => Math.random() - 0.5);
+            }
+            shuffle(tipsArray);
+            document.getElementById("test").innerHTML = tipsArray[1];
         }
-		
 </script>
     <!-- Start Upper Bar -->
     <div class="upper-bar">
@@ -136,7 +137,7 @@ function count_unseen_message_h($connect)
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                              echo "<a class='nav-link fa fa-comment' aria-hidden='true' style='margin-top: 3px;'
-                              href='/Car-Tech-TeamB/src/msg.php'> </a>" ;
+                              href='/Car-Tech-TeamB/src/messenger/msg.php'> </a>" ;
                               count_unseen_message_h( $conn);
                             }      
                     ?>                    
