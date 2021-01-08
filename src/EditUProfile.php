@@ -42,15 +42,10 @@
 	$user_data = mysqli_fetch_array($result);
 
     $username = $user_data['username'];
-    echo $username;
     $email = $user_data['email'];
-    echo $email;
     
     $password = $user_data['password'];
-    echo $password;
-    
     $phone = $user_data['phone'];
-    echo $phone;
 
 ?>
 
@@ -69,6 +64,8 @@
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
+    <link rel="stylesheet" href="../css/uProfile.css" />
     <link rel="stylesheet" href="../css/EditPProfile.css" />
 
 </head>
@@ -99,7 +96,7 @@
                         <hr>
                         <div class="personal-info">
                             <label>password</label><br>
-                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php echo $password ?>" required>
+                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php $user_data['password'] ?>" required>
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                             
                         </div>

@@ -4,22 +4,22 @@
     
     $id = $_SESSION['p_id'];
     $sql="SELECT users.*,
-        providers.comm_img,
-        providers.ID_img,
-        p_address.street,
-        cities.city_name,
-        regions.region_name,
-        services.ser_name
-    
-        FROM (((((( users
-        inner join providers on providers.user_id = users.id)
-        inner join prov_services on prov_services.p_id = providers.user_id )
-        inner join services on prov_services.ser_id = services.id )
-        inner join p_address on p_address.p_id = providers.user_id)
-        inner join regions on regions.id = p_address.region_id)
-        inner join cities on cities.id = regions.city_id )
-        WHERE
-            users.id = '$id'";
+    providers.comm_img,
+    providers.ID_img,
+    p_address.street,
+    cities.city_name,
+    regions.region_name,
+    services.ser_name
+
+    FROM (((((( users
+    inner join providers on providers.user_id = users.id)
+    inner join prov_services on prov_services.p_id = providers.user_id )
+    inner join services on prov_services.ser_id = services.id )
+    inner join p_address on p_address.p_id = providers.user_id)
+    inner join regions on regions.id = p_address.region_id)
+    inner join cities on cities.id = regions.city_id )
+    WHERE users.id = '$id'
+    GROUP BY users.id";
 
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);

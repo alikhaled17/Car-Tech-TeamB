@@ -73,7 +73,6 @@
     
     <?php include('../header.php'); ?>
 
-
   <div class="wrapper">
     <div class="chat-box">
       <div class="chat-head">
@@ -238,6 +237,7 @@
         </div>
     </div>
     <?php include('../footer.php'); ?>
+    <?php include('messengerOne/forMsg_one.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -251,10 +251,6 @@
     </script>    
     <script src="../js/script.js"></script>
     <script>
-
-
-
-
         $(function(){
             var arrow = $('.chat-head img');
             var textarea = $('.chat-text textarea');

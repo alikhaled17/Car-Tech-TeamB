@@ -23,9 +23,6 @@ $(document).ready(function () {
             }
         })
     }
-
-
-
     function make_chat_dialog_box(to_user_id, to_user_name) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
 
@@ -88,7 +85,6 @@ $(document).ready(function () {
             }
         })
     }
-
 
 
 
