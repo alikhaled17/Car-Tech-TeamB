@@ -55,11 +55,11 @@ while($user_data = mysqli_fetch_array($result)){
 if ($rows1<1 && $rows2<1)
 {
     echo "<script>
-    document.getElementById('chatContainer').innerHTML  = 'No Massages';
-    document.getElementById('chatContainer').style.color  = 'black';
+    document.getElementById('conta').innerHTML  = '<h3>- Not messages to show it</h3>';
     </script>";
     echo "<script>
-    document.getElementById('chatBody').style.display = 'none';
+    document.getElementById('user_details').style.display = 'none';
+    document.getElementById('user_details').style.display = 'none';
     </script>";
 }
 else

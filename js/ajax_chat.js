@@ -35,7 +35,11 @@ $(document).ready(function () {
         modal_content += '</div>';
 
         modal_content += '<div class="chat-history" name="' + to_user_id + '" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
-        modal_content += fetch_user_chat_history(to_user_id);
+        chat_content = fetch_user_chat_history(to_user_id);
+        if (chat_content !== undefined)
+            modal_content += chat_content;
+        else
+            modal_content += '<i style="display:block; margin:0 auto"; class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
         modal_content += '</div>';
 
         modal_content += '<div class="chat-box">';
@@ -44,6 +48,7 @@ $(document).ready(function () {
         modal_content += '</div>';
 
         modal_content += '</div>';
+
 
 
         $('#user_model_details').html(modal_content);

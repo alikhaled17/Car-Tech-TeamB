@@ -3,7 +3,9 @@ li {
     list-style-type: none;
 }
 </style>
+
 <?php
+
 include('../../Config.php'); 
 
 function fetch_user_last_activity($user_id, $conn)
@@ -59,7 +61,12 @@ foreach($result as $row)
     else
 
     {
-        if(fetch_user_last_activity($row['to_user_id'], $conn) == "1") {
+        date_default_timezone_set("Africa/Cairo");
+        $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 15 second ');
+        $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
+        $user_last_activity = fetch_user_last_activity($row['to_user_id'], $conn);
+
+        if($user_last_activity > $current_timestamp) {
             $x = "online";
         } else {
             $x = "offline";

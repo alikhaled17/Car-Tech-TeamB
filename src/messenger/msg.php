@@ -27,8 +27,8 @@ else
     </head>  
     <body>  
             <?php include('../../header.php'); ?>
-            <div class="chats row">
-                  <div class="container">
+            <div id="chats" class="chats row">
+                  <div id="conta" class="container">
                         <div class="people-list col-4"  id="user_details" ></div>
                         <div class="chat col-8 row" id="user_model_details"></div>
                   </div>

@@ -237,7 +237,6 @@
         </div>
     </div>
     <?php include('../footer.php'); ?>
-    <?php include('messengerOne/forMsg_one.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -301,10 +300,10 @@
         function make_chat_dialog_box(to_user_id, to_user_name) {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
             let chat_content = fetch_one_user_chat_history(to_user_id);
-            // if (chat_content !== undefined)
-            //     modal_content += chat_content; 
-            // else
-            //     modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
+            if (chat_content !== undefined)
+                modal_content += chat_content; 
+            else
+                modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
             modal_content += '</div>';
             
             $('#user_model_details').html(modal_content);
@@ -322,6 +321,7 @@
             var thi =  $(this);
             var to_user_id = thi.attr('id');
             if(event.keyCode == '13') {
+                event.preventDefault();
                 var chat_message = thi.val().trim();
                 if((chat_message != '') && (chat_message != ' ')) {
                     $.ajax({
@@ -356,9 +356,7 @@
                 var to_user_id = $(this).data('touserid');
                 fetch_one_user_chat_history(to_user_id);
             });
-
         }
-
 
         function fetch_one_user_chat_history(to_user_id) {
             $.ajax({
@@ -370,8 +368,6 @@
                 }
             })
         }
-
-        
 
         $(document).on('focus', '.chat_message', function () {
             var is_type = 'yes';
