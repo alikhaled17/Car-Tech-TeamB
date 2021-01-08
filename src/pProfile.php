@@ -8,6 +8,7 @@
         header("Location:login.php");
     }
     $id = $_SESSION['p_id'];
+
     $sql="SELECT users.*,
         providers.comm_img,
         providers.ID_img,
@@ -23,8 +24,9 @@
         inner join p_address on p_address.p_id = providers.user_id)
         inner join regions on regions.id = p_address.region_id)
         inner join cities on cities.id = regions.city_id )
-        WHERE
-            users.id = '$id'";
+        WHERE users.id = '$id'
+        GROUP BY users.id
+        ";
 
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);

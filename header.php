@@ -78,7 +78,6 @@ function count_unseen_message_h($connect)
             shuffle(tipsArray);
             document.getElementById("test").innerHTML = tipsArray[1];
         }
-		
 </script>
     <!-- Start Upper Bar -->
     <div class="upper-bar">

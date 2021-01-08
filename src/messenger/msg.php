@@ -1,5 +1,6 @@
 <?php
 include('forMsg.php');
+include('../../Config.php'); 
 session_start();
 if(isset($_SESSION['p_id']) )    
 {
@@ -22,14 +23,11 @@ else
             <link rel="stylesheet" href="../../css/animate.css">
             <link rel="stylesheet" href="../../css/style.css" />
             <link rel="stylesheet" href="../../css/test.css" />
-            
-            
     </head>  
     <body>  
             <?php include('../../header.php'); ?>
-            
-            <div class="chats row" id="chatContainer">
-                  <div class="container" id="chatBody">
+            <div class="chats row">
+                  <div class="container">
                         <div class="people-list col-4"  id="user_details" ></div>
                         <div class="chat col-8 row" id="user_model_details"></div>
                   </div>
@@ -42,7 +40,12 @@ else
             <script src="../../js/wow.min.js"></script>
             <script>
                   new WOW().init();
+       
+                  function hamada() {
+                        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
+                  }
             </script>
+
             <script src="../../js/ajax_chat.js">  
             </script>
       </body>  

@@ -1,6 +1,18 @@
 <?php 
-
     include_once ("../Config.php");
+
+    if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
+    {
+        if (isset($_SESSION['u_id']))
+        {
+            $current_id=$_SESSION['u_id'];
+            
+        }
+        else
+        {
+            $current_id=$_SESSION['p_id'];
+        }
+    }
     if (isset ($_POST['search'])) {
         
         if ($_POST['Service'] !="" && $_POST['City'] !="") {

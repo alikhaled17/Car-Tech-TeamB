@@ -18,7 +18,7 @@
 
     <!-- Start Upper Bar -->
     <footer style="
-	width: 100%;">
+		width: 100%;">
 	<!-- Grid container -->
 	<div class="container">
 		<!--Grid row-->
@@ -58,7 +58,7 @@
 			</li>
 			<li>
 				<i class="fa fa-phone"></i>
-				<span>+20 100 3887 479</span>
+				<span>+20 000 0000 000</span>
 			</li>
 			
 			</ul>

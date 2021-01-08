@@ -39,7 +39,7 @@ session_start();
     <div class="Outer">
         <div class="container">
         <?php include('contact_config.php'); ?>
-
+        <?php include('contact_insert.php'); ?>
             <div class="row">
                 <div class="ContactForm col-6">
                     <form class="Mail"  method="POST"

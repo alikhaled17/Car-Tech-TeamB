@@ -4,7 +4,7 @@ li {
 }
 </style>
 <?php
-include_once ('C:/xampp/htdocs/Car-Tech-TeamB/Config.php');
+include('../../Config.php'); 
 
 function fetch_user_last_activity($user_id, $conn)
 {
@@ -88,13 +88,9 @@ foreach($result as $row)
        AND status = '1'
        ";
        $result = mysqli_query($conn, $query);
-//   return $row['from_user_id'];
  }
  $output .= '</ul>';
 
-// while($user_data = mysqli_fetch_array($result))
-// {    
-// }
 return $output;       
 }
 

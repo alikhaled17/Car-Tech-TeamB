@@ -10,9 +10,9 @@ if (isset($_POST['login'])) {
     $sql = "SELECT * FROM users WHERE email = '$email' and password = '$pass'";
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
+    $user_data = mysqli_fetch_array($result);
 
     if ($rows == 1) {
-        $user_data = mysqli_fetch_array($result);
         if($user_data["account_type"] == "Client") 
         {
             
@@ -23,23 +23,24 @@ if (isset($_POST['login'])) {
         }
         else
         {
+            $sql = "SELECT * FROM users ";
+            if ($user_data["account_type"] == "Provider"){
+                $sql .= "inner join providers on providers.user_id = users.id";
+            }
+            
+            $sql .= " WHERE email = '$email' and password = '$pass'";
+            $result = mysqli_query($conn, $sql);
+            $rows = mysqli_num_rows($result);
+            $user_data = mysqli_fetch_array($result);
 
-            $sub_query = "
-                INSERT INTO login_details (user_id) 
-                VALUES ('".$user_data['id']."')
-            ";
-            $statement = $conn->prepare($sub_query);
-            $statement->execute();
-
-            $sq = "SELECT * FROM login_details WHERE user_id = '". $user_data['id'] ."'";
-            $cat = mysqli_query($conn, $sq);
-            $hh = mysqli_fetch_array($cat);
-
-            $_SESSION['login_details_id'] = $hh['login_details_id'];
-
-
-            $_SESSION['p_id'] = $user_data["id"];
-            header("Location: pProfile.php");
+            if($user_data["prov_state"] == "accept"  ){
+                $_SESSION['p_id'] = $user_data["user_id"];
+                header("Location: pProfile.php");
+            } else {
+                $_SESSION['info'] = "The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.";
+                header('location: login.php');
+                exit();
+            }
         }
     } else {
         header("Location: login.php");
@@ -77,6 +78,7 @@ mysqli_close($conn);
             <div class="left-side col-7">
                 <h2>Login</h2>
                 <hr>
+                <?php include '../flash_messages.php';?>
                 <div form-login>
                     <form action="" method="post">
                         <label>Your Email</label>
