@@ -22,12 +22,10 @@ else
             <link rel="stylesheet" href="../../css/animate.css">
             <link rel="stylesheet" href="../../css/style.css" />
             <link rel="stylesheet" href="../../css/test.css" />
-            
-            
     </head>  
     <body>  
             <?php include('../../header.php'); ?>
-            
+            <?php echo $id; ?>
             <div class="chats row">
                   <div class="container">
                         <div class="people-list col-4"  id="user_details" ></div>

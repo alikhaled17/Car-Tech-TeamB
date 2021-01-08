@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     fetch_user();
     setInterval(function () {
         update_last_activity();
@@ -41,22 +42,17 @@ $(document).ready(function () {
         modal_content += '<textarea class="chat_message" name="chat_message_' + to_user_id + '" id="chat_message_' + to_user_id + '"  placeholder ="Type your message" rows="2"></textarea>';
         modal_content += '<button type="button" name="send_chat" id="' + to_user_id + '" class="send_chat">Send</button>';
         modal_content += '</div>';
-        // modal_content += '<button id="scroller">Click Me To Scroll To The Bottom!</button>' ;
 
         modal_content += '</div>';
-        
+
 
         $('#user_model_details').html(modal_content);
-        // var log = $('#chat-box');
-        // console.log(log);
-        // log.animate({ scrollTop: log.prop('scrollHeight')}, 0);
-        // var log = $('#chat-box');
-        // log.animate({ scrollTop: log.prop('scrollHeight')}, 1000); 
-        $('#' + to_user_id + '').click(function (){
-            $('#chat_history_' + to_user_id + '').animate({ scrollTop: $('#chat_history_' + to_user_id + '').prop('scrollHeight')}, 1000);
-        });  
+
+        $('#' + to_user_id + '').click(function () {
+            $('#chat_history_' + to_user_id + '').animate({ scrollTop: $('#chat_history_' + to_user_id + '').prop('scrollHeight') }, 1000);
+        });
     }
-  
+
 
     $(document).on('click', '.start_chat', function () {
         var to_user_id = $(this).data('touserid');
@@ -68,21 +64,19 @@ $(document).ready(function () {
     $(document).on('click', '.send_chat', function () {
         var to_user_id = $(this).attr('id');
         var chat_message = $('#chat_message_' + to_user_id).val().trim();
-        // var thi =  $(this);
-        if((chat_message != '') && (chat_message != ' ')) {
-        $.ajax({
-            url: "insert_chat.php",
-            method: "POST",
-            data: { to_user_id: to_user_id, chat_message: chat_message },
-            success: function (data) {
+        if ((chat_message != '') && (chat_message != ' ')) {
+            $.ajax({
+                url: "insert_chat.php",
+                method: "POST",
+                data: { to_user_id: to_user_id, chat_message: chat_message },
+                success: function (data) {
 
-                $('#chat_history_' + to_user_id).html(data);
-                
-            }
-        })
-        var chat_message = $('#chat_message_' + to_user_id).val(' ');
-        // console.log(chat_message);
-    }
+                    $('#chat_history_' + to_user_id).html(data);
+
+                }
+            })
+            var chat_message = $('#chat_message_' + to_user_id).val(' ');
+        }
     });
 
     function fetch_user_chat_history(to_user_id) {
@@ -91,7 +85,6 @@ $(document).ready(function () {
             method: "POST",
             data: { to_user_id: to_user_id },
             success: function (data) {
-                // $('#chat_history_' + to_user_id).html(data);
                 var chatDiv = $('#chat_history_' + to_user_id);
                 chatDiv.html(data);
             }

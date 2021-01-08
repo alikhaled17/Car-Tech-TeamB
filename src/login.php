@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
             $user_data = mysqli_fetch_array($result);
 
             if($user_data["prov_state"] == "accept"  ){
-                $_SESSION['p_id'] = $user_data["id"];
+                $_SESSION['p_id'] = $user_data["user_id"];
                 header("Location: pProfile.php");
             } else {
                 $_SESSION['info'] = "The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.";

@@ -3,18 +3,15 @@
     ob_start();
     session_start();
     $id =  $_GET['id']; 
-    // $page = $_SERVER['PHP_SELF'];
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {
         if (isset($_SESSION['u_id']))
         {
             $current_id=$_SESSION['u_id'];
-            // echo $u_id ;
         }
         else
         {
             $current_id=$_SESSION['p_id'];
-            // echo $p_id ;
         }
     }
     $sql="SELECT users.*,
@@ -42,8 +39,6 @@
     if (isset($_POST['add_fav']))
     {
         if ( $current_id != $id ){
-            // echo"in else if ";
-            echo "added" ;
             $conn->query("INSERT INTO favorite (user_id,favorite_id) VALUES ('$current_id','$id')");
         }
     }
@@ -51,7 +46,6 @@
     {
         $conn->query("DELETE FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id' ");
     }                   
-    // header("Location:visitProvider.php?id='.$id.' ");                    
 
 ?>
 <!DOCTYPE html>
@@ -339,7 +333,6 @@
             var to_user_id = $(this).data('touserid');
             var to_user_name = $(this).data('tousername');
             make_chat_dialog_box(to_user_id, to_user_name);
-
         });
 
         
