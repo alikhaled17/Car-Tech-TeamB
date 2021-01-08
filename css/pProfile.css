@@ -64,7 +64,7 @@
     border: 3px solid #08526d;
     border-radius: 10px;
     padding: 2%;
-    margin: 50px 1% 0 1% ;
+    margin: 100px 1% 0 1% ;
     width: 100%;
 }
 
@@ -173,10 +173,16 @@ textarea:focus {
     padding: 3% 0% 1% 5% !important;
 }
 
-.v-gallery {
+.v-gallery 
+{
     padding: 2%;
     border-radius: 10px 10px 0 0;
     border: 3px #08526d solid;
     margin: 2% 0 1% 1%;
     border-bottom: none;
+}
+.Add
+{
+    width: 100% !important; 
+
 }

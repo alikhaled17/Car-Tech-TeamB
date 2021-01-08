@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech - Contact</title>
+    <title>Car Tech - Registration</title>
     <!-- my css files -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
@@ -44,17 +44,18 @@
                         <input type="Password" name="pass" required placeholder="Enter Your Password *"><br>
                         <label>Email</label>
                         <input type="Email" name="email" required placeholder="Enter Your E-mail *"><br>
-                        <label>Profile Image</label>
-                        <input type="file" name="prof_img" value="none" accept="image/*">
-                        <p id="vaild_Email">
-                            <p>
-                                <label class="gender-h">Gender</label>
-                                <input type="radio" name="gender" value="Male" />
-                                <label class="gender">Male</label>
-                                <input type="radio" name="gender" value="Female" />
-                                <label class="gender">Female</label><br>
-                                <label>Phone Number</label>
-                                <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
+                        <p id="vaild_Email"> </p>
+                        <label>Phone Number</label>
+                        <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
+                        <div id="User-info">
+                            <label class="gender-h">Gender</label>
+                            <input type="radio" name="gender" value="Male" />
+                            <label class="gender">Male</label>
+                            <input type="radio" name="gender" value="Female" />
+                            <label class="gender">Female</label><br>
+                            <label>Profile Image</label>
+                            <input type="file" name="prof_img" value="none" accept="image/*">
+                        </div>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">
@@ -79,7 +80,7 @@
                         ?>
                         <label>Region</label>
                         <select id="Region1" name="Region" class="search-select">
-                            <option value="none" selected>Choose...</option>
+                            <option value="none" selected>Choose ...</option>
                         </select><br><br>
                         <label for="">Street</label>
                         <input type="text" name="street" placeholder="street">
@@ -102,6 +103,15 @@
                     $("#provider-info").show();
                 } else {
                     $("#provider-info").hide();
+                }
+            });
+        });
+        $(function() {
+            $("input[name='user-info']").click(function() {
+                if ($("#User").is(":checked")) {
+                    $("#User-info").show();
+                } else {
+                    $("#User-info").hide();
                 }
             });
         });

@@ -13,7 +13,7 @@
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
     $user_data = mysqli_fetch_array($result);
-
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/uProfile.css" />
-    <link rel="stylesheet" href="../css/Edit.css" />
 
 
     <script src="../js/responde.js"></script>    
@@ -63,14 +62,31 @@
                     </div>
                     <hr>
                     <div class="personal-info">
-                        <div class="gender">
-                            <i class="fa fa-venus-mars"></i>
+                    <div class="gender">
+                        <?php
+                            if ($user_data['gender']== "Male")
+                            {
+                        ?>
+                            <i class="fa fa-male"></i>
                             <span>
-                                <?php
-                                    echo $user_data['gender'] ;
+                            <?php 
+                                echo $user_data['gender']; 
+                            ?>
+                            </span>
+                            <?php
+                            }
+                            else{
+                            ?>
+                            <i class="fa fa-female"></i>
+                            <span>
+                                <?php 
+                                    echo $user_data['gender']; 
                                 ?>
                             </span>
-                        </div>
+                            <?php
+                            }
+                            ?>
+                    </div>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
@@ -90,11 +106,14 @@
                     </div>
                     <div>
                         <span> 
-                        <button class="btn btn-outline-info" onclick="window.location.href ='EditUProfile.php';"> 
-                            update </button>
+                            <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
+                            Show Favorite 
+                             </button>
                         </span>
+                        
                     </div>                    
                 </div>
+               
             </div>
         </div>
     </div>

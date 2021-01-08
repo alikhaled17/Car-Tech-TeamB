@@ -2,6 +2,7 @@
     include('../Config.php');  
     session_start();
     session_regenerate_id();
+
     if(!isset($_SESSION['p_id']))      
     {
         header("Location:login.php");
@@ -55,22 +56,10 @@
         <div class="container">
             <div class="upper-prof row">
                 <div class="wow wobble img-prof col-3">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="../imgs/default-prof.png"/>       
-                            </div>
-                            <?php 
-                        } else {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            </div>
-                            <?php
-                        }
-                    ?>
-                    
+                   
+                    <div class='imgProf'>
+                    <img src="../imgs/default-prof.jpg"/> 
+                    </div>
 
                 </div>
                 
@@ -82,14 +71,6 @@
                                 echo $user_data['username'];
                             ?>
                         </h2><hr>
-                    </div>
-                    <div class="gender">
-                        <i class="fa fa-venus-mars"></i>
-                        <span>
-                            <?php 
-                                echo $user_data['gender'];
-                            ?>
-                        </span>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
@@ -137,7 +118,14 @@
                     </div>
                 </div>
 
-                
+                <div class="services-prof">
+                    <h3>Favorite list</h3>
+                    <button class="btn btn-outline-info" onclick="window.location.href ='favoriteUser.php';">
+                        Show Favorite 
+                    </button>
+               
+                    
+                </div>
                 <div class="services-prof">
                     <h3>Services</h3>
                     <ul>
@@ -202,7 +190,7 @@
                                     ?>
                                     </div>
                             </div>
-                            <?php
+                            <?php   
                             }
                         }
                     ?>  

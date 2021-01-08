@@ -1,6 +1,22 @@
 <?php 
     include('../Config.php');  
+    ob_start();
+    session_start();
     $id =  $_GET['id']; 
+    // $page = $_SERVER['PHP_SELF'];
+    if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
+    {
+        if (isset($_SESSION['u_id']))
+        {
+            $current_id=$_SESSION['u_id'];
+            // echo $u_id ;
+        }
+        else
+        {
+            $current_id=$_SESSION['p_id'];
+            // echo $p_id ;
+        }
+    }
     $sql="SELECT users.*,
         providers.comm_img,
         providers.ID_img,
@@ -22,6 +38,19 @@
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
     $user_data = mysqli_fetch_array($result);
+                            
+    if (isset($_POST['add_fav']))
+    {
+        if ( $current_id != $id ){
+            // echo"in else if ";
+            $conn->query("INSERT INTO favorite (user_id,favorite_id) VALUES ('$current_id','$id')");
+        }
+    }
+    if (isset($_POST['remove_fav']))
+    {
+        $conn->query("DELETE FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id' ");
+    }                   
+    // header("Location:visitProvider.php?id='.$id.' ");                    
 
 ?>
 <!DOCTYPE html>
@@ -45,25 +74,45 @@
 <body>
     
     <?php include('../header.php'); ?>
-
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="../imgs/default-prof.png"/>       
-                            </div>
-                            <?php 
-                        } else {
-                            ?>
-                            <div class='imgProf'>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            </div>
-                            <?php
+                    <div class='imgProf'>
+                        <img src="../imgs/default-prof.jpg"/> 
+                    </div>
+                    <?php
+                        if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) ) 
+                        {
+                            $search_sql="SELECT favorite_id FROM favorite WHERE user_id = '$current_id' AND favorite_id='$id'  " ;
+                            $search_result = mysqli_query($conn, $search_sql);
+                            // $search_rows = mysqli_num_rows($search_result);
+                            if(mysqli_num_rows($search_result) != 1)
+                        {
+                    ?>
+                        <form method="POST" >
+                            <button class="btn btn-outline-info Add" name="add_fav"> Add To Favorite  </button>
+                        </form>
+                        
+                    <?php
                         }
+                        else
+                        { ?>
+                        <form method="POST">
+                            <button class="btn btn-outline-info Add" name="remove_fav"> Remove From Favorite  </button>
+                        </form>
+                        <?php
+                        }
+                    }
+                    if(!isset($_SESSION['p_id']) && !isset($_SESSION['u_id']) )
+                    {
+                    ?>
+                    
+                    <form action='login.php' >
+                        <button class="btn btn-outline-info Add" name="add_fav"> Add To Favorite  </button>
+                    </form>
+                    <?php
+                     } 
                     ?>
                 </div>
                 
@@ -75,14 +124,6 @@
                                 echo $user_data['username'];
                             ?>
                         </h3>
-                    </div>
-                    <div class="gender">
-                        <i class="fa fa-venus-mars"></i>
-                        <span>
-                            <?php 
-                                echo $user_data['gender'];
-                            ?>
-                        </span>
                     </div>
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
