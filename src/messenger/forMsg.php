@@ -4,7 +4,7 @@ li {
 }
 </style>
 <?php
-include('../../Config.php');  
+include_once ('C:/xampp/htdocs/Car-Tech-TeamB/Config.php');
 
 function fetch_user_last_activity($user_id, $conn)
 {
