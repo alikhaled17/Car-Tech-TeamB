@@ -271,9 +271,8 @@
         fetch_user();
         setInterval(function () {
             update_last_activity();
-            fetch_user();
             update_chat_history_data();
-        }, 5000);
+        }, 3000);
 
      
         function update_last_activity() {
@@ -296,13 +295,13 @@
         function make_chat_dialog_box(to_user_id, to_user_name) {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
             let chat_content = fetch_one_user_chat_history(to_user_id);
-            if (chat_content !== undefined)
-                modal_content += chat_content; 
-            else
-                modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
+            // if (chat_content !== undefined)
+            //     modal_content += chat_content; 
+            // else
+            //     modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
             modal_content += '</div>';
-            $('#user_model_details').html(modal_content);
             
+            $('#user_model_details').html(modal_content);
         }
 
         $(document).on('click', '.start_chat', function () {
@@ -315,11 +314,9 @@
         $('.chat-text textarea').keypress(function(event) {
             var thi =  $(this);
             var to_user_id = thi.attr('id');
-            if(event.keyCode == '13'){
-                let chat_message = thi.val().trim();
-
+            var chat_message = thi.val().trim();
+            if(event.keyCode == '13') {
                 if((chat_message != '') && (chat_message != ' ')) {
-                    
                     $.ajax({
                         url: "insert_chat_one.php",
                         method: "POST",
@@ -328,12 +325,8 @@
                             var chatDiv = $('#chat_history_' + to_user_id);
                         }
                     }) 
-                    
-                    thi.val('');
+                    thi.val(' ');
                 } 
-                $('.chat-text textarea').keypress(function(event){
-                $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 10000);
-            }); 
             }
         });
 
@@ -347,13 +340,19 @@
                     chatDiv.html(data);
                 }
             })
+
         }
+
+        // $('.chat-text textarea').keypress(function(event){
+        //      $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 10000);
+        // }); 
 
         function update_chat_history_data() {
             $('.chat_history').each(function () {
                 var to_user_id = $(this).data('touserid');
                 fetch_one_user_chat_history(to_user_id);
             });
+
         }
 
 
@@ -368,7 +367,7 @@
             })
         }
 
-
+        
 
         $(document).on('focus', '.chat_message', function () {
             var is_type = 'yes';

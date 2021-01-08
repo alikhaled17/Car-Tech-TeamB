@@ -88,13 +88,9 @@ foreach($result as $row)
        AND status = '1'
        ";
        $result = mysqli_query($conn, $query);
-//   return $row['from_user_id'];
  }
  $output .= '</ul>';
 
-// while($user_data = mysqli_fetch_array($result))
-// {    
-// }
 return $output;       
 }
 

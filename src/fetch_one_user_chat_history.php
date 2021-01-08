@@ -12,7 +12,6 @@ if(isset($_SESSION['p_id']) )
 else
 {
     echo fetch_one_user_chat_history($_SESSION['u_id'], $_POST['to_user_id'], $conn);
-    
 }
 
 

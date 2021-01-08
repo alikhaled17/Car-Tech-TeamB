@@ -41,7 +41,13 @@ else
             <script src="../../js/wow.min.js"></script>
             <script>
                   new WOW().init();
+       
+                  function hamada() {
+                        console.log("hamada");
+                        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
+                  }
             </script>
+
             <script src="../../js/ajax_chat.js">  
             </script>
       </body>  

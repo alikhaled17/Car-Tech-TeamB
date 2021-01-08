@@ -13,7 +13,7 @@ if(isset($_SESSION['p_id']) )
     $id=$_SESSION['p_id'];
     $query = "
     SELECT  * FROM `users` 
-    LEFT OUTER JOIN `chat_message`
+    right OUTER JOIN `chat_message`
     ON users.id = chat_message.from_user_id or users.id = chat_message.to_user_id 
     WHERE  users.id != $id
     GROUP BY(users.id)
