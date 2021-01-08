@@ -2,7 +2,6 @@
 
 //update_last_activity.php
 
-include('forMsg.php');
 
 session_start();
 

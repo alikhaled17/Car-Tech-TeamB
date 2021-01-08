@@ -1,5 +1,6 @@
 <?php
 include('forMsg.php');
+include('../../Config.php'); 
 session_start();
 if(isset($_SESSION['p_id']) )    
 {

@@ -5,7 +5,8 @@ $(document).ready(function () {
         update_last_activity();
         fetch_user();
         update_chat_history_data();
-    }, 5000);
+        fetch_user_chat_history(to_user_id);
+    }, 2000);
 
     function fetch_user() {
         $.ajax({
@@ -58,7 +59,6 @@ $(document).ready(function () {
         var to_user_id = $(this).data('touserid');
         var to_user_name = $(this).data('tousername');
         make_chat_dialog_box(to_user_id, to_user_name);
-
     });
 
     $(document).on('click', '.send_chat', function () {

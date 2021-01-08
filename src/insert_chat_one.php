@@ -1,7 +1,6 @@
 
 <?php
 session_start();
-include('forMsg_one.php');
 //insert_chat.php
 if(isset($_SESSION['p_id']) )    
 {
@@ -11,8 +10,12 @@ else
 {
     $id=$_SESSION['u_id'] ; 
 }
+
 $to_user_id=$_POST['to_user_id'];
 $chat_message = $_POST['chat_message'];
+
+echo $to_user_id;
+echo $chat_message;
 $status = '1';
 $query = "INSERT INTO chat_message 
 (to_user_id, from_user_id, chat_message, status) 

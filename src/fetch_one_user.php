@@ -1,5 +1,7 @@
 <?php
-include('forMsg_one.php');
+include('../Config.php'); 
+
+
 session_start();
 
 $id=$_GET['id'];

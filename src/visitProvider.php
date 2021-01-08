@@ -1,5 +1,7 @@
 <?php 
-    include('../Config.php'); 
+    include('../Config.php');
+    include('forMsg_one.php');
+
     ob_start();
     session_start();
     $id =  $_GET['id']; 
@@ -70,7 +72,6 @@
 <body>
     
     <?php include('../header.php'); ?>
-    <!-- Remove include for_msg.php file from here because it aleardy exist in fetch one user  -->
 
 
   <div class="wrapper">
@@ -139,31 +140,7 @@
                             ?>
                         </h3>
                     </div>
-                    <div class="gender">
-                        <?php
-                            if ($user_data['gender']== "Male")
-                            {
-                        ?>
-                            <i class="fa fa-male"></i>
-                            <span>
-                            <?php 
-                                echo $user_data['gender']; 
-                            ?>
-                            </span>
-                            <?php
-                            }
-                            else{
-                            ?>
-                            <i class="fa fa-female"></i>
-                            <span>
-                                <?php 
-                                    echo $user_data['gender']; 
-                                ?>
-                            </span>
-                            <?php
-                            }
-                            ?>
-                    </div>
+                    
                     <div class="phone">
                         <i class="fa fa-phone-square"></i>
                         <span>
@@ -261,7 +238,6 @@
         </div>
     </div>
     <?php include('../footer.php'); ?>
-    <?php include('messengerOne/forMsg_one.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -302,7 +278,7 @@
      
         function update_last_activity() {
             $.ajax({
-                url: "messengerOne/update_last_activity_one.php",
+                url: "update_last_activity_one.php",
                 success: function () {
                 }
             })
@@ -310,7 +286,7 @@
 
         function fetch_user() {
             $.ajax({
-                url: "messengerOne/fetch_one_user.php?id=<?php echo $id; ?>",
+                url: "fetch_one_user.php?id=<?php echo $id; ?>",
                 method: "POST",
                 success: function (data) {
                     $('#user_details').html(data);
@@ -345,24 +321,25 @@
                 if((chat_message != '') && (chat_message != ' ')) {
                     
                     $.ajax({
-                        url: "messengerOne/insert_chat_one.php",
+                        url: "insert_chat_one.php",
                         method: "POST",
                         data: { to_user_id: to_user_id, chat_message: chat_message },
                         success: function (data) {
                             var chatDiv = $('#chat_history_' + to_user_id);
                         }
                     }) 
+                    
                     thi.val('');
                 } 
                 $('.chat-text textarea').keypress(function(event){
-                $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 1000);
+                $('#chat-body').animate({ scrollTop: $('#chat-body').prop('scrollHeight')}, 10000);
             }); 
             }
         });
 
         function fetch_one_user_chat_history(to_user_id) {
             $.ajax({
-                url: "messengerOne/fetch_one_user_chat_history.php",
+                url: "fetch_one_user_chat_history.php",
                 method: "POST",
                 data: { to_user_id: to_user_id },
                 success: function (data) {
@@ -382,7 +359,7 @@
 
         function fetch_one_user_chat_history(to_user_id) {
             $.ajax({
-                url: "messengerOne/fetch_one_user_chat_history.php",
+                url: "fetch_one_user_chat_history.php",
                 method: "POST",
                 data: { to_user_id: to_user_id },
                 success: function (data) {
@@ -396,7 +373,7 @@
         $(document).on('focus', '.chat_message', function () {
             var is_type = 'yes';
             $.ajax({
-                url: "messengerOne/update_is_type_status_one.php",
+                url: "update_is_type_status_one.php",
                 method: "POST",
                 data: { is_type: is_type },
                 success: function () {
@@ -407,7 +384,7 @@
         $(document).on('blur', '.chat_message', function () {
             var is_type = 'no';
             $.ajax({
-                url: "messengerOne/update_is_type_status_one.php",
+                url: "update_is_type_status_one.php",
                 method: "POST",
                 data: { is_type: is_type },
                 success: function () {

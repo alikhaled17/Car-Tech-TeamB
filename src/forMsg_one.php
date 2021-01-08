@@ -4,10 +4,9 @@ li {
 }
 </style>
 <?php
-include('\xampp\htdocs\Car-Tech-TeamB\Config.php'); 
-// if(!@include('..//Config.php')) throw new Exception("Failed to include '../../Config.php'");
 
 
+include('../Config.php');
 
 function fetch_user_last_activity($user_id, $conn)
 {

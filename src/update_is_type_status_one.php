@@ -3,7 +3,6 @@
 
 //update_is_type_status.php
 
-include('forMsg_one.php');
 
 session_start();
 

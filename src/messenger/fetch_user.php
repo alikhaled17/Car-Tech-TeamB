@@ -1,7 +1,7 @@
 <?php
-//fetch_user.php
 include('forMsg.php');
 
+include('../../Config.php'); 
 
 session_start();
 
@@ -9,15 +9,15 @@ session_start();
 if(isset($_SESSION['p_id']) )    
 {
 
-    $id=$_SESSION['p_id'];
 
+    $id=$_SESSION['p_id'];
     $query = "
     SELECT  * FROM `users` 
     LEFT OUTER JOIN `chat_message`
-    ON users.id = chat_message.from_user_id
-    WHERE  chat_message.from_user_id = $id or chat_message.to_user_id = $id
+    ON users.id = chat_message.from_user_id or users.id = chat_message.to_user_id 
+    WHERE  users.id != $id
     GROUP BY(users.id)
-    ";  
+    ";
 }
 else
 {
@@ -25,8 +25,8 @@ else
     $query = "
     SELECT  * FROM `users` 
     LEFT OUTER JOIN `chat_message`
-    ON users.id = chat_message.from_user_id
-    WHERE  chat_message.to_user_id = $id
+    ON users.id = chat_message.from_user_id or users.id = chat_message.to_user_id 
+    WHERE  users.id != $id
     GROUP BY(users.id)
     ";   
 }
