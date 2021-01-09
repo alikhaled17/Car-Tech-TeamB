@@ -29,13 +29,13 @@ $(document).ready(function () {
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
-        modal_content += '<div class="chat-with"><a href="../visitProvider.php?id='+ to_user_id+ '">'+ to_user_name + '</a></div>';
+        modal_content += '<div class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
         modal_content += '</div>';
         modal_content += '</div>';
 
         modal_content += '<div class="chat-history" name="' + to_user_id + '" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
         chat_content = fetch_user_chat_history(to_user_id);
-        if (chat_content !== undefined){
+        if (chat_content !== undefined) {
             modal_content += chat_content;
             document.getElementById('msgAudio').play();
         }
