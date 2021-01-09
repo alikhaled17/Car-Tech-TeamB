@@ -99,7 +99,8 @@
                                 <option value="none" selected>Choose ...</option>
                                 </select><br><br>
                                 <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street" required> 
+                                <input class="street" type="text" name="street" placeholder="street" required>
+                                <label class="col-md-4 control-label">City Name</label>
                               
                             </span>
                         </div>

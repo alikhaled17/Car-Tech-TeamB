@@ -112,6 +112,8 @@ session_start();
         include('Config.php');
         $sql = "SELECT * FROM advertising
         where ad_type = 'show' " ;
+        // $sql = "SELECT * FROM advertising
+        // where ad_type LIKE '%show%' " ;
         $result = mysqli_query($conn, $sql);
         $rows = mysqli_num_rows($result);
         $count = 1;
@@ -190,7 +192,7 @@ session_start();
     <div class="elfsight-app-19737a3b-6c3b-429b-b63d-df7c1593b4cb"></div>
 
     <?php include('footer.php'); ?>
-    
+
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>

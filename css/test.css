@@ -92,6 +92,24 @@
   padding-left: 10px;
   margin-top: 6px;
 }
+.chat .chat-header .chat-about a
+{
+  text-decoration: none;
+  text-transform: capitalize;
+  color:#08526d;
+}
+.chat .chat-header .chat-about a:hover
+{
+  text-decoration: none;
+  text-transform: capitalize;
+  color:#08526d;
+}
+.chat .chat-header .chat-about a:visited
+{
+  text-decoration: none;
+  color:#08526d;
+  text-transform: capitalize;
+}
 .chat .chat-header .chat-with {
   font-weight: bold;
   font-size: 16px;
