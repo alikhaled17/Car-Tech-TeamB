@@ -113,7 +113,7 @@
                             ?>
                             </button>
 
-                            <button class="btn btn-outline-info" onclick="window.location.href ='EditpProfile.php';">Edit Info</button>
+                            <button class="btn btn-outline-info" onclick="window.location.href ='EditPProfile.php';">Edit Info</button>
                         <?php
                         }
                         ?>
