@@ -35,7 +35,8 @@ if (isset ($_POST['send'])) {
     if (PEAR::isError($mail)) {
         echo($mail->getMessage());
     } else {
-        echo ("<div class='success'>". $successMessage."</div>");
+        echo ("<div class='alert alert-success alert-dismissable'><a href='#' 
+            class='close' data-dismiss='alert' aria-label='close'>×</a>". $successMessage."</div>");
     }
 } 
 ?>

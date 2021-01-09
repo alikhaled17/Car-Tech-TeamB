@@ -5,7 +5,6 @@
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                     Account Updated successfully!
                 </div>';
-
     }
     function fail()
     {
