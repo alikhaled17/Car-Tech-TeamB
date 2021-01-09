@@ -1,6 +1,6 @@
 <?php
 include('forMsg.php');
-include('https://care-tech.herokuapp.com/Config.php'); 
+include('../../Config.php'); 
 session_start();
 
 if(isset($_SESSION['p_id']) )    
@@ -27,7 +27,7 @@ else
             <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/test.css" />
     </head>  
     <body>  
-            <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+            <?php include('../../header.php'); ?>
             <div id="chats" class="chats row">
                   <div id="conta" class="container">
                         <div class="people-list col-4"  id="user_details" ></div>
@@ -35,7 +35,7 @@ else
                   </div>
             </div>
             <div style="clear:both;"></div>
-            <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+            <?php include('../../footer.php'); ?>
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
             <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
             <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
