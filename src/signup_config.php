@@ -1,23 +1,31 @@
 <?php
     include('../Config.php');
-    include('../flash_messages.php');
-
+    
     function success()
     {
-        if (($_POST['user-info'] == 'Provider')
+        if (($_POST['user-info'] == 'Provider'))
         {
-            $_SESSION['info'] = "The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.";
+           
+            echo '<div class="alert alert-success alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                             The data will be reviewed within 24 hours.<br>Please try after 24 hours of registration.
+                    </div>';
         }
         else
         {
-            $_SESSION['success'] = "Account Created Successfully .'<br>'You Can Login Now.";
-
+            echo '<div class="alert alert-success alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                            Account Created Successfully .<br>You Can Login Now.
+                  </div>';
         }
     }
 
     function fail()
     {
-        $_SESSION['failure'] = "Please complete your info or your Email is already exist .'<br>'You Can Login Now.";
+        echo '<div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    Please complete your info or your Email is already exist .<br>You Can Login Now.
+            </div>';
     }
 
 
