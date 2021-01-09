@@ -230,8 +230,10 @@
                     ?>  
                 </div>
             </div>
+
         </div>
     </div>
+    <audio id="msgAudio" src="messenger/noti.mp3" preload="auto"></audio>
     <?php include('../footer.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -296,8 +298,10 @@
         function make_chat_dialog_box(to_user_id, to_user_name) {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
             let chat_content = fetch_one_user_chat_history(to_user_id);
-            if (chat_content !== undefined)
-                modal_content += chat_content; 
+            if (chat_content !== undefined){
+                modal_content += chat_content;
+                document.getElementById('msgAudio').play();
+            }
             else
                 modal_content += '<i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
             modal_content += '</div>';

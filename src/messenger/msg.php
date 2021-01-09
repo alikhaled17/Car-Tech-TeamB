@@ -35,6 +35,7 @@ else
                   </div>
             </div>
             <div style="clear:both;"></div>
+            <audio id="msgAudio" src="noti.mp3" preload="auto"></audio>
             <?php include('../../footer.php'); ?>
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
             <script src="../../js/jquery-3.5.1.min.js"></script>
