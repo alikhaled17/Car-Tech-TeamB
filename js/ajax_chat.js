@@ -29,7 +29,7 @@ $(document).ready(function () {
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
-        if (to_user_Type==="Provider"){
+        if (to_user_Type === "Provider"){
             modal_content += '<div class="chat-with"><a href="../visitProvider.php?id='+ to_user_id+ '">'+ to_user_name + '</a></div>';
             console.log ("Provider") ;
         }
