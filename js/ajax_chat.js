@@ -29,14 +29,13 @@ $(document).ready(function () {
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
-        if (to_user_Type === "Provider"){
-            modal_content += '<div class="chat-with"><a href="../visitProvider.php?id='+ to_user_id+ '">'+ to_user_name + '</a></div>';
-            console.log ("Provider") ;
+        if (to_user_Type === "Provider") {
+            modal_content += '<div class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
+            console.log("Provider");
         }
-        else
-        {
+        else {
             // console.log (to_user_id) ;
-            modal_content += '<div class="chat-with">' + to_user_id+  to_user_name + '-User</div>';
+            modal_content += '<div class="chat-with">' + to_user_id + to_user_name + '-User</div>';
         }
         modal_content += '</div>';
         modal_content += '</div>';
@@ -69,9 +68,9 @@ $(document).ready(function () {
         var to_user_id = $(this).data('touserid');
         var to_user_name = $(this).data('tousername');
         var to_user_Type = $(this).data('toType');
-        console.log (to_user_Type);
-        console.log (to_user_name);
-        console.log (to_user_name);
+        console.log(to_user_Type);
+        console.log(to_user_name);
+        console.log(to_user_name);
         make_chat_dialog_box(to_user_id, to_user_name, to_user_Type);
     });
 
