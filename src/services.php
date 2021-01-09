@@ -21,11 +21,11 @@ session_start();
 </head>
 
 <body>
-    <script src="https://car-tch.herokuapp.com/js/jquery-3.5.1.min.js"></script>
-    <script src="https://car-tch.herokuapp.com/js/bootstrap.min.js"></script>
-    <script src="https://car-tch.herokuapp.com/js/wow.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>  
-    <script src="https://car-tch.herokuapp.com/js/script.js"></script>
+    <script src="../js/script.js"></script>
     <!-- Header -->
     <?php include('../header.php'); ?>
     <!-- Services -->
