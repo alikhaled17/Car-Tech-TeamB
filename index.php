@@ -188,9 +188,9 @@ session_start();
 
     <?php include('footer.php'); ?>
 
-    <script src="https://car-tch.herokuapp.comjs/jquery-3.5.1.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/bootstrap.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/wow.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>  
     <script src="https://car-tch.herokuapp.com/js/script.js"></script>
 </body>

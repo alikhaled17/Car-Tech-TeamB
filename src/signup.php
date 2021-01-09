@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Registration</title>
     <!-- my css files -->
-    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.comimage/icon type">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/bootstrap.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comfonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/animate.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/style.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/signup.css" />
+    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.com/image/icon type">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/animate.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/signup.css" />
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js">
     </script>
@@ -92,7 +92,7 @@
             </div>
             <div class="right-side col-5">
                 <div class="sign-img">
-                    <img src="https://car-tch.herokuapp.comimgs/signup.png" width="100%">
+                    <img src="https://car-tch.herokuapp.com/imgs/signup.png" width="100%">
                 </div>
             </div>
         </div>
@@ -119,13 +119,13 @@
     </script>
     <?php include('../footer.php'); ?>
 
-    <script src="https://car-tch.herokuapp.comjs/jquery-3.5.1.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/bootstrap.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/wow.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
-    <script src="https://car-tch.herokuapp.comjs/script.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/script.js"></script>
 </body>
 
 </html>

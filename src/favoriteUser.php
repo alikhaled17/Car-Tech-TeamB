@@ -21,13 +21,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Favorite </title>
     <!-- my css files -->  
-    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.comimage/icon type">
+    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.com/image/icon type">
   
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/bootstrap.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comfonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/animate.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/style.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/fav.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/fav.css" />
 
 
 </head>
@@ -60,7 +60,7 @@ session_start();
                                                 <li class="result-card">
                                                 <div class="lift"> ');
                                         if($provider['prof_img'] == '') {
-                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="https://car-tch.herokuapp.comimgs/default-prof.png"/></a>');     
+                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="https://car-tch.herokuapp.com/imgs/default-prof.png"/></a>');     
                                         } else {
                                             echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" /></a>');
                                         }
@@ -77,7 +77,7 @@ session_start();
                             } 
                             else {
                                 echo "<div class='no-result'>";
-                                echo "<img src='https://car-tch.herokuapp.comimgs/search.png'>";
+                                echo "<img src='https://car-tch.herokuapp.com/imgs/search.png'>";
                                 echo "<h5>No members in your favorite list!</h5>";
                                 echo "</div>";
                             }
@@ -88,10 +88,10 @@ session_start();
             </div>	
         </div>
     <?php include('../footer.php'); ?>
-    <script src="https://car-tch.herokuapp.comjs/jquery-3.5.1.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/bootstrap.min.js"></script>
-    <script src="https://car-tch.herokuapp.comjs/wow.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="https://car-tch.herokuapp.comjs/script.js"></script>
+    <script src="https://car-tch.herokuapp.com/js/script.js"></script>
 </body>
 </html>
