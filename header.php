@@ -100,14 +100,14 @@ function count_unseen_message_h($connect)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" data-wow-duration='.5s' href="#">
-                <img class="wow wobble" src="/Car-Tech-TeamB/imgs/logo2.png" alt="car-tech" width="100px">
+                <img class="wow wobble" src="../imgs/logo2.png" alt="car-tech" width="100px">
                 <span>Car</span><span>Tech</span>
             </a>
 
             <div class="collapse navbar-collapse" id="ournavbar">
                 <ul class="navbar-nav navar ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Car-Tech-TeamB/index.php">Home</a>
+                        <a class="nav-link" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Car-Tech-TeamB/src/AboutUs.php">About US</a>
@@ -127,10 +127,10 @@ function count_unseen_message_h($connect)
                         <!-- <a class="nav-link" href="/../src/pProfile.php">Profile</a> -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/../src/services.php">Services</a>
+                        <a class="nav-link" href="https://dashboard.heroku.com/src/services.php">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/care-tech.herokuapp.com/src/contact.php">Contact US</a>
+                        <a class="nav-link" href=".../src/contact.php">Contact US</a>
                     </li>
                     <li class="nav-item">
                     <?php
