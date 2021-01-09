@@ -65,7 +65,7 @@
                     echo ('
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
-                        echo ('<img src="https://care-tech.herokuapp.com/imgs/default-prof.jpg"/>');     
+                        echo ('<img src="https://car-tch.herokuapp.comimgs/default-prof.jpg"/>');     
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.
@@ -79,7 +79,7 @@
                 }
             } else {
                 echo "<div class='wow flip no-result'>";
-                echo "<img src='https://care-tech.herokuapp.com/imgs/search.png'>";
+                echo "<img src='https://car-tch.herokuapp.comimgs/search.png'>";
                 echo "<h5>Sorry, We haven't found any results matching this search</h5>";
                 echo "</div>";
 
@@ -89,13 +89,13 @@
         } 
         else  {
             echo "<div class='wow rotateIn no-result'>";
-            echo "<img src='https://care-tech.herokuapp.com/imgs/search.png'>";
+            echo "<img src='https://car-tch.herokuapp.comimgs/search.png'>";
             echo "<h5>Sorry, please select city</h5>";
             echo "</div>";
         }
     } else {
         echo "<div class='wow slideInRight no-result'>";
-        echo "<img src='https://care-tech.herokuapp.com/imgs/search.png'>";
+        echo "<img src='https://car-tch.herokuapp.comimgs/search.png'>";
         echo "<h5>Search Result </h5>";
         echo "<h5>----------------------------------</h5>";
         echo "</div>";

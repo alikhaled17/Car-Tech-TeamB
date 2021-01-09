@@ -25,15 +25,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Profile</title>
     <!-- my css files -->    
-    <link rel="icon" href="imgs/icon.png" type="https://care-tech.herokuapp.com/image/icon type">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/uProfile.css" />
+    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.comimage/icon type">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/bootstrap.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comfonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/animate.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/style.css" />
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/uProfile.css" />
 
 
-    <script src="https://care-tech.herokuapp.com/js/responde.js"></script>    
+    <script src="https://car-tch.herokuapp.comjs/responde.js"></script>    
 </head>
 <body>
     <?php include('../header.php'); ?>
@@ -44,7 +44,7 @@
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
-                            <img src="https://care-tech.herokuapp.com/imgs/default-prof.png"/>       
+                            <img src="https://car-tch.herokuapp.comimgs/default-prof.png"/>       
                             <?php 
                         } else {
                             ?>
@@ -125,10 +125,10 @@
     <?php include('../footer.php'); ?>
 
     
-    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
-    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
-    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
+    <script src="https://car-tch.herokuapp.comjs/jquery-3.5.1.min.js"></script>
+    <script src="https://car-tch.herokuapp.comjs/bootstrap.min.js"></script>
+    <script src="https://car-tch.herokuapp.comjs/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="https://care-tech.herokuapp.com/js/script.js"></script>
+    <script src="https://car-tch.herokuapp.comjs/script.js"></script>
 </body>
 </html>

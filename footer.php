@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech</title>
     <!-- my css files -->
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/bootstrap.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comfonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://car-tch.herokuapp.comcss/animate.css">
      
 </head>
 
@@ -38,10 +38,10 @@
 
 			<ul class="">
 			<li>
-				<a href="https://care-tech.herokuapp.com/index.php">Home</a>
+				<a href="https://car-tch.herokuapp.comindex.php">Home</a>
 			</li>
 			<li>
-				<a href="https://care-tech.herokuapp.com/src/services.php">Services</a>
+				<a href="https://car-tch.herokuapp.comsrc/services.php">Services</a>
 			</li>
 			</ul>
 		</div>
