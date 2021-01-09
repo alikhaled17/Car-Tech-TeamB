@@ -100,27 +100,27 @@ function count_unseen_message_h($connect)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" data-wow-duration='.5s' href="#">
-                <img class="wow wobble" src="imgs/logo2.png" alt="car-tech" width="100px">
+                <img class="wow wobble" src="https://care-tech.herokuapp.com/imgs/logo2.png" alt="car-tech" width="100px">
                 <span>Car</span><span>Tech</span>
             </a>
 
             <div class="collapse navbar-collapse" id="ournavbar">
                 <ul class="navbar-nav navar ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Home</a>
+                        <a class="nav-link" href="https://care-tech.herokuapp.com/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Car-Tech-TeamB/src/AboutUs.php">About US</a>
+                        <a class="nav-link" href="https://care-tech.herokuapp.com/src/AboutUs.php">About US</a>
                     </li>
                     <li class="nav-item">
                     <?php if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )
                              {if(isset($_SESSION['p_id']) )    
                              {
-                                 echo "<a class='nav-link' href='/Car-Tech-TeamB/src/pProfile.php'> Profile </a>"; 
+                                 echo "<a class='nav-link' href='https://care-tech.herokuapp.com/src/pProfile.php'> Profile </a>"; 
                              }
                              else
                              {
-                                 echo "<a class='nav-link' href='/Car-Tech-TeamB/src/uProfile.php'> Profile </a>"; 
+                                 echo "<a class='nav-link' href='https://care-tech.herokuapp.com/src/uProfile.php'> Profile </a>"; 
                                  
                              }}
                     ?>
@@ -130,14 +130,14 @@ function count_unseen_message_h($connect)
                         <a class="nav-link" href="https://care-tech.herokuapp.com/src/services.php">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../src/contact.php">Contact US</a>
+                        <a class="nav-link" href="https://care-tech.herokuapp.com/src/contact.php">Contact US</a>
                     </li>
                     <li class="nav-item">
                     <?php
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                              echo "<a class='nav-link fa fa-comment' aria-hidden='true' style='margin-top: 3px;'
-                              href='/Car-Tech-TeamB/src/messenger/msg.php'> </a>" ;
+                              href='https://care-tech.herokuapp.com/src/messenger/msg.php'> </a>" ;
                               count_unseen_message_h( $conn);
                             }      
                     ?>                    
@@ -151,14 +151,14 @@ function count_unseen_message_h($connect)
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                                 if (isset($_SESSION['p_id']))
-                                   { echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/logoutP.php'> Logout</a>" ;}
+                                   { echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/logoutP.php'> Logout</a>" ;}
                                 else
-                                    { echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/logoutU.php'> Logout</a>"; }
+                                    { echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/logoutU.php'> Logout</a>"; }
                             }
                             else
                             {
-                                echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/login.php'> Login</a>" ;
-                                echo "<a class='dropdown-item' href='/Car-Tech-TeamB/src/signup.php'> Sign Up</a>" ;
+                                echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/login.php'> Login</a>" ;
+                                echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/signup.php'> Sign Up</a>" ;
                                 
                             }
                         ?>
