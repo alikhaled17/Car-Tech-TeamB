@@ -124,10 +124,10 @@ function count_unseen_message_h($connect)
                                  
                              }}
                     ?>
-                        <!-- <a class="nav-link" href="/care-tech.herokuapp.com/src/pProfile.php">Profile</a> -->
+                        <!-- <a class="nav-link" href="/../src/pProfile.php">Profile</a> -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/care-tech.herokuapp.com/src/services.php">Services</a>
+                        <a class="nav-link" href="/../src/services.php">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/care-tech.herokuapp.com/src/contact.php">Contact US</a>
