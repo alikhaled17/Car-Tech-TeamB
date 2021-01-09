@@ -38,10 +38,10 @@
 
 			<ul class="">
 			<li>
-				<a href="/Car-Tech-TeamB/index.php">Home</a>
+				<a href="https://care-tech.herokuapp.com/index.php">Home</a>
 			</li>
 			<li>
-				<a href="/Car-Tech-TeamB/src/services.php">Services</a>
+				<a href="https://care-tech.herokuapp.com/src/services.php">Services</a>
 			</li>
 			</ul>
 		</div>
