@@ -17,6 +17,7 @@ session_start();
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="icon" href="imgs/icon.png" type="image/icon type">
 </head>
 <body>
     <?php include('header.php'); ?>

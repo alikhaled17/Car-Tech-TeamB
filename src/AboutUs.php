@@ -10,8 +10,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Car Tech</title>
+    <title>Car Tech - About US</title>
     <!-- my css files -->    
+    <link rel="icon" href="imgs/icon.png" type="https://care-tech.herokuapp.com/image/icon type">
+
     <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
     <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">

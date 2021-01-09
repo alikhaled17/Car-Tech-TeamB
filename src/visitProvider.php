@@ -60,12 +60,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Profile</title>
     <!-- my css files -->    
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/pProfile.css" />
-    <link rel="stylesheet" href="../css/chat_direct.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/pProfile.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/chat_direct.css" />
+    <link rel="icon" href="imgs/icon.png" type="https://care-tech.herokuapp.com/image/icon type">
 
 
 </head>
