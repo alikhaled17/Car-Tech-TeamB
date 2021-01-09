@@ -64,6 +64,7 @@ if ($rows1<1 && $rows2<1)
 }
 else
 {
+    echo $user_data['account_type'] ;
 
     $output = '
         <ul class="list">
