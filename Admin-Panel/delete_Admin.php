@@ -31,8 +31,7 @@ else {
     
     if ($result) {
         if ($_SESSION['id'] == $del_id){
-            echo "--------------------------------------------------";
-            session_destroy();
+            // session_destroy();
             header('location: login.php');
             exit;
         }else {
