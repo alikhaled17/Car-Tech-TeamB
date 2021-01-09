@@ -74,7 +74,10 @@
     
     <?php include('../header.php'); ?>
 
-  <div class="wrapper">
+<?php 
+if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
+    ?>
+    <div class="wrapper">
     <div class="chat-box">
       <div class="chat-head">
         <h2 id="user_details"></h2>
@@ -89,7 +92,10 @@
       </div>
     </div>
   </div>
-
+<?php
+} 
+?>
+  
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
@@ -301,7 +307,7 @@
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
             let chat_content = fetch_one_user_chat_history(to_user_id);
             if (chat_content !== undefined){
-                document.getElementById('msgAudio').play();
+                // document.getElementById('msgAudio').play();
                 modal_content += chat_content;
             }
             else

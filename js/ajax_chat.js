@@ -23,19 +23,19 @@ $(document).ready(function () {
             }
         })
     }
-    function make_chat_dialog_box(to_user_id, to_user_name, to_user_Type) {
+    function make_chat_dialog_box(to_user_id, to_user_name, toType) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
 
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
 
-        if (to_user_Type == "Provider") {
+        if (toType == "Provider") {
             modal_content += '<div class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
-            console.log(to_user_Type);
+            console.log(toType);
         }
         else {
-            console.log(to_user_Type);
+            console.log(toType);
             modal_content += '<div class="chat-with">' + to_user_id + to_user_name + '-User</div>';
         }
 
@@ -46,7 +46,7 @@ $(document).ready(function () {
         chat_content = fetch_user_chat_history(to_user_id);
         if (chat_content !== undefined) {
             modal_content += chat_content;
-            document.getElementById('msgAudio').play();
+            // document.getElementById('msgAudio').play();
         }
         else
             modal_content += '<i style="display:block; margin:0 auto"; class="fa fa-spinner fa-pulse fa-3x fa-fw" style="margin:16px;"></i> <span class="sr-only">Loading...</span>';
