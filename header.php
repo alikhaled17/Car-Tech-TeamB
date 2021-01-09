@@ -80,8 +80,7 @@ function count_unseen_message_h($connect)
         }
 </script>
 
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
 
     <!-- Start Upper Bar -->
     <div class="upper-bar">
