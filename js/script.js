@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.navar li').each(function () {
-        if (window.location.pathname == "https://care-tech.herokuapp.com" + $(this).children().attr("href") || $(this).children().attr("href") === '#') {
+        if (window.location.pathname == "https://car-tch.herokuapp.com" + $(this).children().attr("href") || $(this).children().attr("href") === '#') {
             console.log(window.location.pathname);
             console.log("-- ", $(this).children().attr("href"));
             $(this).addClass('active').siblings().removeClass('active');

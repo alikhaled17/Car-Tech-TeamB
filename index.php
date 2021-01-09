@@ -12,19 +12,22 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech</title>
     <!-- my css files -->  
-      
+    <link rel="icon" href="imgs/icon.png" type="image/icon type">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
-    <link rel="icon" href="imgs/icon.png" type="image/icon type">
     
     
 </head>
 <body>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>  
+    <script src="js/script.js"></script>
+
     <?php include('header.php'); ?>
     <?php include('Config.php'); ?>
 
@@ -197,9 +200,7 @@ session_start();
     <?php include('footer.php'); ?>
 
 
-    <script src="js/wow.min.js"></script>
-    <script>new WOW().init();</script>  
-    <script src="js/script.js"></script>
+
 </body>
 
 </html>
