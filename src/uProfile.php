@@ -25,15 +25,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Profile</title>
     <!-- my css files -->    
-    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.com/image/icon type">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/bootstrap.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/animate.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/style.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/uProfile.css" />
+    <link rel="icon" href="../imgs/icon.png" type="image/icon type">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
+    <link rel="stylesheet" href="../css/uProfile.css" />
 
 
-    <script src="https://car-tch.herokuapp.com/js/responde.js"></script>    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
     <?php include('../header.php'); ?>

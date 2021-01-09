@@ -36,16 +36,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
-    <link rel="icon" href="imgs/icon.png" type="https://car-tch.herokuapp.com/image/icon type">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/bootstrap.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/animate.css">
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/style.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/pProfile.css" />
-    <link rel="stylesheet" href="https://car-tch.herokuapp.com/css/EditPProfile.css" />
+    <link rel="icon" href="../imgs/icon.png" type="image/icon type">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pProfile.css" />
+    <link rel="stylesheet" href="../css/EditPProfile.css" />
 
 
-    <script src="https://car-tch.herokuapp.com/js/responde.js"></script>    
+    <!-- <script src="../js/responde.js"></script>     -->
 </head>
 <body>
     <?php include('../header.php'); ?>
@@ -57,7 +57,7 @@
         <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <img src="https://car-tch.herokuapp.com/imgs/default-prof.jpg"/> 
+                    <img src="../imgs/default-prof.jpg"/> 
                 </div>
                 <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
                     <div class="info-prof ">
@@ -69,7 +69,7 @@
                         <div class="personal-info">
                             <label style="color:#08526d; font-weight:500;">password</label><br>
                             <input type="password" class="inputStyle" name="pass" id="myInput" value="<?php echo $user_data['password']; ?>" required>
-                            <img src="https://car-tch.herokuapp.com/imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
+                            <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                         </div>
                         <br>
                         <div class="phone">
@@ -156,11 +156,11 @@
     <?php include('../footer.php'); ?>
 
     
-    <script src="https://car-tch.herokuapp.com/js/jquery-3.5.1.min.js"></script>
-    <script src="https://car-tch.herokuapp.com/js/Password.js"></script>
-    <script src="https://car-tch.herokuapp.com/js/bootstrap.min.js"></script>
-    <script src="https://car-tch.herokuapp.com/js/wow.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/Password.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="https://car-tch.herokuapp.com/js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

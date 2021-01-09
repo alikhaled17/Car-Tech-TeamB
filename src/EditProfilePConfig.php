@@ -57,7 +57,6 @@
                 fail();
             }
             success();
-            // header("Location:pProfile.php");
         }
         else {
             fail();

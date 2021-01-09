@@ -1,7 +1,7 @@
 <?php
 include('forMsg.php');
 
-include('../..//Config.php'); 
+include('../../Config.php'); 
 
 session_start();
 
