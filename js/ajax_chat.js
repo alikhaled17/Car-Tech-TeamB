@@ -23,13 +23,17 @@ $(document).ready(function () {
             }
         })
     }
-    function make_chat_dialog_box(to_user_id, to_user_name) {
+    function make_chat_dialog_box(to_user_id, to_user_name, to_user_Type) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
 
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
-        modal_content += '<div class="chat-with"><a href="../visitProvider.php?id='+ to_user_id+ '">'+ to_user_name + '</a></div>';
+        if (to_user_Type=="Provider")
+            modal_content += '<div class="chat-with"><a href="../visitProvider.php?id='+ to_user_id+ '">'+ to_user_name + '</a></div>';
+        else
+            modal_content += '<div class="chat-with">' + to_user_id+  to_user_name + '-User</div>';
+
         modal_content += '</div>';
         modal_content += '</div>';
 
@@ -60,7 +64,8 @@ $(document).ready(function () {
     $(document).on('click', '.start_chat', function () {
         var to_user_id = $(this).data('touserid');
         var to_user_name = $(this).data('tousername');
-        make_chat_dialog_box(to_user_id, to_user_name);
+        var to_user_Type = $(this).data('data-toType');
+        make_chat_dialog_box(to_user_id, to_user_name, to_user_Type);
     });
 
     $(document).on('click', '.send_chat', function () {
