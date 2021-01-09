@@ -3,12 +3,20 @@
 
     function success()
     {
-        echo ("<div class='success'>The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.</div>");
+        if (($_POST['user-info'] == 'Provider')
+        {
+            $_SESSION['info'] = "The data will be reviewed within 24 hours.'<br>'Please try after 24 hours of registration.";
+        }
+        else
+        {
+            $_SESSION['success'] = "Account Created Successfully .'<br>'You Can Login Now.";
+
+        }
     }
 
     function fail()
     {
-        echo ("<div class='fail'>Please complete your info or your email is already exist </div>");
+        $_SESSION['failure'] = "Please complete your info or your Email is already exist .'<br>'You Can Login Now.";
     }
 
 
