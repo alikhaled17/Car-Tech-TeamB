@@ -91,7 +91,7 @@
             </div>
             <div class="right-side col-5">
                 <div class="sign-img">
-                    <img src="/Car-Tech-TeamB/imgs/signup.png" width="100%">
+                    <img src="https://care-tech.herokuapp.com/imgs/signup.png" width="100%">
                 </div>
             </div>
         </div>

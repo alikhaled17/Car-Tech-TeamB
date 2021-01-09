@@ -106,7 +106,7 @@ mysqli_close($conn);
             </div>
             <div class="right-side col-5">
                 <div class="login-img">
-                    <img src="/Car-Tech-TeamB/imgs/login-img.png" width="100%">
+                    <img src="https://care-tech.herokuapp.com/imgs/login-img.png" width="100%">
                 </div>
             </div>
         </div>
