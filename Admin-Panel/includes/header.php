@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>Administrator</title>
+    <link rel="icon" href="../imgs/icon.png" type="image/icon type">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />

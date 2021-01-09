@@ -30,15 +30,10 @@ else {
         $result=mysqli_query($conn, $sql); 
     
     if ($result) {
-        if ($_SESSION['id'] == $del_id){
-            // session_destroy();
-            header('location: login.php');
-            exit;
-        }else {
-            $_SESSION['info'] = "User deleted successfully!";
-            header('location: admin_users.php');
-            exit;
-        };
+
+        $_SESSION['info'] = "User deleted successfully!";
+        header('location: admin_users.php');
+        exit;
 
     }
     else
