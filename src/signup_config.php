@@ -1,5 +1,6 @@
 <?php
-    include('https://care-tech.herokuapp.com/Config.php');
+    include('../Config.php');
+    include('../flash_messages.php');
 
     function success()
     {

@@ -1,5 +1,5 @@
 <?php 
-    include_once ("https://care-tech.herokuapp.com/Config.php");
+    include_once ("../Config.php");
 
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {

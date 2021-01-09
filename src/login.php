@@ -1,5 +1,5 @@
 <?php
-include('https://care-tech.herokuapp.com/Config.php');
+include('../Config.php');
 ob_start();
 session_start();
 
@@ -88,14 +88,14 @@ mysqli_close($conn);
 
 <body>
 
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('../header.php'); ?>
 
     <div class="login-section row">
         <div class="container">
             <div class="left-side col-7">
                 <h2>Login</h2>
                 <hr>
-                <?php include 'https://care-tech.herokuapp.com/flash_messages.php';?>
+                <?php include '../flash_messages.php';?>
                 <div form-login>
                     <form action="" method="post">
                         <label>Your Email</label>
@@ -114,7 +114,7 @@ mysqli_close($conn);
         </div>
     </div>
 
-    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <?php include('../footer.php'); ?>
 
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>

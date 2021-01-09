@@ -1,5 +1,5 @@
 <?php
-include('https://care-tech.herokuapp.com/Config.php');  
+include('../Config.php');  
 ob_start();
 session_start();
     if (isset($_SESSION['u_id']))
@@ -33,7 +33,7 @@ session_start();
 </head>
 <body>
     
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('../header.php'); ?>
 
         <div class="container">
         <?php include('contact_config.php'); ?>
@@ -87,6 +87,7 @@ session_start();
                 </div>  
             </div>	
         </div>
+    <?php include('../footer.php'); ?>
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>

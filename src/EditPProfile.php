@@ -48,7 +48,7 @@
     <script src="https://care-tech.herokuapp.com/js/responde.js"></script>    
 </head>
 <body>
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('../header.php'); ?>
     <div class="prof-section">
         <div class="container">
         <?php 
@@ -153,7 +153,7 @@
         </div>
     </div>
     
-    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <?php include('../footer.php'); ?>
 
     
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>

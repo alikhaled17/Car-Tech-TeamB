@@ -1,5 +1,5 @@
 <?php 
-    include('https://care-tech.herokuapp.com/Config.php');
+    include('../Config.php');
     session_start();
     session_regenerate_id();
     function success()
@@ -72,7 +72,7 @@
 
 </head>
 <body>
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('../header.php'); ?>
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
@@ -128,7 +128,7 @@
         </div>
     </div>
     
-    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <?php include('../footer.php'); ?>
 
     
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>

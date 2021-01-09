@@ -1,6 +1,6 @@
 <?php
 
-   include('https://care-tech.herokuapp.com/Config.php');  
+   include('../Config.php');  
    session_start();
    $lg = $_SESSION['login_details_id'];
    $result=mysqli_query($conn,"DELETE FROM  login_details WHERE login_details_id = $lg ");
