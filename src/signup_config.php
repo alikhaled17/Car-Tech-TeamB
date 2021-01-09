@@ -24,7 +24,7 @@
     {
         echo '<div class="alert alert-danger alert-dismissable">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                    Please complete your info or your Email is already exist .<br>You Can Login Now.
+                    Please complete your info or your Email is already exist .
             </div>';
     }
 

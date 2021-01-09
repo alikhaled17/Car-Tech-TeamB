@@ -1,12 +1,18 @@
 <?php 
     function success()
-    {
-        echo ("<div class='success'>Account created successfully!</div>");
-    }
+    { 
+        echo '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    Account Updated successfully!
+                </div>';
 
+    }
     function fail()
     {
-        echo ("<div class='fail'>Please complete your info</div>");
+        echo '<div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                Please complete your info
+            </div>';
     }
     include('../Config.php');
     $id = $_SESSION['p_id'];
