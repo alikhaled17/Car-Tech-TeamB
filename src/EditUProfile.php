@@ -1,5 +1,5 @@
 <?php 
-    include('../Config.php');
+    include('https://care-tech.herokuapp.com/Config.php');
     session_start();
     session_regenerate_id();
     function success()
@@ -60,17 +60,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/EditPProfile.css" />
-    <link rel="stylesheet" href="../css/uProfile.css" />
-    <link rel="stylesheet" href="../css/EditPProfile.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/EditPProfile.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/uProfile.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/EditPProfile.css" />
 
 </head>
 <body>
-    <?php include('../header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
@@ -79,7 +79,7 @@
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
-                            <img src="../imgs/default-prof.png"/>       
+                            <img src="https://care-tech.herokuapp.com/imgs/default-prof.png"/>       
                             <?php 
                         } else {
                             ?>
@@ -97,7 +97,7 @@
                         <div class="personal-info">
                             <label>password</label><br>
                             <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php $user_data['password'] ?>" required>
-                            <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
+                            <img src="https://care-tech.herokuapp.com/imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                             
                         </div>
                         <div class="phone">
@@ -126,14 +126,14 @@
         </div>
     </div>
     
-    <?php include('../footer.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
 
     
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/Password.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/Password.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="../js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/script.js"></script>
 </body>
 </html>

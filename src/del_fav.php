@@ -1,5 +1,5 @@
 <?php
-    include('../Config.php');
+    include('https://care-tech.herokuapp.com/Config.php');
     session_start();
     session_regenerate_id();    
     $id= $_GET['id'];

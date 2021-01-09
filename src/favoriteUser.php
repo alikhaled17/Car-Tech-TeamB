@@ -1,5 +1,5 @@
 <?php
-include('../Config.php');  
+include('https://care-tech.herokuapp.com/Config.php');  
 ob_start();
 session_start();
     if (isset($_SESSION['u_id']))
@@ -21,17 +21,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Favorite </title>
     <!-- my css files -->    
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/fav.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/fav.css" />
 
 
 </head>
 <body>
     
-    <?php include('../header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
 
         <div class="container">
         <?php include('contact_config.php'); ?>
@@ -58,7 +58,7 @@ session_start();
                                                 <li class="result-card">
                                                 <div class="lift"> ');
                                         if($provider['prof_img'] == '') {
-                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="../imgs/default-prof.png"/></a>');     
+                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="https://care-tech.herokuapp.com/imgs/default-prof.png"/></a>');     
                                         } else {
                                             echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" /></a>');
                                         }
@@ -75,7 +75,7 @@ session_start();
                             } 
                             else {
                                 echo "<div class='no-result'>";
-                                echo "<img src='../imgs/search.png'>";
+                                echo "<img src='https://care-tech.herokuapp.com/imgs/search.png'>";
                                 echo "<h5>No members in your favorite list!</h5>";
                                 echo "</div>";
                             }
@@ -85,10 +85,10 @@ session_start();
                 </div>  
             </div>	
         </div>
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="../js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/script.js"></script>
 </body>
 </html>

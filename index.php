@@ -187,11 +187,11 @@ session_start();
 
     <?php include('footer.php'); ?>
 
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>  
-    <script src="/Car-Tech-TeamB/js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com//js/script.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,6 @@
 
 <?php
 
-//update_is_type_status.php
-
-
 session_start();
 
 $query = "

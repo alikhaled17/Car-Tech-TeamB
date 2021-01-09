@@ -1,5 +1,5 @@
 <?php
-    include('../Config.php');  
+    include('https://care-tech.herokuapp.com/Config.php');  
     session_start();
 
     $lon = $_GET['lon'];

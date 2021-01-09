@@ -8,7 +8,7 @@
     {
         echo ("<div class='fail'>Please complete your info</div>");
     }
-    include('../Config.php');
+    include('https://care-tech.herokuapp.com/Config.php');
     $id = $_SESSION['p_id'];
     if(isset($_POST['update']))
     { 

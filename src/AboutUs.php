@@ -12,15 +12,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech</title>
     <!-- my css files -->    
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/about.css" />
 </head>
 <body>
-    <?php include('../header.php'); ?>
-    <?php include('../Config.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/Config.php'); ?>
 
     <div class="about-us row">
         <div class="container">
@@ -48,7 +48,7 @@ session_start();
         
         <div class="our-team">
             <div class="picture">
-            <img class="img-fluid" src="../imgs/ali_K.jpg">
+            <img class="img-fluid" src="https://care-tech.herokuapp.com/imgs/ali_K.jpg">
             </div>
             <div class="team-content">
             <h4 class="name">Ali khaled</h4>
@@ -61,7 +61,7 @@ session_start();
         </div>
         <div class="our-team">
             <div class="picture">
-            <img class="img-fluid" src="../imgs/mayar_a.jpg">
+            <img class="img-fluid" src="https://care-tech.herokuapp.com/imgs/mayar_a.jpg">
             </div>
             <div class="team-content">
             <h4 class="name">Mayar Araby</h4>
@@ -74,7 +74,7 @@ session_start();
         </div>
         <div class="our-team">
             <div class="picture">
-            <img class="img-fluid" src="../imgs/mahmoud_Y.jpg">
+            <img class="img-fluid" src="https://care-tech.herokuapp.com/imgs/mahmoud_Y.jpg">
             </div>
             <div class="team-content">
             <h4 class="name">Mahmoud Elsharawy</h4>
@@ -87,7 +87,7 @@ session_start();
         </div>
         <div class="our-team">
             <div class="picture">
-            <img class="img-fluid" src="../imgs/ahmed_T.jpg">
+            <img class="img-fluid" src="https://care-tech.herokuapp.com/imgs/ahmed_T.jpg">
             </div>
             <div class="team-content">
             <h4 class="name">Ahmd Turky</h4>
@@ -100,7 +100,7 @@ session_start();
         </div>
         <div class="our-team">
             <div class="picture">
-            <img class="img-fluid" src="../imgs/sally_E.jpg">
+            <img class="img-fluid" src="https://care-tech.herokuapp.com/imgs/sally_E.jpg">
             </div>
             <div class="team-content">
             <h4 class="name">Sally Eissawy</h4>
@@ -117,13 +117,13 @@ session_start();
     </div>
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <div class="elfsight-app-19737a3b-6c3b-429b-b63d-df7c1593b4cb"></div>
-    <?php include('../footer.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
 
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>  
-    <script src="/Car-Tech-TeamB/js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com//js/script.js"></script>
 </body>
 
 </html>

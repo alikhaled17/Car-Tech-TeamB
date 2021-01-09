@@ -12,11 +12,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Contact</title>
     <!-- my css files -->    
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css">
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/contact.css" />
 
     <script type="text/javascript">
 
@@ -33,7 +33,7 @@ session_start();
 </head>
 <body>
     
-    <?php include('../header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
 
     <!-- Contact -->
     <div class="Outer">
@@ -44,7 +44,7 @@ session_start();
                 <div class="ContactForm col-6">
                     <form class="Mail"  method="POST"
                             enctype="Contact/plain" name="myemailform" >
-                            <h3>Contact Us<img src="../imgs/contactUs_Tittle.png" width="50px"></h3>
+                            <h3>Contact Us<img src="https://care-tech.herokuapp.com/imgs/contactUs_Tittle.png" width="50px"></h3>
                             <span>Name</span>
                                 <input type="text" name="nameUser" class="Inputs_Text" required placeholder="Enter Your Name *" size="50">
                             <span>Email</span> 
@@ -59,16 +59,16 @@ session_start();
                     </form>
                 </div>
                 <div class="img_contact col-6 wow bounceInRight">
-                    <img class="img_Form" src="../imgs/ContactUsForm.png">
+                    <img class="img_Form" src="https://care-tech.herokuapp.com/imgs/ContactUsForm.png">
                 </div>
             </div>	
         </div>
     </div>
-    <?php include('../footer.php'); ?>
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();</script>    
-    <script src="../js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/script.js"></script>
 </body>
 </html>

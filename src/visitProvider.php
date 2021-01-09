@@ -1,5 +1,5 @@
 <?php 
-    include('../Config.php');
+    include('https://care-tech.herokuapp.com/Config.php');
     include('forMsg_one.php');
 
     ob_start();
@@ -71,7 +71,7 @@
 </head>
 <body>
     
-    <?php include('../header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
 
   <div class="wrapper">
     <div class="chat-box">
@@ -179,7 +179,6 @@
                                 <?php 
                                     echo "<a class='location' href='https://www.google.com/maps/?q=".$lat.",".$lon."'"." target='_blank'> Go |  </a>   ";
                                 ?>
-                                <!-- <a> Go |  </a>    -->
                                 <i class="fa fa-location-arrow"></i>
                             </button>
                         <?PHP } ?>
@@ -191,18 +190,14 @@
                         <?php
                             $sql = "SELECT * FROM prov_services WHERE p_id = '$id'";
                             $res = mysqli_query($conn, $sql);
-                            
-                            // echo"befor whil 1";
+                    
                             while($ser_id = mysqli_fetch_array($res))
                             {
                                 $Sql_ser="SELECT * FROM services WHERE id = ".$ser_id['ser_id']." ";
                                 $res_Ser = mysqli_query($conn, $Sql_ser);
                                 while($ser_Name = mysqli_fetch_array($res_Ser))
                                 { 
-                                // print_r($ser_Name);
-                                // echo"befor whil 2";
                                 echo "<li>".$ser_Name['ser_name']."</li>";
-                                // echo"befor ser 2";
                                 }
                             }
                         ?>
@@ -236,11 +231,11 @@
             </div>
         </div>
     </div>
-    <?php include('../footer.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
     
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>new WOW().init();
     
     function hamada() {

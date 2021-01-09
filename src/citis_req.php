@@ -17,7 +17,7 @@
 </script>
 <select name="City" id="City1" class="search-select" onchange="fetch_region(this.value);" required> 
 <?php
-include_once("../Config.php");
+include_once("https://care-tech.herokuapp.com/Config.php");
 $sql="SELECT id,city_name FROM `cities`";
 $result=mysqli_query($conn, $sql);
 

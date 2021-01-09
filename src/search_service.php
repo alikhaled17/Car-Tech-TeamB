@@ -1,4 +1,4 @@
-<?php include_once("../Config.php");
+<?php include_once("https://care-tech.herokuapp.com/Config.php");
 $sql="SELECT id,ser_name FROM `services`";
 $result=mysqli_query($conn, $sql);
 

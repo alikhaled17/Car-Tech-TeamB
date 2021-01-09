@@ -6,7 +6,7 @@ li {
 <?php
 
 
-include('../Config.php');
+include('https://care-tech.herokuapp.com/Config.php');
 
 function fetch_user_last_activity($user_id, $conn)
 {

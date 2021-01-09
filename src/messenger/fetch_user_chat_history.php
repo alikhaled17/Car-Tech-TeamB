@@ -2,7 +2,7 @@
 
 
 include('forMsg.php');
-include('../../Config.php'); 
+include('https://care-tech.herokuapp.com/Config.php'); 
 
 session_start();
 if(isset($_SESSION['p_id']) )    

@@ -1,5 +1,5 @@
 <?php
-include('../Config.php');
+include('https://care-tech.herokuapp.com/Config.php');
 ob_start();
 session_start();
 
@@ -74,11 +74,11 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Login</title>
     <!-- my css files -->
-    <link rel="stylesheet" href="../css/bootstrap.css" />
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/animate.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/animate.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/style.css" />
+    <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/login.css" />
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js">
     </script>
@@ -86,14 +86,14 @@ mysqli_close($conn);
 
 <body>
 
-    <?php include('../header.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
 
     <div class="login-section row">
         <div class="container">
             <div class="left-side col-7">
                 <h2>Login</h2>
                 <hr>
-                <?php include '../flash_messages.php';?>
+                <?php include 'https://care-tech.herokuapp.com/flash_messages.php';?>
                 <div form-login>
                     <form action="" method="post">
                         <label>Your Email</label>
@@ -112,15 +112,15 @@ mysqli_close($conn);
         </div>
     </div>
 
-    <?php include('../footer.php'); ?>
+    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
 
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/wow.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
-    <script src="../js/script.js"></script>
+    <script src="https://care-tech.herokuapp.com/js/script.js"></script>
 </body>
 
 </html>

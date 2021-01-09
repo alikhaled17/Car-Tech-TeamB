@@ -1,7 +1,7 @@
 <?php
 include('forMsg.php');
 
-include('../../Config.php'); 
+include('https://care-tech.herokuapp.com/Config.php'); 
 
 session_start();
 

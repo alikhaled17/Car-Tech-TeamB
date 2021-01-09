@@ -1,8 +1,5 @@
 <?php
 
-//update_last_activity.php
-
-
 session_start();
 
 $query = "
