@@ -152,7 +152,7 @@ function count_unseen_message_h($connect)
                         <?php
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
-                                if (isset($_SESSION['p_id']))
+                                if (isset($_SESSION['p_id']))   
                                    { echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-out' style='color:#08526d' href='https://car-tch.herokuapp.com/src/logoutP.php'> Logout</a>" ;}
                                 else
                                     { echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-out' style='color:#08526d' href='https://car-tch.herokuapp.com/src/logoutU.php'> Logout</a>"; }
