@@ -35,7 +35,7 @@ session_start();
 </head>
 <body>
     
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
+    <?php include('header.php'); ?>
 
     <!-- Contact -->
     <div class="Outer">
@@ -66,7 +66,7 @@ session_start();
             </div>	
         </div>
     </div>
-    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <?php include('footer.php'); ?>
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/wow.min.js"></script>

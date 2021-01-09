@@ -21,8 +21,8 @@ session_start();
     <link rel="stylesheet" href="https://care-tech.herokuapp.com/css/about.css" />
 </head>
 <body>
-    <?php include('https://care-tech.herokuapp.com/header.php'); ?>
-    <?php include('https://care-tech.herokuapp.com/Config.php'); ?>
+    <?php include('../header.php'); ?>
+    <?php include('../Config.php'); ?>
 
     <div class="about-us row">
         <div class="container">
@@ -119,7 +119,7 @@ session_start();
     </div>
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <div class="elfsight-app-19737a3b-6c3b-429b-b63d-df7c1593b4cb"></div>
-    <?php include('https://care-tech.herokuapp.com/footer.php'); ?>
+    <?php include('../footer.php'); ?>
 
     <script src="https://care-tech.herokuapp.com/js/jquery-3.5.1.min.js"></script>
     <script src="https://care-tech.herokuapp.com/js/bootstrap.min.js"></script>
