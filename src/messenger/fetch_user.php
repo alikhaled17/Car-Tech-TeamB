@@ -93,7 +93,7 @@ else
                 '. strtoupper(substr($user_data['username'], 0, 1)) .'
             </button>
             <div class="about">
-                <div class="name">'.$user_data['username'] .$user_data['account_type'].  '<span> '.count_unseen_message($user_data['id'], $id, $conn).' </span></div>
+                <div class="name">'.$user_data['username'] .  '<span> '.count_unseen_message($user_data['id'], $id, $conn).' </span></div>
                 <div class="status">
                     <i class="fa fa-circle '.$st_class.'"></i> '.$status.'
                 </div>
