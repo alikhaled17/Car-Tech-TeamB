@@ -19,12 +19,12 @@ session_start();
     <link rel="stylesheet" href="css/home.css" />
     <link rel="icon" href="imgs/icon.png" type="image/icon type">
     
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <?php include('header.php'); ?>
     <?php include('Config.php'); ?>
+
 
     <!-- Home -->
     <div class="image-header row ">
@@ -190,7 +190,9 @@ session_start();
     <div class="elfsight-app-19737a3b-6c3b-429b-b63d-df7c1593b4cb"></div>
 
     <?php include('footer.php'); ?>
-
+    
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script>  
     <script src="js/script.js"></script>

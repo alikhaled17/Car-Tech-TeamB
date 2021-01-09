@@ -8,6 +8,7 @@ $users_id = filter_input(INPUT_GET, 'users_id');
 $operation = filter_input(INPUT_GET, 'operation', FILTER_SANITIZE_STRING);
 ($operation == 'edit') ? $edit = true : $edit = false;
 
+
 //Serve POST request.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Sanitize input post if we want

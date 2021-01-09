@@ -79,12 +79,15 @@ function count_unseen_message_h($connect)
             document.getElementById("test").innerHTML = tipsArray[1];
         }
 </script>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
     <!-- Start Upper Bar -->
     <div class="upper-bar">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <i class="fa fa-phone"></i><span> +20 000 0000 000</span>,
                     <i class="fa fa-envelope-o"></i> info.cartechb@gmail.com
                 </div>
                 <div class="col-sm text-right">
