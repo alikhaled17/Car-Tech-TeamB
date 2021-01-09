@@ -151,14 +151,14 @@ function count_unseen_message_h($connect)
                             if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )      // if there is no valid session
                             {
                                 if (isset($_SESSION['p_id']))
-                                   { echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/logoutP.php'> Logout</a>" ;}
+                                   { echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-out' style='color:#f47e3d' href='https://care-tech.herokuapp.com/src/logoutP.php'> Logout</a>" ;}
                                 else
-                                    { echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/logoutU.php'> Logout</a>"; }
+                                    { echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-out' style='color:#f47e3d' href='https://care-tech.herokuapp.com/src/logoutU.php'> Logout</a>"; }
                             }
                             else
                             {
-                                echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/login.php'> Login</a>" ;
-                                echo "<a class='dropdown-item' href='https://care-tech.herokuapp.com/src/signup.php'> Sign Up</a>" ;
+                                echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-in' style='color:#f47e3d' href='https://care-tech.herokuapp.com/src/login.php'> Login</a>" ;
+                                echo "<a aria-hidden='true' class='dropdown-item fa fa-user-plus' style='color:#f47e3d' href='https://care-tech.herokuapp.com/src/signup.php'> Sign Up</a>" ;
                                 
                             }
                         ?>
