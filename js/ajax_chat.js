@@ -69,7 +69,7 @@ $(document).ready(function () {
         var to_user_id = $(this).data('touserid');
         var to_user_name = $(this).data('tousername');
         var to_user_Type = $(this).data('data-toType');
-        console.log ( to_user_Type ) ;
+        // console.log (to_user_Type) ;
         make_chat_dialog_box(to_user_id, to_user_name, to_user_Type);
     });
 
