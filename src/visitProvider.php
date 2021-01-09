@@ -247,15 +247,16 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script>new WOW().init();
-    
-    function hamada() {
-        $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
-    }
-    
-    </script>    
+    <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
+    <?php 
+    if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) ) {
+    ?>
     <script>
+        function hamada() {
+            $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+        }
+
         $(function(){
             var arrow = $('.chat-head img');
             var textarea = $('.chat-text textarea');
@@ -402,5 +403,8 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
     });  
         
     </script>
+    <?php
+} 
+?>
 </body>
 </html>

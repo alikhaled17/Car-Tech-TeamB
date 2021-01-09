@@ -33,8 +33,7 @@ $(document).ready(function () {
         if (toType == "Provider") {
             modal_content += '<div class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
             console.log(toType);
-        }
-        else {
+        } else {
             console.log(toType);
             modal_content += '<div class="chat-with">' + to_user_id + to_user_name + '-User</div>';
         }

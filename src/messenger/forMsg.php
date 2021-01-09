@@ -1,8 +1,4 @@
-<style>
-li {
-    list-style-type: none;
-}
-</style>
+
 
 <?php
 
