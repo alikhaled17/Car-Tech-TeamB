@@ -91,7 +91,7 @@ include BASE_PATH . '/includes/header.php';
                 success: function (response) {
                     setInterval(function() {
                     location.reload();
-                }, 100);
+                }, 1000);
                 }
             });
         }
