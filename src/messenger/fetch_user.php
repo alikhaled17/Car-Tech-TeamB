@@ -106,5 +106,5 @@ else
     echo $output;
     }
 }
-
+$conn.Close();
 ?>

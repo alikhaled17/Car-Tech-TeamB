@@ -79,7 +79,7 @@ foreach($result as $row)
             
             </div>
             <div class="message '. 'my-message' .'">
-            '.$date_msg.'
+            '. $date_msg .'
             </div>
         </li>
         ';
