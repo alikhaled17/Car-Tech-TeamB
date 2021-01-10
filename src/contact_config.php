@@ -2,6 +2,7 @@
 if (isset ($_POST['send'])) {
     echo "Start contact config". '<br>';
     require_once "../Mail.php";
+    echo "Afer required once ". '<br>';
     $username = 'info.cartechb@gmail.com';
     $password = 'car5857507M';
     $smtpHost = 'ssl://smtp.gmail.com';
@@ -16,13 +17,16 @@ if (isset ($_POST['send'])) {
     $replyTo = "\n";
     $name = $_POST['nameUser'];
     $body = $_POST['message'].$replyTo.$_POST['nameUser'].$replyTo.$_POST['Emailsend'];
-
+    
+    echo "After variables ". '<br>';
 
     $headers = array(
         'From' => $name . " <" . $from . ">",
         'To' => $to,
         'Subject' => $subject
     );
+
+    echo json_encode($headers). '<br>';
 
     $smtp = Mail::factory('smtp', array(
                 'host' => $smtpHost,
@@ -31,7 +35,7 @@ if (isset ($_POST['send'])) {
                 'username' => $username,
                 'password' => $password
             ));
-
+    echo"smtp". '<br>';
     $mail = $smtp->send($to, $headers, $body);
     echo $mail. '<br>';
     if (PEAR::isError($mail)) {
