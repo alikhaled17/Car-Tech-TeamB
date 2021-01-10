@@ -1,10 +1,17 @@
 $(document).ready(function () {
     fetch_user();
-    setInterval(function () {
+    // setInterval(function () {
+    //     update_last_activity();
+    //     fetch_user();
+    //     update_chat_history_data();
+    // }, 5000);
+
+    $(document).on('click', '.chat', function () {
         update_last_activity();
         fetch_user();
         update_chat_history_data();
-    }, 5000);
+    });
+
 
     function fetch_user() {
         $.ajax({
@@ -22,6 +29,9 @@ $(document).ready(function () {
             }
         })
     }
+
+
+
     function make_chat_dialog_box(to_user_id, to_user_name, toType) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
 
@@ -59,6 +69,7 @@ $(document).ready(function () {
     }
 
 
+
     $(document).on('click', '.start_chat', function () {
         var to_user_id = $(this).data('touserid');
         var to_user_name = $(this).data('tousername');
@@ -82,6 +93,7 @@ $(document).ready(function () {
             var chat_message = $('#chat_message_' + to_user_id).val(' ');
         }
     });
+
 
     function fetch_user_chat_history(to_user_id) {
         $.ajax({
@@ -111,6 +123,7 @@ $(document).ready(function () {
 
 
     $(document).on('focus', '.chat_message', function () {
+
         var is_type = 'yes';
         $.ajax({
             url: "update_is_type_status.php",
@@ -119,6 +132,8 @@ $(document).ready(function () {
             success: function () {
             }
         })
+
+
     });
 
     $(document).on('blur', '.chat_message', function () {
@@ -131,5 +146,6 @@ $(document).ready(function () {
             }
         })
     });
+
 
 });  

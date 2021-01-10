@@ -282,10 +282,10 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
 
         $(document).ready(function () {
         fetch_user();
-        setInterval(function () {
-            update_last_activity();
-            update_chat_history_data();
-        }, 5000);
+        // setInterval(function () {
+        //     update_last_activity();
+        //     update_chat_history_data();
+        // }, 5000);
 
      
         function update_last_activity() {

@@ -62,7 +62,10 @@
                    
                     <div class='imgProf'>
                         <?php
-                            echo"<h2>";
+                            $background_colors = array('#282E33', '#25373A', '#164852', '#495E67', '#FF3838');
+                            $rand_background = $background_colors[array_rand($background_colors)];
+                            
+                            echo"<h2 style='background-color: ". $rand_background .";'>";
                             echo strtoupper(substr($user_data['username'], 0, 1)) ;
                             echo "</h2>";
                         ?> 

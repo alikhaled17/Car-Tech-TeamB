@@ -71,7 +71,7 @@
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                <select id="Region1" name="region_name" class="form-control" required="" 
+                <select id="Region1" name="region_name" class="form-control" required 
                  value="<?php echo ($edit) ? $users['region_id'] : ''; ?>">
                  <option value="none" selected >Region Name</option>
                  <?php 
