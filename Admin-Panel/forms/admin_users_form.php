@@ -12,7 +12,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input type="text" name="user_name" autocomplete="off" placeholder="Admin Name" class="form-control"
-                    value="<?php echo ($edit) ? $admin_account['user_name'] : ''; ?>" autocomplete="off">
+                required="" value="<?php echo ($edit) ? $admin_account['user_name'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>
