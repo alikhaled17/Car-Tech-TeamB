@@ -62,9 +62,9 @@ foreach($result as $row)
         $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
         $user_last_activity = fetch_user_last_activity($row['to_user_id'], $conn);
 
-        $date_msg = date_create($row['chat_message']);
-        date_add($date_msg, date_interval_create_from_date_string('10 days'));
-        echo date_format($date_msg, "Y-m-d H:i:s");
+        $date_msg = date_create($row['timestamp']);
+        date_add($date_msg, date_interval_create_from_date_string('2 hours'));
+        date_format($date_msg, "Y-m-d H:i:s");
 
         if($user_last_activity > $current_timestamp) {
             $x = "online";
@@ -75,11 +75,11 @@ foreach($result as $row)
         <div class="message-data">
             <i class="fa fa-circle '.$x. '"></i>
             <span class="message-data-name" >'.get_user_name($row['from_user_id'], $conn).'</span>
-            <span class="message-data-time" >'.$row['timestamp'].'</span>
+            <span class="message-data-time" >'.date_format($date_msg, "Y-m-d H:i:s").'</span>
             
             </div>
             <div class="message '. 'my-message' .'">
-            '. $date_msg .'
+            '. $row['chat_message'] .'
             </div>
         </li>
         ';
