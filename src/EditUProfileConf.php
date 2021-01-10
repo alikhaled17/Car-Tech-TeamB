@@ -33,15 +33,17 @@
             && isset($_POST['email'])
             && isset($_POST['pass'])
             && isset($_POST['phone'])
+            && isset($_POST['gender'])
         )
         {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['pass'];
             $phone = $_POST['phone'];
+            $gender = $_POST['gender'];
             
             $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-            password='$password',phone='$phone' WHERE id=$id");  
+            password='$password' , gender='$gender' ,phone='$phone' WHERE id=$id");  
              success();
         }
         else{
@@ -58,5 +60,6 @@
     $email = $user_data['email'];
     $password = $user_data['password'];
     $phone = $user_data['phone'];
+    $gender = $_POST['gender'];
 
 ?>

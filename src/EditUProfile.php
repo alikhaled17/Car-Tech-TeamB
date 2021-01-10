@@ -60,6 +60,29 @@
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                             
                         </div>
+                        <div class="gender">
+                      
+                    
+                            <?php
+                                if ($user_data['gender']== "Male")
+                                {
+                            ?>
+                                <i class="fa fa-male"></i>
+                                <span>
+                                <input type="radio" id="user" name="user-info" value="Male" checked />
+                                </span>
+                                <?php
+                                }
+                                else{
+                                ?>
+                                <i class="fa fa-female"></i>
+                                <span>
+                                <input type="radio" id="user" name="user-info" value="Female" checked />
+                                </span>
+                                <?php
+                                }
+                                ?>
+                        </div>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
                             <span> 
