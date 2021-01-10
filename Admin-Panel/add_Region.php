@@ -32,6 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     	header('location: Region_show.php');
     	exit();
     }  
+    else{
+        $_SESSION['failure'] = "Error in Add Region";
+        header('location: add_Region.php');
+        exit();
+    }
     
 }
 
