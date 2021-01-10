@@ -47,17 +47,15 @@
                         <p id="vaild_Email"> </p>
                         <label>Phone Number</label>
                         <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
-                        <?php if ($_POST['user-info'] == 'User'){?>
                         <div id="User-info">
                             <label class="gender-h">Gender</label>
-                            <input type="radio" name="gender" value="Male" required />
+                            <input type="radio" name="gender" value="Male" />
                             <label class="gender">Male</label>
-                            <input type="radio" name="gender" value="Female" required />
+                            <input type="radio" name="gender" value="Female" />
                             <label class="gender">Female</label><br>
                             <label>Profile Image</label>
-                            <input type="file" name="prof_img" value="none" accept="image/*" required>
+                            <input type="file" name="prof_img" value="none" accept="image/*">
                         </div>
-                        <?php}?>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">

@@ -4,12 +4,21 @@
     session_regenerate_id();
     function success()
     {
-        echo ("<div class='success'>Account created successfully!</div>");
+        echo '<div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            Account Updated Successfully .
+        </div>';
+        echo "<button class='btn btn-outline-info' style='float:left;'
+        onclick='window.location.href ='uProfile.php';'>Veiw Profile<button>" ;
+        
     }
 
     function fail()
     {
-        echo ("<div class='fail'>Please complete your info</div>");
+        echo '<div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            Please Complite Your Information .
+        </div>';
     }
     $id = $_SESSION['u_id'];
     if(isset($_POST['update']))
@@ -95,25 +104,25 @@
                     <div class="info-prof col-9">
                         <div class="account-name" style>
                             <label>User Name</label><br>
-                            <input type="text" class="inputStyle" name="username" value="<?php echo $user_data['username'] ?>"  required>
+                            <input type="text" class="inputStyle" name="username" value="<?php echo $user_data['username']; ?>"  required>
                         </div>
                         <hr>
                         <div class="personal-info">
                             <label>password</label><br>
-                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php $user_data['password'] ?>" required>
+                            <input type="password" class="inputStyle" id="myInput" name="pass" value="<?php echo $user_data['password']; ?>" required>
                             <img src="../imgs/eye-slash-512.png" width="20px" onclick=" myFunction();" style="cursor: pointer;" />
                             
                         </div>
                         <div class="phone">
                             <i class="fa fa-phone-square"></i>
                             <span> 
-                                <input class="inputStyle" type="number" name="phone" value="<?php echo $phone ?>" required> 
+                                <input class="inputStyle" type="number" name="phone" value="<?php echo $phone; ?>" required> 
                             </span>
                         </div>
                         <div class="mail">
                             <i class="fa fa-envelope-square"></i>
                             <span> 
-                                <input type="Email" class="inputStyle" name="email" value="<?php echo $email ?>" required>
+                                <input type="Email" class="inputStyle" name="email" value="<?php echo $email; ?>" required>
                             </span>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id ?>">
