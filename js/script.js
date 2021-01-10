@@ -1,8 +1,8 @@
 window.onload = (event) => {
     var slides = document.getElementsByClassName("nav-item");
     for (var i = 0; i < slides.length; i++) {
-        // if (slides.item(i).)
-        slides.item(i).style.backgroundColor = "yellow";
+        var x = slides.item(i).firstChild.getAttribute('href');
+        console.log(x);
     }
 }
 // $(document).ready(function () {
