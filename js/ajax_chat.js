@@ -7,6 +7,12 @@ $(document).ready(function () {
     // }, 5000);
 
 
+    function hamada() {
+        update_last_activity();
+        fetch_user();
+        update_chat_history_data();
+        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
+    }
 
     function fetch_user() {
         $.ajax({
@@ -25,12 +31,7 @@ $(document).ready(function () {
         })
     }
 
-    function hamada() {
-        update_last_activity();
-        fetch_user();
-        update_chat_history_data();
-        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
-    }
+
 
     function make_chat_dialog_box(to_user_id, to_user_name, toType) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
