@@ -6,10 +6,6 @@
     {
         header("Location:uProfile.php");
     }
-    else
-    {
-        echo"error";
-    }
     function success()
     {
         echo '<div class="alert alert-success alert-dismissable">
