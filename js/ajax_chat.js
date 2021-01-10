@@ -4,7 +4,7 @@ $(document).ready(function () {
         update_last_activity();
         fetch_user();
         update_chat_history_data();
-    }, 2000);
+    }, 10000);
 
     function fetch_user() {
         $.ajax({
