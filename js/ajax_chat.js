@@ -6,6 +6,8 @@ $(document).ready(function () {
     //     update_chat_history_data();
     // }, 5000);
 
+
+
     function fetch_user() {
         $.ajax({
             url: "fetch_user.php",
@@ -46,7 +48,12 @@ $(document).ready(function () {
         modal_content += '</div>';
 
         modal_content += '<div class="chat-box">';
-        modal_content += '<textarea onfocus="hamada()" class="chat_message" name="chat_message_' + to_user_id + '" id="chat_message_' + to_user_id + '"  placeholder ="Type your message" rows="2"></textarea>';
+        modal_content += '<textarea onfocus="' +
+            update_last_activity();
+        fetch_user();
+        update_chat_history_data();
+        $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
+        +'" class="chat_message" name="chat_message_' + to_user_id + '" id="chat_message_' + to_user_id + '"  placeholder ="Type your message" rows="2"></textarea>';
         modal_content += '<button type="button" name="send_chat" id="' + to_user_id + '" class="send_chat">Send</button>';
         modal_content += '</div>';
 
@@ -57,6 +64,7 @@ $(document).ready(function () {
         $('#user_model_details').html(modal_content);
 
     }
+
 
 
     $(document).on('click', '.start_chat', function () {
@@ -82,6 +90,8 @@ $(document).ready(function () {
             var chat_message = $('#chat_message_' + to_user_id).val(' ');
         }
     });
+    function hamada() {
+    }
 
     function fetch_user_chat_history(to_user_id) {
         $.ajax({
