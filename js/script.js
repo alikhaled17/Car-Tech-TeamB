@@ -13,25 +13,25 @@
 $(document).ready(function () {
     $('.navar li').each(function () {
         if ($(this).children().length) {
-            console.log("exist");
+            if (($(this).children().attr("href")).indexOf(window.location.pathname) != -1 || $(this).children().attr("href") === '#') {
+                console.log("exist");
+                console.log("path: ", "https://car-tch.herokuapp.com");
+                console.log("href: ", $(this).children().attr("href"));
+                console.log("sum: ", ("https://car-tch.herokuapp.com" + window.location.pathname));
+                $(this).addClass('active').siblings().removeClass('active');
+                // $(this).data('tousername')
+                return false;
+            } else {
+                console.log("not found");
+                console.log("path: ", "https://car-tch.herokuapp.com");
+                console.log("href: ", $(this).children().attr("href"));
+                console.log("sum: ", ("https://car-tch.herokuapp.com" + window.location.pathname));
+            }
         } else {
             console.log("else");
             return;
         }
-        // if (($(this).children().attr("href")).indexOf(window.location.pathname) != -1 || $(this).children().attr("href") === '#') {
-        //     console.log("exist");
-        //     console.log("path: ", "https://car-tch.herokuapp.com");
-        //     console.log("href: ", $(this).children().attr("href"));
-        //     console.log("sum: ", ("https://car-tch.herokuapp.com" + window.location.pathname));
-        //     $(this).addClass('active').siblings().removeClass('active');
-        //     // $(this).data('tousername')
-        //     return false;
-        // } else {
-        //     console.log("not found");
-        //     console.log("path: ", "https://car-tch.herokuapp.com");
-        //     console.log("href: ", $(this).children().attr("href"));
-        //     console.log("sum: ", ("https://car-tch.herokuapp.com" + window.location.pathname));
-        // }
+
     })
 });
 
