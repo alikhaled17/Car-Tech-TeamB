@@ -16,16 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name_adver =$data_to_update['name_adver'];
 	$ad_content =$data_to_update['ad_content'];
 	$img_adver = $_FILES['img_adver']['name'];
-	$img_adver_tmp = $_FILES['img_adver']['tmp_name'];
-	$img_adver_tmp= addslashes(file_get_contents($img_adver_tmp));
 	$ad_type =$data_to_update['ad_type'];
 
 	$advertising_id = filter_input(INPUT_GET, 'advertising_id', FILTER_VALIDATE_INT);
+	$add_img_adver = $img_adver_tmp == '' ? "" : ", advertising.img_adver = '".addslashes(file_get_contents($img_adver_tmp))."' ";
+
 
 	if($img_adver_tmp != "")
 	{
 		$sql="UPDATE advertising
-		SET name_adver='$name_adver',ad_content='$ad_content',img_adver='$img_adver_tmp',ad_type='$ad_type' WHERE id='$advertising_id'";	 
+		SET name_adver='$name_adver',ad_content='$ad_content',".$add_img_adver.",ad_type='$ad_type' WHERE id='$advertising_id'";	 
 	}else
 	{
 		$sql="UPDATE advertising
