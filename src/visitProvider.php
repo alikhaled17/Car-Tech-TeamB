@@ -352,7 +352,6 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
                     chatDiv.html(data);
                 }
             })
-
         }
 
 
