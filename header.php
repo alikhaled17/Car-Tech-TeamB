@@ -112,7 +112,7 @@ function count_unseen_message_h($connect)
                         <a class="nav-link" href="https://car-tch.herokuapp.com/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-path="AboutUs.php" href="https://car-tch.herokuapp.com/src/AboutUs.php">About US</a>
+                        <a class="nav-link" href="https://car-tch.herokuapp.com/src/AboutUs.php">About US</a>
                     </li>
                     <li class="nav-item">
                     <?php if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )
@@ -129,10 +129,10 @@ function count_unseen_message_h($connect)
                         <!-- <a class="nav-link" href="../src/pProfile.php">Profile</a> -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-path="services.php" href="https://car-tch.herokuapp.com/src/services.php">Services</a>
+                        <a class="nav-link" href="https://car-tch.herokuapp.com/src/services.php">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-path="contact.php" href="https://car-tch.herokuapp.com/src/contact.php">Contact US</a>
+                        <a class="nav-link" href="https://car-tch.herokuapp.com/src/contact.php">Contact US</a>
                     </li>
                     <li class="nav-item">
                     <?php
