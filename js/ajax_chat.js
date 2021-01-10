@@ -5,24 +5,12 @@ $(document).ready(function () {
     //     fetch_user();
     //     update_chat_history_data();
     // }, 5000);
-    $(document).on('focus', '.chat_message', function () {
 
+    $(document).on('click', '.container', function () {
         update_last_activity();
         fetch_user();
         update_chat_history_data();
-
-        var is_type = 'yes';
-        $.ajax({
-            url: "update_is_type_status.php",
-            method: "POST",
-            data: { is_type: is_type },
-            success: function () {
-            }
-        })
-
-
     });
-
 
 
     function fetch_user() {
@@ -134,7 +122,19 @@ $(document).ready(function () {
 
 
 
+    $(document).on('focus', '.chat_message', function () {
 
+        var is_type = 'yes';
+        $.ajax({
+            url: "update_is_type_status.php",
+            method: "POST",
+            data: { is_type: is_type },
+            success: function () {
+            }
+        })
+
+
+    });
 
     $(document).on('blur', '.chat_message', function () {
         var is_type = 'no';
