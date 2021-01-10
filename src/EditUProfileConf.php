@@ -8,7 +8,7 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             Account Updated Successfully .
         </div>';
-        echo "<button class='btn btn-outline-info' style='float:left;'
+        echo "<button class='btn btn-outline-info' style='float:right;'
         onclick='window.location.href ='uProfile.php';'>Veiw Profile<button>" ;
         
     }
