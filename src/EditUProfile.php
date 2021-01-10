@@ -8,8 +8,7 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             Account Updated Successfully .
         </div>';
-        echo "<button class='btn btn-outline-info' style='float:left;'
-        onclick='window.location.href ='uProfile.php';'>Veiw Profile<button>" ;
+       
         
     }
 
@@ -36,9 +35,10 @@
             $phone = $_POST['phone'];
             
             $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
-            password='$password',phone='$phone' WHERE id=$id");  
-            success();
-            header("Location:uProfile.php");
+            password='$password',phone='$phone' WHERE id=$id");
+            success();  
+            
+            // header("Location:uProfile.php");
         }
         else{
             fail();
@@ -52,10 +52,7 @@
 
     $username = $user_data['username'];
     $email = $user_data['email'];
-    
     $password = $user_data['password'];
-    echo $password ;
-    echo $user_data['password'];
     $phone = $user_data['phone'];
 
 ?>

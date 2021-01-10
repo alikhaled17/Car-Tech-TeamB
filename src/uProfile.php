@@ -41,6 +41,7 @@
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
+            <?php include('EditUProfile.php'); ?>
                 <div class="img-prof col-3">
                     <?php 
                         if($user_data['prof_img'] == '') {
