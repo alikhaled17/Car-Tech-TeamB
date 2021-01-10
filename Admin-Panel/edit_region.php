@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['failure'] = "Failed to update region : " . mysqli_error($conn);
 	}
 
-	header('location: region_Show.php');
+	header('location: Region_show.php');
 	exit;
 
 }
