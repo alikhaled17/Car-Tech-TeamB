@@ -59,11 +59,7 @@ session_start();
                                         echo ('
                                                 <li class="result-card">
                                                 <div class="lift"> ');
-                                        if($provider['prof_img'] == '') {
-                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="https://car-tch.herokuapp.com/imgs/default-prof.png"/></a>');     
-                                        } else {
-                                            echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="data:image/jpg;charset=utf8mb4;base64,'. base64_encode($provider['prof_img']) .'" /></a>');
-                                        }
+                                        echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="../imgs/default-prof.png"/></a>');     
                                         echo   ('</div>'.
                                                 '<div class="name-hover">
                                                     <h6>'.$provider['username'].'</h6>
