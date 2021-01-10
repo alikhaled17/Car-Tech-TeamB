@@ -1,5 +1,6 @@
 <?php 
     include_once ("../Config.php");
+    include_once ("pagination.php");
 
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {
@@ -100,5 +101,31 @@
         echo "<h5>----------------------------------</h5>";
         echo "</div>";
     }
+    $nema_table_count= 'providers';
+    $select_types = "'accept'";
+    $select_types_count="'accept'";
+    $coul = 'username';
+    $types = 'prov_state';
+    // Per page limit for pagination.
+    $pagelimit = 2;
+    // Get current page.
+    $page = filter_input(INPUT_GET, 'page');
+    if (!$page) {
+        $page = 1;
+    }
+
+    $offset = ($page - 1) * $pagelimit ;
+    $sql.=" LIMIT $pagelimit OFFSET $offset";
+    $rows=mysqli_query($conn, $sql);
+    $total_count = 0 ;
+    if ($nema_table_count == 'users' || $nema_table_count == 'providers'){
+        $total_count = counting_type($nema_table_count, $types, $select_types_count);
+    }else {
+        $total_count = counting($nema_table);
+    }
+    $total_pages = ceil( $total_count / $pagelimit);
+    //}
+  
+    echo paginationLinks($page, $total_pages, 'search_submit.php'); 
 
 ?>
