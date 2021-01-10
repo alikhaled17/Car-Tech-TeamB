@@ -282,7 +282,7 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
         setInterval(function () {
             update_last_activity();
             update_chat_history_data();
-        }, 10000);
+        }, 5000);
 
      
         function update_last_activity() {
