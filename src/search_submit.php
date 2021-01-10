@@ -1,14 +1,6 @@
 <?php 
     include_once ("../Config.php");
-    include_once ("pagination.php");
-    $limit = 2;  
-    if (isset($_GET["page"])) {
-        $page  = $_GET["page"]; 
-        } 
-        else{ 
-        $page=1;
-        };  
-    $start_from = ($page-1) * $limit; 
+  
 
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {
@@ -23,6 +15,14 @@
         }
     }
     if (isset ($_POST['search'])) {
+        $limit = 3;  
+        if (isset($_GET["page"])) {
+            $page  = $_GET["page"]; 
+            } 
+            else{ 
+            $page=1;
+            };  
+        $start_from = ($page-1) * $limit; 
         
         if ($_POST['Service'] !="" && $_POST['City'] !="") {
             $Service=$_POST['Service'];
@@ -61,6 +61,7 @@
             }
             
             $info=mysqli_query($conn, $sql);
+            
             if($x=mysqli_fetch_array($info)) {
                
                 echo("<h3>Result</h3> <span>". $x['ser_name']. ", ".$x['city_name']
@@ -87,6 +88,14 @@
                         '</li>
                     ');
                 }
+                $row_db = mysqli_fetch_row($result);  
+                $total_records = $row_db[0];  
+                $total_pages = ceil($total_records / $limit); 
+                $pagLink = "<ul class='pagination'>";  
+                for ($i=1; $i<=$total_pages; $i++) {
+                            $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
+                }
+                echo $pagLink . "</ul>";  
             } else {
                 echo "<div class='wow flip no-result'>";
                 echo "<img src='../imgs/search.png'>";
@@ -136,13 +145,6 @@
     // //}
   
     // echo paginationLinks($page, $total_pages, 'search_submit.php'); 
-    $row_db = mysqli_fetch_row($result);  
-    $total_records = $row_db[0];  
-    $total_pages = ceil($total_records / $limit); 
-    $pagLink = "<ul class='pagination'>";  
-    for ($i=1; $i<=$total_pages; $i++) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
-    }
-    echo $pagLink . "</ul>";  
+    
 
 ?>
