@@ -126,7 +126,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
                 <input type="file" name="ID_img" autocomplete="off" placeholder="National ID" class="form-control" accept="image/*"
-                    value="<?php echo ($edit) ? $users[''] : ''; ?>" autocomplete="off">
+                    value="<?php ($edit) ? $users['ID_img'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
                 <input type="file" name="comm_img" autocomplete="off" placeholder="Commercial ID" class="form-control" accept="image/*"
-                    value="<?php echo ($edit) ? $users[''] : ''; ?>" autocomplete="off">
+                    value="<?php ($edit) ? $users['comm_img'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>
