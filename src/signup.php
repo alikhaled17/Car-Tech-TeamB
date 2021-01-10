@@ -57,7 +57,7 @@
                             <label>Profile Image</label>
                             <input type="file" name="prof_img" value="none" accept="image/*" required>
                         </div>
-                        <?php }else{ ?>
+                        <?php}?>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">
@@ -73,21 +73,20 @@
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID *</label>
-                        <input type="file" name="nation_id"  value="none" accept="image/*" required>
+                        <input type="file" name="nation_id" value="none" accept="image/*">
                         <label>commercial ID *</label>
-                        <input type="file" name="commerc_id" value="none" accept="image/*" required><br><br>
+                        <input type="file" name="commerc_id" value="none" accept="image/*"><br><br>
                         <label>City *</label>
                         <?php
                             include('search_citis.php'); 
                         ?>
                         <label>Region *</label>
-                        <select id="Region1" name="Region" class="search-select" required>
+                        <select id="Region1" name="Region" class="search-select">
                             <option value="none" selected>Choose ...</option>
                         </select><br><br>
                         <label for="">Street *</label>
-                        <input type="text" name="street" placeholder="street" required>
+                        <input type="text" name="street" placeholder="street">
                     </div>
-                    <?php}?>
                     <button name="submit" class="btn btn-outline-info">Sign Up</button>
                 </form>
 

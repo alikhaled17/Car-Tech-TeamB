@@ -45,6 +45,8 @@
     $email = $user_data['email'];
     
     $password = $user_data['password'];
+    echo $password ;
+    echo $user_data['password'];
     $phone = $user_data['phone'];
 
 ?>
