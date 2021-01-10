@@ -47,15 +47,17 @@
                         <p id="vaild_Email"> </p>
                         <label>Phone Number</label>
                         <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
+                        <?php if ($_POST['user-info'] == 'User'){?>
                         <div id="User-info">
                             <label class="gender-h">Gender</label>
-                            <input type="radio" name="gender" value="Male" />
+                            <input type="radio" name="gender" value="Male" required />
                             <label class="gender">Male</label>
-                            <input type="radio" name="gender" value="Female" />
+                            <input type="radio" name="gender" value="Female" required />
                             <label class="gender">Female</label><br>
                             <label>Profile Image</label>
-                            <input type="file" name="prof_img" value="none" accept="image/*">
+                            <input type="file" name="prof_img" value="none" accept="image/*" required>
                         </div>
+                        <?php }else{ ?>
                     </div>
 
                     <div class="prov-info" id="provider-info" style="display: none">
@@ -71,20 +73,21 @@
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID *</label>
-                        <input type="file" name="nation_id" value="none" accept="image/*">
+                        <input type="file" name="nation_id" value="none" accept="image/*" required>
                         <label>commercial ID *</label>
-                        <input type="file" name="commerc_id" value="none" accept="image/*"><br><br>
+                        <input type="file" name="commerc_id" value="none" accept="image/*" required><br><br>
                         <label>City *</label>
                         <?php
                             include('search_citis.php'); 
                         ?>
                         <label>Region *</label>
-                        <select id="Region1" name="Region" class="search-select">
+                        <select id="Region1" name="Region" class="search-select" required>
                             <option value="none" selected>Choose ...</option>
                         </select><br><br>
                         <label for="">Street *</label>
-                        <input type="text" name="street" placeholder="street">
+                        <input type="text" name="street" placeholder="street" required>
                     </div>
+                    <?php}?>
                     <button name="submit" class="btn btn-outline-info">Sign Up</button>
                 </form>
 
