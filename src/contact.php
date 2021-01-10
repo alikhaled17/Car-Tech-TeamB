@@ -40,8 +40,9 @@ session_start();
     <!-- Contact -->
     <div class="Outer">
         <div class="container">
-        <?php include('contact_config.php'); ?>
         <?php include('contact_insert.php'); ?>
+        <?php include('contact_config.php'); ?>
+        
             <div class="row">
                 <div class="ContactForm col-6">
                     <form class="Mail"  method="POST"

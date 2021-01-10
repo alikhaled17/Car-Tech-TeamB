@@ -1,5 +1,6 @@
 <?php
 if (isset ($_POST['send'])) {
+    echo "Start contact config". '<br>';
     require_once "../Mail.php";
     $username = 'info.cartechb@gmail.com';
     $password = 'car5857507M';
@@ -22,6 +23,7 @@ if (isset ($_POST['send'])) {
         'To' => $to,
         'Subject' => $subject
     );
+
     $smtp = Mail::factory('smtp', array(
                 'host' => $smtpHost,
                 'port' => $smtpPort,
@@ -31,9 +33,10 @@ if (isset ($_POST['send'])) {
             ));
 
     $mail = $smtp->send($to, $headers, $body);
-
+    echo $mail. '<br>';
     if (PEAR::isError($mail)) {
-        echo($mail->getMessage());
+        echo("<div class='alert alert-danger alert-dismissable'><a href='#' 
+        class='close' data-dismiss='alert' aria-label='close'>×</a>".$mail->getMessage()."</div>");
     } else {
         echo ("<div class='alert alert-success alert-dismissable'><a href='#' 
             class='close' data-dismiss='alert' aria-label='close'>×</a>". $successMessage."</div>");
