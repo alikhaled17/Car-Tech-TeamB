@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $('#msgAudio').play();
     fetch_user();
     setInterval(function () {
         update_last_activity();
@@ -29,15 +29,11 @@ $(document).ready(function () {
         modal_content += '<div class="chat-header clearfix">';
 
         modal_content += '<div class="chat-about">';
-
         if (toType == "Provider") {
-            modal_content += '<div class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + toType + to_user_name + '</a></div>';
-            console.log(toType);
+            modal_content += '<div style="cursor:pointer;" class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
         } else {
-            console.log(toType);
-            modal_content += '<div class="chat-with">' + to_user_id + toType + to_user_name + '-User</div>';
+            modal_content += '<div class="chat-with">' + to_user_name + '-User</div>';
         }
-
         modal_content += '</div>';
         modal_content += '</div>';
 
