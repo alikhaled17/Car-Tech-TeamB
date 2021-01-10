@@ -15,15 +15,11 @@ if (isset($_POST['login'])) {
     if ($rows == 1) {
         if($user_data["account_type"] == "Client") 
         {
-            
-
             $_SESSION['u_id'] = $user_data["id"];
             header("Location: uProfile.php");
-
         }
         else
         {
-
             $sub_query = "
                 INSERT INTO login_details (user_id) 
                 VALUES ('".$user_data['id']."')

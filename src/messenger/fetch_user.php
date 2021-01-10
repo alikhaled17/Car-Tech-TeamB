@@ -89,7 +89,7 @@ else
         }
         $output .= '
         <li class="clearfix">
-            <button type="button" class="start_chat" data-touserid="'.$user_data['id'].'"  data-toType="'.$user_data['account_type'].'" data-tousername="'.$user_data['username'].'">
+            <button type="button" class="start_chat" data-touserid="'.$user_data['id'].'"  data-totype="'.$user_data['account_type'].'" data-tousername="'.$user_data['username'].'">
                 '. strtoupper(substr($user_data['username'], 0, 1)) .'
             </button>
             <div class="about">
