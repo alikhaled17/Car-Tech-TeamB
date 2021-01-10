@@ -9,7 +9,15 @@
             Account Updated Successfully .
         </div>';
         echo "<button class='btn btn-outline-info' style='float:right;'
-        onclick='window.location.href ='uProfile.php';'>Veiw Profile<button>" ;
+        name='Vist'>Veiw Profile<button>" ;
+        if (isset($_POST['username']))
+        {
+            header("Location:uProfile.php");
+        }
+        else
+        {
+            echo"error";
+        }
         
     }
 
@@ -38,7 +46,6 @@
             $result = mysqli_query($conn, "UPDATE users SET username='$username',email='$email',
             password='$password',phone='$phone' WHERE id=$id");  
              success();
-            // header("Location:uProfile.php");
         }
         else{
             fail();
