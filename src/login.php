@@ -56,6 +56,7 @@ if (isset($_POST['login'])) {
     } else {
         $_SESSION['failure'] = "The email or password you entered did not match our records. '<br>'Please try again.";
         header("Location: login.php");
+        exit();
     }
 } 
 mysqli_close($conn);
