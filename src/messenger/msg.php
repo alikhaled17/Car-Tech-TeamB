@@ -48,6 +48,8 @@ else
             <script src="../../js/jquery-3.5.1.min.js"></script>
             <script src="../../js/bootstrap.min.js"></script>
             <script src="../../js/wow.min.js"></script>
+            <script src="../../js/ajax_chat.js">  
+            </script>
             <script>    
                   new WOW().init();
        
@@ -57,9 +59,6 @@ else
                         update_chat_history_data();
                         $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
                   }
-            </script>
-
-            <script src="../../js/ajax_chat.js">  
             </script>
       </body>  
 </html>  
