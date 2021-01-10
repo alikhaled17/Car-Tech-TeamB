@@ -12,6 +12,9 @@ $(document).ready(function () {
             method: "POST",
             success: function (data) {
                 $('#user_details').html(data);
+            },
+            error: function (data) {
+                location.reload();
             }
         })
     }
@@ -19,6 +22,9 @@ $(document).ready(function () {
         $.ajax({
             url: "update_last_activity.php",
             success: function () {
+            },
+            error: function () {
+                location.reload();
             }
         })
     }
@@ -95,7 +101,7 @@ $(document).ready(function () {
                 chatDiv.html(data);
             },
             error: function (data) {
-                alert("fail");
+                location.reload();
             }
 
         })
