@@ -35,7 +35,7 @@ if (isset ($_POST['send'])) {
                 'username' => $username,
                 'password' => $password
             ));
-    echo"smtp". '<br>';
+    echo json_encode($smtp). '<br>';
 
     try {
         $mail = $smtp->send($to, $headers, $body);
