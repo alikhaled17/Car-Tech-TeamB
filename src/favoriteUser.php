@@ -59,7 +59,7 @@ session_start();
                                         echo ('
                                                 <li class="result-card">
                                                 <div class="lift"> ');
-                                        echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="../imgs/default-prof.png"/></a>');     
+                                        echo ('<a  target="_blank" href="visitProvider.php?id='.$provider['id'].' "><img src="../imgs/default-prof.jpg"/></a>');     
                                         echo   ('</div>'.
                                                 '<div class="name-hover">
                                                     <h6>'.$provider['username'].'</h6>
