@@ -111,7 +111,7 @@ include BASE_PATH . '/includes/header.php';
             <!-- Delete Confirmation Modal -->
             <div class="modal fade" id="confirm-delete-<?php echo $row['id']; ?>" role="dialog">
                 <div class="modal-dialog">
-                    <form action="delete_users.php" method="POST">
+                    <form action="delete_Users.php" method="POST">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <div class="modal-header">
