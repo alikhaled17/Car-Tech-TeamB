@@ -8,7 +8,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-car fa-fw"></i></span>
                 <input type="text" name="ser_name" autocomplete="off" placeholder="Services Name" class="form-control"
-                    value="<?php echo ($edit) ? $services['ser_name'] : ''; ?>" autocomplete="off">
+                required="required" value="<?php echo ($edit) ? $services['ser_name'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>

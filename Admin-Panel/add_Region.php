@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     //reset db instance
     $Insert_qur="INSERT INTO regions (region_name,city_id) VALUES ('$region_name','$city_name')";
-    echo $Insert_qur;
     $ins_result=mysqli_query($conn, $Insert_qur); 
     if($ins_result)
     {

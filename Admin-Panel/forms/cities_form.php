@@ -8,7 +8,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                 <input type="text" name="city_name" autocomplete="off" placeholder="Cities Name" class="form-control"
-                    value="<?php echo ($edit) ? $cities['city_name'] : ''; ?>" autocomplete="off">
+                required="required" value="<?php echo ($edit) ? $cities['city_name'] : ''; ?>" autocomplete="off">
             </div>
         </div>
     </div>

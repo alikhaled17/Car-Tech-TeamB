@@ -8,7 +8,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-bullhorn fa-fw"></i></span>
                 <input type="text" name="name_adver" autocomplete="off" placeholder="Advertising Name" class="form-control"
-                    value="<?php echo ($edit) ? $advertising['name_adver'] : ''; ?>" required="" autocomplete="off">
+                    value="<?php echo ($edit) ? $advertising['name_adver'] : ''; ?>" required="required" autocomplete="off">
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-paragraph fa-fw"></i></span>
                 <textarea type="text" name="ad_content" autocomplete="off" placeholder="Advertising Content" class="form-control"
-                required="" autocomplete="off"><?php echo ($edit) ? $advertising['ad_content'] : ''; ?></textarea>
+                required="required" autocomplete="off"><?php echo ($edit) ? $advertising['ad_content'] : ''; ?></textarea>
             </div>
         </div>
     </div>

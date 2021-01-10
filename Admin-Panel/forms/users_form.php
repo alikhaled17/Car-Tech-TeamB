@@ -56,13 +56,13 @@
             <div class="radio">
                 <label>
                     <?php //echo $admin_account['admin_type'] ?>
-                    <input type="radio" name="gender" value="Male" required=""
+                    <input type="radio" name="gender" value="Male"
                         <?php echo ($edit && $users['gender'] =='Male') ? "checked": "" ; ?> /> Male
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="gender" value="Female" required=""
+                    <input type="radio" name="gender" value="Female"
                         <?php echo ($edit && $users['gender'] =='Female') ? "checked": "" ; ?> /> Female
                 </label>
             </div>
@@ -75,7 +75,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
                 <input name="phone"
-                    value="<?php echo htmlspecialchars($edit ? $users['phone'] : '', ENT_QUOTES, 'UTF-8'); ?>"
+                required="required" value="<?php echo htmlspecialchars($edit ? $users['phone'] : '', ENT_QUOTES, 'UTF-8'); ?>"
                     placeholder="01#########" class="form-control" type="text" id="phone">
             </div>
         </div>
