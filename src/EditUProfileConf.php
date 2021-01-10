@@ -8,8 +8,10 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             Account Updated Successfully .
         </div>';
-        echo "<button class='btn btn-outline-info' style='float:right;'
-        name='Vist'>Veiw Profile<button>" ;
+        echo "<form method='post'>
+            <button class='btn btn-outline-info' style='float:right;'
+            name='Vist'>Veiw Profile</button>
+            </form>" ;
         if (isset($_POST['username']))
         {
             header("Location:uProfile.php");

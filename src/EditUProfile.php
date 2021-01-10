@@ -30,23 +30,23 @@
     <?php include('../header.php'); ?>
     <div class="prof-section">
         <div class="container">
-        <?php 
+            <?php 
             include('EditUProfileConf.php'); 
             ?>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                <form name="update_user" method="post" action="EditUProfile.php">
-                    <?php 
-                        if($user_data['prof_img'] == '') {
-                            ?>
-                            <img src="../imgs/default-prof.png"/>       
-                            <?php 
-                        } else {
-                            ?>
-                            <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
-                            <?php
-                        }
-                    ?>
+                    <form name="update_user" method="post" action="EditUProfile.php">
+                        <?php 
+                            if($user_data['prof_img'] == '') {
+                                ?>
+                                <img src="../imgs/default-prof.png"/>       
+                                <?php 
+                            } else {
+                                ?>
+                                <img src="data:image/jpg;charset=utf8mb4;base64,<?php echo base64_encode($user_data['prof_img']); ?>" /> 
+                                <?php
+                            }
+                        ?>
                 </div>
                     <div class="info-prof col-9">
                         <div class="account-name" style>
@@ -78,7 +78,7 @@
                             <input type="submit" class="btn btn-outline-info loc" name="update" value="Update">
                             </span>
                         </div>
-                        <br>
+                        <br/>
 				        
                     </div>
                 </form>
