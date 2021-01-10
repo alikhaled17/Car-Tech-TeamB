@@ -31,7 +31,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
                 <input type="file" name="img_adver" autocomplete="off" placeholder="Advertising Img" class="form-control" accept="image/*"
-                    value="<?php ($edit) ? $advertising['img_adver'] : ''; ?>"  autocomplete="off">
+                    value="<?php ($edit) ? $advertising[''] : ''; ?>"  autocomplete="off">
             </div>
         </div>
     </div>
