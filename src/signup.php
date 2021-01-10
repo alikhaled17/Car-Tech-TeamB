@@ -73,7 +73,7 @@
                             <label>Trailer Truck</label><br>
                         </div>
                         <label>National ID *</label>
-                        <input type="file" name="nation_id" value="none" accept="image/*" required>
+                        <input type="file" name="nation_id"  value="none" accept="image/*" required>
                         <label>commercial ID *</label>
                         <input type="file" name="commerc_id" value="none" accept="image/*" required><br><br>
                         <label>City *</label>
