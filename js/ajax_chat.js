@@ -1,10 +1,10 @@
 $(document).ready(function () {
     fetch_user();
-    setInterval(function () {
-        update_last_activity();
-        fetch_user();
-        update_chat_history_data();
-    }, 5000);
+    // setInterval(function () {
+    //     update_last_activity();
+    //     fetch_user();
+    //     update_chat_history_data();
+    // }, 5000);
 
     function fetch_user() {
         $.ajax({

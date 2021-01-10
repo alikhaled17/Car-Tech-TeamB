@@ -48,10 +48,13 @@ else
             <script src="../../js/jquery-3.5.1.min.js"></script>
             <script src="../../js/bootstrap.min.js"></script>
             <script src="../../js/wow.min.js"></script>
-            <script>
+            <script>    
                   new WOW().init();
        
                   function hamada() {
+                        update_last_activity();
+                        fetch_user();
+                        update_chat_history_data();
                         $('.chat-history').animate({ scrollTop: $('.chat-history').prop('scrollHeight') }, 1000);
                   }
             </script>
