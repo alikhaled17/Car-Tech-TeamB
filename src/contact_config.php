@@ -1,6 +1,6 @@
 <?php
 if (isset ($_POST['send'])) {
-    require_once "../Mail.php";
+    require_once "Mail.php";
     $username = 'info.cartechb@gmail.com';
     $password = 'car5857507M';
     $smtpHost = 'ssl://smtp.gmail.com';
