@@ -8,7 +8,7 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             Account Updated Successfully .
         </div>';
-        echo "<form method='post'>
+        echo "<form name='profile' method='post' action='EditUProfileConf.php'>
             <button class='btn btn-outline-info' style='float:right;'
             name='Vist'>Veiw Profile</button>
             </form>" ;
