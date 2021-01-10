@@ -76,8 +76,7 @@ else
         $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 15 second ');
         $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
         $user_last_activity = fetch_user_last_activity($user_data['id'], $conn);
-        echo "curr: " . $current_timestamp ."<br>";
-        echo "last: " . $user_last_activity ."<br>";
+
         if($user_last_activity > $current_timestamp)
         {
             $st_class = "online";
