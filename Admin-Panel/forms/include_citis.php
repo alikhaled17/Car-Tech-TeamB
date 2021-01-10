@@ -16,14 +16,14 @@ $.ajax( {
 }
 </script>
 
-<select id="City1" name="city_name" class="form-control" onchange="fetch_region(this.value)" required="required" value="<?php echo ($edit)? $selected_city_id : ''; ?>">
+<select id="City1" name="city_name" class="form-control" onchange="fetch_region(this.value)" required value="<?php echo ($edit)? $selected_city_id : ''; ?>">
 
 <?php
 include_once("./config/config.php");
 $sql="SELECT id,city_name FROM `cities`";
 $result=mysqli_query($conn, $sql);
 
-echo '<option value="Choose" >City Name</option>';
+echo '<option value="" >City Name</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
     $selected_attribute = $selected_city_id == $mycitys ['id'] ? "selected" : "";

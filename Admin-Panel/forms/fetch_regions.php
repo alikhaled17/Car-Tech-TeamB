@@ -12,7 +12,7 @@ if(isset($_POST['get_option']) || isset($selected_city_id))
     $sql="SELECT id, region_name FROM `regions` WHERE city_id = '$selected_city'";
     $result=mysqli_query($conn, $sql);
 
-    echo '<option value="none" >Region Name</option>';
+    echo '<option value="" >Region Name</option>';
 
     while($myregion=mysqli_fetch_array($result)) {
         $selected_attribute = $selected_region_id == $myregion ['id'] ? "selected" : "";
