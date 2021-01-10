@@ -239,9 +239,7 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
 
         </div>
     </div>
-    <audio id="msgAudio">
-        <source src="messenger/noti.mp3" type="audio/mpeg">
-    </audio>
+
     <?php include('../footer.php'); ?>
     
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -308,7 +306,6 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
             var modal_content = '<div class="chat-history" data-touserid="' + to_user_id + '" id="chat_history_' + to_user_id + '">';
             let chat_content = fetch_one_user_chat_history(to_user_id);
             if (chat_content !== undefined){
-                // document.getElementById('msgAudio').play();
                 modal_content += chat_content;
             }
             else

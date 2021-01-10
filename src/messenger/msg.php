@@ -41,9 +41,7 @@ else
                   </div>
             </div>
             <div style="clear:both;"></div>
-            <audio id="msgAudio">
-                  <source src="noti.mp3" type="audio/mpeg">
-            </audio>
+          
             <?php include('../../footer.php'); ?>
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
             <script src="../../js/jquery-3.5.1.min.js"></script>
