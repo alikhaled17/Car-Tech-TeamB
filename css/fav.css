@@ -97,22 +97,31 @@ h2 {
 }
 .charimge
 {
-  text-decoration: none;
+  text-decoration: none ;
   color: #fff;
-  font-size: 25px;
-  text-align: center;
+  font-size: 80px ;
+  text-align: center ;
 }
 .charimge:hover
 {
-  text-decoration: none;
+  text-decoration: none ;
+  color: #fff;
+  font-size: 80px ;
+  text-align: center ;
 }
 .charimge:focus
 {
-  text-decoration: none;
+  text-decoration: none ;
+  color: #fff;
+  font-size: 80px ;
+  text-align: center ;
 
 }
 .charimge:visited
 {
-  text-decoration: none;
+  text-decoration: none ;
+  color: #fff;
+  font-size: 80px ;
+  text-align: center ;
 
 }

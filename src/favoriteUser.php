@@ -59,7 +59,7 @@ session_start();
                                         echo ('
                                                 <li class="result-card">
                                                 <div class="lift"> ');
-                                        echo ('<a class="charimge"  target="_blank" href="visitProvider.php?id='.$provider['id'].' ">'. strtoupper(substr($provider['username'], 0, 1)) .'</a>');     
+                                        echo ('<div><a class="charimge"  target="_blank" href="visitProvider.php?id='.$provider['id'].' ">'. strtoupper(substr($provider['username'], 0, 1)) .'</a></div>');     
                                         echo   ('</div>'.
                                                 '<div class="name-hover">
                                                     <h6>'.$provider['username'].'</h6>
