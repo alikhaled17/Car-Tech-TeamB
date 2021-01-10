@@ -57,7 +57,7 @@ foreach($result as $row)
     else
 
     {
-        date_default_timezone_set("Africa/Cairo");
+        // date_default_timezone_set("Africa/Cairo");
         $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 15 second ');
         $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
         $user_last_activity = fetch_user_last_activity($row['to_user_id'], $conn);
