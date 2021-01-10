@@ -95,26 +95,27 @@ h2 {
   padding-top: 10px;
   margin: 4% 0 0 20%;
 }
+.charimgetxt
+{
+  text-align: center ;
+}
 .charimge
 {
   text-decoration: none ;
   color: #fff;
   font-size: 80px ;
-  text-align: center ;
 }
 .charimge:hover
 {
   text-decoration: none ;
   color: #fff;
   font-size: 80px ;
-  text-align: center ;
 }
 .charimge:focus
 {
   text-decoration: none ;
   color: #fff;
   font-size: 80px ;
-  text-align: center ;
 
 }
 .charimge:visited
@@ -122,6 +123,5 @@ h2 {
   text-decoration: none ;
   color: #fff;
   font-size: 80px ;
-  text-align: center ;
 
 }
