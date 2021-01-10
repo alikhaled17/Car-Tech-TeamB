@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$add_img_adver = $img_adver_tmp == '' ? "" : ", advertising.img_adver = '".addslashes(file_get_contents($img_adver_tmp))."' ";
 
 	$sql="UPDATE advertising
-	SET name_adver='$name_adver',ad_content='$ad_content',".$add_img_adver.",ad_type='$ad_type' WHERE id='$advertising_id'";
+	SET name_adver='$name_adver',ad_content='$ad_content'".$add_img_adver.",ad_type='$ad_type' WHERE id='$advertising_id'";
 	$result=mysqli_query($conn, $sql);
 
 	if ($result) {
