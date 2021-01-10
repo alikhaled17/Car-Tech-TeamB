@@ -66,7 +66,7 @@
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
                         echo ("<div style='text-align: center;'><h2 
-                        style='color:#f47e3d;font-size:30px;box-shadow: 3px 3px 2px 1px #888888;'
+                        style='color:#f47e3d;font-size:30px;'
                         >".strtoupper(substr($provider['username'], 0, 1))."</h2></div>";     
                     echo   ('</div>'.
                             '<div class="mid col-7">
