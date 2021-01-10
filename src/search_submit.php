@@ -64,8 +64,8 @@
 
                     echo ('
                             <li class="result-card row wow bounceInDown">
-                                <div class="lift col-2"> ');
-                        echo ("<div style='text-align: center;'><h2 style='color:#f47e3d;font-size:30px;'>".strtoupper(substr($provider['username'], 0, 1))."</h2></div>";     
+                                <div class="lift col-2"> style="text-align:center;")';
+                        echo ('<h3 style="font-size:30px;color:#f47e3d;">'.strtoupper(substr($provider['username'], 0, 1)).'</h3>';     
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.
