@@ -36,7 +36,15 @@ if (isset ($_POST['send'])) {
                 'password' => $password
             ));
     echo"smtp". '<br>';
-    $mail = $smtp->send($to, $headers, $body);
+
+    try {
+        $mail = $smtp->send($to, $headers, $body);
+
+    }
+    
+    catch(Exception $e) {
+        echo 'Message: ' .$e->getMessage();
+    }
     echo $mail. '<br>';
     if (PEAR::isError($mail)) {
         echo("<div class='alert alert-danger alert-dismissable'><a href='#' 
