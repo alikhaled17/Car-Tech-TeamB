@@ -113,20 +113,21 @@ class Mail
      */
     public function send($recipients, $headers, $body)
     {
+        echo "1 <br>";
         if (!is_array($headers)) {
             return PEAR::raiseError('$headers must be an array');
         }
-
+        echo "2 <br>";
         $result = $this->_sanitizeHeaders($headers);
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
-
+        echo "3 <br>";
         // if we're passed an array of recipients, implode it.
         if (is_array($recipients)) {
             $recipients = implode(', ', $recipients);
         }
-
+        echo "4 <br>";
         // get the Subject out of the headers array so that we can
         // pass it as a seperate argument to mail().
         $subject = '';
@@ -134,10 +135,10 @@ class Mail
             $subject = $headers['Subject'];
             unset($headers['Subject']);
         }
-
+        echo "5 <br>";
         // flatten the headers out.
         list(, $text_headers) = Mail::prepareHeaders($headers);
-
+        echo "6 <br>";
         return mail($recipients, $subject, $body, $text_headers);
     }
 
