@@ -61,7 +61,11 @@
                 <div class="wow wobble img-prof col-3">
                    
                     <div class='imgProf'>
-                    <img src="../imgs/default-prof.jpg"/> 
+                        <?php
+                            echo"<h2>";
+                            echo strtoupper(substr($user_data['username'], 0, 1)) ;
+                            echo "</h2>";
+                        ?> 
                     </div>
 
                 </div>
