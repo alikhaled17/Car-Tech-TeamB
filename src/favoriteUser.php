@@ -73,7 +73,7 @@ session_start();
                             } 
                             else {
                                 echo "<div class='no-result'>";
-                                echo "<img src='../imgs/search.png'>";
+                                echo "<img src='../imgs/user-not-found.png'>";
                                 echo "<h5>No members in your favorite list!</h5>";
                                 echo "</div>";
                             }
