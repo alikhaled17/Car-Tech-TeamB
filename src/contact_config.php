@@ -1,12 +1,12 @@
 <?php
 if (isset ($_POST['send'])) {
     echo "Start contact config". '<br>';
-    require_once "../Mail.php";
+    require_once 'Mail.php';
     echo "Afer required once ". '<br>';
     $username = 'info.cartechb@gmail.com';
     $password = 'car5857507M';
-    $smtpHost = 'ssl://smtp.gmail.com';
-    $smtpPort = '465';
+    $smtpHost = 'tls://smtp.sendgrid.net';
+    $smtpPort = '587';
     $to = 'info.cartechb@gmail.com';
     $from =  'info.cartechb@gmail.com';
     
