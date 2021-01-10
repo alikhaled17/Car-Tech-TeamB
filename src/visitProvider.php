@@ -68,10 +68,9 @@
     <link rel="stylesheet" href="../css/chat_direct.css" />
     <link rel="icon" href="../imgs/icon.png" type="image/icon type">
 
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
-<body>
-    
+<body>    
     <?php include('../header.php'); ?>
 
 <?php 

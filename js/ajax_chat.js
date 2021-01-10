@@ -93,23 +93,16 @@ $(document).ready(function () {
             success: function (data) {
                 var chatDiv = $('#chat_history_' + to_user_id);
                 chatDiv.html(data);
-            }
-        })
-    }
-
-
-
-    function fetch_user_chat_history(to_user_id) {
-        $.ajax({
-            url: "fetch_user_chat_history.php",
-            method: "POST",
-            data: { to_user_id: to_user_id },
-            success: function (data) {
-                $('#chat_history_' + to_user_id).html(data);
+            },
+            error: function (data) {
+                alert("fail");
             }
 
         })
     }
+
+
+
 
     function update_chat_history_data() {
         $('.chat-history').each(function () {
