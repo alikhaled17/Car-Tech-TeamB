@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('.navar li').each(function () {
         if ($(this).children().length) {
@@ -9,7 +8,7 @@ $(document).ready(function () {
                 $('.navar li').removeClass('active');
             }
         } else {
-            console.log("else");
+            // console.log("else");
             return;
         }
     })

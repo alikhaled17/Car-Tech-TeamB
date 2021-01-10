@@ -1,6 +1,14 @@
 <?php 
     include_once ("../Config.php");
     include_once ("pagination.php");
+    $limit = 2;  
+    if (isset($_GET["page"])) {
+        $page  = $_GET["page"]; 
+        } 
+        else{ 
+        $page=1;
+        };  
+    $start_from = ($page-1) * $limit; 
 
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
     {
@@ -21,12 +29,13 @@
             $City=$_POST['City'];
             $Region=$_POST['Region'];
             $Name=$_POST['search_name'];
-            $sql="SELECT users.prof_img,
+            $sql="SELECT  users.prof_img,
                     users.id,
                     users.username, 
                     services.ser_name,
                     cities.city_name,
-                    regions.region_name
+                    regions.region_name,
+                    COUNT(users.id)
                     
                     FROM (((((( users
                     inner join providers on providers.user_id = users.id)
@@ -40,7 +49,7 @@
                     users.account_type ='Provider' and 
                     prov_services.ser_id ='$Service' and 
                     regions.city_id='$City' and 
-                    users.username like '$Name%'";
+                    users.username like '$Name%' LIMIT $start_from, $limit";
 
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
@@ -101,31 +110,39 @@
         echo "<h5>----------------------------------</h5>";
         echo "</div>";
     }
-    $nema_table_count= 'providers';
-    $select_types = "'accept'";
-    $select_types_count="'accept'";
-    $coul = 'username';
-    $types = 'prov_state';
-    // Per page limit for pagination.
-    $pagelimit = 2;
-    // Get current page.
-    $page = filter_input(INPUT_GET, 'page');
-    if (!$page) {
-        $page = 1;
-    }
+    // $nema_table_count= 'providers';
+    // $select_types = "'accept'";
+    // $select_types_count="'accept'";
+    // $coul = 'username';
+    // $types = 'prov_state';
+    // // Per page limit for pagination.
+    // $pagelimit = 2;
+    // // Get current page.
+    // $page = filter_input(INPUT_GET, 'page');
+    // if (!$page) {
+    //     $page = 1;
+    // }
 
-    $offset = ($page - 1) * $pagelimit ;
-    $sql.=" LIMIT $pagelimit OFFSET $offset";
-    $rows=mysqli_query($conn, $sql);
-    $total_count = 0 ;
-    if ($nema_table_count == 'users' || $nema_table_count == 'providers'){
-        $total_count = counting_type($nema_table_count, $types, $select_types_count);
-    }else {
-        $total_count = counting($nema_table);
-    }
-    $total_pages = ceil( $total_count / $pagelimit);
-    //}
+    // $offset = ($page - 1) * $pagelimit ;
+    // $sql.=" LIMIT $pagelimit OFFSET $offset";
+    // $rows=mysqli_query($conn, $sql);
+    // $total_count = 0 ;
+    // if ($nema_table_count == 'users' || $nema_table_count == 'providers'){
+    //     $total_count = counting_type($nema_table_count, $types, $select_types_count);
+    // }else {
+    //     $total_count = counting($nema_table);
+    // }
+    // $total_pages = ceil( $total_count / $pagelimit);
+    // //}
   
-    echo paginationLinks($page, $total_pages, 'search_submit.php'); 
+    // echo paginationLinks($page, $total_pages, 'search_submit.php'); 
+    $row_db = mysqli_fetch_row($result);  
+    $total_records = $row_db[0];  
+    $total_pages = ceil($total_records / $limit); 
+    $pagLink = "<ul class='pagination'>";  
+    for ($i=1; $i<=$total_pages; $i++) {
+                $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
+    }
+    echo $pagLink . "</ul>";  
 
 ?>
