@@ -2,6 +2,14 @@
     include('../Config.php');
     session_start();
     session_regenerate_id();
+    if (isset($_POST['Visit']))
+    {
+        header("Location:uProfile.php");
+    }
+    else
+    {
+        echo"error";
+    }
     function success()
     {
         echo '<div class="alert alert-success alert-dismissable">
@@ -10,17 +18,8 @@
         </div>';
         echo "<form name='profile' method='post' action='EditUProfileConf.php'>
             <button class='btn btn-outline-info' style='float:right;'
-            name='Vist'>Veiw Profile</button>
+            name='Visit'>Visit Profile</button>
             </form>" ;
-        if (isset($_POST['username']))
-        {
-            header("Location:uProfile.php");
-        }
-        else
-        {
-            echo"error";
-        }
-        
     }
 
     function fail()
