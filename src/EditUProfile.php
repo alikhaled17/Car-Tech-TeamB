@@ -67,17 +67,23 @@
                                 if ($user_data['gender']== "Male")
                                 {
                             ?>
-                                <i class="fa fa-male"></i>
+                                <i class="fa fa-info-circle"></i>
                                 <span>
+                                    <label>Male</label>
                                 <input type="radio" id="user" name="user-info" value="Male" checked />
+                                    <label>Female</label>
+                                <input type="radio" id="user" name="user-info" value="Female"  />
                                 </span>
                                 <?php
                                 }
                                 else{
                                 ?>
-                                <i class="fa fa-female"></i>
+                                <i class="fa fa-info-circle"></i>
                                 <span>
+                                    <label>Female</label>
                                 <input type="radio" id="user" name="user-info" value="Female" checked />
+                                    <label>Male</label>
+                                <input type="radio" id="user" name="user-info" value="Male" />
                                 </span>
                                 <?php
                                 }
