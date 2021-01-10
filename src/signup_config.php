@@ -24,7 +24,14 @@
     {
         echo '<div class="alert alert-danger alert-dismissable">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                    Please complete your info or your Email is already exist .
+                Please complete your info  .
+            </div>';
+    }
+    function failEmail()
+    {
+        echo '<div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                Your Email is already exist .
             </div>';
     }
 
@@ -53,7 +60,7 @@
                     $result = mysqli_query($conn, $query);
                     $num_rows = mysqli_num_rows($result);
                     if ($num_rows >= 1) {
-                        fail();
+                        failEmail();
                     } else {
 
                         $conn->query("INSERT INTO users (username, email, password, phone, account_type) 
@@ -117,7 +124,7 @@
                     $result = mysqli_query($conn, $query);
                     $num_rows = mysqli_num_rows($result);
                     if ($num_rows >= 1) {
-                        fail();
+                        failEmail();
                     } else {
                         $conn->query("INSERT INTO users (username, email, password, gender, phone,prof_img) VALUES
                         ('$username','$email','$password', '$gender','$Phone','$prof_imgID')");

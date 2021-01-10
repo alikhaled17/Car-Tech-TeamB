@@ -45,7 +45,7 @@
                     <?php 
                         if($user_data['prof_img'] == '') {
                             ?>
-                            <img src="https://car-tch.herokuapp.com/imgs/default-prof.png"/>       
+                            <img src="../imgs/default-prof.png"/>       
                             <?php 
                         } else {
                             ?>
