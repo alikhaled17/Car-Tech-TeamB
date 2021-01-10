@@ -1,7 +1,7 @@
 window.onload = (event) => {
     var slides = document.getElementsByClassName("nav-item");
     for (var i = 0; i < slides.length; i++) {
-        var x = slides.item(i).firstChild.getAttribute('href');
+        var x = slides.item(i).firstElementChild.getAttribute('href');
         console.log(x);
     }
 }
