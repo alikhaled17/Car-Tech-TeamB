@@ -20,7 +20,7 @@
 
     function fail()
     {
-        echo '<div class="alert alert-success alert-dismissable">
+        echo '<div class="alert alert-danger alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             Please Complite Your Information .
         </div>';

@@ -70,9 +70,9 @@
                                 <i class="fa fa-info-circle"></i>
                                 <span>
                                     <label>Male</label>
-                                <input type="radio" id="user" name="user-info" value="Male" checked />
+                                <input type="radio" id="user" name="gender" value="Male" checked />
                                     <label>Female</label>
-                                <input type="radio" id="user" name="user-info" value="Female"  />
+                                <input type="radio" id="user" name="gender" value="Female"  />
                                 </span>
                                 <?php
                                 }
@@ -81,9 +81,9 @@
                                 <i class="fa fa-info-circle"></i>
                                 <span>
                                     <label>Female</label>
-                                <input type="radio" id="user" name="user-info" value="Female" checked />
+                                <input type="radio" id="user" name="gender" value="Female" checked />
                                     <label>Male</label>
-                                <input type="radio" id="user" name="user-info" value="Male" />
+                                <input type="radio" id="user" name="gender" value="Male" />
                                 </span>
                                 <?php
                                 }
