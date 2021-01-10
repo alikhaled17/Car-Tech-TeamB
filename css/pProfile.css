@@ -8,13 +8,13 @@
 .img-prof {
     position: relative;
     height: 180px;
-    max-width: 80%;
+    max-width: 70%;
     text-align: center;
 }
 
 .img-prof h2 {
     height: 150px;
-    width: 100%;
+    width: 80%;
     color:#f47e3d;
     font-size:100px;
     box-shadow: 3px 3px 2px 1px #888888; 

@@ -65,7 +65,7 @@
                     echo ('
                             <li class="result-card row wow bounceInDown">
                                 <div class="lift col-2"> ');
-                        echo ('<img src="../imgs/default-prof.jpg"/>');     
+                        echo (strtoupper(substr($provider['username'], 0, 1)));     
                     echo   ('</div>'.
                             '<div class="mid col-7">
                                 <h5>'.$provider['username'].'</h5>'.
