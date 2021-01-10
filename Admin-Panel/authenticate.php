@@ -1,7 +1,7 @@
 <?php
 require_once './config/config.php';
 session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$username = filter_input(INPUT_POST, 'username');
 	$passwd = filter_input(INPUT_POST, 'passwd');
 	$remember = filter_input(INPUT_POST, 'remember');
