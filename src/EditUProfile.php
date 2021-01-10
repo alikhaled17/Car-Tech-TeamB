@@ -31,9 +31,6 @@
     <div class="prof-section">
         <div class="container">
             <div class="upper-prof row">
-            <?php 
-            include('EditUProfileConf.php'); 
-            ?>
                 <div class="img-prof col-3">
                 <form name="update_user" method="post" action="EditUProfile.php">
                     <?php 
@@ -83,6 +80,9 @@
                     </div>
                 </form>
             </div>
+            <?php 
+            include('EditUProfileConf.php'); 
+            ?>
         </div>
     </div>
     
