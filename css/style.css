@@ -53,10 +53,7 @@ body {
     font-size: 30px;
 }
 
-.navbar-brand span:first-child
-{
-    color: #08526d !important;
-}
+
 
 .navbar-brand span:last-child
 {

@@ -103,7 +103,7 @@ function count_unseen_message_h($connect)
         <div class="container">
             <a class="navbar-brand" data-wow-duration='.5s' href="#">
                 <img class="wow wobble" src="https://car-tch.herokuapp.com/imgs/logo2.png" alt="car-tech" width="100px">
-                <span>Car</span><span>Tech</span>
+                <span style="color: #08526d;">Car</span><span>Tech</span>
             </a>
 
             <div class="collapse navbar-collapse" id="ournavbar">
