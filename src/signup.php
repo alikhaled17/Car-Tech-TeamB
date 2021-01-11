@@ -44,7 +44,7 @@
         <div class="container">
         <?php include('signup_config.php');
         $user_type="User"; ?>
-        <span class="result" ><?php echo $user_type; ?></span></h3>
+        
             <div class="left-side col-6">
                 <!-- form -->
                 <br>
@@ -66,8 +66,9 @@
                         <p id="vaild_Email"> </p>
                         <label>Phone Number</label>
                         <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
-                        <?php echo $user_type.'<br>';
-                        if ($user_type =="User"){ ?>
+                        <?php 
+                        echo $user_type.'<br>';
+                        if ($user_type == "User"){ ?>
                             <div id="User-info">
                             <label class="gender-h">Gender</label>
                             <input type="radio" name="gender" value="Male" />
@@ -120,6 +121,7 @@
             </div>
         </div>
     </div>
+    <span class="result" ><?php echo $user_type; ?></span></h3>
     <script type="text/javascript">
         $(function() {
             $("input[name='user-info']").click(function() {
