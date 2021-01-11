@@ -19,38 +19,19 @@
 </head>
 
 <body>
-    <script type="text/javascript">
 
-        function handleData()
-        {
-            var form_data = new FormData(document.querySelector("form"));
-            
-            if(!form_data.has("ser_name[]"))
-            {
-                document.getElementById("chk_option_error").style.visibility = "visible";
-            return false;
-            }
-            else
-            {
-                document.getElementById("chk_option_error").style.visibility = "hidden";
-            return true;
-            }
-            
-        }
-    </script>
     <?php include('../header.php'); ?>
     
     <div class="signup row">
         <div class="container">
-        <?php include('signup_config.php');
-        $user_type="User"; ?>
+        <?php include('signup_config.php'); ?>
         
             <div class="left-side col-6">
                 <!-- form -->
                 <br>
                 <h2>Registration</h2>
                 <hr>
-                <form method="POST" onsubmit="return handleData()" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
                     <h4>Account Type</h4>
                     <input type="radio" id="user" name="user-info" value="User" checked />
                     <label for="user">User</label>
@@ -66,10 +47,7 @@
                         <p id="vaild_Email"> </p>
                         <label>Phone Number</label>
                         <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
-                        <?php 
-                        echo $user_type.'<br>';
-                        if ($user_type == "User"){ ?>
-                            <div id="User-info">
+                        <div id="User-info">
                             <label class="gender-h">Gender</label>
                             <input type="radio" name="gender" value="Male" />
                             <label class="gender">Male</label>
@@ -78,38 +56,35 @@
                             <label>Profile Image</label>
                             <input type="file" name="prof_img" value="none" accept="image/*">
                         </div>
-                        <?php } ?>
-                        
                     </div>
-                    <?php echo $user_type.'<br>';
-                    if ($user_type == "Provider"){ ?>
-                        <div class="prov-info" id="provider-info" style="display: none">
-                            <h4>services *</h4>
-                            <div class="service-check">
-                                <?php 
-                                $selected_service_ids =  "";
-                                include_once('include_service.php'); ?>
-                            </div>
-                            <div style="visibility:hidden; color:red; " id="chk_option_error">
-                                Please select at least one option.
-                            </div>
-                            
-                            <label>National ID *</label>
-                            <input type="file" name="nation_id" value="none" accept="image/*">
-                            <label>commercial ID *</label>
-                            <input type="file" name="commerc_id" value="none" accept="image/*"><br><br>
-                            <label>City *</label>
-                            <?php
-                                include('search_citis.php'); 
-                            ?>
-                            <label>Region *</label>
-                            <select id="Region1" name="Region" class="search-select">
-                                <option value="none" selected>Choose ...</option>
-                            </select><br><br>
-                            <label for="">Street *</label>
-                            <input type="text" name="street" placeholder="street">
+
+                    <div class="prov-info" id="provider-info" style="display: none">
+                        <h4>services *</h4>
+                        <div class="service-check">
+                            <input type="checkbox" name="Gas_Station">
+                            <label>Gas Station</label><br>
+                            <input type="checkbox" name="Car_Wash">
+                            <label>Car Wash</label><br>
+                            <input type="checkbox" name="Car_Maintenance">
+                            <label>Car Maintenance</label><br>
+                            <input type="checkbox" name="Trailer_Truck">
+                            <label>Trailer Truck</label><br>
                         </div>
-                    <?php } ?>
+                        <label>National ID *</label>
+                        <input type="file" name="nation_id" value="none" accept="image/*">
+                        <label>commercial ID *</label>
+                        <input type="file" name="commerc_id" value="none" accept="image/*"><br><br>
+                        <label>City *</label>
+                        <?php
+                            include('search_citis.php'); 
+                        ?>
+                        <label>Region *</label>
+                        <select id="Region1" name="Region" class="search-select">
+                            <option value="none" selected>Choose ...</option>
+                        </select><br><br>
+                        <label for="">Street *</label>
+                        <input type="text" name="street" placeholder="street">
+                    </div>
                     <button name="submit" class="btn btn-outline-info">Sign Up</button>
                 </form>
 
@@ -121,30 +96,25 @@
             </div>
         </div>
     </div>
-    <span class="result" ><?php echo $user_type; ?></span></h3>
     <script type="text/javascript">
         $(function() {
             $("input[name='user-info']").click(function() {
-
-                var gender = $(this).val(); 
-                 $('.result').html(gender);
-
-                /* if ($("#Provider").is(":checked")) {
+                if ($("#Provider").is(":checked")) {
                     $("#provider-info").show();
                 } else {
                     $("#provider-info").hide();
-                } */
+                }
             });
         });
-        // $(function() {
-        //     $("input[name='user-info']").click(function() {
-        //         if ($("#User").is(":checked")) {
-        //             $("#User-info").show();
-        //         } else {
-        //             $("#User-info").hide();
-        //         }
-        //     });
-        // });
+        $(function() {
+            $("input[name='user-info']").click(function() {
+                if ($("#User").is(":checked")) {
+                    $("#User-info").show();
+                } else {
+                    $("#User-info").hide();
+                }
+            });
+        });
     </script>
     <?php include('../footer.php'); ?>
 
