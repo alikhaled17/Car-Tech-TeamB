@@ -257,9 +257,7 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
     if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) ) {
     ?>
     <script>
-        function hamada() {
-            $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
-        }
+        
 
         $(function(){
             var arrow = $('.chat-head img');
@@ -276,10 +274,6 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
                     arrow.attr('src', 'https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png');
                 }
             });
-
-           
-            
-
         });
 
 
@@ -289,8 +283,13 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
         //     update_last_activity();
         //     update_chat_history_data();
         // }, 5000);
-
+            
      
+        function hamada() {
+            update_last_activity();
+            update_chat_history_data();
+            $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+        }
         function update_last_activity() {
             $.ajax({
                 url: "update_last_activity_one.php",

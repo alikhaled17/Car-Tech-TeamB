@@ -1,10 +1,6 @@
 $(document).ready(function () {
     fetch_user();
-    // setInterval(function () {
-    //     update_last_activity();
-    //     fetch_user();
-    //     update_chat_history_data();
-    // }, 5000);
+
 
     $(document).on('click', '.chat', function () {
         update_last_activity();
