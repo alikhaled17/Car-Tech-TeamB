@@ -1,3 +1,23 @@
+<script type="text/javascript">
+
+function handleData()
+{
+    var form_data = new FormData(document.querySelector("form"));
+    
+    if(!form_data.has("ser_name[]"))
+    {
+        document.getElementById("chk_option_error").style.visibility = "visible";
+      return false;
+    }
+    else
+    {
+        document.getElementById("chk_option_error").style.visibility = "hidden";
+      return true;
+    }
+    
+}
+</script>
+
 <?php include_once("../Config.php");
 $sql="SELECT id,ser_name FROM `services`";
 $result=mysqli_query($conn, $sql);
