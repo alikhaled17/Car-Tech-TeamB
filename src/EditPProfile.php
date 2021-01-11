@@ -7,7 +7,6 @@
     providers.comm_img,
     providers.ID_img,
     p_address.street,
-    cities.id as city_id,
     cities.city_name,
     regions.region_name,
     services.ser_name
@@ -89,30 +88,37 @@
                             <input type="Email" class="inputStyle" name="email" value="<?php echo $user_data['email']; ?>" required>
                         </div>
                         <div class="adress">
-                        <!-- <i class="fa fa-address-book"></i> -->
-                            <!-- <span class="inputStyle">  -->
-                            <?php
-                                // echo ",";
-                                // echo " " . $user_data['region_name'] . " ";
-                                // echo ",";
-                                // echo " " . $user_data['city_name'] . " ";
-                            ?>  
+                            <div class="inputStyle"> 
+                                <div>
+                                    <i class="fa fa-address-book"></i>
+                                    <?php
+                                        echo ",";
+                                        echo " " . $user_data['city_name'] . " ";
+                                        echo ",";
+                                        echo " " . $user_data['region_name'] . " ";
+                                        echo ",";
+                                        echo " " . $user_data['street'] . " ";
+                                    ?> 
+                                    <div id="new_cl">New</div>
+                                </div> 
                             <br>
                             <br>
-                                <label class="labelCity" >City </label>
-                                <?php include('search_citis.php'); ?>
+                                <div style="display:none;" id="new">
+                                    <label class="labelCity" >City </label>
+                                    <?php include('search_citis.php'); ?>
 
-                                <label class="labelReion">Region</label>
-                                <select id="Region1" name="Region" class="search-select" required>
-                                <option value="none" selected>Choose ...</option>
+                                    <label class="labelReion">Region</label>
+                                    <select id="Region1" name="Region" class="search-select" required>
+                                    <option value="none" selected>Choose ...</option>
 
-                                </select><br><br>
-                                <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street"  
-                                value='<?php echo$user_data['street'];?>'>
+                                    </select><br><br>
+                                    <label class="st">Street</label>
+                                    <input class="street" type="text" name="street" placeholder="street"  
+                                    value=''>
+                                </div>
                                 
                               
-                            </span>
+                            </div>
                         </div>
                         
 
@@ -176,24 +182,25 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        $(document).ready(function () {
-            var city = "<?php echo $user_data['city_id']; ?>";
-            console.log(city);
-            var region = "<?php echo $user_data['region_name']; ?>";
+        // $(document).ready(function () {
 
-            $("option[name='cc']").each(function () { 
-                if ($(this).attr("value") == city) {
-                    echo "Y";
-                    $(this).attr("selected","selected").siblings().attr("selected","");
-                } else {
-                    echo "N";
+        //     $("option[name='cc']").each(function () { 
+        //         if ($(this).attr("value") == city) {
+        //             echo "Y";
+        //             $(this).attr("selected","selected").siblings().attr("selected","");
+        //         } else {
+        //             echo "N";
 
-                }
-            });
-            // $("#cc").text(city) ;
-            // $("#rr").text('');
-            // $("#rr").text(region) ;
+        //         }
+        //     });
+        //     // $("#cc").text(city) ;
+        //     // $("#rr").text('');
+        //     // $("#rr").text(region) ;
            
+        // });
+
+        $(document).on('click', '#new_cl', function () {
+            $('#new').show();
         });
     </script>
 </body>

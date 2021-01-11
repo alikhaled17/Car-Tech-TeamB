@@ -10,7 +10,7 @@
 
         while($myregion=mysqli_fetch_array($result)) {
 
-            echo '<option name="rr" value="'
+            echo '<option value="'
             .$myregion ['id']
             .'">'
             .$myregion ['region_name']

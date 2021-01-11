@@ -25,7 +25,7 @@ echo '<option value="" selected >Choose...</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
 
-    echo '<option name="cc" value="'
+    echo '<option value="'
     .$mycitys ['id'] .'">'
     .$mycitys ['city_name'] .'</option>';
 }
