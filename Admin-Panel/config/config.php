@@ -8,7 +8,7 @@ if (!defined('CURRENT_PAGE')) define('CURRENT_PAGE', basename($_SERVER['REQUEST_
 
 require_once BASE_PATH . '/helpers/helpers.php';
 
-$conn = new mysqli('us-cdbr-east-02.cleardb.com', 'b541e9d2344cba', '84bd742c', 'heroku_14b5ff014b7ea68');
+$conn = new mysqli('localhost', 'root', '', 'cartech');
 
 
 ?>

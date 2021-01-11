@@ -1,7 +1,6 @@
 <?php 
     include('../Config.php');
-    session_start();
-    session_regenerate_id();
+
     if (isset($_POST['Visit']))
     {
         header("Location:uProfile.php");
@@ -60,6 +59,5 @@
     $email = $user_data['email'];
     $password = $user_data['password'];
     $phone = $user_data['phone'];
-    $gender = $_POST['gender'];
 
 ?>

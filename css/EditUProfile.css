@@ -1,0 +1,125 @@
+.col-9
+{
+  max-width: 100% !important;
+}
+
+.fail {
+  border-radius: 10px;
+  padding: 5px 15px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: rgb(245, 61, 37);
+}
+
+.success {
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: rgb(66, 184, 66);
+}
+.inputStyle
+{
+    color: #08526d;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 14px;
+    outline-style: none;
+/*    margin-left: 12%;
+*/    font-size: 20px;
+}
+.RadioStyle
+{
+  cursor: pointer;
+  padding: 0 50px 0 30px;
+  color: #08526d;
+  font-size: 20px;
+}
+input.RadioStyle
+{
+  margin-right: 2%;
+}
+span.gender-span
+{
+  margin-left: 3%;
+  font-size: 25px;
+}
+label.gender
+{
+  cursor: pointer;
+  color: #08526d;
+  font-size: 20px;
+}
+.gender-span
+{
+  margin: 10px;
+  font-size: 25px;
+}
+.gender
+{
+  margin-right: 7%;
+  font-size: 25px;
+}
+select#City1.search-select
+{
+  padding-left: 1%;
+  width: 50% !important;
+  border-radius: 5px;
+  outline-style: none;
+  border: 1px solid #08526d;
+}
+
+select#Region1.search-select
+{
+  padding-left: 1%;
+  width: 50% !important;
+  border-radius: 5px;
+  outline-style: none;
+  border: 1px solid #08526d;
+}
+label.labelCity
+{
+  font-size: 20px;
+  width: 20%;
+  display: block;
+
+}
+label.labelReion
+{
+  font-size: 20px;
+  width: 20%;
+  display: block;
+}
+label.st
+{
+  font-size: 20px;
+  margin-right: 3px;
+}
+input.street
+{
+  border:none;
+  outline-style: none;
+/*  margin-left: 5%;
+*/  font-size: 20px;
+}
+label.service
+{
+  margin-left: 1%;
+  color: #08526d;
+  font-size: 20px;
+}
+input[type="checkbox"]
+{
+  margin-left: 7%;
+  color: #08526d;
+  border:1px solid #08526d;
+}
+
+input[type="text"], input[type="password"] {
+  border-left: 2px solid #08526d !important;
+  padding-left: 10px ;
+  border-radius: 0;
+  height: 20px;
+}

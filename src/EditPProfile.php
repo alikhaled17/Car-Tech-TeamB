@@ -97,6 +97,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
+    <link rel="icon" href="../imgs/icon.png" type="image/icon type">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
@@ -164,11 +165,11 @@
 
                             <div class="street">
                                 <label for="">Street</label>
-                                <input type="text" name="street" placeholder="street">
+                                <input type="text" name="street" placeholder="street" style="margin-left: 45px;">
                             </div>
 
                             <div class="ok">
-                                <span>Ok</span>
+                                <span style="width:110%">Ok</span>
                             </div>
                             <button id='close'>x</button>
                         </div>
