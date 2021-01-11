@@ -7,6 +7,7 @@
     providers.comm_img,
     providers.ID_img,
     p_address.street,
+    cities.id as city_id,
     cities.city_name,
     regions.region_name,
     services.ser_name
@@ -176,11 +177,11 @@
     <script src="../js/script.js"></script>
     <script>
         $(document).ready(function () {
-            var city = "<?php echo $user_data['city_name']; ?>";
+            var city = "<?php echo $user_data['city_id']; ?>";
             var region = "<?php echo $user_data['region_name']; ?>";
 
             $("option[name='cc']").each(function () { 
-                if ($(this).text() == city) {
+                if ($(this).attr("value") == city) {
                     $(this).attr("selected","selected").siblings().attr("selected","");
                 }
             });
