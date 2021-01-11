@@ -51,7 +51,7 @@
             
             $counting_result=mysqli_query($conn, $sql);
             $total_records =mysqli_num_rows($counting_result);
-            // $sql = $sql." LIMIT $limit OFFSET $start_from";
+            $sql = $sql." LIMIT $limit OFFSET $start_from";
             $info=mysqli_query($conn, $sql);
             
             if($x=mysqli_fetch_array($info)) {
@@ -80,13 +80,22 @@
                         '</li>
                     ');
                 }
-              
+                
+                $total_pages = ceil($total_records / $limit); 
+                // $pagLink = "<ul class='pagination'>";  
+                // for ($i=1; $i<=$total_pages; $i++) {
+                //     $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
+                // }
+                // echo $pagLink . "</ul>";  
             } else {
                 echo "<div class='wow flip no-result'>";
                 echo "<img src='../imgs/search.png'>";
                 echo "<h5>Sorry, We haven't found any results matching this search</h5>";
                 echo "</div>";
+
             }
+            
+            
         } 
         else  {
             echo "<div class='wow rotateIn no-result'>";
