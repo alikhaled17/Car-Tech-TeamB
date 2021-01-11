@@ -21,7 +21,7 @@ include_once("../Config.php");
 $sql="SELECT id,city_name FROM `cities`";
 $result=mysqli_query($conn, $sql);
 
-echo '<option value="" selected >Choose...</option>';
+echo '<option value="" id="cc" selected >Choose...</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
 
