@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $account_type =$data_to_update['account_type'];
 	
 	$prof_img = $_FILES['prof_img']['tmp_name'];
-	$add_prof_img = $img_ID == '' ? "" : ", users.prof_img = '".addslashes(file_get_contents($prof_img))."' ";
+	$add_prof_img = $prof_img == '' ? "" : ", users.prof_img = '".addslashes(file_get_contents($prof_img))."' ";
 
 
 	$sql="SELECT * FROM `users`
