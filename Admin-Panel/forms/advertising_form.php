@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <?php if($operation != ''){ ?>
+    <?php if($operation == 'edit'){ ?>
     <!-- File input-->
     <div class="form-group">
         <label class="col-md-4 control-label">Advertising Img</label>
@@ -43,7 +43,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
                 <input type="file" name="img_adver" autocomplete="off" placeholder="Advertising Img" class="form-control" accept="image/*"
-                    value="<?php echo ($edit) ? $advertising[''] : ''; ?>" required="" autocomplete="off">
+                    value="<?php echo ($edit) ? $advertising[''] : ''; ?>" required autocomplete="off">
             </div>
         </div>
     </div>
