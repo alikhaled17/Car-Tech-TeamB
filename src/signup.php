@@ -66,7 +66,8 @@
                         <p id="vaild_Email"> </p>
                         <label>Phone Number</label>
                         <input type="number" name="phone" required placeholder="Enter Your Phone Number"><br>
-                        <?php if ($user_type=="User"){ ?>
+                        <?php echo $user_type.'<br>';
+                        if ($user_type =="User"){ ?>
                             <div id="User-info">
                             <label class="gender-h">Gender</label>
                             <input type="radio" name="gender" value="Male" />
@@ -79,7 +80,8 @@
                         <?php } ?>
                         
                     </div>
-                    <?php if ($user_type=="Provider"){ ?>
+                    <?php echo $user_type.'<br>';
+                    if ($user_type == "Provider"){ ?>
                         <div class="prov-info" id="provider-info" style="display: none">
                             <h4>services *</h4>
                             <div class="service-check">
