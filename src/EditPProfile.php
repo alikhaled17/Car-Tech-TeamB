@@ -88,13 +88,12 @@
                             <input type="Email" class="inputStyle" name="email" value="<?php echo $user_data['email']; ?>" required>
                         </div>
                         <div class="adress">
-                        <i class="fa fa-address-book"></i>
+                        <!-- <i class="fa fa-address-book"></i> -->
                             <span class="inputStyle"> 
                             <?php
-                                echo ",";
-                                echo " " . $user_data['region_name'] . " ";
-                                echo ",";
-                                echo " " . $user_data['city_name'] . " ";
+                                // echo " " . $user_data['region_name'] . " ";
+                                // echo ",";
+                                // echo " " . $user_data['city_name'] . " ";
                             ?>  
                             <br>
                             <br>
@@ -105,7 +104,11 @@
                                 <option value="none" selected>Choose ...</option>
                                 </select><br><br>
                                 <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street"  value='<?php echo$user_data['street'];?>'>
+                                <input class="street" type="text" name="street" placeholder="street"  
+                                value='<?php echo$user_data['street'];?>'>
+                                <script>
+                                    document.getElementById("City1").selectedIndex = <?php echo $City;?>;
+                                </script>
                               
                             </span>
                         </div>
