@@ -68,9 +68,7 @@ session_start();
                 <!-- result -->
                 <div class="left-side col-6">
                     <div class="result">
-                        <ul id="result">
-                            <?php include('search_submit.php'); ?>
-                        </ul>
+                        <?php include('search_submit.php'); ?>
                     </div>
                     <div class="text-center">
                         <?php 
