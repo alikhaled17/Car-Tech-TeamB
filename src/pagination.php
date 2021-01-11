@@ -61,24 +61,4 @@ function paginationLinks($current_page, $total_pages, $base_url) {
 
 	return $html;
 }
-function counting($table_name) {
-    include('config/config.php');
-    $sql="SELECT count(*) FROM $table_name";
-    $result=mysqli_query($conn, $sql);
-    while ($row = $result->fetch_assoc()) {
-        $numCustomers = $row['count(*)'];
-    };
-    return $numCustomers;
-};
-
-function counting_type($table_name,$column_name,$types) {
-    include('config/config.php');
-    $sql="SELECT count(*) FROM `$table_name`
-    WHERE $column_name =$types";
-    $result=mysqli_query($conn, $sql);
-    while ($row = $result->fetch_assoc()) {
-        $numCustomers = $row['count(*)'];
-    };
-    return $numCustomers;
-};
 ?>
