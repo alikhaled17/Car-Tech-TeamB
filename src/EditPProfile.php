@@ -172,11 +172,12 @@
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
-    <?php echo ?>
     <script>
         $(document).ready(function () {
             $("#cc").text('');
-            console.log( <?php $user_data['region_name']; ?>);
+            var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
+            console.log(MyJSStringVar);
+
             $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
             $("#rr").text('');
             $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
