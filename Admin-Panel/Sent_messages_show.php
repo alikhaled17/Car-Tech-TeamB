@@ -70,7 +70,7 @@ include BASE_PATH.'/includes/header.php';
     <!-- //Filters -->
 
     <div id="export-section">
-        <a href="export_Message.php"><button class="btn btn-sm btn-primary">Export to CSV <i class="glyphicon glyphicon-export"></i></button></a>
+        <a href="export_sent_Message.php"><button class="btn btn-sm btn-primary">Export to CSV <i class="glyphicon glyphicon-export"></i></button></a>
     </div>
 
     <!-- Table -->
