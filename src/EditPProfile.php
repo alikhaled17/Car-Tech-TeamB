@@ -174,10 +174,10 @@
     <script src="../js/script.js"></script>
     <script>
         $(document).ready(function () {
-            $("#cc").val('');
-            $("#cc").val(<?php echo $user_data['city_name']; ?>);
-            $("#rr").val('');
-            $("#rr").val(<?php echo $user_data['region_name']; ?>);
+            $("#cc").text('');
+            $("#cc").text(<?php echo $user_data['city_name']; ?>);
+            $("#rr").text('');
+            $("#rr").text(<?php echo $user_data['region_name']; ?>);
         });
     </script>
 </body>
