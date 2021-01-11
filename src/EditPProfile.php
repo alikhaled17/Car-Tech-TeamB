@@ -57,7 +57,11 @@
         <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <img src="../imgs/default-prof.jpg"/> 
+                    <?php
+                        echo"<h2>";
+                        echo strtoupper(substr($user_data['username'], 0, 1)) ;
+                        echo "</h2>";
+                    ?> 
                 </div>
                 <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
                     <div class="info-prof ">
