@@ -1,3 +1,5 @@
+
+
 <?php
     include('../Config.php');
     
@@ -74,21 +76,15 @@
                         $commircID = addslashes(file_get_contents($commirc));
                         $nation = $_FILES['nation_id']['tmp_name'];
                         $nationID = addslashes(file_get_contents($nation));
-
-
                         $conn->query("INSERT INTO providers (user_id,ID_img,comm_img) VALUES ('$id','$nationID','$commircID')");
-                        if (isset($_POST['Gas_Station'])) {
-                            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','10')");
-                        }
-                        if (isset($_POST['Car_Wash'])) {
-                            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','20')");
-                        }
-                        if (isset($_POST['Car_Maintenance'])) {
-                            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','30')");
-                        }
-                        if (isset($_POST['Trailer_Truck'])) {
-                            $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','40')");
-                        }
+
+                        $ser_ids = $_POST['ser_name'];
+
+                        foreach ($ser_ids as $ser_id):
+                            $conn->query( "INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','$ser_id')");
+                        endforeach;
+
+                        
                         if (isset($_POST['City'])) {
                             $selected = $_POST['City'];
                             $Region = $_POST['Region'];

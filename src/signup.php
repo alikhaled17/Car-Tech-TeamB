@@ -19,7 +19,25 @@
 </head>
 
 <body>
+    <script type="text/javascript">
 
+        function handleData()
+        {
+            var form_data = new FormData(document.querySelector("form"));
+            
+            if(!form_data.has("ser_name[]"))
+            {
+                document.getElementById("chk_option_error").style.visibility = "visible";
+            return false;
+            }
+            else
+            {
+                document.getElementById("chk_option_error").style.visibility = "hidden";
+            return true;
+            }
+            
+        }
+    </script>
     <?php include('../header.php'); ?>
     
     <div class="signup row">
@@ -31,7 +49,7 @@
                 <br>
                 <h2>Registration</h2>
                 <hr>
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" onsubmit="return handleData()" enctype="multipart/form-data">
                     <h4>Account Type</h4>
                     <input type="radio" id="user" name="user-info" value="User" checked />
                     <label for="user">User</label>
@@ -61,15 +79,14 @@
                     <div class="prov-info" id="provider-info" style="display: none">
                         <h4>services *</h4>
                         <div class="service-check">
-                            <input type="checkbox" name="Gas_Station">
-                            <label>Gas Station</label><br>
-                            <input type="checkbox" name="Car_Wash">
-                            <label>Car Wash</label><br>
-                            <input type="checkbox" name="Car_Maintenance">
-                            <label>Car Maintenance</label><br>
-                            <input type="checkbox" name="Trailer_Truck">
-                            <label>Trailer Truck</label><br>
+                            <?php 
+                            $selected_service_ids =  "";
+                            include_once('include_service.php'); ?>
                         </div>
+                        <div style="visibility:hidden; color:red; " id="chk_option_error">
+                            Please select at least one option.
+                        </div>
+                        
                         <label>National ID *</label>
                         <input type="file" name="nation_id" value="none" accept="image/*">
                         <label>commercial ID *</label>
