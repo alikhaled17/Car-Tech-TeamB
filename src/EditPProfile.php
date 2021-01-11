@@ -88,27 +88,31 @@
                             <input type="Email" class="inputStyle" name="email" value="<?php echo $user_data['email']; ?>" required>
                         </div>
                         <div class="adress">
-                        <i class="fa fa-address-book"></i>
-                            <span class="inputStyle"> 
+                        <!-- <i class="fa fa-address-book"></i> -->
+                            <!-- <span class="inputStyle">  -->
                             <?php
-                                echo ",";
-                                echo " " . $user_data['region_name'] . " ";
-                                echo ",";
-                                echo " " . $user_data['city_name'] . " ";
+                                // echo ",";
+                                // echo " " . $user_data['region_name'] . " ";
+                                // echo ",";
+                                // echo " " . $user_data['city_name'] . " ";
                             ?>  
                             <br>
                             <br>
                                 <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
+
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose ...</option>
+
                                 </select><br><br>
                                 <label class="st">Street</label>
                                 <input class="street" type="text" name="street" placeholder="street"  value='<?php echo$user_data['street'];?>'>
                               
                             </span>
                         </div>
+                        
+
                         <br>
                         
                         <div class="service-check">
@@ -168,5 +172,13 @@
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#cc").val('');
+            $("#cc").val(<?php echo $user_data['city_name']; ?>);
+            $("#rr").val('');
+            $("#rr").val(<?php echo $user_data['region_name']; ?>);
+        });
+    </script>
 </body>
 </html>
