@@ -7,5 +7,5 @@
    unset($_SESSION['p_id']);
    
    session_destroy();
-   header("Location:https://car-tch.herokuapp.com/index.php");
+   header("Location:Car-Tech-TeamB/index.php");
 ?>

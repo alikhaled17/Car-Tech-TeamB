@@ -58,7 +58,7 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="edit_admin.php?admin_user_id=<?php echo $_SESSION['id']; ?>&operation=edit"><i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['user_name']; ?> </a>
                         </li>
-                        <li><a href="https://car-tch.herokuapp.com/index.php"><i class="fa fa-exchange fa-fw"></i> Car Tech </a>
+                        <li><a href="Car-Tech-TeamB/index.php"><i class="fa fa-exchange fa-fw"></i> Car Tech </a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
