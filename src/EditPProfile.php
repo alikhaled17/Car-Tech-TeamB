@@ -24,6 +24,9 @@
     $result = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($result);
     $user_data = mysqli_fetch_array($result);
+    $City = $user_data['city_id'];
+    $Region = $user_data['regions.id'];
+    $street = $user_data['street'];
 
 ?>
 <!DOCTYPE html>
@@ -96,6 +99,10 @@
                                 // echo ",";
                                 // echo " " . $user_data['city_name'] . " ";
                             ?>  
+                            <script>
+                                    document.getElementById('City1').value = <?php echo $City;?>;
+
+                            </script>
                             <br>
                             <br>
                                 <label class="labelCity" >City </label>
@@ -109,9 +116,7 @@
                                 <label class="st">Street</label>
                                 <input class="street" type="text" name="street" placeholder="street"  
                                 value='<?php echo$user_data['street'];?>'>
-                                <script>
-                                    document.getElementById("City1").selectedIndex = <?php echo $City;?>;
-                                </script>
+                                
                               
                             </span>
                         </div>
@@ -177,15 +182,15 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#cc").text('');
-            var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
-            console.log(MyJSStringVar);
+        // $(document).ready(function () {
+        //     $("#cc").text('');
+        //     var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
+        //     console.log(MyJSStringVar);
 
-            $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
-            $("#rr").text('');
-            $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
-        });
+        //     $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
+        //     $("#rr").text('');
+        //     $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
+        // });
     </script>
 </body>
 </html>
