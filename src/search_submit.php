@@ -74,7 +74,6 @@
             }
 
             $result=mysqli_query($conn, $sql);
-            echo ($sql) ;
 
             if(mysqli_num_rows($result) >= 1) {
                 while($provider=mysqli_fetch_array($result)) {
@@ -94,10 +93,8 @@
                         '</li>
                     ');
                 }
-                echo $total_records.'<br>';
-                echo $limit.'<br>';
+                
                 $total_pages = ceil($total_records / $limit); 
-                echo $total_pages;
                 // $pagLink = "<ul class='pagination'>";  
                 // for ($i=1; $i<=$total_pages; $i++) {
                 //     $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
