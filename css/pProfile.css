@@ -68,7 +68,7 @@
     border: 3px solid #08526d;
     border-radius: 10px;
     padding: 2%;
-    margin: 100px 1% 0 1% ;
+    margin: 20px 1% 0 0 ;
     width: 100%;
 }
 
@@ -97,8 +97,8 @@
     box-shadow: none; 
 }
 .work-gallery {
-    padding-top: 30px;
-    margin-top: 20px;
+    padding-top: 0;
+    margin-top: 10px;
     margin-bottom: 50px;
 }
 
