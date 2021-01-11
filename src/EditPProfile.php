@@ -175,12 +175,14 @@
     <script>
         $(document).ready(function () {
             $("#cc").text('');
-            var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
-            console.log(MyJSStringVar);
+            var city = "<?php echo $user_data['city_name']; ?>";
+            var region = "<?php echo $user_data['region_name']; ?>";
 
-            $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
+            $("#cc").text('');
+            $("#cc").text(city) ;
             $("#rr").text('');
-            $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
+            $("#rr").text(region) ;
+           
         });
     </script>
 </body>
