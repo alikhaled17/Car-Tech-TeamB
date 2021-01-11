@@ -10,7 +10,6 @@
     cities.city_name,
     regions.region_name,
     services.ser_name
-
     FROM (((((( users
     inner join providers on providers.user_id = users.id)
     inner join prov_services on prov_services.p_id = providers.user_id )
@@ -36,7 +35,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech - Edit Profile</title>
     <!-- my css files -->    
-    <link rel="icon" href="../imgs/icon.png" type="image/icon type">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/animate.css">
@@ -45,7 +43,7 @@
     <link rel="stylesheet" href="../css/EditPProfile.css" />
 
 
-    <!-- <script src="../js/responde.js"></script>     -->
+    <script src="../js/responde.js"></script>    
 </head>
 <body>
     <?php include('../header.php'); ?>
@@ -57,14 +55,7 @@
         <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                        <?php
-                            $background_colors = array('#282E33', '#25373A', '#164852', '#495E67', '#FF3838');
-                            $rand_background = $background_colors[array_rand($background_colors)];
-                            
-                            echo"<h2 style='background-color: ". $rand_background .";'>";
-                            echo strtoupper(substr($user_data['username'], 0, 1)) ;
-                            echo "</h2>";
-                        ?> 
+                    <img src="../imgs/default-prof.jpg"/> 
                 </div>
                 <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
                     <div class="info-prof ">
@@ -88,40 +79,28 @@
                             <input type="Email" class="inputStyle" name="email" value="<?php echo $user_data['email']; ?>" required>
                         </div>
                         <div class="adress">
-                            <div class="inputStyle"> 
-                                <div>
-                                    <i class="fa fa-address-book"></i>
-                                    <?php
-                                        echo ",";
-                                        echo " " . $user_data['city_name'] . " ";
-                                        echo ",";
-                                        echo " " . $user_data['region_name'] . " ";
-                                        echo ",";
-                                        echo " " . $user_data['street'] . " ";
-                                    ?> 
-                                    <div id="new_cl">New</div>
-                                </div> 
+                        <i class="fa fa-address-book"></i>
+                            <span class="inputStyle"> 
+                            <?php
+                                echo " " . $user_data['street'] ;
+                                echo ",";
+                                echo " " . $user_data['region_name'] . " ";
+                                echo ",";
+                                echo " " . $user_data['city_name'] . " ";
+                            ?>  
                             <br>
                             <br>
-                                <div style="display:none;" id="new">
-                                    <label class="labelCity" >City </label>
-                                    <?php include('search_citis.php'); ?>
-
-                                    <label class="labelReion">Region</label>
-                                    <select id="Region1" name="Region" class="search-select" required>
-                                    <option value="none" selected>Choose ...</option>
-
-                                    </select><br><br>
-                                    <label class="st">Street</label>
-                                    <input class="street" type="text" name="street" placeholder="street"  
-                                    value=''>
-                                </div>
-                                
+                                <label class="labelCity" >City </label>
+                                <?php include('search_citis.php'); ?>
+                                <label class="labelReion">Region</label>
+                                <select id="Region1" name="Region" class="search-select" required>
+                                <option value="none" selected>Choose ...</option>
+                                </select><br><br>
+                                <label class="st">Street</label>
+                                <input class="street" type="text" name="street" placeholder="street" required> 
                               
-                            </div>
+                            </span>
                         </div>
-                        
-
                         <br>
                         
                         <div class="service-check">
@@ -182,26 +161,10 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        // $(document).ready(function () {
-
-        //     $("option[name='cc']").each(function () { 
-        //         if ($(this).attr("value") == city) {
-        //             echo "Y";
-        //             $(this).attr("selected","selected").siblings().attr("selected","");
-        //         } else {
-        //             echo "N";
-
-        //         }
-        //     });
-        //     // $("#cc").text(city) ;
-        //     // $("#rr").text('');
-        //     // $("#rr").text(region) ;
-           
-        // });
-
         $(document).on('click', '#new_cl', function () {
             $('#new').show();
         });
     </script>
 </body>
 </html>
+
