@@ -86,7 +86,7 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
         <div  class="msg-insert" id="user_model_details">
         </div>
         <div class="chat-text">
-          <textarea onfocus="hamada()" id="<?php echo $id; ?>" placeholder="Send"></textarea>
+          <textarea class="fresh" id="<?php echo $id; ?>" placeholder="Send"></textarea>
         </div>
       </div>
     </div>
@@ -285,11 +285,12 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
         // }, 5000);
             
      
-        function hamada() {
+        $(document).on('focus', '.fresh', function () {
             update_last_activity();
             update_chat_history_data();
             $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
-        }
+        });
+        
         function update_last_activity() {
             $.ajax({
                 url: "update_last_activity_one.php",

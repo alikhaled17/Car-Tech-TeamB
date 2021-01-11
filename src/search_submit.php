@@ -16,12 +16,14 @@
     }
     if (isset ($_POST['search'])) {
         $limit = 3;  
-        if (isset($_GET["page"])) {
-            $page  = $_GET["page"]; 
-            } 
-            else{ 
-            $page=1;
-            };  
+        // Get current page.
+        
+        if (!isset($_GET["page"])) {
+            $page = 1;
+        }else{
+            $page = $_GET["page"] ;
+        }
+          
         $start_from = ($page-1) * $limit; 
         
         if ($_POST['Service'] !="" && $_POST['City'] !="") {
@@ -34,8 +36,7 @@
                     users.username, 
                     services.ser_name,
                     cities.city_name,
-                    regions.region_name,
-                    COUNT(users.id)
+                    regions.region_name
                     
                     FROM (((((( users
                     inner join providers on providers.user_id = users.id)
@@ -49,7 +50,7 @@
                     users.account_type ='Provider' and 
                     prov_services.ser_id ='$Service' and 
                     regions.city_id='$City' and 
-                    users.username like '$Name%' LIMIT $start_from, $limit";
+                    users.username like '$Name%' ";
 
             if ($Region != "none") {
                 $sql = $sql."and p_address.region_id = '$Region'";
@@ -60,7 +61,11 @@
                 $sql = $sql."and users.id != '$x'";
             }
             
+            $counting_result=mysqli_query($conn, $sql);
+            $total_records =mysqli_num_rows($counting_result);
+            $sql = $sql." LIMIT $limit OFFSET $start_from";
             $info=mysqli_query($conn, $sql);
+            
             
             if($x=mysqli_fetch_array($info)) {
                
@@ -88,14 +93,13 @@
                         '</li>
                     ');
                 }
-                $row_db = mysqli_fetch_row($result);  
-                $total_records = $row_db[0];  
+                
                 $total_pages = ceil($total_records / $limit); 
-                $pagLink = "<ul class='pagination'>";  
-                for ($i=1; $i<=$total_pages; $i++) {
-                    $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
-                }
-                echo $pagLink . "</ul>";  
+                // $pagLink = "<ul class='pagination'>";  
+                // for ($i=1; $i<=$total_pages; $i++) {
+                //     $pagLink .= "<li class='page-item'><a class='page-link' href='pagination.php?page=".$i."'>".$i."</a></li>";	
+                // }
+                // echo $pagLink . "</ul>";  
             } else {
                 echo "<div class='wow flip no-result'>";
                 echo "<img src='../imgs/search.png'>";
@@ -119,32 +123,6 @@
         echo "<h5>----------------------------------</h5>";
         echo "</div>";
     }
-    // $nema_table_count= 'providers';
-    // $select_types = "'accept'";
-    // $select_types_count="'accept'";
-    // $coul = 'username';
-    // $types = 'prov_state';
-    // // Per page limit for pagination.
-    // $pagelimit = 2;
-    // // Get current page.
-    // $page = filter_input(INPUT_GET, 'page');
-    // if (!$page) {
-    //     $page = 1;
-    // }
-
-    // $offset = ($page - 1) * $pagelimit ;
-    // $sql.=" LIMIT $pagelimit OFFSET $offset";
-    // $rows=mysqli_query($conn, $sql);
-    // $total_count = 0 ;
-    // if ($nema_table_count == 'users' || $nema_table_count == 'providers'){
-    //     $total_count = counting_type($nema_table_count, $types, $select_types_count);
-    // }else {
-    //     $total_count = counting($nema_table);
-    // }
-    // $total_pages = ceil( $total_count / $pagelimit);
-    // //}
-  
-    // echo paginationLinks($page, $total_pages, 'search_submit.php'); 
     
 
 ?>
