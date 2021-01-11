@@ -185,7 +185,7 @@
                 <a href="inbox_new_message.php"><i class="fa fa-envelope-o fa-fw"></i>Inbox New Message</a>
             </li>
             <li>
-                <a href="Message_show.php"><i class="fa fa-envelope-open-o fa-fw"></i>Inbox Old Message</a>
+                <a href="Message_Show.php"><i class="fa fa-envelope-open-o fa-fw"></i>Inbox Old Message</a>
             </li>
             <li>
                 <a href="Sent_messages_show.php"><i class="fa fa-bars fa-fw"></i>Sent Message</a>
