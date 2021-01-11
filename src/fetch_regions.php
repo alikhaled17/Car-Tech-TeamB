@@ -1,5 +1,5 @@
 <?php
-    echo '<option id="rr" value="none" selected >Choose ...</option>';
+    echo '<option value="none" selected >Choose ...</option>';
     if(isset($_POST['get_option']))
     {
 
@@ -10,7 +10,7 @@
 
         while($myregion=mysqli_fetch_array($result)) {
 
-            echo '<option value="'
+            echo '<option name="rr" value="'
             .$myregion ['id']
             .'">'
             .$myregion ['region_name']

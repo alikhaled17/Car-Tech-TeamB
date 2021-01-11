@@ -21,11 +21,11 @@ include_once("../Config.php");
 $sql="SELECT id,city_name FROM `cities`";
 $result=mysqli_query($conn, $sql);
 
-echo '<option value="" id="cc" selected >Choose...</option>';
+echo '<option value="" selected >Choose...</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
 
-    echo '<option value="'
+    echo '<option name="cc" value="'
     .$mycitys ['id'] .'">'
     .$mycitys ['city_name'] .'</option>';
 }

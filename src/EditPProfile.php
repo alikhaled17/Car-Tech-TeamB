@@ -109,9 +109,7 @@
                                 <label class="st">Street</label>
                                 <input class="street" type="text" name="street" placeholder="street"  
                                 value='<?php echo$user_data['street'];?>'>
-                                <script>
-                                    document.getElementById("City1").selectedIndex = <?php echo $City;?>;
-                                </script>
+                                
                               
                             </span>
                         </div>
@@ -178,14 +176,17 @@
     <script src="../js/script.js"></script>
     <script>
         $(document).ready(function () {
-            $("#cc").text('');
             var city = "<?php echo $user_data['city_name']; ?>";
             var region = "<?php echo $user_data['region_name']; ?>";
 
-            $("#cc").text('');
-            $("#cc").text(city) ;
-            $("#rr").text('');
-            $("#rr").text(region) ;
+            $("option[name='cc']").each(function () { 
+                if ($(this).text() == city) {
+                    $(this).attr("selected","selected").siblings().attr("selected","");
+                }
+            });
+            // $("#cc").text(city) ;
+            // $("#rr").text('');
+            // $("#rr").text(region) ;
            
         });
     </script>
