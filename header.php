@@ -159,7 +159,7 @@ function count_unseen_message_h($connect)
                             }
                             else
                             {
-                                echo "<a aria-hidden='true' class='dropdown-item fa fa-user-plus' style='color:#08526d' href='https://car-tch.herokuapp.com/src/signup.php'> Sign Up</a>" ;
+                                echo "<a aria-hidden='true' class='dropdown-item fa fa-user-plus' style='color:#08526d' href='https://car-tch.herokuapp.com/src/signup.php?user_type=user'> Sign Up</a>" ;
                                 echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-in' style='color:#08526d' href='https://car-tch.herokuapp.com/src/login.php'> Login</a>" ;                                
                             }
                         ?>
