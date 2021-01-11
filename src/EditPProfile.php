@@ -89,8 +89,9 @@
                         </div>
                         <div class="adress">
                         <!-- <i class="fa fa-address-book"></i> -->
-                            <span class="inputStyle"> 
+                            <!-- <span class="inputStyle">  -->
                             <?php
+                                // echo ",";
                                 // echo " " . $user_data['region_name'] . " ";
                                 // echo ",";
                                 // echo " " . $user_data['city_name'] . " ";
@@ -99,9 +100,11 @@
                             <br>
                                 <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
+
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose ...</option>
+
                                 </select><br><br>
                                 <label class="st">Street</label>
                                 <input class="street" type="text" name="street" placeholder="street"  
@@ -112,6 +115,8 @@
                               
                             </span>
                         </div>
+                        
+
                         <br>
                         
                         <div class="service-check">
@@ -171,5 +176,16 @@
     <script src="../js/wow.min.js"></script>
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#cc").text('');
+            var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
+            console.log(MyJSStringVar);
+
+            $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
+            $("#rr").text('');
+            $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
+        });
+    </script>
 </body>
 </html>
