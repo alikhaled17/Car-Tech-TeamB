@@ -279,17 +279,19 @@ if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  {
 
         $(document).ready(function () {
         fetch_user();
-        // setInterval(function () {
-        //     update_last_activity();
-        //     update_chat_history_data();
-        // }, 5000);
-            
-     
-        $(document).on('focus', '.fresh', function () {
+        setInterval(function () {
             update_last_activity();
             update_chat_history_data();
+        }, 5000);
+            
+        $(document).on('focus', '.fresh', function () {
             $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
         });
+        // $(document).on('focus', '.fresh', function () {
+        //     update_last_activity();
+        //     update_chat_history_data();
+        //     $('.chat-body').animate({ scrollTop: $('.chat-body').prop('scrollHeight') }, 1000);
+        // });
         
         function update_last_activity() {
             $.ajax({
