@@ -62,7 +62,7 @@
 
 .left-side .result {
   list-style: none;
-  width: 80%;
+  width: 100%;
 }
 
 .left-side .result .result-card
@@ -75,6 +75,7 @@
   box-shadow: rgba(0, 0, 0, 0.411) 3px 3px;
   margin-top: 15px;
   margin-left: 20px;
+  width: 90%;
 }
 
 .left-side .result .result-card:hover {
@@ -126,4 +127,11 @@
   color: #f47e3d;
   padding-top: 10px;
   margin: 4% 0 0 20%;
+}
+
+.result ul {
+  height: 300px;
+  overflow-y: scroll;
+  width: 100%;
+  scrollbar-width: 2px;
 }

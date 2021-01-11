@@ -63,7 +63,7 @@
             
             $counting_result=mysqli_query($conn, $sql);
             $total_records =mysqli_num_rows($counting_result);
-            $sql = $sql." LIMIT $limit OFFSET $start_from";
+            // $sql = $sql." LIMIT $limit OFFSET $start_from";
             $info=mysqli_query($conn, $sql);
             
             
@@ -76,6 +76,7 @@
             $result=mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) >= 1) {
+                echo "<ul id='result'>" ;
                 while($provider=mysqli_fetch_array($result)) {
 
                     echo ('
@@ -93,7 +94,7 @@
                         '</li>
                     ');
                 }
-                
+                echo "</ul>" ;
                 // $total_pages = ceil($total_records / $limit); 
                 // $pagLink = "<ul class='pagination'>";  
                 // for ($i=1; $i<=$total_pages; $i++) {
