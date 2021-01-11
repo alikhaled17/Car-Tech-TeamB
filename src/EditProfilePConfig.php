@@ -96,6 +96,7 @@
     $email = $user_data['email'];
     $password = $user_data['password'];
     $phone = $user_data['phone'];
-
+    $City = $user_data['city_id'];
+    $Region = $user_data['regions.id'];
     $street = $user_data['street'];
 ?>

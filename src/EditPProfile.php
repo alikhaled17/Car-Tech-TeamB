@@ -91,7 +91,6 @@
                         <i class="fa fa-address-book"></i>
                             <span class="inputStyle"> 
                             <?php
-                                echo " " . $user_data['street'] ;
                                 echo ",";
                                 echo " " . $user_data['region_name'] . " ";
                                 echo ",";
@@ -106,8 +105,7 @@
                                 <option value="none" selected>Choose ...</option>
                                 </select><br><br>
                                 <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street" required>
-                                <label class="col-md-4 control-label">City Name</label>
+                                <input class="street" type="text" name="street" placeholder="street"  value='<?php echo$user_data['street'];?>'>
                               
                             </span>
                         </div>
