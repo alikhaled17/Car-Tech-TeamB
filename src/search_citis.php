@@ -1,4 +1,5 @@
 <script type="text/javascript">function fetch_region(val) {
+    console.log("Heeere ");
 $.ajax( {
 
         type: 'post',

@@ -7,8 +7,10 @@ echo '<option value="" selected >Choose...</option>';
 
 while($myservice=mysqli_fetch_array($result)) {
 
+    $selected_attribute = $selected_service_id == $myservice ['id'] ? "selected" : "";
+
     echo '<option value="'
-    .$myservice ['id'] .'">'
+    .$myservice ['id'].'"'.$selected_attribute.'>'
     .$myservice ['ser_name'] .'</option>';
 }
 

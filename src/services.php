@@ -1,6 +1,8 @@
 <?php
 ob_start();
 session_start();
+$page=0;
+$total_pages=0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,22 +44,41 @@ session_start();
                         <form class="test" action="services.php" method= "post">
                             <!-- Service -->
                             <label class="label">Service</label>
-                            <?php include('search_service.php'); ?>
+                            <?php 
+                            $selected_service_id = !empty($_POST) ? $_POST['Service'] : (!empty($_GET) ? $_GET['Service'] :'');
+                            include('search_service.php'); ?>
 
                              <!-- City -->
                             <label class="label">City</label>
-                            <?php include('citis_req.php'); ?>
+                            <?php 
+                            $selected_city_id = !empty($_POST) ? $_POST['City'] : (!empty($_GET) ? $_GET['City'] : null);
+                            $selected_region_id = !empty($_POST) ? $_POST['Region'] : (!empty($_GET) ? $_GET['Region'] : null);
+
+                            
+                            include('search_citis.php'); ?>
 
                             <!-- Region -->
                             <label class="label">Region</label>
                             <select id="Region1" name="Region" class="search-select">
-                                <option value="none" selected >Choose...</option>
+                                <?php 
+                                
+                                if (!empty($_POST) || !empty($_GET)){
+                                    include('fetch_regions.php');
+                                }else {
+                                    echo '<option value="" >Region Name</option>';
+                                }
+                                
+                                ?>
                             </select>
                             <hr>
 
                             <!-- Name -->
                             <label class="label">Name</label>
-                            <input id="name_p" type="text" placeholder="Search.." name="search_name"> <br>
+                            <?php  
+                                $search_name = !empty($_POST) ? $_POST['search_name'] : (!empty($_GET) ? $_GET['search_name'] :'');
+                            ?>
+
+                            <input id="name_p" type="text" placeholder="Search.." name="search_name" value="<?php echo $search_name ?>"> <br>
 
                             <!-- search_submit -->
                             <input class="btn btn-outline-dark" type="submit" value="Search" name="search" >
@@ -68,7 +89,15 @@ session_start();
                 <!-- result -->
                 <div class="left-side col-6">
                     <div class="result">
-                        <?php include('search_submit.php'); ?>
+                        <ul id="result">
+                            <?php 
+                            include('search_submit.php'); ?>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <?php 
+                        require_once('pagination.php');
+                        echo paginationLinks($page, $total_pages, $temp); ?>
                     </div>
                     
                 </div>
