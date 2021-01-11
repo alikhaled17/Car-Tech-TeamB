@@ -175,6 +175,8 @@
     <script>
         $(document).ready(function () {
             $("#cc").text('');
+            console.log( <?php $user_data['city_name'] ?>);
+            console.log( <?php $user_data['region_name'] ?>);
             $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
             $("#rr").text('');
             $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
