@@ -57,11 +57,14 @@
         <br>
             <div class="upper-prof row">
                 <div class="img-prof col-3">
-                    <?php
-                        echo"<h2>";
-                        echo strtoupper(substr($user_data['username'], 0, 1)) ;
-                        echo "</h2>";
-                    ?> 
+                        <?php
+                            $background_colors = array('#282E33', '#25373A', '#164852', '#495E67', '#FF3838');
+                            $rand_background = $background_colors[array_rand($background_colors)];
+                            
+                            echo"<h2 style='background-color: ". $rand_background .";'>";
+                            echo strtoupper(substr($user_data['username'], 0, 1)) ;
+                            echo "</h2>";
+                        ?> 
                 </div>
                 <form name="update_user" class="col-9" method="post" action="EditPProfile.php">
                     <div class="info-prof ">
