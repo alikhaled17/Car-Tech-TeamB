@@ -70,11 +70,7 @@ session_start();
                     <div class="result">
                         <?php include('search_submit.php'); ?>
                     </div>
-                    <div class="text-center">
-                        <?php 
-                        // include_once('pagination.php');
-                        // echo paginationLinks($page, $total_pages, 'services.php'); ?>
-                    </div>
+                    
                 </div>
             </div>
         </div>
