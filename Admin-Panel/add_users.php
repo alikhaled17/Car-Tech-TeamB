@@ -16,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $email = $data_to_store['email'];
     $gender = $data_to_store['gender'];
     $phone = $data_to_store['phone'];
+    $prof_img = $_FILES['prof_img']['tmp_name'];
+    $prof_img= addslashes(file_get_contents($prof_img));
 
     if($operation == 'edit'){
         
@@ -35,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
 
     //reset db instance
-    $Insert_qur="INSERT INTO users (username,password,email,gender,phone,account_type) VALUES ('$username','$password','$email','$gender','$phone','Client')";
+    $Insert_qur="INSERT INTO users (username,password,email,gender,phone,prof_img,account_type) VALUES ('$username','$password','$email','$gender','$phone','$prof_img','Client')";
     $ins_result=mysqli_query($conn, $Insert_qur); 
     echo json_encode($ins_result);
     if($ins_result)

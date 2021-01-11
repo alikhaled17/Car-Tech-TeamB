@@ -20,7 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gender =$data_to_update['gender'];
     $phone =$data_to_update['phone'];
     $account_type =$data_to_update['account_type'];
-    
+	
+	$prof_img = $_FILES['prof_img']['tmp_name'];
+	$add_prof_img = $img_ID == '' ? "" : ", users.prof_img = '".addslashes(file_get_contents($prof_img))."' ";
+
 
 	$sql="SELECT * FROM `users`
 	WHERE email ='$email' && id <>'$users_id' ";
@@ -40,18 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$users_id = filter_input(INPUT_GET, 'users_id', FILTER_VALIDATE_INT);
+	$add_password = $password != "" ? ", users.password='$password' " : "";
 
-	if($password != "")
-	{
-		$sql="UPDATE users
-		SET username='$username',password='$password',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
-		WHERE id='$users_id'";	 
-	}else
-	{
-		$sql="UPDATE users
-		SET username='$username',email='$email',gender='$gender',phone='$phone',account_type='$account_type'
-		WHERE id='$users_id'";
-	}
+	$sql="UPDATE users
+	SET username='$username'".$add_password.",email='$email',gender='$gender',phone='$phone'".$add_prof_img.",account_type='$account_type'
+	WHERE id='$users_id'";	 
+
+	
 	$result=mysqli_query($conn, $sql);
 
 	if ($result) {

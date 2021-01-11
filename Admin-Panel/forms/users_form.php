@@ -80,6 +80,31 @@
             </div>
         </div>
     </div>
+    <?php if($operation == 'edit'){ ?>
+    <!-- File input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Profil Img</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
+                <input type="file" name="prof_img" autocomplete="off" placeholder="Profil Img" class="form-control" accept="image/*"
+                    value="<?php ($edit) ? $users['prof_img'] : ''; ?>" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <?php } else { ?>
+    <!-- File input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Profil Img</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-picture-o fa-fw"></i></span>
+                <input type="file" name="prof_img" autocomplete="off" placeholder="Profil Img" class="form-control" accept="image/*"
+                    value="<?php echo ($edit) ? $users[''] : ''; ?>" required=""  autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <?php } ?>
     <!-- radio checks -->
     <?php if($operation == 'edit'){ ?>
     <div class="form-group">
