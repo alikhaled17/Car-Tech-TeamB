@@ -184,12 +184,12 @@
     <script>
         // $(document).ready(function () {
         //     $("#cc").text('');
-        //     var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
+            // var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
         //     console.log(MyJSStringVar);
 
-        //     $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
+            // $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
         //     $("#rr").text('');
-        //     $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
+            // $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
         // });
     </script>
 </body>
