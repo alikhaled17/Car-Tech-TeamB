@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car Tech</title>
     <!-- my css files -->
-    <link rel="stylesheet" href="Car-Tech-TeamB/css/bootstrap.css">
-    <link rel="stylesheet" href="Car-Tech-TeamB/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="Car-Tech-TeamB/css/animate.css">
+    <link rel="stylesheet" href="/Car-Tech-TeamB/css/bootstrap.css">
+    <link rel="stylesheet" href="/Car-Tech-TeamB/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Car-Tech-TeamB/css/animate.css">
      
 </head>
 
@@ -38,10 +38,10 @@
 
 			<ul class="">
 			<li>
-				<a href="Car-Tech-TeamB/index.php">Home</a>
+				<a href="/Car-Tech-TeamB/index.php">Home</a>
 			</li>
 			<li>
-				<a href="Car-Tech-TeamB/src/services.php">Services</a>
+				<a href="/Car-Tech-TeamB/src/services.php">Services</a>
 			</li>
 			</ul>
 		</div>
