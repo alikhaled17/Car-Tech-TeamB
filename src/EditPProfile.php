@@ -178,11 +178,16 @@
     <script>
         $(document).ready(function () {
             var city = "<?php echo $user_data['city_id']; ?>";
+            console.log(city);
             var region = "<?php echo $user_data['region_name']; ?>";
 
             $("option[name='cc']").each(function () { 
                 if ($(this).attr("value") == city) {
+                    echo "Y";
                     $(this).attr("selected","selected").siblings().attr("selected","");
+                } else {
+                    echo "N";
+
                 }
             });
             // $("#cc").text(city) ;
