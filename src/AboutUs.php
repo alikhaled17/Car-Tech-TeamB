@@ -56,8 +56,8 @@ session_start();
             <h5 class="title">Web Developer</h5>
             </div>
             <ul class="social">
-            <li><a href="https://github.com/alikhaled17" class="fa fa-github" aria-hidden="true"></a></li>
-            <li><a href="https://www.linkedin.com/in/ali-khaled-7a4a981b4/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://github.com/alikhaled17" class="fa fa-github" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/ali-khaled-7a4a981b4/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
         <div class="our-team">
@@ -69,8 +69,8 @@ session_start();
             <h5 class="title">Web Developer</h5>
             </div>
             <ul class="social">
-            <li><a href="https://github.com/mayararaby" class="fa fa-github" aria-hidden="true"></a></li>
-            <li><a href="https://www.linkedin.com/in/mayar-araby-20b671127/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://github.com/mayararaby" class="fa fa-github" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/mayar-araby-20b671127/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
         <div class="our-team">
@@ -82,8 +82,8 @@ session_start();
             <h5 class="title">Web Developer</h5>
             </div>
             <ul class="social">
-            <li><a href="https://github.com/MahmoudElsh3rawy" class="fa fa-github" aria-hidden="true"></a></li>
-            <li><a href="https://www.linkedin.com/in/mahmoud-elsharawy-266aa4136/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://github.com/MahmoudElsh3rawy" class="fa fa-github" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/mahmoud-elsharawy-266aa4136/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
         <div class="our-team">
@@ -95,8 +95,8 @@ session_start();
             <h5 class="title">Web Developer</h5>
             </div>
             <ul class="social">
-            <li><a href="https://github.com/AhmedTurkiii" class="fa fa-github" aria-hidden="true"></a></li>
-            <li><a href="https://www.linkedin.com/in/ahmed-turki-6a8062120/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://github.com/AhmedTurkiii" class="fa fa-github" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/ahmed-turki-6a8062120/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
         <div class="our-team">
@@ -108,9 +108,9 @@ session_start();
             <h5 class="title">Web Developer</h5>
             </div>
             <ul class="social">
-            <li><a href="https://github.com/sallyElsayedShehataa" class="fa fa-github" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://github.com/sallyElsayedShehataa" class="fa fa-github" aria-hidden="true"></a></li>
             <!-- <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li> -->
-            <li><a href="https://www.linkedin.com/in/sally-eissawy-5677b3201/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/sally-eissawy-5677b3201/" class="fa fa-linkedin" aria-hidden="true"></a></li>
             </ul>
         </div>
        
