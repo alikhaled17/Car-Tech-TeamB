@@ -55,7 +55,7 @@ while($user_data = mysqli_fetch_array($result)){
 if ($rows1<1 && $rows2<1)
 {
     echo "<script>
-    document.getElementById('conta').innerHTML  = '<h3>- Not messages to show it</h3>';
+    document.getElementById('conta').innerHTML  = '<img style=\'opacity:.7; display:block;margin:75px auto 10px; \' src=\'images.png\'><hr><h3 style=\'opacity:.9; display:block;text-align: center; \' >No messages to show it</h3>';
     </script>";
     echo "<script>
     document.getElementById('user_details').style.display = 'none';
