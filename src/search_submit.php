@@ -4,7 +4,7 @@
     $temp = !empty($_POST) ? "Service=".$_POST['Service']."&City=".$_POST['City']."&Region=".$_POST['Region']."&search_name=".$_POST['search_name'] : "";
 
     if (isset ($_POST['search']) || isset($_GET["page"])) {
-        $limit = 5;  
+        $limit = 1;  
         // Get current page.
         
         if (!isset($_GET["page"])) {
@@ -55,7 +55,6 @@
             $info=mysqli_query($conn, $sql);
             
             if($x=mysqli_fetch_array($info)) {
-               
                 echo("<h3>Result</h3> <span>". $x['ser_name']. ", ".$x['city_name']
                 ."</span><br><br>"); 
             }
@@ -79,6 +78,8 @@
                             </div>'.
                         '</li>
                     ');
+
+                    
                 }
                 
                 $total_pages = ceil($total_records / $limit); 
