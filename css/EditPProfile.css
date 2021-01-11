@@ -1,125 +1,167 @@
-.col-9
+*
 {
-  max-width: 100% !important;
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
 }
 
-.fail {
-  border-radius: 10px;
-  padding: 5px 15px;
-  color: #fff;
+.services, .submit {
+  float: left;
+  margin: 25px 0;
+}
+
+.services > div {
+  display: inline;
+}
+
+.name, .email-pass {
+  margin: 25px 5px;
+}
+
+.email-pass .col-6 {
+  float: left;
+  margin: 5px 0 5px;
+
+}
+.edit > form {
+  display: block;
+  margin: 30px 0;
+  width: 100%;
+}
+
+
+
+label {
+  display: block !important;
+  margin-bottom: 2px !important;
+  font-size: 20px;
+}
+
+input:not([type='checkbox']) {
+  width: 80%;
+  margin: 0 6px;
+  padding: 3px 4px;
+  border: 2px solid #72b3ca;
+
+}
+
+.name input {
+  width: 90%;
+}
+input:not([type='checkbox']):focus {
+  outline: none;
+}
+
+.services label:not(:first-child){
+  display: inline-block !important;
+}
+
+.last-add:first-child span {
+  font-size: 18px;
   font-weight: 500;
-  font-size: 20px;
-  background-color: rgb(245, 61, 37);
+  color: #4a5052;
+  padding: 0 10px;
 }
 
-.success {
-    border-radius: 10px;
-    padding: 5px 15px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 20px;
-    background-color: rgb(66, 184, 66);
+.last-add:last-child {
+  display: none;
+  height: 250px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 3px solid #72b3ca;
 }
-.inputStyle
-{
-    color: #08526d;
-    border-radius: 5px;
-    border: none;
-    padding: 8px 14px;
-    outline-style: none;
-/*    margin-left: 12%;
-*/    font-size: 20px;
+
+.last-add:last-child > div {
+  display: inline;
+  float: left;
+  width: 33%;
+  padding: 10px;
 }
-.RadioStyle
-{
-  cursor: pointer;
-  padding: 0 50px 0 30px;
+
+.last-add:last-child > div select {
+  padding: 4px 6px;
+}
+
+.last-add:last-child > div.ok {
+  width: 95%;
+  clear: both;
+  
+}
+
+.last-add:last-child > div.ok span {
+  font-weight: 500;
   color: #08526d;
-  font-size: 20px;
-}
-input.RadioStyle
-{
-  margin-right: 2%;
-}
-span.gender-span
-{
-  margin-left: 3%;
-  font-size: 25px;
-}
-label.gender
-{
-  cursor: pointer;
-  color: #08526d;
-  font-size: 20px;
-}
-.gender-span
-{
-  margin: 10px;
-  font-size: 25px;
-}
-.gender
-{
-  margin-right: 7%;
-  font-size: 25px;
-}
-select#City1.search-select
-{
-  padding-left: 1%;
-  width: 50% !important;
-  border-radius: 5px;
-  outline-style: none;
   border: 1px solid #08526d;
-}
-
-select#Region1.search-select
-{
-  padding-left: 1%;
-  width: 50% !important;
-  border-radius: 5px;
-  outline-style: none;
-  border: 1px solid #08526d;
-}
-label.labelCity
-{
-  font-size: 20px;
-  width: 20%;
+  background-color: transparent;
+  padding: 3px 0;
+  width: 100%;
   display: block;
-
-}
-label.labelReion
-{
-  font-size: 20px;
-  width: 20%;
-  display: block;
-}
-label.st
-{
-  font-size: 20px;
-  margin-right: 3px;
-}
-input.street
-{
-  border:none;
-  outline-style: none;
-/*  margin-left: 5%;
-*/  font-size: 20px;
-}
-label.service
-{
-  margin-left: 1%;
-  color: #08526d;
-  font-size: 20px;
-}
-input[type="checkbox"]
-{
-  margin-left: 7%;
-  color: #08526d;
-  border:1px solid #08526d;
+  text-align: center;
+  cursor: pointer;
 }
 
-input[type="text"], input[type="password"] {
-  border-left: 2px solid #08526d !important;
-  padding-left: 10px ;
-  border-radius: 0;
-  height: 20px;
+.last-add:last-child > div.ok span:hover {
+  background-color: #08526d;
+  color: #fff;
+}
+
+.last-add:last-child > div select {
+  border: 2px solid #72b3ca;
+}
+
+.last-add:last-child span {
+  margin: 0;
+}
+
+.last-add {
+  position: relative;
+}
+
+.last-add button {
+  position: absolute;
+  background-color: transparent;
+  font-weight: 500;
+  color: #72b3ca;
+  border: 1px solid #72b3ca;
+}
+
+.last-add button:hover {
+  border: none;
+  background-color: #72b3ca;
+  color: #fff;
+}
+
+.last-add:first-child button {
+  bottom: 1px;
+  right: 5px; 
+  padding: 5px 8px;
+}
+
+.last-add:last-child button {
+  top: 15px;
+  right: 10px; 
+  width: 30px;
+  height: 30px;
+}
+.services label:not(:first-child) {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4a5052;
+}
+
+input[type='checkbox']{
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+
+.submit .btn {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.alert {
+  position: absolute !important;
+  top: 10%;
+  right: 20%;
 }
