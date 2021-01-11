@@ -104,10 +104,6 @@
                             <br>
                                 <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
-                                <script>
-                                    document.getElementById('City1').value = <?php echo $City;?>;
-                                </script>
-
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
                                 <option value="none" selected>Choose ...</option>
@@ -182,15 +178,15 @@
     <script>new WOW().init();</script>    
     <script src="../js/script.js"></script>
     <script>
-        // $(document).ready(function () {
-        //     $("#cc").text('');
-            // var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
-        //     console.log(MyJSStringVar);
+        $(document).ready(function () {
+            $("#cc").text('');
+            var MyJSStringVar = "<?php echo $user_data['region_name']; ?>";
+            console.log(MyJSStringVar);
 
-            // $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
-        //     $("#rr").text('');
-            // $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
-        // });
+            $("#cc").text("'" + <?php $user_data['city_name'] ?>+ "'") ;
+            $("#rr").text('');
+            $("#rr").text("'" + <?php $user_data['region_name'] ?>+ "'") ;
+        });
     </script>
 </body>
 </html>
