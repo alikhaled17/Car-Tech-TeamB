@@ -24,9 +24,9 @@ $result=mysqli_query($conn, $sql);
 echo '<option value="" selected >Choose...</option>';
 
 while($mycitys=mysqli_fetch_array($result)) {
-
+    $selected_attribute = $selected_city_id == $mycitys ['id'] ? "selected" : "";
     echo '<option value="'
-    .$mycitys ['id'] .'">'
+    .$mycitys ['id'].'"'.$selected_attribute.'>'
     .$mycitys ['city_name'] .'</option>';
 }
 

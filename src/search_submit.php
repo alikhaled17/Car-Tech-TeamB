@@ -1,21 +1,10 @@
 <?php 
     include_once ("../Config.php");
   
+    $temp = !empty($_POST) ? "Service=".$_POST['Service']."&City=".$_POST['City']."&Region=".$_POST['Region']."&search_name=".$_POST['search_name'] : "";
 
-    if(isset($_SESSION['p_id']) || isset($_SESSION['u_id']) )  
-    {
-        if (isset($_SESSION['u_id']))
-        {
-            $current_id=$_SESSION['u_id'];
-            
-        }
-        else
-        {
-            $current_id=$_SESSION['p_id'];
-        }
-    }
-    if (isset ($_POST['search'])) {
-        $limit = 3;  
+    if (isset ($_POST['search']) || isset($_GET["page"])) {
+        $limit = 5;  
         // Get current page.
         
         if (!isset($_GET["page"])) {
@@ -25,12 +14,11 @@
         }
           
         $start_from = ($page-1) * $limit; 
-        
-        if ($_POST['Service'] !="" && $_POST['City'] !="") {
-            $Service=$_POST['Service'];
-            $City=$_POST['City'];
-            $Region=$_POST['Region'];
-            $Name=$_POST['search_name'];
+        $Service = isset($_POST['Service'])? $_POST['Service'] : $_GET['Service'];
+        $City = isset($_POST['City'])? $_POST['City'] : $_GET['City'];
+        if ($Service && $City) {
+            $Region= isset($_POST['Region'])? $_POST['Region'] : $_GET['Region']; 
+            $Name=isset($_POST['search_name'])? $_POST['search_name'] : $_GET['search_name'];
             $sql="SELECT  users.prof_img,
                     users.id,
                     users.username, 
@@ -52,7 +40,7 @@
                     regions.city_id='$City' and 
                     users.username like '$Name%' ";
 
-            if ($Region != "none") {
+            if ($Region != "") {
                 $sql = $sql."and p_address.region_id = '$Region'";
             }
             
@@ -65,7 +53,6 @@
             $total_records =mysqli_num_rows($counting_result);
             $sql = $sql." LIMIT $limit OFFSET $start_from";
             $info=mysqli_query($conn, $sql);
-            
             
             if($x=mysqli_fetch_array($info)) {
                

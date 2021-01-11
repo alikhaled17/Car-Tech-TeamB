@@ -6,9 +6,8 @@ if ($operation != 'edit'){
 
 if(isset($_POST['get_option']) || isset($selected_city_id))
 {
-    echo $selected_city_id;
+    
     $selected_city = isset($_POST['get_option']) ? $_POST['get_option'] : $selected_city_id;
-    echo $selected_city;
     $sql="SELECT id, region_name FROM `regions` WHERE city_id = '$selected_city'";
     $result=mysqli_query($conn, $sql);
 
