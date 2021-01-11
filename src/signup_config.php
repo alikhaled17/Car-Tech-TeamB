@@ -50,8 +50,7 @@
                 && isset($_POST['City'])
                 && isset($_POST['Region'])
                 && isset($_POST['street'])
-                && (isset($_POST['Gas_Station']) || isset($_POST['Car_Wash'])
-                    || isset($_POST['Car_Maintenance']) || isset($_POST['Trailer_Truck']))
+                && isset($_POST['ser_name']) 
             ) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
