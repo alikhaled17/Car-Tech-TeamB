@@ -99,14 +99,14 @@
                                 // echo ",";
                                 // echo " " . $user_data['city_name'] . " ";
                             ?>  
-                            <script>
-                                    document.getElementById('City1').value = <?php echo $City;?>;
-
-                            </script>
+                            
                             <br>
                             <br>
                                 <label class="labelCity" >City </label>
                                 <?php include('search_citis.php'); ?>
+                                <script>
+                                    document.getElementById('City1').value = <?php echo $City;?>;
+                                </script>
 
                                 <label class="labelReion">Region</label>
                                 <select id="Region1" name="Region" class="search-select" required>
