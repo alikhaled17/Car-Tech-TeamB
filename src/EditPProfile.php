@@ -175,9 +175,9 @@
     <script>
         $(document).ready(function () {
             $("#cc").text('');
-            $("#cc").text(<?php echo $user_data['city_name']; ?>);
+            $("#cc").text("'" + <?php echo $user_data['city_name']; ?>+ "'") ;
             $("#rr").text('');
-            $("#rr").text(<?php echo $user_data['region_name']; ?>);
+            $("#rr").text("'" + <?php echo $user_data['region_name']; ?>+ "'") ;
         });
     </script>
 </body>
