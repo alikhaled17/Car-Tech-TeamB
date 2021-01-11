@@ -107,7 +107,11 @@
 
                                 </select><br><br>
                                 <label class="st">Street</label>
-                                <input class="street" type="text" name="street" placeholder="street"  value='<?php echo$user_data['street'];?>'>
+                                <input class="street" type="text" name="street" placeholder="street"  
+                                value='<?php echo$user_data['street'];?>'>
+                                <script>
+                                    document.getElementById("City1").selectedIndex = <?php echo $City;?>;
+                                </script>
                               
                             </span>
                         </div>
