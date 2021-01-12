@@ -4,7 +4,7 @@
     $temp = !empty($_POST) ? "Service=".$_POST['Service']."&City=".$_POST['City']."&Region=".$_POST['Region']."&search_name=".$_POST['search_name'] : "";
 
     if (isset ($_POST['search']) || isset($_GET["page"])) {
-        $limit = 1;  
+        $limit = 3;  
         // Get current page.
         
         if (!isset($_GET["page"])) {
