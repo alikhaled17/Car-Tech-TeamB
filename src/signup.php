@@ -53,7 +53,7 @@
                 <hr>
                 <form method="POST" onsubmit="return handleData()" enctype="multipart/form-data">
                     <h4>Account Type</h4>
-                    <input onclick="window.location='signup.php?user_type=User';" type="radio" id="user" name="user-info" value="User" <?php echo $user_type=='User' ? 'checked' : '';?> />
+                    <input checked onclick="window.location='signup.php?user_type=User';" type="radio" id="user" name="user-info" value="User" <?php echo $user_type=='User' ? 'checked' : '';?> />
                     <label for="user">User</label>
                     <input onclick="window.location='signup.php?user_type=Provider';" type="radio" id="Provider" name="user-info" value="Provider" <?php echo $user_type=='Provider' ? 'checked' : '';?>/>
                     <label for="Provider">Provider</label><br><br>
