@@ -159,7 +159,7 @@ function count_unseen_message_h($connect)
                             }
                             else
                             {
-                                echo "<a aria-hidden='true' class='dropdown-item fa fa-user-plus' style='color:#08526d' href='/Car-Tech-TeamB/src/signup.php'> Sign Up</a>" ;
+                                echo "<a aria-hidden='true' class='dropdown-item fa fa-user-plus' style='color:#08526d' href='/Car-Tech-TeamB/src/signup.php?user_type=User'> Sign Up</a>" ;
                                 echo "<a aria-hidden='true' class='dropdown-item fa fa-sign-in' style='color:#08526d' href='/Car-Tech-TeamB/src/login.php'> Login</a>" ;                                
                             }
                         ?>

@@ -63,16 +63,16 @@
             $conn->query("DELETE FROM prov_services WHERE p_id = $id");
 
             if (isset($_POST['Gas'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','10')");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','1')");
             }
             if (isset($_POST['Wash'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','20') ");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','2') ");
             }
             if (isset($_POST['Maintenance'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','30')");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','3')");
             }
             if (isset($_POST['Trailer'])) {
-                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','40') ");
+                $conn->query("INSERT INTO prov_services (p_id,ser_id) VALUES ('$id','4') ");
             }
 
             header("Location: pProfile.php");
