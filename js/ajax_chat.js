@@ -6,7 +6,7 @@ $(document).ready(function () {
         update_last_activity();
         fetch_user();
         update_chat_history_data();
-    }, 2000);
+    }, 3000);
 
     // $(document).on('click', '.chat', function () {
     //     update_last_activity();
@@ -33,7 +33,6 @@ $(document).ready(function () {
     }
 
 
-
     function make_chat_dialog_box(to_user_id, to_user_name, toType) {
         var modal_content = '<div  id="user_dialog_' + to_user_id + '" class="chat col-12" >';
 
@@ -43,7 +42,7 @@ $(document).ready(function () {
         if (toType == "Provider") {
             modal_content += '<div  style="cursor:pointer;" class="chat-with"><a href="../visitProvider.php?id=' + to_user_id + '">' + to_user_name + '</a></div>';
         } else {
-            modal_content += '<div class="chat-with">' + to_user_name + '-User</div>';
+            modal_content += '<div class="chat-with">' + to_user_name + '- Customer</div>';
         }
         modal_content += '</div>';
         modal_content += '</div>';
