@@ -31,7 +31,6 @@ if (isset ($_POST['send'])) {
             ));
 
     $mail = $smtp->send($to, $headers, $body);
-    // echo $mail. '<br>';
     if (PEAR::isError($mail)) {
         echo("<div class='alert alert-danger alert-dismissable'><a href='#' 
         class='close' data-dismiss='alert' aria-label='close'>×</a>".$mail->getMessage()."</div>");

@@ -8,7 +8,7 @@ if (!defined('CURRENT_PAGE')) define('CURRENT_PAGE', basename($_SERVER['REQUEST_
 
 require_once BASE_PATH . '/helpers/helpers.php';
 
-$conn = new mysqli('localhost', 'root', '', 'cartech');
+$conn = new mysqli('localhost', 'root', '', 'cartech1');
 
 
 ?>
