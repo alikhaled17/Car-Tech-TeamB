@@ -1,7 +1,6 @@
 # Car-Tech
 This website is made using PHP , MySQL , HTML5 , CSS3 , bootstrap , jquery and JavaScript 
 
-You can check the live site from [here](https://care-tech.herokuapp.com/index.php)
 
 ## contributers
 
