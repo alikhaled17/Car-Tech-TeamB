@@ -39,7 +39,7 @@ session_start();
                 <h1>Car Tech</h1>
                 <hr>
                 <p>
-                We offer full range of cars services to vehicle owners in Egypt . Our professionals know how to handle a wide range of car services. Whether you drive a passenger car or medium sized truck or SUV, providers strive to ensure that your vehicle will be performing at its best before leaving car shop.
+                We offer full range of cars services to vehicle owners in Egypt . Our professionals know how to handle a wide range of car services. Whether you drive a passenger car or medium sized truck or SUV, mechanics strive to ensure that your vehicle will be performing at its best before leaving car shop. Whether you drive a medium sized truck or passenger car or SUV, our mechanics strive to ensure.
                 </p>
             </div>
             <div class="right-side col-6">
@@ -129,8 +129,6 @@ session_start();
     ?>
     <div id="port" class="Ads row">
             <div class="container">
-                <h3>Add Your Ad</h3>
-
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                     <?php

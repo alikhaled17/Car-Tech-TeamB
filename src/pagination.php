@@ -16,8 +16,7 @@ function paginationLinks($current_page, $total_pages, $base_url) {
 		$http_query = "?";
 	}
 
-	$html = '<div class="parent-pagination">';
-	$html .= '<ul class="pagination text-center">';
+	$html = '<ul class="pagination text-center">';
 
 	if ($current_page == 1) {
 
@@ -58,7 +57,7 @@ function paginationLinks($current_page, $total_pages, $base_url) {
 		$html .= '<li><a href="' . $http_query . $base_url . '&page=' . $total_pages . '">Last</a></li>';
 	}
 
-	$html = $html . '</ul></div>';
+	$html = $html . '</ul>';
 
 	return $html;
 }
