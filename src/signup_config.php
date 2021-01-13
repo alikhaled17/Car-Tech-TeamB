@@ -45,7 +45,7 @@
                 $password = $_POST['pass'];
                 $Phone = $_POST['phone'];
                 if ($email != "") {
-                    $query = "SELECT email FROM users where email='" . $email . "'";
+                    $query = "SELECT email FROM users where email='$email'";
                     $result = mysqli_query($conn, $query);
                     $num_rows = mysqli_num_rows($result);
                     if ($num_rows >= 1) {
@@ -94,7 +94,7 @@
             $prof_img = $_FILES['prof_img']['tmp_name'];
             $prof_imgID = addslashes(file_get_contents($prof_img));
             if ($email != "") {
-                $query = "SELECT email FROM users where email='$email' or username = '$username'";
+                $query = "SELECT email FROM users where email='$email' ";
                 $result = mysqli_query($conn, $query);
                 $num_rows = mysqli_num_rows($result);
                 if ($num_rows >= 1) {
