@@ -53,10 +53,11 @@
                 <hr>
                 <form method="POST" onsubmit="return handleData()" enctype="multipart/form-data">
                     <h4>Account Type</h4>
-                    <input checked onclick="window.location='signup.php?user_type=User';" type="radio" id="user" name="user-info" value="User" <?php echo $user_type=='User' ? 'checked' : '';?> />
+                    <input required onclick="window.location='signup.php?user_type=User';" type="radio" id="user" name="user-info" value="User" <?php echo $user_type=='User' ? 'checked' : '';?> />
                     <label for="user">User</label>
-                    <input onclick="window.location='signup.php?user_type=Provider';" type="radio" id="Provider" name="user-info" value="Provider" <?php echo $user_type=='Provider' ? 'checked' : '';?>/>
+                    <input required onclick="window.location='signup.php?user_type=Provider';" type="radio" id="Provider" name="user-info" value="Provider" <?php echo $user_type=='Provider' ? 'checked' : '';?>/>
                     <label for="Provider">Provider</label><br><br>
+                    <h5 style="color:#08526d; font-size:15px;" > Please Select the type of account first * </h5>
                     <div class="global-info">
                         <label>User Name</label>
                         <input type="text" name="username" required placeholder="Enter Your User Name *"><br>
